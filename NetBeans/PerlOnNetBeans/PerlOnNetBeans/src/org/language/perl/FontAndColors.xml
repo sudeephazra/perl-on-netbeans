@@ -1,0 +1,21 @@
+<!DOCTYPE fontscolors PUBLIC "-//NetBeans//DTD Editor Fonts and Colors settings 1.1//EN" "http://www.netbeans.org/dtds/EditorFontsColors-1_1.dtd">
+<fontscolors>
+    <fontcolor bgColor="white" foreColor="black" name="default"/>
+    <fontcolor bgColor="ff9900" foreColor="white" name="error"/>
+    <fontcolor foreColor="c71585" name="string">
+        <font style="italic" />
+    </fontcolor>
+    <fontcolor foreColor="blue" name="keyword" default="keyword"/>
+    <fontcolor foreColor="009966" name="comment"  default="comment">
+        <font style="italic" />
+    </fontcolor>
+    <fontcolor foreColor="ce9a08" name="command">
+        <font style="bold" />
+    </fontcolor>
+    <fontcolor foreColor="ce7b00" name="variable"/>
+    <fontcolor foreColor="a0a0a0" name="pod"/>
+    <!--<fontcolor name="identifier"  default="default"/>-->
+    <!--<fontcolor name="operator"  default="default"/>-->
+    <!--<fontcolor foreColor="black" name="whitespace"  default="whitespace"/>-->
+    <fontcolor foreColor="a0522d" name="number"/>
+</fontscolors>
