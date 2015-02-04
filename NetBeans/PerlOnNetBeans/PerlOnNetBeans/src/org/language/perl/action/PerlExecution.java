@@ -16,6 +16,7 @@ import org.netbeans.api.extexecution.ExecutionService;
 import org.netbeans.api.extexecution.ExternalProcessBuilder;
 import org.netbeans.api.extexecution.input.InputProcessor;
 import org.openide.util.Exceptions;
+import org.openide.modules.InstalledFileLocator;
 
 public class PerlExecution {
     
@@ -194,6 +195,16 @@ public class PerlExecution {
     
     public synchronized void setRawScript(String script) throws IOException {
         this.script = script;
+    }
+    
+    public String getBundledPerlAutoflushPath() {
+
+        File perlAutoflush = InstalledFileLocator.getDefault().locate(
+                "autoflush/Autoflush.pod",
+                "org.languages.perl",
+                false);
+        String flushFolder = perlAutoflush.getParent();
+        return flushFolder;
     }
     
     public synchronized String getRawScript() {

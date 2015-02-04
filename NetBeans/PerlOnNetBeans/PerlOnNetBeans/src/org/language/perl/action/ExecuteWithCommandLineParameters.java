@@ -8,6 +8,7 @@ import java.util.prefs.Preferences;
 import javax.swing.JOptionPane;
 import org.language.perl.file.PerlFileDataObject;
 import org.language.perl.options.panel.GeneralPanel;
+import org.language.perl.utilities.PerlConstants;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.awt.ActionReferences;
@@ -73,7 +74,7 @@ public class ExecuteWithCommandLineParameters implements ActionListener {
         myExecution.setDisplayName(file.getName() + " (Execute with command line parameters)");
         if (perlBinary.equals(""))
         {
-            myExecution.setCommand("perl");
+            myExecution.setCommand(PerlConstants.PERL_DEFAULT);
         } else {
             myExecution.setCommand(perlBinary);
         }
@@ -86,6 +87,11 @@ public class ExecuteWithCommandLineParameters implements ActionListener {
                 myExecution.setCommandArgs(myExecution.getCommandArgs() + " \"" + s + "\" ");
             }
         }
+        //Removing the need to create a new file for output buffer flushing
+        myExecution.setCommandArgs(myExecution.getCommandArgs() + " -I ");
+        myExecution.setCommandArgs(myExecution.getCommandArgs() + 
+                "\"" + myExecution.getBundledPerlAutoflushPath() + "\"" );
+        myExecution.setCommandArgs(myExecution.getCommandArgs() + " -MDevel::Autoflush ");
         
         try {
             myExecution.setScript(fileName);

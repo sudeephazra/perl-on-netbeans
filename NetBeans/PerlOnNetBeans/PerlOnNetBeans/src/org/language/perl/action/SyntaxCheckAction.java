@@ -73,7 +73,7 @@ public final class SyntaxCheckAction implements ActionListener {
         } else {
             myExecution.setCommand(perlBinary);
         }
-        myExecution.setCommandArgs("-c");
+        myExecution.setCommandArgs(" -c ");
         if (!perlLibrary.equalsIgnoreCase("")) {
             String[] libPaths = perlLibrary.split("\\n");
             for (String s : libPaths) {
@@ -82,7 +82,6 @@ public final class SyntaxCheckAction implements ActionListener {
             }
         }
         try {
-            //myExecution.setScript(fileName);
             myExecution.setRawScript(fileName);
         } catch (IOException ex) {
             Exceptions.printStackTrace(ex);
@@ -90,15 +89,4 @@ public final class SyntaxCheckAction implements ActionListener {
         myExecution.run();
     }
     
-    /*
-    public class PerlSyntaxCheckerThread implements Runnable {
-                
-        @Override
-        public void run() {
-            PerlSyntaxChecker compiler = new PerlSyntaxChecker();
-            compiler.checkDataObject(context);
-
-        }
-    }
-    */
 }

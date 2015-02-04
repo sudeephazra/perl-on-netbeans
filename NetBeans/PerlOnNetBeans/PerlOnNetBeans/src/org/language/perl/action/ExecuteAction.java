@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.util.prefs.Preferences;
 import org.language.perl.file.PerlFileDataObject;
 import org.language.perl.options.panel.GeneralPanel;
+import org.language.perl.utilities.PerlConstants;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.awt.ActionReferences;
@@ -22,11 +23,11 @@ import org.openide.util.NbBundle.Messages;
 import org.openide.util.NbPreferences;
 
 @ActionID(
-    category = "File",
-id = "org.netbeans.perl.file.ExecuteAction")
+        category = "File",
+        id = "org.netbeans.perl.file.ExecuteAction")
 @ActionRegistration(
-    iconBase = "org/language/perl/images/file-run-icon.png",
-displayName = "#CTL_ExecuteAction")
+        iconBase = "org/language/perl/images/file-run-icon.png",
+        displayName = "#CTL_ExecuteAction")
 @ActionReferences({
     @ActionReference(path = "Toolbars/Build", position = 600),
     @ActionReference(path = "Loaders/text/x-perl/Actions", position = 175)
@@ -63,7 +64,7 @@ public final class ExecuteAction implements ActionListener {
         myExecution.setWorkingDirectory(file.getParent().toString());
         myExecution.setDisplayName(file.getName() + " (Execute)");
         if (perlBinary.equals("")) {
-            myExecution.setCommand("perl");
+            myExecution.setCommand(PerlConstants.PERL_DEFAULT);
         } else {
             myExecution.setCommand(perlBinary);
         }
@@ -76,14 +77,17 @@ public final class ExecuteAction implements ActionListener {
                 myExecution.setCommandArgs(myExecution.getCommandArgs() + "\"" + s + "\" ");
             }
         }
-
+        //Removing the need to create a new file for output buffer flushing
+        myExecution.setCommandArgs(myExecution.getCommandArgs() + " -I ");
+        myExecution.setCommandArgs(myExecution.getCommandArgs()
+                + "\"" + myExecution.getBundledPerlAutoflushPath() + "\"");
+        myExecution.setCommandArgs(myExecution.getCommandArgs() + " -MDevel::Autoflush ");
         try {
-            myExecution.setScript(fileName);
+            myExecution.setRawScript(fileName);
         } catch (IOException ex) {
             Exceptions.printStackTrace(ex);
         }
         myExecution.run();
-
 
     }
 }
