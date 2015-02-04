@@ -11,7 +11,7 @@ import java.io.IOException;
 import javax.swing.JOptionPane;
 import org.language.perl.file.PerlFileDataObject;
 import org.language.perl.options.panel.PerlTidyPreferences;
-import org.language.perl.utilities.PerlUtilsConstants;
+import org.language.perl.utilities.PerlConstants;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.awt.ActionReferences;
@@ -71,8 +71,8 @@ public class PerlTidyCodeFormatterAction implements ActionListener {
                 return;
             }
             myExecution.setWorkingDirectory(bundledTidy.getAbsolutePath());
-            myExecution.setCommand(PerlUtilsConstants.PERL_DEFAULT);
-            myExecution.setCommandArgs(PerlUtilsConstants.PERL_TIDY_BINARY);
+            myExecution.setCommand(PerlConstants.PERL_DEFAULT);
+            myExecution.setCommandArgs(PerlConstants.PERL_TIDY_BINARY);
         } else {
             myExecution.setCommand(perlTidyBinary);
             File tidy = new File(myExecution.getCommand());

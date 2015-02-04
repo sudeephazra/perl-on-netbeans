@@ -6,6 +6,7 @@
 package org.language.perl.file;
 
 import java.io.IOException;
+import org.language.perl.utilities.PerlConstants;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.awt.ActionReferences;
@@ -22,11 +23,11 @@ import org.openide.util.NbBundle.Messages;
 })
 @MIMEResolver.ExtensionRegistration(
         displayName = "#LBL_PerlFile_LOADER",
-        mimeType = "text/x-perl",
+        mimeType = PerlConstants.MIME_TYPE,
         extension = {"pl", "PL"}
 )
 @DataObject.Registration(
-        mimeType = "text/x-perl",
+        mimeType = PerlConstants.MIME_TYPE,
         iconBase = "org/language/perl/images/perl-file.png",
         displayName = "#LBL_PerlFile_LOADER",
         position = 300
@@ -87,7 +88,7 @@ public class PerlFileDataObject extends MultiDataObject {
 
     public PerlFileDataObject(FileObject pf, MultiFileLoader loader) throws DataObjectExistsException, IOException {
         super(pf, loader);
-        registerEditor("text/x-perl", false);
+        registerEditor(PerlConstants.MIME_TYPE, false);
     }
 
     @Override

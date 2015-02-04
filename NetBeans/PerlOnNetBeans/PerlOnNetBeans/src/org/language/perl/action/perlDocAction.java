@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import javax.swing.text.JTextComponent;
-import org.language.perl.utilities.PerlUtilsConstants;
+import org.language.perl.utilities.PerlConstants;
 import org.netbeans.api.editor.EditorRegistry;
 import org.openide.cookies.EditorCookie;
 import org.openide.awt.ActionID;
@@ -76,13 +76,13 @@ public final class perlDocAction implements ActionListener {
         switch( Utilities.getOperatingSystem() )
         {
             case Utilities.OS_WIN_OTHER:
-                executableName = PerlUtilsConstants.PERL_DOC_WIN;
+                executableName = PerlConstants.PERL_DOC_WIN;
                 break;
             case Utilities.OS_MAC:
-                executableName = PerlUtilsConstants.PERL_DOC_UIX;
+                executableName = PerlConstants.PERL_DOC_UIX;
                 break;
             case Utilities.OS_LINUX:
-                executableName = PerlUtilsConstants.PERL_DOC_UIX; 
+                executableName = PerlConstants.PERL_DOC_UIX; 
                 break;
             default: 
                 executableName = null;

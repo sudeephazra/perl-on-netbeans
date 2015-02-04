@@ -7,6 +7,7 @@
 package org.language.perl.editor;
 
 import javax.swing.text.Document;
+import org.language.perl.utilities.PerlConstants;
 import org.netbeans.api.editor.mimelookup.MimeRegistration;
 import org.netbeans.api.editor.mimelookup.MimeRegistrations;
 import org.netbeans.spi.editor.highlighting.HighlightsLayer ;
@@ -14,7 +15,7 @@ import org.netbeans.spi.editor.highlighting.HighlightsLayerFactory ;
 import org.netbeans.spi.editor.highlighting.ZOrder ;
 
 @MimeRegistrations({
-    @MimeRegistration(mimeType = "text/x-perl", service = HighlightsLayerFactory.class)
+    @MimeRegistration(mimeType = PerlConstants.MIME_TYPE, service = HighlightsLayerFactory.class)
 })
 public class PerlMarkOccurrencesFactory implements HighlightsLayerFactory  {
 

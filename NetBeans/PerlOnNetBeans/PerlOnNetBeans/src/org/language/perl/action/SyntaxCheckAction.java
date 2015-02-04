@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.prefs.Preferences;
 import org.language.perl.file.PerlFileDataObject;
 import org.language.perl.options.panel.GeneralPanel;
-import org.language.perl.utilities.PerlUtilsConstants;
+import org.language.perl.utilities.PerlConstants;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.awt.ActionReferences;
@@ -69,7 +69,7 @@ public final class SyntaxCheckAction implements ActionListener {
         myExecution.setDisplayName(file.getName() + " (Syntax Checking)");
         if (perlBinary.equals(""))
         {
-            myExecution.setCommand(PerlUtilsConstants.PERL_DEFAULT);
+            myExecution.setCommand(PerlConstants.PERL_DEFAULT);
         } else {
             myExecution.setCommand(perlBinary);
         }

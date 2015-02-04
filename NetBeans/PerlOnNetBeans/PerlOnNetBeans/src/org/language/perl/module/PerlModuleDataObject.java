@@ -6,6 +6,7 @@
 package org.language.perl.module;
 
 import java.io.IOException;
+import org.language.perl.utilities.PerlConstants;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.awt.ActionReferences;
@@ -24,11 +25,11 @@ import org.openide.windows.TopComponent;
 })
 @MIMEResolver.ExtensionRegistration(
         displayName = "#LBL_PerlModule_LOADER",
-        mimeType = "text/x-perl",
+        mimeType = PerlConstants.MIME_TYPE,
         extension = {"pm", "PM"}
 )
 @DataObject.Registration(
-        mimeType = "text/x-perl",
+        mimeType = PerlConstants.MIME_TYPE,
         iconBase = "org/language/perl/images/perl-module.png",
         displayName = "#LBL_PerlModule_LOADER",
         position = 300
@@ -89,7 +90,7 @@ public class PerlModuleDataObject extends MultiDataObject {
 
     public PerlModuleDataObject(FileObject pf, MultiFileLoader loader) throws DataObjectExistsException, IOException {
         super(pf, loader);
-        registerEditor("text/x-perl", false);
+        registerEditor(PerlConstants.MIME_TYPE, false);
     }
 
     @Override
