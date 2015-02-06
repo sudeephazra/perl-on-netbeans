@@ -90,4 +90,54 @@ public final class ExecuteAction implements ActionListener {
         myExecution.run();
 
     }
+    
+    public void runPerlFile() {
+        if (context.isModified() == true) {
+            SaveCookie sc = context.getLookup().lookup(SaveCookie.class);
+            try {
+                sc.save();
+            } catch (IOException ex) {
+                Exceptions.printStackTrace(ex);
+            }
+        }
+
+        File file = FileUtil.toFile(context.getPrimaryFile());
+        String fileName = file.getAbsolutePath();
+
+        Preferences pref = NbPreferences.forModule(GeneralPanel.class);
+        String perlBinary = pref.get("perlBinary", "").trim();
+        String perlLibrary = pref.get("perlLibrary", "").trim();
+
+        PerlExecution myExecution = new PerlExecution();
+        myExecution.setRedirectError(true);
+        myExecution.setWorkingDirectory(file.getParent().toString());
+        myExecution.setDisplayName(file.getName() + " (Execute)");
+        if (perlBinary.equals("")) {
+            myExecution.setCommand(PerlConstants.PERL_DEFAULT);
+        } else {
+            myExecution.setCommand(perlBinary);
+        }
+        myExecution.setCommandArgs(" -w ");
+
+        if (!perlLibrary.equalsIgnoreCase("")) {
+            String[] libPaths = perlLibrary.split("\\n");
+            for (String s : libPaths) {
+                myExecution.setCommandArgs(myExecution.getCommandArgs() + " -I ");
+                myExecution.setCommandArgs(myExecution.getCommandArgs() + "\"" + s + "\" ");
+            }
+        }
+        //Removing the need to create a new file for output buffer flushing
+        myExecution.setCommandArgs(myExecution.getCommandArgs() + " -I ");
+        myExecution.setCommandArgs(myExecution.getCommandArgs() + 
+                "\"" + myExecution.getBundledPerlAutoflushPath() + "\"" );
+        myExecution.setCommandArgs(myExecution.getCommandArgs() + " -MDevel::Autoflush ");
+        try {
+            myExecution.setRawScript(fileName);
+        } catch (IOException ex) {
+            Exceptions.printStackTrace(ex);
+        }
+        myExecution.run();
+
+
+    }
 }

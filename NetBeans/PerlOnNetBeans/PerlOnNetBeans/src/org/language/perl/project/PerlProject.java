@@ -10,9 +10,18 @@ import java.beans.PropertyChangeListener;
 import javax.swing.Action;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.text.Document;
+import javax.swing.text.JTextComponent;
+import org.language.perl.action.ExecuteAction;
+import org.language.perl.action.SyntaxCheckAction;
+import org.language.perl.file.PerlFileDataObject;
+import org.language.perl.utilities.PerlConstants;
 import org.netbeans.api.annotations.common.StaticResource;
+import org.netbeans.api.editor.EditorRegistry;
 import org.netbeans.api.project.Project;
 import org.netbeans.api.project.ProjectInformation;
+import org.netbeans.modules.editor.NbEditorUtilities;
+import org.netbeans.spi.project.ActionProvider;
 import org.netbeans.spi.project.ProjectState;
 import org.netbeans.spi.project.ui.LogicalViewProvider;
 import org.netbeans.spi.project.ui.support.CommonProjectActions;
@@ -55,6 +64,7 @@ public class PerlProject implements Project {
         if (lkp == null) {
             lkp = Lookups.fixed(new Object[]{
                 //Register your features here
+               new PerlProjectActionProvider(),
                this,
                new Info(),
                new PerlProjectLogicalView(this),
@@ -63,6 +73,91 @@ public class PerlProject implements Project {
         return lkp;
     }
     
+    private final class PerlProjectActionProvider implements ActionProvider {
+
+        private String[] supported = new String[]{
+            //ActionProvider.COMMAND_DELETE,
+            //ActionProvider.COMMAND_COPY,
+            //ActionProvider.COMMAND_MOVE,
+            //ActionProvider.COMMAND_RENAME, 
+            ActionProvider.COMMAND_RUN_SINGLE,
+            ActionProvider.COMMAND_RUN, 
+            ActionProvider.COMMAND_COMPILE_SINGLE
+                
+        };
+
+        @Override
+        public String[] getSupportedActions() {
+            return supported;
+        }
+
+        @Override
+        public void invokeAction(String string, Lookup lookup) throws IllegalArgumentException {
+            //Disabling till project structure is corrected 
+            //Project should not have hidden files in structure
+            /*
+            if (string.equalsIgnoreCase(ActionProvider.COMMAND_DELETE)) {
+                DefaultProjectOperations.performDefaultDeleteOperation(PerlProject.this);
+            }
+            if (string.equalsIgnoreCase(ActionProvider.COMMAND_COPY)) {
+                DefaultProjectOperations.performDefaultCopyOperation(PerlProject.this);
+                //PerlProjectOperationsImplementation.copyProject(PerlProject.this);
+            }
+            if (string.equalsIgnoreCase(ActionProvider.COMMAND_MOVE)) {
+                DefaultProjectOperations.performDefaultMoveOperation(PerlProject.this);
+            }
+            if (string.equalsIgnoreCase(ActionProvider.COMMAND_RENAME)) {
+                DefaultProjectOperations.performDefaultRenameOperation(PerlProject.this, "");
+            }
+            */
+            if (string.equalsIgnoreCase(ActionProvider.COMMAND_RUN) || 
+                    string.equalsIgnoreCase(ActionProvider.COMMAND_RUN_SINGLE)) {
+                JTextComponent editor = EditorRegistry.lastFocusedComponent();
+                Document document = editor.getDocument();
+                if (NbEditorUtilities.getMimeType(document).equals(PerlConstants.MIME_TYPE)) {
+                    ExecuteAction execute = 
+                            new ExecuteAction((PerlFileDataObject)NbEditorUtilities.getDataObject(document));
+                    execute.runPerlFile();
+                }
+            }
+            if (string.equalsIgnoreCase(ActionProvider.COMMAND_COMPILE_SINGLE)) {
+                JTextComponent editor = EditorRegistry.lastFocusedComponent(); 
+                Document document = editor.getDocument();
+                if (NbEditorUtilities.getMimeType(document).equals(PerlConstants.MIME_TYPE)) {
+                    SyntaxCheckAction execute = 
+                            new SyntaxCheckAction((PerlFileDataObject)NbEditorUtilities.getDataObject(document));
+                    execute.runSyntaxCheck();
+                }
+            }
+        }
+
+        @Override
+        public boolean isActionEnabled(String command, Lookup lookup) throws IllegalArgumentException {
+            //Disabling till project structure is corrected
+            /*
+            if (command.equals(ActionProvider.COMMAND_DELETE)) {
+                return true;
+            } else if (command.equals(ActionProvider.COMMAND_COPY)) {
+                return true;
+            } else if (command.equals(ActionProvider.COMMAND_MOVE)) {
+                return true;
+            } else if (command.equals(ActionProvider.COMMAND_RENAME)) {
+                return true;
+            } else 
+            */
+            if (command.equals(ActionProvider.COMMAND_RUN)) { //for enabling the debugger button.
+                return true;
+            } else if (command.equals(ActionProvider.COMMAND_RUN_SINGLE)) { //for enabling the debugger button.
+                return true;
+            } else if (command.equals(ActionProvider.COMMAND_COMPILE_SINGLE)) { //for enabling the debugger button.
+                return true;
+            } else {
+                throw new IllegalArgumentException(command);
+            }
+        }
+    }
+
+ 
     //New Info class
     private final class Info implements ProjectInformation {
 

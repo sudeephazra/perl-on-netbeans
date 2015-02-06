@@ -46,11 +46,12 @@
                 <attr name="instanceOf" stringvalue="org.netbeans.api.lexer.Language"/>
                 <file name="org-language-perl-parser-PerlParserFactory.instance"/>
                 <file name="org-language-perl-parser-SyntaxErrorsHighlightingTaskFactory.instance"/>
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="org.language.perl.Bundle"/>
                 <folder name="FontsColors">
                     <folder name="NetBeans">
                         <folder name="Defaults">
                             <file name="org-language-perl-FontAndColors.xml" url="FontAndColors.xml">
-                                <attr name="SystemFileSystem.localizingBundle" bundlevalue="org.language.perl.Bundle"/>
+                                <attr name="SystemFileSystem.localizingBundle" stringvalue="org.language.perl.Bundle"/>
                             </file>
                         </folder>
                     </folder>
