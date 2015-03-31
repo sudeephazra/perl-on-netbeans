@@ -20,7 +20,7 @@ import org.openide.util.lookup.ServiceProvider;
 @ServiceProvider(service=ProjectFactory.class)
 public class PerlProjectFactory implements ProjectFactory  {
 
-     public static final String PROJECT_FILE = ".perl_project.ini";
+     public static final String PROJECT_FILE = "nbproject/perl_project.xml";
 
     @Override
     public boolean isProject(FileObject projectDirectory) {

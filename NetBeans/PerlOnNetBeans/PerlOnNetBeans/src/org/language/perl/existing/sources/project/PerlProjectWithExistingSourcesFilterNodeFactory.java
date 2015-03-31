@@ -16,7 +16,7 @@ public class PerlProjectWithExistingSourcesFilterNodeFactory extends FilterNode.
     
     @Override
     protected Node[] createNodes(Node key) {
-        if (key.getName().startsWith(".")) {
+        if (key.getName().startsWith("nbproject")) {
             return new Node[]{};
         }
         return new Node[] {copyNode(key)};

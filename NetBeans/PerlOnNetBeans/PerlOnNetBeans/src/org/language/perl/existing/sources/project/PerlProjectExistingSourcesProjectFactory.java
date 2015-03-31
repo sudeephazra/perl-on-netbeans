@@ -14,7 +14,8 @@ import org.openide.util.lookup.ServiceProvider;
 @ServiceProvider(service=ProjectFactory.class)
 public class PerlProjectExistingSourcesProjectFactory  implements ProjectFactory {
     
-    public static final String PROJECT_EXISTING_FILE = ".perl_project_existing_sources.ini";
+    public static final String PROJECT_EXISTING_FILE = 
+            "nbproject/perl_project_existing_sources.xml";
     
     @Override
     public boolean isProject(FileObject projectDirectory) {
