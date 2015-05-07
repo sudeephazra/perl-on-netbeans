@@ -16,6 +16,7 @@ import org.openide.loaders.DataObject;
 import org.openide.loaders.DataObjectExistsException;
 import org.openide.loaders.MultiDataObject;
 import org.openide.loaders.MultiFileLoader;
+import org.openide.text.DataEditorSupport;
 import org.openide.util.NbBundle.Messages;
 
 @Messages({
@@ -89,6 +90,7 @@ public class PerlFileDataObject extends MultiDataObject {
     public PerlFileDataObject(FileObject pf, MultiFileLoader loader) throws DataObjectExistsException, IOException {
         super(pf, loader);
         registerEditor(PerlConstants.MIME_TYPE, false);
+        getLookup().lookup(DataEditorSupport.class).setMIMEType(PerlConstants.MIME_TYPE);
     }
 
     @Override

@@ -16,9 +16,8 @@ import org.openide.loaders.DataObject;
 import org.openide.loaders.DataObjectExistsException;
 import org.openide.loaders.MultiDataObject;
 import org.openide.loaders.MultiFileLoader;
-import org.openide.util.Lookup;
+import org.openide.text.DataEditorSupport;
 import org.openide.util.NbBundle.Messages;
-import org.openide.windows.TopComponent;
 
 @Messages({
     "LBL_PerlModule_LOADER=Files of PerlModule"
@@ -91,6 +90,7 @@ public class PerlModuleDataObject extends MultiDataObject {
     public PerlModuleDataObject(FileObject pf, MultiFileLoader loader) throws DataObjectExistsException, IOException {
         super(pf, loader);
         registerEditor(PerlConstants.MIME_TYPE, false);
+        getLookup().lookup(DataEditorSupport.class).setMIMEType(PerlConstants.MIME_TYPE);
     }
 
     @Override

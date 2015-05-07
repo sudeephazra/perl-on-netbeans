@@ -23,6 +23,8 @@ public final class PerlConstants {
     public static final String FILE_SEPARATOR = System.getProperty("file.separator");
     public static final String PATH_SEPARATOR = System.getProperty("path.separator");
     
+    public static final String MODULE_SEPARATOR = "::";
+    
     public static final String MIME_TYPE = "text/x-perl";
     public static final String LINE_COMMENT_PREFIX = "#";
     
