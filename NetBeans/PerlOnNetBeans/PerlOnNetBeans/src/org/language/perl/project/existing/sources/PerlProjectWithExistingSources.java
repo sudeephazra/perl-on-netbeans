@@ -1,4 +1,4 @@
-package org.language.perl.existing.sources.project;
+package org.language.perl.project.existing.sources;
 
 import java.awt.Image;
 import java.beans.PropertyChangeListener;
@@ -9,12 +9,12 @@ import java.util.List;
 import javax.swing.Action;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.text.Document;
 import javax.swing.text.JTextComponent;
 import org.language.perl.action.ExecuteAction;
 import org.language.perl.action.SyntaxCheckAction;
 import org.language.perl.file.PerlFileDataObject;
-import org.language.perl.project.PerlProject;
 import org.language.perl.utilities.PerlConstants;
 import org.netbeans.api.annotations.common.StaticResource;
 import org.netbeans.api.editor.EditorRegistry;
@@ -116,6 +116,10 @@ public class PerlProjectWithExistingSources implements Project {
             if (string.equalsIgnoreCase(ActionProvider.COMMAND_RUN)
                     || string.equalsIgnoreCase(ActionProvider.COMMAND_RUN_SINGLE)) {
                 JTextComponent editor = EditorRegistry.lastFocusedComponent();
+                if (editor == null) {
+                    JOptionPane.showMessageDialog(null, "No file selected. Please select a file.");
+                    return;
+                }
                 Document document = editor.getDocument();
                 if (NbEditorUtilities.getMimeType(document).equals(PerlConstants.MIME_TYPE)) {
                     ExecuteAction execute
@@ -125,6 +129,10 @@ public class PerlProjectWithExistingSources implements Project {
             }
             if (string.equalsIgnoreCase(ActionProvider.COMMAND_COMPILE_SINGLE)) {
                 JTextComponent editor = EditorRegistry.lastFocusedComponent();
+                if (editor == null) {
+                    JOptionPane.showMessageDialog(null, "No file selected. Please select a file.");
+                    return;
+                }
                 Document document = editor.getDocument();
                 if (NbEditorUtilities.getMimeType(document).equals(PerlConstants.MIME_TYPE)) {
                     SyntaxCheckAction execute

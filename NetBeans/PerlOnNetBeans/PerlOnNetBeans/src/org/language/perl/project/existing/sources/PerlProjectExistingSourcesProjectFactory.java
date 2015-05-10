@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.language.perl.existing.sources.project;
+package org.language.perl.project.existing.sources;
 
 import java.io.IOException;
 import org.netbeans.api.project.Project;

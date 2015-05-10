@@ -1,8 +1,9 @@
 /*
- * To change this template, choose Tools | Templates
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.language.perl.existing.sources.project;
+package org.language.perl.project.dancer;
 
 import java.io.File;
 import javax.swing.JFileChooser;
@@ -10,22 +11,22 @@ import javax.swing.JPanel;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.text.Document;
+import org.language.perl.utilities.CheckInstalledPerlModules;
 import org.netbeans.spi.project.ui.support.ProjectChooser;
 import org.openide.WizardDescriptor;
 import org.openide.WizardValidationException;
 import org.openide.filesystems.FileUtil;
 
-public class PerlProjectWithExistingSourcesPanelVisual extends JPanel implements DocumentListener {
+public class PerlDancerProjectPanelVisual extends JPanel implements DocumentListener {
 
     public static final String PROP_PROJECT_NAME = "projectName";
-    public static final String PERL_PROJECT = ".perl_project.ini";
-    public static final String PERL_PROJECT_EXISTING_SOURCES = ".perl_project_existing_sources.ini";
-    
-    private PerlProjectWithExistingSourcesWizardPanel panel;
 
-    public PerlProjectWithExistingSourcesPanelVisual(PerlProjectWithExistingSourcesWizardPanel panel) {
+    private PerlDancerProjectWizardPanel panel;
+
+    public PerlDancerProjectPanelVisual(PerlDancerProjectWizardPanel panel) {
         initComponents();
         this.panel = panel;
+        // Register listener on the textFields to make the automatic updates
         projectNameTextField.getDocument().addDocumentListener(this);
         projectLocationTextField.getDocument().addDocumentListener(this);
     }
@@ -42,48 +43,32 @@ public class PerlProjectWithExistingSourcesPanelVisual extends JPanel implements
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         projectNameLabel = new javax.swing.JLabel();
         projectNameTextField = new javax.swing.JTextField();
         projectLocationLabel = new javax.swing.JLabel();
         projectLocationTextField = new javax.swing.JTextField();
         browseButton = new javax.swing.JButton();
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane2.setViewportView(jTable1);
+        createdFolderLabel = new javax.swing.JLabel();
+        createdFolderTextField = new javax.swing.JTextField();
 
         projectNameLabel.setLabelFor(projectNameTextField);
-        org.openide.awt.Mnemonics.setLocalizedText(projectNameLabel, "Project &Name:");
-
-        projectNameTextField.setEditable(false);
+        org.openide.awt.Mnemonics.setLocalizedText(projectNameLabel, org.openide.util.NbBundle.getMessage(PerlDancerProjectPanelVisual.class, "PerlDancerProjectPanelVisual.projectNameLabel.text")); // NOI18N
 
         projectLocationLabel.setLabelFor(projectLocationTextField);
-        org.openide.awt.Mnemonics.setLocalizedText(projectLocationLabel, "Project &Location:");
+        org.openide.awt.Mnemonics.setLocalizedText(projectLocationLabel, org.openide.util.NbBundle.getMessage(PerlDancerProjectPanelVisual.class, "PerlDancerProjectPanelVisual.projectLocationLabel.text")); // NOI18N
 
-        projectLocationTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                projectLocationTextFieldActionPerformed(evt);
-            }
-        });
-
-        org.openide.awt.Mnemonics.setLocalizedText(browseButton, "Br&owse...");
-        browseButton.setActionCommand("BROWSE");
+        org.openide.awt.Mnemonics.setLocalizedText(browseButton, org.openide.util.NbBundle.getMessage(PerlDancerProjectPanelVisual.class, "PerlDancerProjectPanelVisual.browseButton.text")); // NOI18N
+        browseButton.setActionCommand(org.openide.util.NbBundle.getMessage(PerlDancerProjectPanelVisual.class, "PerlDancerProjectPanelVisual.browseButton.actionCommand")); // NOI18N
         browseButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 browseButtonActionPerformed(evt);
             }
         });
+
+        createdFolderLabel.setLabelFor(createdFolderTextField);
+        org.openide.awt.Mnemonics.setLocalizedText(createdFolderLabel, org.openide.util.NbBundle.getMessage(PerlDancerProjectPanelVisual.class, "PerlDancerProjectPanelVisual.createdFolderLabel.text")); // NOI18N
+
+        createdFolderTextField.setEditable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -92,12 +77,14 @@ public class PerlProjectWithExistingSourcesPanelVisual extends JPanel implements
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(projectNameLabel)
                     .addComponent(projectLocationLabel)
-                    .addComponent(projectNameLabel))
+                    .addComponent(createdFolderLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(projectNameTextField)
-                    .addComponent(projectLocationTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE))
+                    .addComponent(projectNameTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
+                    .addComponent(projectLocationTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
+                    .addComponent(createdFolderTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(browseButton)
                 .addContainerGap())
@@ -107,14 +94,18 @@ public class PerlProjectWithExistingSourcesPanelVisual extends JPanel implements
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(projectNameLabel)
+                    .addComponent(projectNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(projectLocationLabel)
                     .addComponent(projectLocationTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(browseButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(projectNameLabel)
-                    .addComponent(projectNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(178, Short.MAX_VALUE))
+                    .addComponent(createdFolderLabel)
+                    .addComponent(createdFolderTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(213, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -122,7 +113,7 @@ public class PerlProjectWithExistingSourcesPanelVisual extends JPanel implements
         String command = evt.getActionCommand();
         if ("BROWSE".equals(command)) {
             JFileChooser chooser = new JFileChooser();
-            chooser.setCurrentDirectory(null);
+            FileUtil.preventFileChooserSymlinkTraversal(chooser, null);
             chooser.setDialogTitle("Select Project Location");
             chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
             String path = this.projectLocationTextField.getText();
@@ -135,20 +126,16 @@ public class PerlProjectWithExistingSourcesPanelVisual extends JPanel implements
             if (JFileChooser.APPROVE_OPTION == chooser.showOpenDialog(this)) {
                 File projectDir = chooser.getSelectedFile();
                 projectLocationTextField.setText(FileUtil.normalizeFile(projectDir).getAbsolutePath());
-                projectNameTextField.setText(FileUtil.normalizeFile(projectDir).getName());
             }
             panel.fireChangeEvent();
         }
 
     }//GEN-LAST:event_browseButtonActionPerformed
 
-    private void projectLocationTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_projectLocationTextFieldActionPerformed
-    }//GEN-LAST:event_projectLocationTextFieldActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton browseButton;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel createdFolderLabel;
+    private javax.swing.JTextField createdFolderTextField;
     private javax.swing.JLabel projectLocationLabel;
     private javax.swing.JTextField projectLocationTextField;
     private javax.swing.JLabel projectNameLabel;
@@ -159,10 +146,11 @@ public class PerlProjectWithExistingSourcesPanelVisual extends JPanel implements
     public void addNotify() {
         super.addNotify();
         //same problem as in 31086, initial focus on Cancel button
+        projectNameTextField.requestFocus();
     }
 
     boolean valid(WizardDescriptor wizardDescriptor) {
-/*
+
         if (projectNameTextField.getText().length() == 0) {
             // TODO if using org.openide.dialogs >= 7.8, can use WizardDescriptor.PROP_ERROR_MESSAGE:
             wizardDescriptor.putProperty("WizardPanel_errorMessage",
@@ -174,27 +162,25 @@ public class PerlProjectWithExistingSourcesPanelVisual extends JPanel implements
             String message = "Project Folder is not a valid path.";
             wizardDescriptor.putProperty("WizardPanel_errorMessage", message);
             return false;
-        }*/
-        
-        final File destFolder = FileUtil.normalizeFile(new File(projectLocationTextField.getText()).getAbsoluteFile());
+        }
+        final File destFolder = FileUtil.normalizeFile(new File(createdFolderTextField.getText()).getAbsoluteFile());
+
         File projLoc = destFolder;
-        /*
         while (projLoc != null && !projLoc.exists()) {
             projLoc = projLoc.getParentFile();
         }
         if (projLoc == null || !projLoc.canWrite()) {
             wizardDescriptor.putProperty("WizardPanel_errorMessage",
-                    "Project Folder is read-only.");
+                    "Project Folder cannot be created.");
             return false;
         }
-        */
+
         if (FileUtil.toFileObject(projLoc) == null) {
             String message = "Project Folder is not a valid path.";
             wizardDescriptor.putProperty("WizardPanel_errorMessage", message);
             return false;
         }
-        
-        /*
+
         File[] kids = destFolder.listFiles();
         if (destFolder.exists() && kids != null && kids.length > 0) {
             // Folder exists and is not empty
@@ -202,28 +188,30 @@ public class PerlProjectWithExistingSourcesPanelVisual extends JPanel implements
                     "Project Folder already exists and is not empty.");
             return false;
         }
-        */
-        File PerlProjectIndicator = new File(destFolder.getAbsoluteFile().getAbsoluteFile() + File.separator + PERL_PROJECT);
-        if (PerlProjectIndicator.exists()) {
-            wizardDescriptor.putProperty("WizardPanel_errorMessage",
-                    "Project Folder is already a Perl Project.");
+        
+        CheckInstalledPerlModules perlDancer = new CheckInstalledPerlModules();
+        if (perlDancer.isPerlDancerInstalled() == false) {
+            wizardDescriptor.putProperty("WizardPanel_errorMessage", 
+                    "Dancer Framework is not installed. Please install Dancer and YAML to continue.");
             return false;
         }
         
-        File PerlProjectWithExistinSourcesIndicator = new File(destFolder.getAbsoluteFile().getAbsoluteFile() + File.separator + PERL_PROJECT_EXISTING_SOURCES);
-        if (PerlProjectWithExistinSourcesIndicator.exists()) {
-            wizardDescriptor.putProperty("WizardPanel_errorMessage",
-                    "Project Folder is already a Perl Project.");
+        CheckInstalledPerlModules perlYAML = new CheckInstalledPerlModules();
+        if (perlYAML.isYAMLInstalled() == false) {
+            wizardDescriptor.putProperty("WizardPanel_errorMessage", 
+                    "YAML is not installed. Please install it to continue.");
             return false;
         }
         
         wizardDescriptor.putProperty("WizardPanel_errorMessage", "");
         return true;
+
     }
 
     void store(WizardDescriptor d) {
         String name = projectNameTextField.getText().trim();
-        String folder = projectLocationTextField.getText().trim();
+        String folder = createdFolderTextField.getText().trim();
+
         d.putProperty("projdir", new File(folder));
         d.putProperty("name", name);
     }
@@ -235,17 +223,17 @@ public class PerlProjectWithExistingSourcesPanelVisual extends JPanel implements
         } else {
             projectLocation = projectLocation.getParentFile();
         }
-        
         this.projectLocationTextField.setText(projectLocation.getAbsolutePath());
 
         String projectName = (String) settings.getProperty("name");
         if (projectName == null) {
-            projectName = projectLocation.getName();
+            projectName = "PerlDancerProject";
         }
         this.projectNameTextField.setText(projectName);
+        this.projectNameTextField.selectAll();
     }
 
-    void validate(WizardDescriptor wizardDescriptor) throws WizardValidationException {
+    void validate(WizardDescriptor d) throws WizardValidationException {
         // nothing to validate
     }
 
@@ -278,13 +266,21 @@ public class PerlProjectWithExistingSourcesPanelVisual extends JPanel implements
      * Handles changes in the Project name and project directory,
      */
     private void updateTexts(DocumentEvent e) {
+
         Document doc = e.getDocument();
+
         if (doc == projectNameTextField.getDocument() || doc == projectLocationTextField.getDocument()) {
             // Change in the project name
+
             String projectName = projectNameTextField.getText();
             String projectFolder = projectLocationTextField.getText();
-            //createdFolderTextField.setText(projectFolder + File.separatorChar + projectName);
+
+            //if (projectFolder.trim().length() == 0 || projectFolder.equals(oldName)) {
+            createdFolderTextField.setText(projectFolder + File.separatorChar + projectName);
+            //}
+
         }
         panel.fireChangeEvent(); // Notify that the panel changed
     }
+
 }

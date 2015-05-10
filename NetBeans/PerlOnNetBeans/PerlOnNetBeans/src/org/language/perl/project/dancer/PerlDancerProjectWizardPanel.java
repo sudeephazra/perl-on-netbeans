@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.language.perl.existing.sources.project;
+package org.language.perl.project.dancer;
 
 import java.awt.Component;
 import java.util.HashSet;
@@ -18,27 +18,30 @@ import org.openide.util.NbBundle;
 /**
  * Panel just asking for basic info.
  */
-public class PerlProjectWithExistingSourcesWizardPanel implements WizardDescriptor.Panel,
+public class PerlDancerProjectWizardPanel implements WizardDescriptor.Panel,
         WizardDescriptor.ValidatingPanel, WizardDescriptor.FinishablePanel {
 
     private WizardDescriptor wizardDescriptor;
-    private PerlProjectWithExistingSourcesPanelVisual component;
+    private PerlDancerProjectPanelVisual component;
 
-    public PerlProjectWithExistingSourcesWizardPanel() {
+    public PerlDancerProjectWizardPanel() {
     }
 
+    @Override
     public Component getComponent() {
         if (component == null) {
-            component = new PerlProjectWithExistingSourcesPanelVisual(this);
-            component.setName(NbBundle.getMessage(PerlProjectWithExistingSourcesWizardPanel.class, "LBL_CreateProjectStep"));
+            component = new PerlDancerProjectPanelVisual(this);
+            component.setName(NbBundle.getMessage(PerlDancerProjectWizardPanel.class, "LBL_CreateProjectStep"));
         }
         return component;
     }
 
+    @Override
     public HelpCtx getHelp() {
-        return new HelpCtx(PerlProjectWithExistingSourcesWizardPanel.class);
+        return new HelpCtx(PerlDancerProjectWizardPanel.class);
     }
 
+    @Override
     public boolean isValid() {
         getComponent();
         return component.valid(wizardDescriptor);
@@ -46,12 +49,14 @@ public class PerlProjectWithExistingSourcesWizardPanel implements WizardDescript
 
     private final Set<ChangeListener> listeners = new HashSet<ChangeListener>(1); // or can use ChangeSupport in NB 6.0
 
+    @Override
     public final void addChangeListener(ChangeListener l) {
         synchronized (listeners) {
             listeners.add(l);
         }
     }
 
+    @Override
     public final void removeChangeListener(ChangeListener l) {
         synchronized (listeners) {
             listeners.remove(l);
@@ -69,20 +74,24 @@ public class PerlProjectWithExistingSourcesWizardPanel implements WizardDescript
         }
     }
 
+    @Override
     public void readSettings(Object settings) {
         wizardDescriptor = (WizardDescriptor) settings;
         component.read(wizardDescriptor);
     }
 
+    @Override
     public void storeSettings(Object settings) {
         WizardDescriptor d = (WizardDescriptor) settings;
         component.store(d);
     }
 
+    @Override
     public boolean isFinishPanel() {
         return true;
     }
 
+    @Override
     public void validate() throws WizardValidationException {
         getComponent();
         component.validate(wizardDescriptor);

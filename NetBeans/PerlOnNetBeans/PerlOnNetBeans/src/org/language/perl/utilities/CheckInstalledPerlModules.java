@@ -12,7 +12,7 @@ public class CheckInstalledPerlModules {
         String output = "";
         try {
             Process p = Runtime.getRuntime().exec(cmdLine);
-            BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            BufferedReader input = new BufferedReader(new InputStreamReader(p.getErrorStream()));
             while ((line = input.readLine()) != null) {
                 output += (line + '\n');
             }
@@ -20,11 +20,7 @@ public class CheckInstalledPerlModules {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        if (output.matches("locate")) {
-            return false;
-        } else {
-            return true;
-        }
+        return output.isEmpty();
     }
 
     //Check if Perl::Critic is installed
@@ -34,7 +30,7 @@ public class CheckInstalledPerlModules {
         String output = "";
         try {
             Process p = Runtime.getRuntime().exec(cmdLine);
-            BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            BufferedReader input = new BufferedReader(new InputStreamReader(p.getErrorStream()));
             while ((line = input.readLine()) != null) {
                 output += (line + '\n');
             }
@@ -43,10 +39,46 @@ public class CheckInstalledPerlModules {
             ex.printStackTrace();
         }
 
-        if (output.matches("locate")) {
-            return false;
-        } else {
-            return true;
+        return output.isEmpty();
+    }
+
+    //Check if Dancer is installed
+    public Boolean isPerlDancerInstalled() {
+        String line;
+        String cmdLine = "perl -MDancer -e 1";
+        String output = "";
+        try {
+            Process p = Runtime.getRuntime().exec(cmdLine);
+            p.waitFor();
+            BufferedReader input
+                    = new BufferedReader(new InputStreamReader(p.getErrorStream()));
+            while ((line = input.readLine()) != null) {
+                output += (line + '\n');
+            }
+//            p.waitFor();
+            input.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
+        return output.isEmpty();
+    }
+
+    //Check if YAML is installed
+    public Boolean isYAMLInstalled() {
+        String line;
+        String cmdLine = "perl -MYAML -e 1";
+        String output = "";
+        try {
+            Process p = Runtime.getRuntime().exec(cmdLine);
+            BufferedReader input = new BufferedReader(new InputStreamReader(p.getErrorStream()));
+            while ((line = input.readLine()) != null) {
+                output += (line + '\n');
+            }
+            input.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        return output.isEmpty();
     }
 }

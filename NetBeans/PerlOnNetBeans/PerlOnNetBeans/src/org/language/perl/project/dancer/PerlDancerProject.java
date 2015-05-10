@@ -1,14 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package org.language.perl.project;
+package org.language.perl.project.dancer;
 
 import java.awt.Image;
 import java.beans.PropertyChangeListener;
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.Action;
@@ -35,12 +32,15 @@ import org.netbeans.spi.project.ui.LogicalViewProvider;
 import org.netbeans.spi.project.ui.support.CommonProjectActions;
 import org.netbeans.spi.project.ui.support.DefaultProjectOperations;
 import org.openide.actions.FileSystemAction;
+import org.openide.awt.HtmlBrowser;
 import org.openide.filesystems.FileObject;
+import org.openide.filesystems.FileUtil;
 import org.openide.loaders.DataFolder;
+import org.openide.loaders.DataObject;
 import org.openide.loaders.DataObjectNotFoundException;
 import org.openide.nodes.AbstractNode;
-import org.openide.nodes.Children;
 import org.openide.nodes.FilterNode;
+import org.openide.nodes.FilterNode.Children;
 import org.openide.nodes.Node;
 import org.openide.util.Exceptions;
 import org.openide.util.ImageUtilities;
@@ -49,17 +49,13 @@ import org.openide.util.actions.SystemAction;
 import org.openide.util.lookup.Lookups;
 import org.openide.util.lookup.ProxyLookup;
 
-/**
- *
- * @author Sudeep
- */
-public class PerlProject implements Project {
+public class PerlDancerProject implements Project {
 
     private final FileObject projectDir;
     private final ProjectState state;
     private Lookup lkp;
 
-    PerlProject(FileObject dir, ProjectState state) {
+    PerlDancerProject(FileObject dir, ProjectState state) {
         this.projectDir = dir;
         this.state = state;
     }
@@ -74,18 +70,19 @@ public class PerlProject implements Project {
         if (lkp == null) {
             lkp = Lookups.fixed(new Object[]{
                 //Register your features here
-                new PerlProjectActionProvider(),
-                new PerlProjectMoveOrRenameOperation(),
-                new PerlProjectCopyOperation(),
-                new PerlProjectDeleteOperation(this),
+                new PerlDancerProjectActionProvider(this),
+                new PerlDancerProjectMoveOrRenameOperation(),
+                new PerlDancerProjectCopyOperation(),
+                new PerlDancerProjectDeleteOperation(this),
                 this,
-                new Info(),
-                new PerlProjectLogicalView(this),});
+                state,
+                new PerlDancerProjectInfo(),
+                new PerlDancerProjectLogicalView(this),});
         }
         return lkp;
     }
 
-    private final class PerlProjectActionProvider implements ActionProvider {
+       private final class PerlDancerProjectActionProvider implements ActionProvider {
 
         private final String[] supported = new String[]{
             ActionProvider.COMMAND_DELETE,
@@ -97,7 +94,12 @@ public class PerlProject implements Project {
             ActionProvider.COMMAND_COMPILE_SINGLE
 
         };
-
+        PerlDancerProject project;
+        
+        PerlDancerProjectActionProvider(PerlDancerProject p) {
+            this.project = p;
+        }
+        
         @Override
         public String[] getSupportedActions() {
             return supported;
@@ -105,28 +107,23 @@ public class PerlProject implements Project {
 
         @Override
         public void invokeAction(String string, Lookup lookup) throws IllegalArgumentException {
-            //Disabling till project structure is corrected 
-            //Project should not have hidden files in structure
-
             if (string.equalsIgnoreCase(ActionProvider.COMMAND_DELETE)) {
-                DefaultProjectOperations.performDefaultDeleteOperation(PerlProject.this);
-
+                DefaultProjectOperations.performDefaultDeleteOperation(PerlDancerProject.this);
             }
             if (string.equalsIgnoreCase(ActionProvider.COMMAND_COPY)) {
-                DefaultProjectOperations.performDefaultCopyOperation(PerlProject.this);
-                //PerlProjectOperationsImplementation.copyProject(PerlProject.this);
+                DefaultProjectOperations.performDefaultCopyOperation(PerlDancerProject.this);
             }
             if (string.equalsIgnoreCase(ActionProvider.COMMAND_MOVE)) {
-                DefaultProjectOperations.performDefaultMoveOperation(PerlProject.this);
+                DefaultProjectOperations.performDefaultMoveOperation(PerlDancerProject.this);
             }
             if (string.equalsIgnoreCase(ActionProvider.COMMAND_RENAME)) {
-                DefaultProjectOperations.performDefaultRenameOperation(PerlProject.this, "");
+                DefaultProjectOperations.performDefaultRenameOperation(PerlDancerProject.this, "");
             }
             if (string.equalsIgnoreCase(ActionProvider.COMMAND_RUN)
                     || string.equalsIgnoreCase(ActionProvider.COMMAND_RUN_SINGLE)) {
                 JTextComponent editor = EditorRegistry.lastFocusedComponent();
                 if (editor == null) {
-                    JOptionPane.showMessageDialog(null, "No file selected. Please select a file.");
+                    JOptionPane.showMessageDialog(null, "No file selected. Please open the file bin/app.pl file.");
                     return;
                 }
                 Document document = editor.getDocument();
@@ -134,6 +131,11 @@ public class PerlProject implements Project {
                     ExecuteAction execute
                             = new ExecuteAction((PerlFileDataObject) NbEditorUtilities.getDataObject(document));
                     execute.runPerlFile();
+                }
+                try {
+                    HtmlBrowser.URLDisplayer.getDefault().showURL(new URL(PerlConstants.DANCER_DEFAULT_URL));
+                } catch (MalformedURLException ex) {
+                    Exceptions.printStackTrace(ex);
                 }
             }
             if (string.equalsIgnoreCase(ActionProvider.COMMAND_COMPILE_SINGLE)) {
@@ -153,8 +155,6 @@ public class PerlProject implements Project {
 
         @Override
         public boolean isActionEnabled(String command, Lookup lookup) throws IllegalArgumentException {
-            //Disabling till project structure is corrected
-
             if (command.equals(ActionProvider.COMMAND_DELETE)) {
                 return true;
             } else if (command.equals(ActionProvider.COMMAND_COPY)) {
@@ -163,11 +163,11 @@ public class PerlProject implements Project {
                 return true;
             } else if (command.equals(ActionProvider.COMMAND_RENAME)) {
                 return true;
-            } else if (command.equals(ActionProvider.COMMAND_RUN)) { //for enabling the debugger button.
+            } else if (command.equals(ActionProvider.COMMAND_RUN)) { 
                 return true;
-            } else if (command.equals(ActionProvider.COMMAND_RUN_SINGLE)) { //for enabling the debugger button.
+            } else if (command.equals(ActionProvider.COMMAND_RUN_SINGLE)) { 
                 return true;
-            } else if (command.equals(ActionProvider.COMMAND_COMPILE_SINGLE)) { //for enabling the debugger button.
+            } else if (command.equals(ActionProvider.COMMAND_COMPILE_SINGLE)) { 
                 return true;
             } else {
                 throw new IllegalArgumentException(command);
@@ -176,10 +176,10 @@ public class PerlProject implements Project {
     }
 
     //New Info class
-    private final class Info implements ProjectInformation {
+    private final class PerlDancerProjectInfo implements ProjectInformation {
 
         @StaticResource()
-        public static final String PERL_ICON = "org/language/perl/images/perl-project.png";
+        public static final String PERL_ICON = "org/language/perl/images/perl-dancer-project.png";
 
         @Override
         public Icon getIcon() {
@@ -198,7 +198,7 @@ public class PerlProject implements Project {
 
         @Override
         public Project getProject() {
-            return PerlProject.this;
+            return PerlDancerProject.this;
         }
 
         @Override
@@ -210,18 +210,16 @@ public class PerlProject implements Project {
         public void removePropertyChangeListener(PropertyChangeListener pl) {
             //throw new UnsupportedOperationException("Not supported yet.");
         }
-
     }
 
     //Logical view class
-    class PerlProjectLogicalView implements LogicalViewProvider {
+    class PerlDancerProjectLogicalView implements LogicalViewProvider {
 
         @StaticResource()
-        public static final String PERL_ICON = "org/language/perl/images/perl-project.png";
+        public static final String PERL_ICON = "org/language/perl/images/perl-dancer-project.png";
+        private final PerlDancerProject project;
 
-        private final PerlProject project;
-
-        public PerlProjectLogicalView(PerlProject project) {
+        public PerlDancerProjectLogicalView(PerlDancerProject project) {
             this.project = project;
         }
 
@@ -231,7 +229,7 @@ public class PerlProject implements Project {
                 FileObject Text = project.getProjectDirectory();
                 DataFolder TextDataObject = DataFolder.findFolder(Text);
                 Node realTextFolderNode = TextDataObject.getNodeDelegate();
-                return new ProjectNode(realTextFolderNode, project);
+                return new PerlDancerProjectFilterNode(realTextFolderNode, project);
 
             } catch (DataObjectNotFoundException donfe) {
                 Exceptions.printStackTrace(donfe);
@@ -239,20 +237,19 @@ public class PerlProject implements Project {
             }
         }
 
-        private final class ProjectNode extends FilterNode {
+        private final class PerlDancerProjectFilterNode extends FilterNode {
 
-            final PerlProject project;
+            final PerlDancerProject project;
 
-            public ProjectNode(Node node, PerlProject project) throws DataObjectNotFoundException {
+            public PerlDancerProjectFilterNode(Node node, PerlDancerProject project) throws DataObjectNotFoundException {
 
                 super(node,
-                        new PerlProjectFilterNodeFactory(node),
+                        new PerlDancerProjectFilterNodeFactory(node),
                         new ProxyLookup(
                                 new Lookup[]{
                                     Lookups.singleton(project),
                                     node.getLookup()
                                 }));
-
                 this.project = project;
             }
 
@@ -265,7 +262,7 @@ public class PerlProject implements Project {
                     CommonProjectActions.renameProjectAction(),
                     CommonProjectActions.deleteProjectAction(),
                     CommonProjectActions.closeProjectAction(),
-                    SystemAction.get(FileSystemAction.class)
+                    SystemAction.get(FileSystemAction.class) // Version Control is done from here
                 };
             }
 
@@ -283,7 +280,6 @@ public class PerlProject implements Project {
             public String getDisplayName() {
                 return project.getProjectDirectory().getName();
             }
-
         }
 
         @Override
@@ -291,10 +287,9 @@ public class PerlProject implements Project {
             //leave unimplemented for now
             return null;
         }
-
     }
-
-    private final class PerlProjectMoveOrRenameOperation implements MoveOrRenameOperationImplementation {
+    
+    private final class PerlDancerProjectMoveOrRenameOperation implements MoveOrRenameOperationImplementation {
 
         @Override
         public void notifyRenaming() throws IOException {
@@ -328,7 +323,7 @@ public class PerlProject implements Project {
 
     }
 
-    private final class PerlProjectCopyOperation implements CopyOperationImplementation {
+    private final class PerlDancerProjectCopyOperation implements CopyOperationImplementation {
 
         @Override
         public void notifyCopying() throws IOException {
@@ -352,11 +347,11 @@ public class PerlProject implements Project {
 
     }
 
-    private final class PerlProjectDeleteOperation implements DeleteOperationImplementation {
+    private final class PerlDancerProjectDeleteOperation implements DeleteOperationImplementation {
 
-        private final PerlProject project;
+        private final PerlDancerProject project;
 
-        private PerlProjectDeleteOperation(PerlProject project) {
+        private PerlDancerProjectDeleteOperation(PerlDancerProject project) {
             this.project = project;
         }
 

@@ -15,13 +15,14 @@ public final class PerlConstants {
     
     public static final String PERL_DOC_WIN = "perldoc.bat";
     public static final String PERL_DOC_UIX = "perldoc";
-    
+        
     public static final boolean SUCCESS = true;
     public static final boolean FAILURE = false;
 
     public static final String NEW_LINE = System.getProperty("line.separator");
     public static final String FILE_SEPARATOR = System.getProperty("file.separator");
     public static final String PATH_SEPARATOR = System.getProperty("path.separator");
+    public static final String TEMP_DIRECTORY = System.getProperty("java.io.tmpdir");
     
     public static final String MODULE_SEPARATOR = "::";
     
@@ -30,4 +31,7 @@ public final class PerlConstants {
     
     public static final String LANGUAGE_NAME = "Perl";
     
+    public static final String PERL_DANCER_WIN = "dancer.bat";
+    public static final String PERL_DANCER_UIX = "dancer";
+    public static final String DANCER_DEFAULT_URL = "http://localhost:3000/";
 }

@@ -2,15 +2,15 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.language.perl.existing.sources.project;
+package org.language.perl.project.dancer;
 
 import org.openide.nodes.FilterNode;
 import org.openide.nodes.Node;
 
 
-public class PerlProjectWithExistingSourcesFilterNodeFactory extends FilterNode.Children {
+public class PerlDancerProjectFilterNodeFactory extends FilterNode.Children {
     
-    public PerlProjectWithExistingSourcesFilterNodeFactory(Node node) {
+    public PerlDancerProjectFilterNodeFactory(Node node) {
         super(node);
     }
     

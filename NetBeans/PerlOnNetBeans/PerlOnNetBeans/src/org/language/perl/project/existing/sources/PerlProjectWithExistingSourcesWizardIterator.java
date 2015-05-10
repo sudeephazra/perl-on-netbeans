@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.language.perl.existing.sources.project;
+package org.language.perl.project.existing.sources;
 
 import java.awt.Component;
 import java.io.ByteArrayInputStream;
@@ -38,7 +38,10 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
 // TODO define position attribute
-@TemplateRegistration(folder = "Project/Perl", displayName = "#PerlProjectWithExistingSources_displayName", description = "PerlProjectWithExistingSourcesDescription.html", iconBase = "org/language/perl/existing/sources/project/PerlProjectWithExistingSources.png", content = "PerlProjectWithExistingSourcesProject.zip")
+@TemplateRegistration(folder = "Project/Perl", displayName = "#PerlProjectWithExistingSources_displayName", 
+        description = "PerlProjectWithExistingSourcesDescription.html", 
+        iconBase = "org/language/perl/project/existing/sources/PerlProjectWithExistingSources.png", 
+        content = "PerlProjectWithExistingSourcesProject.zip")
 @Messages("PerlProjectWithExistingSources_displayName=Perl Project With Existing Sources")
 public class PerlProjectWithExistingSourcesWizardIterator implements WizardDescriptor./*Progress*/InstantiatingIterator {
 

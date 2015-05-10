@@ -136,8 +136,12 @@ public final class ExecuteAction implements ActionListener {
         } catch (IOException ex) {
             Exceptions.printStackTrace(ex);
         }
-        myExecution.run();
-
+//        myExecution.run();
+        if (file.exists()) {
+            myExecution.run();
+        } else {
+            return;
+        }
 
     }
 }

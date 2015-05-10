@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.language.perl.project;
+package org.language.perl.project.dancer;
 
 import java.awt.Component;
 import java.io.ByteArrayInputStream;
@@ -21,6 +21,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import javax.swing.JComponent;
 import javax.swing.event.ChangeListener;
+import org.language.perl.dancer.PerlDancerAppInitiator;
 import org.netbeans.api.project.ProjectManager;
 import org.netbeans.api.templates.TemplateRegistration;
 import org.netbeans.spi.project.ui.support.ProjectChooser;
@@ -38,42 +39,47 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
 // TODO define position attribute
-@TemplateRegistration(folder = "Project/Perl", 
-        displayName = "#PerlProject_displayName", description = "PerlProjectDescription.html", 
-        iconBase = "org/language/perl/project/PerlProject.png", 
-        content = "PerlProjectProject.zip")
-@Messages("PerlProject_displayName=Perl Project")
-public class PerlProjectWizardIterator implements WizardDescriptor./*Progress*/InstantiatingIterator {
+@TemplateRegistration(folder = "Project/Perl", displayName = "#PerlDancerProject_displayName", 
+        description = "PerlDancerProjectDescription.html", 
+        iconBase = "org/language/perl/project/dancer/PerDancerProject.png", 
+        content = "PerlDancerProject.zip")
+@Messages("PerlDancerProject_displayName=Perl Dancer Project")
+public class PerlDancerProjectWizardIterator implements WizardDescriptor./*Progress*/InstantiatingIterator {
 
     private int index;
     private WizardDescriptor.Panel[] panels;
     private WizardDescriptor wiz;
 
-    public PerlProjectWizardIterator() {
+    public PerlDancerProjectWizardIterator() {
     }
 
-    public static PerlProjectWizardIterator createIterator() {
-        return new PerlProjectWizardIterator();
+    public static PerlDancerProjectWizardIterator createIterator() {
+        return new PerlDancerProjectWizardIterator();
     }
 
     private WizardDescriptor.Panel[] createPanels() {
         return new WizardDescriptor.Panel[]{
-            new PerlProjectWizardPanel(),};
+            new PerlDancerProjectWizardPanel(),};
     }
 
     private String[] createSteps() {
         return new String[]{
-            NbBundle.getMessage(PerlProjectWizardIterator.class, "LBL_CreateProjectStep")
+            NbBundle.getMessage(PerlDancerProjectWizardIterator.class, "LBL_CreateProjectStep")
         };
     }
 
+    @Override
     public Set/*<FileObject>*/ instantiate(/*ProgressHandle handle*/) throws IOException {
         Set<FileObject> resultSet = new LinkedHashSet<FileObject>();
         File dirF = FileUtil.normalizeFile((File) wiz.getProperty("projdir"));
-        dirF.mkdirs();
-
+        //dirF.mkdirs();
+        PerlDancerAppInitiator dancerApp = new PerlDancerAppInitiator();
+        dancerApp.createDefaultDancerWebApplication(dirF);
+        
         FileObject template = Templates.getTemplate(wiz);
-        FileObject dir = FileUtil.toFileObject(dirF);
+        Thread.currentThread().setContextClassLoader(getClass().getClassLoader());
+        //FileObject dir = FileUtil.toFileObject(dirF);
+        FileObject dir = FileUtil.createFolder(dirF);
         unZipFile(template.getInputStream(), dir);
 
         // Always open top dir as a project:
@@ -95,6 +101,7 @@ public class PerlProjectWizardIterator implements WizardDescriptor./*Progress*/I
         return resultSet;
     }
 
+    @Override
     public void initialize(WizardDescriptor wiz) {
         this.wiz = wiz;
         index = 0;
@@ -120,6 +127,7 @@ public class PerlProjectWizardIterator implements WizardDescriptor./*Progress*/I
         }
     }
 
+    @Override
     public void uninitialize(WizardDescriptor wiz) {
         this.wiz.putProperty("projdir", null);
         this.wiz.putProperty("name", null);
@@ -127,19 +135,23 @@ public class PerlProjectWizardIterator implements WizardDescriptor./*Progress*/I
         panels = null;
     }
 
+    @Override
     public String name() {
         return MessageFormat.format("{0} of {1}",
                 new Object[]{new Integer(index + 1), new Integer(panels.length)});
     }
 
+    @Override
     public boolean hasNext() {
         return index < panels.length - 1;
     }
 
+    @Override
     public boolean hasPrevious() {
         return index > 0;
     }
-
+    
+    @Override
     public void nextPanel() {
         if (!hasNext()) {
             throw new NoSuchElementException();
@@ -147,6 +159,7 @@ public class PerlProjectWizardIterator implements WizardDescriptor./*Progress*/I
         index++;
     }
 
+    @Override
     public void previousPanel() {
         if (!hasPrevious()) {
             throw new NoSuchElementException();
@@ -154,14 +167,17 @@ public class PerlProjectWizardIterator implements WizardDescriptor./*Progress*/I
         index--;
     }
 
+    @Override
     public WizardDescriptor.Panel current() {
         return panels[index];
     }
 
     // If nothing unusual changes in the middle of the wizard, simply:
+    @Override
     public final void addChangeListener(ChangeListener l) {
     }
 
+    @Override
     public final void removeChangeListener(ChangeListener l) {
     }
 

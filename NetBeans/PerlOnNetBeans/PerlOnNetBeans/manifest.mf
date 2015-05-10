@@ -1,6 +1,7 @@
 Manifest-Version: 1.0
-OpenIDE-Module: org.language.perl
+OpenIDE-Module: org.language.perl/0
+OpenIDE-Module-Implementation-Version: 0
 OpenIDE-Module-Layer: org/language/perl/layer.xml
 OpenIDE-Module-Localizing-Bundle: org/language/perl/Bundle.properties
-OpenIDE-Module-Specification-Version: 0.3
+OpenIDE-Module-Specification-Version: 4
 
