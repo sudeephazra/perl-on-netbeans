@@ -15,7 +15,6 @@ import org.language.perl.utilities.PerlConstants;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.awt.ActionReferences;
-import org.openide.awt.ActionRegistration;
 import org.openide.cookies.SaveCookie;
 import org.openide.filesystems.FileUtil;
 import org.openide.util.Exceptions;
@@ -25,9 +24,9 @@ import org.openide.util.NbPreferences;
 @ActionID(
     category = "File",
 id = "org.netbeans.perl.file.SyntaxCheckAction")
-@ActionRegistration(
-    iconBase = "org/language/perl/images/file-parse-icon.png",
-displayName = "#CTL_SyntaxCheckAction")
+//@ActionRegistration(
+//    iconBase = "org/language/perl/images/file-parse-icon.png",
+//displayName = "#CTL_SyntaxCheckAction")
 @ActionReferences({
     @ActionReference(path = "Toolbars/Build", position = 500),
     @ActionReference(path = "Loaders/text/x-perl/Actions", position = 150)

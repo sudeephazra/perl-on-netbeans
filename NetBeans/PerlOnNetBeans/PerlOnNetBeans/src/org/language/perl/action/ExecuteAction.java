@@ -15,7 +15,6 @@ import org.language.perl.utilities.PerlConstants;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.awt.ActionReferences;
-import org.openide.awt.ActionRegistration;
 import org.openide.cookies.SaveCookie;
 import org.openide.filesystems.FileUtil;
 import org.openide.util.Exceptions;
@@ -25,9 +24,9 @@ import org.openide.util.NbPreferences;
 @ActionID(
         category = "File",
         id = "org.netbeans.perl.file.ExecuteAction")
-@ActionRegistration(
-        iconBase = "org/language/perl/images/file-run-icon.png",
-        displayName = "#CTL_ExecuteAction")
+//@ActionRegistration(
+//        iconBase = "org/language/perl/images/file-run-icon.png",
+//        displayName = "#CTL_ExecuteAction")
 @ActionReferences({
     @ActionReference(path = "Toolbars/Build", position = 600),
     @ActionReference(path = "Loaders/text/x-perl/Actions", position = 175)
