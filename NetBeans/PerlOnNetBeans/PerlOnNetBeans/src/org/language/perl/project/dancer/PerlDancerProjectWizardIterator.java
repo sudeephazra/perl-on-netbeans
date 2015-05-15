@@ -42,7 +42,7 @@ import org.xml.sax.InputSource;
 @TemplateRegistration(folder = "Project/Perl", displayName = "#PerlDancerProject_displayName", 
         description = "PerlDancerProjectDescription.html", 
         iconBase = "org/language/perl/project/dancer/PerDancerProject.png", 
-        content = "PerlDancerProject.zip")
+        content = "PerlDancerProject.zip", position = 300)
 @Messages("PerlDancerProject_displayName=Perl Dancer Project")
 public class PerlDancerProjectWizardIterator implements WizardDescriptor./*Progress*/InstantiatingIterator {
 

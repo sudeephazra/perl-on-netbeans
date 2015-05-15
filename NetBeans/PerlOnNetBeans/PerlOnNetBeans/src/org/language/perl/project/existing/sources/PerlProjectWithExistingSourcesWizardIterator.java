@@ -41,7 +41,7 @@ import org.xml.sax.InputSource;
 @TemplateRegistration(folder = "Project/Perl", displayName = "#PerlProjectWithExistingSources_displayName", 
         description = "PerlProjectWithExistingSourcesDescription.html", 
         iconBase = "org/language/perl/project/existing/sources/PerlProjectWithExistingSources.png", 
-        content = "PerlProjectWithExistingSourcesProject.zip")
+        content = "PerlProjectWithExistingSourcesProject.zip", position = 200)
 @Messages("PerlProjectWithExistingSources_displayName=Perl Project With Existing Sources")
 public class PerlProjectWithExistingSourcesWizardIterator implements WizardDescriptor./*Progress*/InstantiatingIterator {
 
