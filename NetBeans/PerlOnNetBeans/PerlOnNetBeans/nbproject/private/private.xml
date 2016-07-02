@@ -3,10 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Source%20Code/PerlOnNetBeans%20-%20Bitbucket/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/utilities/PerlConstants.java</file>
-            <file>file:/D:/Source%20Code/PerlOnNetBeans%20-%20Bitbucket/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/editor/PerlMarkOccurrences.java</file>
-            <file>file:/D:/Source%20Code/PerlOnNetBeans%20-%20Bitbucket/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/project/dancer/PerlDancerProjectWizardIterator.java</file>
-            <file>file:/D:/Source%20Code/PerlOnNetBeans%20-%20Bitbucket/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/dancer/PerlDancerAppInitiator.java</file>
+            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/feature/grammar_enhancements/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/grammar/PerlLexer.java</file>
         </group>
     </open-files>
 </project-private>

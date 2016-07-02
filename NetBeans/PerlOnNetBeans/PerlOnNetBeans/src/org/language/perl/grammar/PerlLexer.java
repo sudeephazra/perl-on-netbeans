@@ -1,4 +1,4 @@
-// $ANTLR 3.4 D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g 2014-09-28 13:54:13
+// $ANTLR 3.4 D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g 2016-06-23 05:58:21
 package org.language.perl.grammar;
 
 import org.antlr.runtime.*;
@@ -54,17 +54,17 @@ public class PerlLexer extends Lexer {
     public PerlLexer(CharStream input, RecognizerSharedState state) {
         super(input,state);
     }
-    public String getGrammarFileName() { return "D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g"; }
+    public String getGrammarFileName() { return "D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g"; }
 
     // $ANTLR start "WHITESPACE"
     public final void mWHITESPACE() throws RecognitionException {
         try {
             int _type = WHITESPACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:54:2: ( ( ' ' | '\\t' | '\\n' | '\\r' )+ )
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:54:4: ( ' ' | '\\t' | '\\n' | '\\r' )+
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:54:2: ( ( ' ' | '\\t' | '\\n' | '\\r' )+ )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:54:4: ( ' ' | '\\t' | '\\n' | '\\r' )+
             {
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:54:4: ( ' ' | '\\t' | '\\n' | '\\r' )+
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:54:4: ( ' ' | '\\t' | '\\n' | '\\r' )+
             int cnt1=0;
             loop1:
             do {
@@ -78,7 +78,7 @@ public class PerlLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:
+            	    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:
             	    {
             	    if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
             	        input.consume();
@@ -121,12 +121,12 @@ public class PerlLexer extends Lexer {
         try {
             int _type = COMMANDS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:57:9: ( 'NULL' | '__FILE__' | '__LINE__' | '__PACKAGE__' | '__DATA__' | '__END__' | 'AUTOLOAD' | 'BEGIN' | 'CORE' | 'DESTROY' | 'END' | 'EQ' | 'GE' | 'GT' | 'INIT' | 'LE' | 'LT' | 'NE' | 'CHECK' | 'abs' | 'accept' | 'alarm' | 'and' | 'atan2' | 'bind' | 'binmode' | 'bless' | 'caller' | 'chdir' | 'chmod' | 'chomp' | 'chop' | 'chown' | 'chr' | 'chroot' | 'close' | 'closedir' | 'cmp' | 'connect' | 'continue' | 'cos' | 'crypt' | 'dbmclose' | 'dbmopen' | 'defined' | 'delete' | 'die' | 'do' | 'dump' | 'each' | 'else' | 'elsif' | 'endgrent' | 'endhostent' | 'endnetent' | 'endprotoent' | 'endpwent' | 'endservent' | 'eof' | 'eq' | 'eval' | 'exec' | 'exists' | 'exit' | 'exp' | 'fcntl' | 'fileno' | 'flock' | 'for' | 'foreach' | 'fork' | 'format' | 'formline' | 'ge' | 'getc' | 'getgrent' | 'getgrgid' | 'getgrnam' | 'gethostbyaddr' | 'gethostbyname' | 'gethostent' | 'getlogin' | 'getnetbyaddr' | 'getnetbyname' | 'getnetent' | 'getpeername' | 'getpgrp' | 'getppid' | 'getpriority' | 'getprotobyname' | 'getprotobynumber' | 'getprotoent' | 'getpwent' | 'getpwnam' | 'getpwuid' | 'getservbyname' | 'getservbyport' | 'getservent' | 'getsockname' | 'getsockopt' | 'glob' | 'gmtime' | 'goto' | 'grep' | 'gt' | 'hex' | 'if' | 'index' | 'int' | 'ioctl' | 'join' | 'keys' | 'kill' | 'last' | 'lc' | 'lcfirst' | 'le' | 'length' | 'link' | 'listen' | 'local' | 'localtime' | 'lock' | 'log' | 'lstat' | 'lt' | 'm' | 'map' | 'mkdir' | 'msgctl' | 'msgget' | 'msgrcv' | 'msgsnd' | 'my' | 'ne' | 'next' | 'no' | 'not' | 'oct' | 'open' | 'opendir' | 'or' | 'ord' | 'our' | 'pack' | 'package' | 'pipe' | 'pop' | 'pos' | 'print' | 'printf' | 'prototype' | 'push' | 'q' | 'qq' | 'qr' | 'quotemeta' | 'qu' | 'qw' | 'qx' | 'rand' | 'read' | 'readdir' | 'readline' | 'readlink' | 'readpipe' | 'recv' | 'redo' | 'ref' | 'rename' | 'require' | 'reset' | 'return' | 'reverse' | 'rewinddir' | 'rindex' | 'rmdir' | 's' | 'scalar' | 'seek' | 'seekdir' | 'select' | 'semctl' | 'semget' | 'semop' | 'send' | 'setgrent' | 'sethostent' | 'setnetent' | 'setpgrp' | 'setpriority' | 'setprotoent' | 'setpwent' | 'setservent' | 'setsockopt' | 'shift' | 'shmctl' | 'shmget' | 'shmread' | 'shmwrite' | 'shutdown' | 'sin' | 'sleep' | 'socket' | 'socketpair' | 'sort' | 'splice' | 'split' | 'sprintf' | 'sqrt' | 'srand' | 'stat' | 'study' | 'sub' | 'substr' | 'symlink' | 'syscall' | 'sysopen' | 'sysread' | 'sysseek' | 'system' | 'syswrite' | 'tell' | 'telldir' | 'tie' | 'tied' | 'time' | 'times' | 'tr' | 'truncate' | 'uc' | 'ucfirst' | 'umask' | 'undef' | 'unless' | 'unlink' | 'unpack' | 'unshift' | 'untie' | 'until' | 'use' | 'utime' | 'values' | 'vec' | 'wait' | 'waitpid' | 'wantarray' | 'warn' | 'while' | 'write' | 'xor' )
-            int alt2=251;
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:57:9: ( 'NULL' | '__FILE__' | '__LINE__' | '__PACKAGE__' | '__DATA__' | '__END__' | 'AUTOLOAD' | 'BEGIN' | 'CORE' | 'DESTROY' | 'END' | 'EQ' | 'GE' | 'GT' | 'INIT' | 'LE' | 'LT' | 'NE' | 'CHECK' | 'abs' | 'accept' | 'alarm' | 'and' | 'atan2' | 'bind' | 'binmode' | 'bless' | 'caller' | 'chdir' | 'chmod' | 'chomp' | 'chop' | 'chown' | 'chr' | 'chroot' | 'close' | 'closedir' | 'cmp' | 'connect' | 'continue' | 'cos' | 'crypt' | 'dbmclose' | 'dbmopen' | 'defined' | 'delete' | 'die' | 'do' | 'dump' | 'each' | 'else' | 'elsif' | 'endgrent' | 'endhostent' | 'endnetent' | 'endprotoent' | 'endpwent' | 'endservent' | 'eof' | 'eq' | 'eval' | 'exec' | 'exists' | 'exit' | 'exp' | 'fcntl' | 'fileno' | 'flock' | 'for' | 'foreach' | 'fork' | 'format' | 'formline' | 'ge' | 'getc' | 'getgrent' | 'getgrgid' | 'getgrnam' | 'gethostbyaddr' | 'gethostbyname' | 'gethostent' | 'getlogin' | 'getnetbyaddr' | 'getnetbyname' | 'getnetent' | 'getpeername' | 'getpgrp' | 'getppid' | 'getpriority' | 'getprotobyname' | 'getprotobynumber' | 'getprotoent' | 'getpwent' | 'getpwnam' | 'getpwuid' | 'getservbyname' | 'getservbyport' | 'getservent' | 'getsockname' | 'getsockopt' | 'glob' | 'gmtime' | 'goto' | 'grep' | 'gt' | 'hex' | 'if' | 'index' | 'int' | 'ioctl' | 'join' | 'keys' | 'kill' | 'last' | 'lc' | 'lcfirst' | 'le' | 'length' | 'link' | 'listen' | 'local' | 'localtime' | 'lock' | 'log' | 'lstat' | 'lt' | 'map' | 'mkdir' | 'msgctl' | 'msgget' | 'msgrcv' | 'msgsnd' | 'my' | 'ne' | 'next' | 'no' | 'not' | 'oct' | 'open' | 'opendir' | 'or' | 'ord' | 'our' | 'pack' | 'package' | 'pipe' | 'pop' | 'pos' | 'print' | 'printf' | 'prototype' | 'push' | 'quotemeta' | 'rand' | 'read' | 'readdir' | 'readline' | 'readlink' | 'readpipe' | 'recv' | 'redo' | 'ref' | 'rename' | 'require' | 'reset' | 'return' | 'reverse' | 'rewinddir' | 'rindex' | 'rmdir' | 'scalar' | 'seek' | 'seekdir' | 'select' | 'semctl' | 'semget' | 'semop' | 'send' | 'setgrent' | 'sethostent' | 'setnetent' | 'setpgrp' | 'setpriority' | 'setprotoent' | 'setpwent' | 'setservent' | 'setsockopt' | 'shift' | 'shmctl' | 'shmget' | 'shmread' | 'shmwrite' | 'shutdown' | 'sin' | 'sleep' | 'socket' | 'socketpair' | 'sort' | 'splice' | 'split' | 'sprintf' | 'sqrt' | 'srand' | 'stat' | 'study' | 'sub' | 'substr' | 'symlink' | 'syscall' | 'sysopen' | 'sysread' | 'sysseek' | 'system' | 'syswrite' | 'tell' | 'telldir' | 'tie' | 'tied' | 'time' | 'times' | 'truncate' | 'uc' | 'ucfirst' | 'umask' | 'undef' | 'unless' | 'unlink' | 'unpack' | 'unshift' | 'untie' | 'until' | 'use' | 'utime' | 'values' | 'vec' | 'wait' | 'waitpid' | 'wantarray' | 'warn' | 'while' | 'write' | 'xor' )
+            int alt2=242;
             alt2 = dfa2.predict(input);
             switch (alt2) {
                 case 1 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:57:11: 'NULL'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:57:11: 'NULL'
                     {
                     match("NULL"); 
 
@@ -135,7 +135,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:57:20: '__FILE__'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:57:20: '__FILE__'
                     {
                     match("__FILE__"); 
 
@@ -144,7 +144,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:57:33: '__LINE__'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:57:33: '__LINE__'
                     {
                     match("__LINE__"); 
 
@@ -153,7 +153,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:57:46: '__PACKAGE__'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:57:46: '__PACKAGE__'
                     {
                     match("__PACKAGE__"); 
 
@@ -162,7 +162,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 5 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:57:62: '__DATA__'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:57:62: '__DATA__'
                     {
                     match("__DATA__"); 
 
@@ -171,7 +171,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 6 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:57:75: '__END__'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:57:75: '__END__'
                     {
                     match("__END__"); 
 
@@ -180,7 +180,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 7 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:57:87: 'AUTOLOAD'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:57:87: 'AUTOLOAD'
                     {
                     match("AUTOLOAD"); 
 
@@ -189,7 +189,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 8 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:58:5: 'BEGIN'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:58:5: 'BEGIN'
                     {
                     match("BEGIN"); 
 
@@ -198,7 +198,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 9 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:58:15: 'CORE'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:58:15: 'CORE'
                     {
                     match("CORE"); 
 
@@ -207,7 +207,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 10 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:58:24: 'DESTROY'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:58:24: 'DESTROY'
                     {
                     match("DESTROY"); 
 
@@ -216,7 +216,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 11 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:58:36: 'END'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:58:36: 'END'
                     {
                     match("END"); 
 
@@ -225,7 +225,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 12 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:58:44: 'EQ'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:58:44: 'EQ'
                     {
                     match("EQ"); 
 
@@ -234,7 +234,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 13 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:58:51: 'GE'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:58:51: 'GE'
                     {
                     match("GE"); 
 
@@ -243,7 +243,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 14 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:58:58: 'GT'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:58:58: 'GT'
                     {
                     match("GT"); 
 
@@ -252,7 +252,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 15 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:58:65: 'INIT'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:58:65: 'INIT'
                     {
                     match("INIT"); 
 
@@ -261,7 +261,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 16 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:58:74: 'LE'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:58:74: 'LE'
                     {
                     match("LE"); 
 
@@ -270,7 +270,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 17 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:58:81: 'LT'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:58:81: 'LT'
                     {
                     match("LT"); 
 
@@ -279,7 +279,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 18 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:58:88: 'NE'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:58:88: 'NE'
                     {
                     match("NE"); 
 
@@ -288,7 +288,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 19 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:58:95: 'CHECK'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:58:95: 'CHECK'
                     {
                     match("CHECK"); 
 
@@ -297,7 +297,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 20 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:59:5: 'abs'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:59:5: 'abs'
                     {
                     match("abs"); 
 
@@ -306,7 +306,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 21 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:59:13: 'accept'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:59:13: 'accept'
                     {
                     match("accept"); 
 
@@ -315,7 +315,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 22 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:59:24: 'alarm'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:59:24: 'alarm'
                     {
                     match("alarm"); 
 
@@ -324,7 +324,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 23 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:59:34: 'and'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:59:34: 'and'
                     {
                     match("and"); 
 
@@ -333,7 +333,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 24 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:59:42: 'atan2'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:59:42: 'atan2'
                     {
                     match("atan2"); 
 
@@ -342,7 +342,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 25 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:59:52: 'bind'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:59:52: 'bind'
                     {
                     match("bind"); 
 
@@ -351,7 +351,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 26 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:59:61: 'binmode'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:59:61: 'binmode'
                     {
                     match("binmode"); 
 
@@ -360,7 +360,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 27 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:59:73: 'bless'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:59:73: 'bless'
                     {
                     match("bless"); 
 
@@ -369,7 +369,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 28 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:59:83: 'caller'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:59:83: 'caller'
                     {
                     match("caller"); 
 
@@ -378,7 +378,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 29 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:59:94: 'chdir'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:59:94: 'chdir'
                     {
                     match("chdir"); 
 
@@ -387,7 +387,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 30 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:60:5: 'chmod'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:60:5: 'chmod'
                     {
                     match("chmod"); 
 
@@ -396,7 +396,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 31 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:60:15: 'chomp'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:60:15: 'chomp'
                     {
                     match("chomp"); 
 
@@ -405,7 +405,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 32 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:60:25: 'chop'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:60:25: 'chop'
                     {
                     match("chop"); 
 
@@ -414,7 +414,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 33 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:60:34: 'chown'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:60:34: 'chown'
                     {
                     match("chown"); 
 
@@ -423,7 +423,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 34 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:60:44: 'chr'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:60:44: 'chr'
                     {
                     match("chr"); 
 
@@ -432,7 +432,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 35 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:60:52: 'chroot'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:60:52: 'chroot'
                     {
                     match("chroot"); 
 
@@ -441,7 +441,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 36 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:60:63: 'close'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:60:63: 'close'
                     {
                     match("close"); 
 
@@ -450,7 +450,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 37 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:60:73: 'closedir'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:60:73: 'closedir'
                     {
                     match("closedir"); 
 
@@ -459,7 +459,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 38 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:60:86: 'cmp'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:60:86: 'cmp'
                     {
                     match("cmp"); 
 
@@ -468,7 +468,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 39 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:60:94: 'connect'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:60:94: 'connect'
                     {
                     match("connect"); 
 
@@ -477,7 +477,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 40 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:61:5: 'continue'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:61:5: 'continue'
                     {
                     match("continue"); 
 
@@ -486,7 +486,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 41 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:61:18: 'cos'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:61:18: 'cos'
                     {
                     match("cos"); 
 
@@ -495,7 +495,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 42 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:61:26: 'crypt'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:61:26: 'crypt'
                     {
                     match("crypt"); 
 
@@ -504,7 +504,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 43 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:61:36: 'dbmclose'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:61:36: 'dbmclose'
                     {
                     match("dbmclose"); 
 
@@ -513,7 +513,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 44 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:61:49: 'dbmopen'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:61:49: 'dbmopen'
                     {
                     match("dbmopen"); 
 
@@ -522,7 +522,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 45 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:61:61: 'defined'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:61:61: 'defined'
                     {
                     match("defined"); 
 
@@ -531,7 +531,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 46 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:61:73: 'delete'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:61:73: 'delete'
                     {
                     match("delete"); 
 
@@ -540,7 +540,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 47 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:61:84: 'die'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:61:84: 'die'
                     {
                     match("die"); 
 
@@ -549,7 +549,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 48 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:61:92: 'do'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:61:92: 'do'
                     {
                     match("do"); 
 
@@ -558,7 +558,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 49 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:61:99: 'dump'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:61:99: 'dump'
                     {
                     match("dump"); 
 
@@ -567,7 +567,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 50 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:62:5: 'each'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:62:5: 'each'
                     {
                     match("each"); 
 
@@ -576,7 +576,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 51 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:62:14: 'else'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:62:14: 'else'
                     {
                     match("else"); 
 
@@ -585,7 +585,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 52 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:62:23: 'elsif'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:62:23: 'elsif'
                     {
                     match("elsif"); 
 
@@ -594,7 +594,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 53 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:62:33: 'endgrent'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:62:33: 'endgrent'
                     {
                     match("endgrent"); 
 
@@ -603,7 +603,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 54 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:62:46: 'endhostent'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:62:46: 'endhostent'
                     {
                     match("endhostent"); 
 
@@ -612,7 +612,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 55 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:62:61: 'endnetent'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:62:61: 'endnetent'
                     {
                     match("endnetent"); 
 
@@ -621,7 +621,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 56 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:62:75: 'endprotoent'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:62:75: 'endprotoent'
                     {
                     match("endprotoent"); 
 
@@ -630,7 +630,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 57 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:62:91: 'endpwent'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:62:91: 'endpwent'
                     {
                     match("endpwent"); 
 
@@ -639,7 +639,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 58 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:63:5: 'endservent'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:63:5: 'endservent'
                     {
                     match("endservent"); 
 
@@ -648,7 +648,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 59 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:63:20: 'eof'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:63:20: 'eof'
                     {
                     match("eof"); 
 
@@ -657,7 +657,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 60 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:63:28: 'eq'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:63:28: 'eq'
                     {
                     match("eq"); 
 
@@ -666,7 +666,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 61 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:63:35: 'eval'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:63:35: 'eval'
                     {
                     match("eval"); 
 
@@ -675,7 +675,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 62 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:63:44: 'exec'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:63:44: 'exec'
                     {
                     match("exec"); 
 
@@ -684,7 +684,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 63 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:63:53: 'exists'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:63:53: 'exists'
                     {
                     match("exists"); 
 
@@ -693,7 +693,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 64 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:63:64: 'exit'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:63:64: 'exit'
                     {
                     match("exit"); 
 
@@ -702,7 +702,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 65 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:63:73: 'exp'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:63:73: 'exp'
                     {
                     match("exp"); 
 
@@ -711,7 +711,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 66 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:63:81: 'fcntl'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:63:81: 'fcntl'
                     {
                     match("fcntl"); 
 
@@ -720,7 +720,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 67 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:63:91: 'fileno'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:63:91: 'fileno'
                     {
                     match("fileno"); 
 
@@ -729,7 +729,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 68 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:64:5: 'flock'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:64:5: 'flock'
                     {
                     match("flock"); 
 
@@ -738,7 +738,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 69 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:64:15: 'for'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:64:15: 'for'
                     {
                     match("for"); 
 
@@ -747,7 +747,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 70 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:64:23: 'foreach'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:64:23: 'foreach'
                     {
                     match("foreach"); 
 
@@ -756,7 +756,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 71 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:64:35: 'fork'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:64:35: 'fork'
                     {
                     match("fork"); 
 
@@ -765,7 +765,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 72 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:64:44: 'format'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:64:44: 'format'
                     {
                     match("format"); 
 
@@ -774,7 +774,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 73 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:64:55: 'formline'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:64:55: 'formline'
                     {
                     match("formline"); 
 
@@ -783,7 +783,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 74 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:64:68: 'ge'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:64:68: 'ge'
                     {
                     match("ge"); 
 
@@ -792,7 +792,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 75 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:64:75: 'getc'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:64:75: 'getc'
                     {
                     match("getc"); 
 
@@ -801,7 +801,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 76 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:64:84: 'getgrent'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:64:84: 'getgrent'
                     {
                     match("getgrent"); 
 
@@ -810,7 +810,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 77 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:64:97: 'getgrgid'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:64:97: 'getgrgid'
                     {
                     match("getgrgid"); 
 
@@ -819,7 +819,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 78 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:65:5: 'getgrnam'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:65:5: 'getgrnam'
                     {
                     match("getgrnam"); 
 
@@ -828,7 +828,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 79 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:65:18: 'gethostbyaddr'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:65:18: 'gethostbyaddr'
                     {
                     match("gethostbyaddr"); 
 
@@ -837,7 +837,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 80 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:65:36: 'gethostbyname'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:65:36: 'gethostbyname'
                     {
                     match("gethostbyname"); 
 
@@ -846,7 +846,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 81 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:65:54: 'gethostent'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:65:54: 'gethostent'
                     {
                     match("gethostent"); 
 
@@ -855,7 +855,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 82 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:65:69: 'getlogin'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:65:69: 'getlogin'
                     {
                     match("getlogin"); 
 
@@ -864,7 +864,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 83 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:65:82: 'getnetbyaddr'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:65:82: 'getnetbyaddr'
                     {
                     match("getnetbyaddr"); 
 
@@ -873,7 +873,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 84 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:66:5: 'getnetbyname'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:66:5: 'getnetbyname'
                     {
                     match("getnetbyname"); 
 
@@ -882,7 +882,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 85 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:66:22: 'getnetent'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:66:22: 'getnetent'
                     {
                     match("getnetent"); 
 
@@ -891,7 +891,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 86 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:66:36: 'getpeername'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:66:36: 'getpeername'
                     {
                     match("getpeername"); 
 
@@ -900,7 +900,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 87 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:66:52: 'getpgrp'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:66:52: 'getpgrp'
                     {
                     match("getpgrp"); 
 
@@ -909,7 +909,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 88 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:66:64: 'getppid'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:66:64: 'getppid'
                     {
                     match("getppid"); 
 
@@ -918,7 +918,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 89 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:66:76: 'getpriority'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:66:76: 'getpriority'
                     {
                     match("getpriority"); 
 
@@ -927,7 +927,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 90 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:67:5: 'getprotobyname'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:67:5: 'getprotobyname'
                     {
                     match("getprotobyname"); 
 
@@ -936,7 +936,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 91 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:67:24: 'getprotobynumber'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:67:24: 'getprotobynumber'
                     {
                     match("getprotobynumber"); 
 
@@ -945,7 +945,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 92 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:67:45: 'getprotoent'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:67:45: 'getprotoent'
                     {
                     match("getprotoent"); 
 
@@ -954,7 +954,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 93 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:67:61: 'getpwent'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:67:61: 'getpwent'
                     {
                     match("getpwent"); 
 
@@ -963,7 +963,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 94 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:67:74: 'getpwnam'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:67:74: 'getpwnam'
                     {
                     match("getpwnam"); 
 
@@ -972,7 +972,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 95 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:67:87: 'getpwuid'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:67:87: 'getpwuid'
                     {
                     match("getpwuid"); 
 
@@ -981,7 +981,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 96 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:68:5: 'getservbyname'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:68:5: 'getservbyname'
                     {
                     match("getservbyname"); 
 
@@ -990,7 +990,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 97 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:68:23: 'getservbyport'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:68:23: 'getservbyport'
                     {
                     match("getservbyport"); 
 
@@ -999,7 +999,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 98 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:68:41: 'getservent'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:68:41: 'getservent'
                     {
                     match("getservent"); 
 
@@ -1008,7 +1008,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 99 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:68:56: 'getsockname'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:68:56: 'getsockname'
                     {
                     match("getsockname"); 
 
@@ -1017,7 +1017,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 100 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:68:72: 'getsockopt'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:68:72: 'getsockopt'
                     {
                     match("getsockopt"); 
 
@@ -1026,7 +1026,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 101 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:68:87: 'glob'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:68:87: 'glob'
                     {
                     match("glob"); 
 
@@ -1035,7 +1035,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 102 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:68:96: 'gmtime'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:68:96: 'gmtime'
                     {
                     match("gmtime"); 
 
@@ -1044,7 +1044,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 103 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:69:5: 'goto'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:69:5: 'goto'
                     {
                     match("goto"); 
 
@@ -1053,7 +1053,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 104 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:69:14: 'grep'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:69:14: 'grep'
                     {
                     match("grep"); 
 
@@ -1062,7 +1062,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 105 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:69:23: 'gt'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:69:23: 'gt'
                     {
                     match("gt"); 
 
@@ -1071,7 +1071,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 106 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:69:30: 'hex'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:69:30: 'hex'
                     {
                     match("hex"); 
 
@@ -1080,7 +1080,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 107 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:69:38: 'if'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:69:38: 'if'
                     {
                     match("if"); 
 
@@ -1089,7 +1089,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 108 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:69:45: 'index'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:69:45: 'index'
                     {
                     match("index"); 
 
@@ -1098,7 +1098,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 109 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:69:55: 'int'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:69:55: 'int'
                     {
                     match("int"); 
 
@@ -1107,7 +1107,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 110 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:69:63: 'ioctl'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:69:63: 'ioctl'
                     {
                     match("ioctl"); 
 
@@ -1116,7 +1116,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 111 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:69:73: 'join'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:69:73: 'join'
                     {
                     match("join"); 
 
@@ -1125,7 +1125,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 112 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:69:82: 'keys'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:69:82: 'keys'
                     {
                     match("keys"); 
 
@@ -1134,7 +1134,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 113 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:69:91: 'kill'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:69:91: 'kill'
                     {
                     match("kill"); 
 
@@ -1143,7 +1143,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 114 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:69:100: 'last'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:69:100: 'last'
                     {
                     match("last"); 
 
@@ -1152,7 +1152,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 115 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:70:5: 'lc'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:70:5: 'lc'
                     {
                     match("lc"); 
 
@@ -1161,7 +1161,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 116 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:70:12: 'lcfirst'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:70:12: 'lcfirst'
                     {
                     match("lcfirst"); 
 
@@ -1170,7 +1170,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 117 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:70:24: 'le'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:70:24: 'le'
                     {
                     match("le"); 
 
@@ -1179,7 +1179,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 118 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:70:31: 'length'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:70:31: 'length'
                     {
                     match("length"); 
 
@@ -1188,7 +1188,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 119 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:70:42: 'link'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:70:42: 'link'
                     {
                     match("link"); 
 
@@ -1197,7 +1197,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 120 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:70:51: 'listen'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:70:51: 'listen'
                     {
                     match("listen"); 
 
@@ -1206,7 +1206,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 121 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:70:62: 'local'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:70:62: 'local'
                     {
                     match("local"); 
 
@@ -1215,7 +1215,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 122 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:70:72: 'localtime'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:70:72: 'localtime'
                     {
                     match("localtime"); 
 
@@ -1224,7 +1224,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 123 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:70:86: 'lock'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:70:86: 'lock'
                     {
                     match("lock"); 
 
@@ -1233,7 +1233,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 124 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:70:95: 'log'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:70:95: 'log'
                     {
                     match("log"); 
 
@@ -1242,7 +1242,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 125 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:71:5: 'lstat'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:71:5: 'lstat'
                     {
                     match("lstat"); 
 
@@ -1251,7 +1251,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 126 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:71:15: 'lt'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:71:15: 'lt'
                     {
                     match("lt"); 
 
@@ -1260,14 +1260,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 127 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:71:22: 'm'
-                    {
-                    match('m'); 
-
-                    }
-                    break;
-                case 128 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:71:28: 'map'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:71:22: 'map'
                     {
                     match("map"); 
 
@@ -1275,8 +1268,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 129 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:71:36: 'mkdir'
+                case 128 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:71:30: 'mkdir'
                     {
                     match("mkdir"); 
 
@@ -1284,8 +1277,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 130 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:71:46: 'msgctl'
+                case 129 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:71:40: 'msgctl'
                     {
                     match("msgctl"); 
 
@@ -1293,8 +1286,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 131 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:71:57: 'msgget'
+                case 130 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:71:51: 'msgget'
                     {
                     match("msgget"); 
 
@@ -1302,8 +1295,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 132 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:71:68: 'msgrcv'
+                case 131 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:71:62: 'msgrcv'
                     {
                     match("msgrcv"); 
 
@@ -1311,8 +1304,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 133 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:71:79: 'msgsnd'
+                case 132 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:71:73: 'msgsnd'
                     {
                     match("msgsnd"); 
 
@@ -1320,8 +1313,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 134 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:71:90: 'my'
+                case 133 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:71:84: 'my'
                     {
                     match("my"); 
 
@@ -1329,8 +1322,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 135 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:71:97: 'ne'
+                case 134 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:71:91: 'ne'
                     {
                     match("ne"); 
 
@@ -1338,8 +1331,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 136 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:72:5: 'next'
+                case 135 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:72:5: 'next'
                     {
                     match("next"); 
 
@@ -1347,8 +1340,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 137 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:72:14: 'no'
+                case 136 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:72:14: 'no'
                     {
                     match("no"); 
 
@@ -1356,8 +1349,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 138 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:72:21: 'not'
+                case 137 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:72:21: 'not'
                     {
                     match("not"); 
 
@@ -1365,8 +1358,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 139 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:72:29: 'oct'
+                case 138 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:72:29: 'oct'
                     {
                     match("oct"); 
 
@@ -1374,8 +1367,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 140 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:72:37: 'open'
+                case 139 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:72:37: 'open'
                     {
                     match("open"); 
 
@@ -1383,8 +1376,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 141 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:72:46: 'opendir'
+                case 140 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:72:46: 'opendir'
                     {
                     match("opendir"); 
 
@@ -1392,8 +1385,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 142 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:72:58: 'or'
+                case 141 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:72:58: 'or'
                     {
                     match("or"); 
 
@@ -1401,8 +1394,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 143 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:72:65: 'ord'
+                case 142 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:72:65: 'ord'
                     {
                     match("ord"); 
 
@@ -1410,8 +1403,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 144 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:72:73: 'our'
+                case 143 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:72:73: 'our'
                     {
                     match("our"); 
 
@@ -1419,8 +1412,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 145 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:72:81: 'pack'
+                case 144 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:72:81: 'pack'
                     {
                     match("pack"); 
 
@@ -1428,8 +1421,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 146 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:72:90: 'package'
+                case 145 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:72:90: 'package'
                     {
                     match("package"); 
 
@@ -1437,8 +1430,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 147 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:73:5: 'pipe'
+                case 146 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:73:5: 'pipe'
                     {
                     match("pipe"); 
 
@@ -1446,8 +1439,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 148 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:73:14: 'pop'
+                case 147 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:73:14: 'pop'
                     {
                     match("pop"); 
 
@@ -1455,8 +1448,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 149 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:73:22: 'pos'
+                case 148 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:73:22: 'pos'
                     {
                     match("pos"); 
 
@@ -1464,8 +1457,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 150 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:73:30: 'print'
+                case 149 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:73:30: 'print'
                     {
                     match("print"); 
 
@@ -1473,8 +1466,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 151 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:73:40: 'printf'
+                case 150 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:73:40: 'printf'
                     {
                     match("printf"); 
 
@@ -1482,8 +1475,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 152 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:73:51: 'prototype'
+                case 151 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:73:51: 'prototype'
                     {
                     match("prototype"); 
 
@@ -1491,8 +1484,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 153 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:73:65: 'push'
+                case 152 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:73:65: 'push'
                     {
                     match("push"); 
 
@@ -1500,33 +1493,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 154 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:73:74: 'q'
-                    {
-                    match('q'); 
-
-                    }
-                    break;
-                case 155 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:73:80: 'qq'
-                    {
-                    match("qq"); 
-
-
-
-                    }
-                    break;
-                case 156 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:73:87: 'qr'
-                    {
-                    match("qr"); 
-
-
-
-                    }
-                    break;
-                case 157 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:73:94: 'quotemeta'
+                case 153 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:73:74: 'quotemeta'
                     {
                     match("quotemeta"); 
 
@@ -1534,35 +1502,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 158 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:74:5: 'qu'
-                    {
-                    match("qu"); 
-
-
-
-                    }
-                    break;
-                case 159 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:74:12: 'qw'
-                    {
-                    match("qw"); 
-
-
-
-                    }
-                    break;
-                case 160 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:74:19: 'qx'
-                    {
-                    match("qx"); 
-
-
-
-                    }
-                    break;
-                case 161 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:74:26: 'rand'
+                case 154 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:74:5: 'rand'
                     {
                     match("rand"); 
 
@@ -1570,8 +1511,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 162 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:74:35: 'read'
+                case 155 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:74:14: 'read'
                     {
                     match("read"); 
 
@@ -1579,8 +1520,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 163 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:74:44: 'readdir'
+                case 156 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:74:23: 'readdir'
                     {
                     match("readdir"); 
 
@@ -1588,8 +1529,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 164 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:74:56: 'readline'
+                case 157 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:74:35: 'readline'
                     {
                     match("readline"); 
 
@@ -1597,8 +1538,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 165 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:74:69: 'readlink'
+                case 158 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:74:48: 'readlink'
                     {
                     match("readlink"); 
 
@@ -1606,8 +1547,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 166 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:74:82: 'readpipe'
+                case 159 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:74:61: 'readpipe'
                     {
                     match("readpipe"); 
 
@@ -1615,8 +1556,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 167 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:74:95: 'recv'
+                case 160 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:74:74: 'recv'
                     {
                     match("recv"); 
 
@@ -1624,8 +1565,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 168 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:75:5: 'redo'
+                case 161 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:75:5: 'redo'
                     {
                     match("redo"); 
 
@@ -1633,8 +1574,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 169 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:75:14: 'ref'
+                case 162 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:75:14: 'ref'
                     {
                     match("ref"); 
 
@@ -1642,8 +1583,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 170 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:75:22: 'rename'
+                case 163 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:75:22: 'rename'
                     {
                     match("rename"); 
 
@@ -1651,8 +1592,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 171 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:75:33: 'require'
+                case 164 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:75:33: 'require'
                     {
                     match("require"); 
 
@@ -1660,8 +1601,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 172 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:75:45: 'reset'
+                case 165 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:75:45: 'reset'
                     {
                     match("reset"); 
 
@@ -1669,8 +1610,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 173 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:75:55: 'return'
+                case 166 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:75:55: 'return'
                     {
                     match("return"); 
 
@@ -1678,8 +1619,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 174 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:75:66: 'reverse'
+                case 167 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:75:66: 'reverse'
                     {
                     match("reverse"); 
 
@@ -1687,8 +1628,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 175 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:75:78: 'rewinddir'
+                case 168 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:75:78: 'rewinddir'
                     {
                     match("rewinddir"); 
 
@@ -1696,8 +1637,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 176 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:75:92: 'rindex'
+                case 169 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:75:92: 'rindex'
                     {
                     match("rindex"); 
 
@@ -1705,8 +1646,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 177 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:76:5: 'rmdir'
+                case 170 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:76:5: 'rmdir'
                     {
                     match("rmdir"); 
 
@@ -1714,15 +1655,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 178 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:76:15: 's'
-                    {
-                    match('s'); 
-
-                    }
-                    break;
-                case 179 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:76:21: 'scalar'
+                case 171 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:76:15: 'scalar'
                     {
                     match("scalar"); 
 
@@ -1730,8 +1664,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 180 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:76:32: 'seek'
+                case 172 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:76:26: 'seek'
                     {
                     match("seek"); 
 
@@ -1739,8 +1673,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 181 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:76:41: 'seekdir'
+                case 173 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:76:35: 'seekdir'
                     {
                     match("seekdir"); 
 
@@ -1748,8 +1682,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 182 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:76:53: 'select'
+                case 174 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:76:47: 'select'
                     {
                     match("select"); 
 
@@ -1757,8 +1691,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 183 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:76:64: 'semctl'
+                case 175 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:76:58: 'semctl'
                     {
                     match("semctl"); 
 
@@ -1766,8 +1700,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 184 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:76:75: 'semget'
+                case 176 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:76:69: 'semget'
                     {
                     match("semget"); 
 
@@ -1775,8 +1709,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 185 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:76:86: 'semop'
+                case 177 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:76:80: 'semop'
                     {
                     match("semop"); 
 
@@ -1784,8 +1718,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 186 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:76:96: 'send'
+                case 178 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:76:90: 'send'
                     {
                     match("send"); 
 
@@ -1793,8 +1727,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 187 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:77:5: 'setgrent'
+                case 179 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:77:5: 'setgrent'
                     {
                     match("setgrent"); 
 
@@ -1802,8 +1736,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 188 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:77:18: 'sethostent'
+                case 180 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:77:18: 'sethostent'
                     {
                     match("sethostent"); 
 
@@ -1811,8 +1745,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 189 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:77:33: 'setnetent'
+                case 181 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:77:33: 'setnetent'
                     {
                     match("setnetent"); 
 
@@ -1820,8 +1754,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 190 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:77:47: 'setpgrp'
+                case 182 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:77:47: 'setpgrp'
                     {
                     match("setpgrp"); 
 
@@ -1829,8 +1763,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 191 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:77:59: 'setpriority'
+                case 183 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:77:59: 'setpriority'
                     {
                     match("setpriority"); 
 
@@ -1838,8 +1772,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 192 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:77:75: 'setprotoent'
+                case 184 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:77:75: 'setprotoent'
                     {
                     match("setprotoent"); 
 
@@ -1847,8 +1781,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 193 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:77:91: 'setpwent'
+                case 185 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:77:91: 'setpwent'
                     {
                     match("setpwent"); 
 
@@ -1856,8 +1790,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 194 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:78:5: 'setservent'
+                case 186 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:78:5: 'setservent'
                     {
                     match("setservent"); 
 
@@ -1865,8 +1799,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 195 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:78:20: 'setsockopt'
+                case 187 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:78:20: 'setsockopt'
                     {
                     match("setsockopt"); 
 
@@ -1874,8 +1808,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 196 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:78:35: 'shift'
+                case 188 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:78:35: 'shift'
                     {
                     match("shift"); 
 
@@ -1883,8 +1817,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 197 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:78:45: 'shmctl'
+                case 189 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:78:45: 'shmctl'
                     {
                     match("shmctl"); 
 
@@ -1892,8 +1826,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 198 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:78:56: 'shmget'
+                case 190 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:78:56: 'shmget'
                     {
                     match("shmget"); 
 
@@ -1901,8 +1835,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 199 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:78:67: 'shmread'
+                case 191 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:78:67: 'shmread'
                     {
                     match("shmread"); 
 
@@ -1910,8 +1844,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 200 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:78:79: 'shmwrite'
+                case 192 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:78:79: 'shmwrite'
                     {
                     match("shmwrite"); 
 
@@ -1919,8 +1853,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 201 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:78:92: 'shutdown'
+                case 193 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:78:92: 'shutdown'
                     {
                     match("shutdown"); 
 
@@ -1928,8 +1862,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 202 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:79:5: 'sin'
+                case 194 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:79:5: 'sin'
                     {
                     match("sin"); 
 
@@ -1937,8 +1871,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 203 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:79:13: 'sleep'
+                case 195 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:79:13: 'sleep'
                     {
                     match("sleep"); 
 
@@ -1946,8 +1880,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 204 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:79:23: 'socket'
+                case 196 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:79:23: 'socket'
                     {
                     match("socket"); 
 
@@ -1955,8 +1889,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 205 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:79:34: 'socketpair'
+                case 197 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:79:34: 'socketpair'
                     {
                     match("socketpair"); 
 
@@ -1964,8 +1898,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 206 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:79:49: 'sort'
+                case 198 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:79:49: 'sort'
                     {
                     match("sort"); 
 
@@ -1973,8 +1907,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 207 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:79:58: 'splice'
+                case 199 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:79:58: 'splice'
                     {
                     match("splice"); 
 
@@ -1982,8 +1916,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 208 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:79:69: 'split'
+                case 200 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:79:69: 'split'
                     {
                     match("split"); 
 
@@ -1991,8 +1925,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 209 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:79:79: 'sprintf'
+                case 201 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:79:79: 'sprintf'
                     {
                     match("sprintf"); 
 
@@ -2000,8 +1934,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 210 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:79:91: 'sqrt'
+                case 202 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:79:91: 'sqrt'
                     {
                     match("sqrt"); 
 
@@ -2009,8 +1943,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 211 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:80:5: 'srand'
+                case 203 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:80:5: 'srand'
                     {
                     match("srand"); 
 
@@ -2018,8 +1952,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 212 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:80:15: 'stat'
+                case 204 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:80:15: 'stat'
                     {
                     match("stat"); 
 
@@ -2027,8 +1961,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 213 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:80:24: 'study'
+                case 205 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:80:24: 'study'
                     {
                     match("study"); 
 
@@ -2036,8 +1970,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 214 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:80:34: 'sub'
+                case 206 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:80:34: 'sub'
                     {
                     match("sub"); 
 
@@ -2045,8 +1979,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 215 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:80:42: 'substr'
+                case 207 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:80:42: 'substr'
                     {
                     match("substr"); 
 
@@ -2054,8 +1988,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 216 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:80:53: 'symlink'
+                case 208 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:80:53: 'symlink'
                     {
                     match("symlink"); 
 
@@ -2063,8 +1997,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 217 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:80:65: 'syscall'
+                case 209 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:80:65: 'syscall'
                     {
                     match("syscall"); 
 
@@ -2072,8 +2006,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 218 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:80:77: 'sysopen'
+                case 210 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:80:77: 'sysopen'
                     {
                     match("sysopen"); 
 
@@ -2081,8 +2015,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 219 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:80:89: 'sysread'
+                case 211 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:80:89: 'sysread'
                     {
                     match("sysread"); 
 
@@ -2090,8 +2024,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 220 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:81:5: 'sysseek'
+                case 212 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:81:5: 'sysseek'
                     {
                     match("sysseek"); 
 
@@ -2099,8 +2033,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 221 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:81:17: 'system'
+                case 213 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:81:17: 'system'
                     {
                     match("system"); 
 
@@ -2108,8 +2042,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 222 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:81:28: 'syswrite'
+                case 214 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:81:28: 'syswrite'
                     {
                     match("syswrite"); 
 
@@ -2117,8 +2051,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 223 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:81:41: 'tell'
+                case 215 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:81:41: 'tell'
                     {
                     match("tell"); 
 
@@ -2126,8 +2060,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 224 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:81:50: 'telldir'
+                case 216 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:81:50: 'telldir'
                     {
                     match("telldir"); 
 
@@ -2135,8 +2069,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 225 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:81:62: 'tie'
+                case 217 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:81:62: 'tie'
                     {
                     match("tie"); 
 
@@ -2144,8 +2078,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 226 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:81:70: 'tied'
+                case 218 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:81:70: 'tied'
                     {
                     match("tied"); 
 
@@ -2153,8 +2087,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 227 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:81:79: 'time'
+                case 219 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:81:79: 'time'
                     {
                     match("time"); 
 
@@ -2162,8 +2096,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 228 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:81:88: 'times'
+                case 220 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:81:88: 'times'
                     {
                     match("times"); 
 
@@ -2171,17 +2105,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 229 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:81:98: 'tr'
-                    {
-                    match("tr"); 
-
-
-
-                    }
-                    break;
-                case 230 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:82:5: 'truncate'
+                case 221 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:82:5: 'truncate'
                     {
                     match("truncate"); 
 
@@ -2189,8 +2114,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 231 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:82:18: 'uc'
+                case 222 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:82:18: 'uc'
                     {
                     match("uc"); 
 
@@ -2198,8 +2123,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 232 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:82:25: 'ucfirst'
+                case 223 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:82:25: 'ucfirst'
                     {
                     match("ucfirst"); 
 
@@ -2207,8 +2132,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 233 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:82:37: 'umask'
+                case 224 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:82:37: 'umask'
                     {
                     match("umask"); 
 
@@ -2216,8 +2141,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 234 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:82:47: 'undef'
+                case 225 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:82:47: 'undef'
                     {
                     match("undef"); 
 
@@ -2225,8 +2150,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 235 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:82:57: 'unless'
+                case 226 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:82:57: 'unless'
                     {
                     match("unless"); 
 
@@ -2234,8 +2159,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 236 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:82:68: 'unlink'
+                case 227 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:82:68: 'unlink'
                     {
                     match("unlink"); 
 
@@ -2243,8 +2168,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 237 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:82:79: 'unpack'
+                case 228 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:82:79: 'unpack'
                     {
                     match("unpack"); 
 
@@ -2252,8 +2177,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 238 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:82:90: 'unshift'
+                case 229 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:82:90: 'unshift'
                     {
                     match("unshift"); 
 
@@ -2261,8 +2186,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 239 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:83:5: 'untie'
+                case 230 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:83:5: 'untie'
                     {
                     match("untie"); 
 
@@ -2270,8 +2195,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 240 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:83:15: 'until'
+                case 231 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:83:15: 'until'
                     {
                     match("until"); 
 
@@ -2279,8 +2204,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 241 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:83:25: 'use'
+                case 232 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:83:25: 'use'
                     {
                     match("use"); 
 
@@ -2288,8 +2213,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 242 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:83:33: 'utime'
+                case 233 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:83:33: 'utime'
                     {
                     match("utime"); 
 
@@ -2297,8 +2222,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 243 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:83:43: 'values'
+                case 234 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:83:43: 'values'
                     {
                     match("values"); 
 
@@ -2306,8 +2231,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 244 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:83:54: 'vec'
+                case 235 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:83:54: 'vec'
                     {
                     match("vec"); 
 
@@ -2315,8 +2240,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 245 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:83:62: 'wait'
+                case 236 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:83:62: 'wait'
                     {
                     match("wait"); 
 
@@ -2324,8 +2249,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 246 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:83:71: 'waitpid'
+                case 237 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:83:71: 'waitpid'
                     {
                     match("waitpid"); 
 
@@ -2333,8 +2258,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 247 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:83:83: 'wantarray'
+                case 238 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:83:83: 'wantarray'
                     {
                     match("wantarray"); 
 
@@ -2342,8 +2267,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 248 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:83:97: 'warn'
+                case 239 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:83:97: 'warn'
                     {
                     match("warn"); 
 
@@ -2351,8 +2276,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 249 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:84:5: 'while'
+                case 240 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:84:5: 'while'
                     {
                     match("while"); 
 
@@ -2360,8 +2285,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 250 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:84:15: 'write'
+                case 241 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:84:15: 'write'
                     {
                     match("write"); 
 
@@ -2369,8 +2294,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 251 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:84:26: 'xor'
+                case 242 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:84:26: 'xor'
                     {
                     match("xor"); 
 
@@ -2394,15 +2319,15 @@ public class PerlLexer extends Lexer {
         try {
             int _type = SPECIAL_VAR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:88:2: ( ( '*^A' | '*^C' | '*^D' | '*^E' | '*^F' | '*^I' | '*^L' | '*^N' | '*^O' | '*^P' | '*^R' | '*^S' | '*^T' | '*^V' | '*^W' | '*^X' | '*/' | '*?' | '*%' | '*@' | '*_' | '*-' | '*+' | '*.' | '*|' | '*,' | '*;' | '*~' | '*:' | '*^' | '*<' | '*>' | '*(' | '*)' | '*\\'' | '*\\\\' | '$$m' | '$$s' | '$\"' | '$^A' | '$^C' | '$^D' | '$^E' | '$^F' | '$^H' | '$^I' | '$^L' | '$^M' | '$^N' | '$^O' | '$^P' | '$^R' | '$^S' | '$^T' | '$^V' | '$^W' | '$^X' | '$/' | '$?' | '$%' | '$@' | '$_' | '$-' | '$+' | '$.' | '$|' | '$!' | '$;' | '$~' | '$$' | '$`' | '$<' | '$>' | '$(' | '$)' | '$,' | '$[' | '$]' | '$:' | '$*' | '$#' | '$=' | '$^' | '$&' | '$\\'' | '$\\\\' | '@+' | '@-' | '@_' | '@$' | '%!' | '%@' | '%^H' ) )
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:88:4: ( '*^A' | '*^C' | '*^D' | '*^E' | '*^F' | '*^I' | '*^L' | '*^N' | '*^O' | '*^P' | '*^R' | '*^S' | '*^T' | '*^V' | '*^W' | '*^X' | '*/' | '*?' | '*%' | '*@' | '*_' | '*-' | '*+' | '*.' | '*|' | '*,' | '*;' | '*~' | '*:' | '*^' | '*<' | '*>' | '*(' | '*)' | '*\\'' | '*\\\\' | '$$m' | '$$s' | '$\"' | '$^A' | '$^C' | '$^D' | '$^E' | '$^F' | '$^H' | '$^I' | '$^L' | '$^M' | '$^N' | '$^O' | '$^P' | '$^R' | '$^S' | '$^T' | '$^V' | '$^W' | '$^X' | '$/' | '$?' | '$%' | '$@' | '$_' | '$-' | '$+' | '$.' | '$|' | '$!' | '$;' | '$~' | '$$' | '$`' | '$<' | '$>' | '$(' | '$)' | '$,' | '$[' | '$]' | '$:' | '$*' | '$#' | '$=' | '$^' | '$&' | '$\\'' | '$\\\\' | '@+' | '@-' | '@_' | '@$' | '%!' | '%@' | '%^H' )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:88:2: ( ( '*^A' | '*^C' | '*^D' | '*^E' | '*^F' | '*^I' | '*^L' | '*^N' | '*^O' | '*^P' | '*^R' | '*^S' | '*^T' | '*^V' | '*^W' | '*^X' | '*/' | '*?' | '*%' | '*@' | '*_' | '*-' | '*+' | '*.' | '*|' | '*,' | '*;' | '*~' | '*:' | '*^' | '*<' | '*>' | '*(' | '*)' | '*\\'' | '*\\\\' | '$$m' | '$$s' | '$\"' | '$^A' | '$^C' | '$^D' | '$^E' | '$^F' | '$^H' | '$^I' | '$^L' | '$^M' | '$^N' | '$^O' | '$^P' | '$^R' | '$^S' | '$^T' | '$^V' | '$^W' | '$^X' | '$/' | '$?' | '$%' | '$@' | '$_' | '$-' | '$+' | '$.' | '$|' | '$!' | '$;' | '$~' | '$$' | '$`' | '$<' | '$>' | '$(' | '$)' | '$,' | '$[' | '$]' | '$:' | '$*' | '$#' | '$=' | '$^' | '$&' | '$\\'' | '$\\\\' | '@+' | '@-' | '@_' | '@$' | '%!' | '%@' | '%^H' ) )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:88:4: ( '*^A' | '*^C' | '*^D' | '*^E' | '*^F' | '*^I' | '*^L' | '*^N' | '*^O' | '*^P' | '*^R' | '*^S' | '*^T' | '*^V' | '*^W' | '*^X' | '*/' | '*?' | '*%' | '*@' | '*_' | '*-' | '*+' | '*.' | '*|' | '*,' | '*;' | '*~' | '*:' | '*^' | '*<' | '*>' | '*(' | '*)' | '*\\'' | '*\\\\' | '$$m' | '$$s' | '$\"' | '$^A' | '$^C' | '$^D' | '$^E' | '$^F' | '$^H' | '$^I' | '$^L' | '$^M' | '$^N' | '$^O' | '$^P' | '$^R' | '$^S' | '$^T' | '$^V' | '$^W' | '$^X' | '$/' | '$?' | '$%' | '$@' | '$_' | '$-' | '$+' | '$.' | '$|' | '$!' | '$;' | '$~' | '$$' | '$`' | '$<' | '$>' | '$(' | '$)' | '$,' | '$[' | '$]' | '$:' | '$*' | '$#' | '$=' | '$^' | '$&' | '$\\'' | '$\\\\' | '@+' | '@-' | '@_' | '@$' | '%!' | '%@' | '%^H' )
             {
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:88:4: ( '*^A' | '*^C' | '*^D' | '*^E' | '*^F' | '*^I' | '*^L' | '*^N' | '*^O' | '*^P' | '*^R' | '*^S' | '*^T' | '*^V' | '*^W' | '*^X' | '*/' | '*?' | '*%' | '*@' | '*_' | '*-' | '*+' | '*.' | '*|' | '*,' | '*;' | '*~' | '*:' | '*^' | '*<' | '*>' | '*(' | '*)' | '*\\'' | '*\\\\' | '$$m' | '$$s' | '$\"' | '$^A' | '$^C' | '$^D' | '$^E' | '$^F' | '$^H' | '$^I' | '$^L' | '$^M' | '$^N' | '$^O' | '$^P' | '$^R' | '$^S' | '$^T' | '$^V' | '$^W' | '$^X' | '$/' | '$?' | '$%' | '$@' | '$_' | '$-' | '$+' | '$.' | '$|' | '$!' | '$;' | '$~' | '$$' | '$`' | '$<' | '$>' | '$(' | '$)' | '$,' | '$[' | '$]' | '$:' | '$*' | '$#' | '$=' | '$^' | '$&' | '$\\'' | '$\\\\' | '@+' | '@-' | '@_' | '@$' | '%!' | '%@' | '%^H' )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:88:4: ( '*^A' | '*^C' | '*^D' | '*^E' | '*^F' | '*^I' | '*^L' | '*^N' | '*^O' | '*^P' | '*^R' | '*^S' | '*^T' | '*^V' | '*^W' | '*^X' | '*/' | '*?' | '*%' | '*@' | '*_' | '*-' | '*+' | '*.' | '*|' | '*,' | '*;' | '*~' | '*:' | '*^' | '*<' | '*>' | '*(' | '*)' | '*\\'' | '*\\\\' | '$$m' | '$$s' | '$\"' | '$^A' | '$^C' | '$^D' | '$^E' | '$^F' | '$^H' | '$^I' | '$^L' | '$^M' | '$^N' | '$^O' | '$^P' | '$^R' | '$^S' | '$^T' | '$^V' | '$^W' | '$^X' | '$/' | '$?' | '$%' | '$@' | '$_' | '$-' | '$+' | '$.' | '$|' | '$!' | '$;' | '$~' | '$$' | '$`' | '$<' | '$>' | '$(' | '$)' | '$,' | '$[' | '$]' | '$:' | '$*' | '$#' | '$=' | '$^' | '$&' | '$\\'' | '$\\\\' | '@+' | '@-' | '@_' | '@$' | '%!' | '%@' | '%^H' )
             int alt3=93;
             alt3 = dfa3.predict(input);
             switch (alt3) {
                 case 1 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:89:4: '*^A'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:89:4: '*^A'
                     {
                     match("*^A"); 
 
@@ -2411,7 +2336,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:89:12: '*^C'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:89:12: '*^C'
                     {
                     match("*^C"); 
 
@@ -2420,7 +2345,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:89:20: '*^D'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:89:20: '*^D'
                     {
                     match("*^D"); 
 
@@ -2429,7 +2354,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:89:28: '*^E'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:89:28: '*^E'
                     {
                     match("*^E"); 
 
@@ -2438,7 +2363,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 5 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:89:36: '*^F'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:89:36: '*^F'
                     {
                     match("*^F"); 
 
@@ -2447,7 +2372,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 6 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:89:44: '*^I'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:89:44: '*^I'
                     {
                     match("*^I"); 
 
@@ -2456,7 +2381,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 7 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:89:52: '*^L'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:89:52: '*^L'
                     {
                     match("*^L"); 
 
@@ -2465,7 +2390,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 8 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:89:60: '*^N'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:89:60: '*^N'
                     {
                     match("*^N"); 
 
@@ -2474,7 +2399,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 9 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:90:4: '*^O'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:90:4: '*^O'
                     {
                     match("*^O"); 
 
@@ -2483,7 +2408,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 10 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:90:12: '*^P'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:90:12: '*^P'
                     {
                     match("*^P"); 
 
@@ -2492,7 +2417,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 11 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:90:20: '*^R'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:90:20: '*^R'
                     {
                     match("*^R"); 
 
@@ -2501,7 +2426,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 12 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:90:28: '*^S'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:90:28: '*^S'
                     {
                     match("*^S"); 
 
@@ -2510,7 +2435,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 13 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:90:36: '*^T'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:90:36: '*^T'
                     {
                     match("*^T"); 
 
@@ -2519,7 +2444,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 14 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:90:44: '*^V'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:90:44: '*^V'
                     {
                     match("*^V"); 
 
@@ -2528,7 +2453,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 15 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:90:52: '*^W'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:90:52: '*^W'
                     {
                     match("*^W"); 
 
@@ -2537,7 +2462,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 16 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:90:60: '*^X'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:90:60: '*^X'
                     {
                     match("*^X"); 
 
@@ -2546,7 +2471,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 17 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:91:4: '*/'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:91:4: '*/'
                     {
                     match("*/"); 
 
@@ -2555,7 +2480,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 18 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:91:12: '*?'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:91:12: '*?'
                     {
                     match("*?"); 
 
@@ -2564,7 +2489,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 19 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:91:19: '*%'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:91:19: '*%'
                     {
                     match("*%"); 
 
@@ -2573,7 +2498,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 20 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:91:26: '*@'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:91:26: '*@'
                     {
                     match("*@"); 
 
@@ -2582,7 +2507,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 21 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:91:33: '*_'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:91:33: '*_'
                     {
                     match("*_"); 
 
@@ -2591,7 +2516,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 22 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:91:40: '*-'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:91:40: '*-'
                     {
                     match("*-"); 
 
@@ -2600,7 +2525,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 23 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:91:47: '*+'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:91:47: '*+'
                     {
                     match("*+"); 
 
@@ -2609,7 +2534,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 24 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:91:54: '*.'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:91:54: '*.'
                     {
                     match("*."); 
 
@@ -2618,7 +2543,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 25 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:91:61: '*|'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:91:61: '*|'
                     {
                     match("*|"); 
 
@@ -2627,7 +2552,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 26 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:91:68: '*,'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:91:68: '*,'
                     {
                     match("*,"); 
 
@@ -2636,7 +2561,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 27 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:92:4: '*;'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:92:4: '*;'
                     {
                     match("*;"); 
 
@@ -2645,7 +2570,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 28 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:92:11: '*~'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:92:11: '*~'
                     {
                     match("*~"); 
 
@@ -2654,7 +2579,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 29 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:92:18: '*:'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:92:18: '*:'
                     {
                     match("*:"); 
 
@@ -2663,7 +2588,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 30 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:92:25: '*^'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:92:25: '*^'
                     {
                     match("*^"); 
 
@@ -2672,7 +2597,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 31 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:92:32: '*<'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:92:32: '*<'
                     {
                     match("*<"); 
 
@@ -2681,7 +2606,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 32 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:92:39: '*>'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:92:39: '*>'
                     {
                     match("*>"); 
 
@@ -2690,7 +2615,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 33 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:92:46: '*('
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:92:46: '*('
                     {
                     match("*("); 
 
@@ -2699,7 +2624,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 34 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:92:53: '*)'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:92:53: '*)'
                     {
                     match("*)"); 
 
@@ -2708,7 +2633,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 35 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:93:5: '*\\''
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:93:5: '*\\''
                     {
                     match("*'"); 
 
@@ -2717,7 +2642,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 36 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:93:13: '*\\\\'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:93:13: '*\\\\'
                     {
                     match("*\\"); 
 
@@ -2726,7 +2651,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 37 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:93:21: '$$m'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:93:21: '$$m'
                     {
                     match("$$m"); 
 
@@ -2735,7 +2660,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 38 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:93:29: '$$s'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:93:29: '$$s'
                     {
                     match("$$s"); 
 
@@ -2744,7 +2669,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 39 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:93:37: '$\"'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:93:37: '$\"'
                     {
                     match("$\""); 
 
@@ -2753,7 +2678,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 40 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:94:4: '$^A'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:94:4: '$^A'
                     {
                     match("$^A"); 
 
@@ -2762,7 +2687,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 41 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:94:12: '$^C'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:94:12: '$^C'
                     {
                     match("$^C"); 
 
@@ -2771,7 +2696,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 42 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:94:20: '$^D'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:94:20: '$^D'
                     {
                     match("$^D"); 
 
@@ -2780,7 +2705,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 43 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:94:28: '$^E'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:94:28: '$^E'
                     {
                     match("$^E"); 
 
@@ -2789,7 +2714,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 44 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:94:36: '$^F'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:94:36: '$^F'
                     {
                     match("$^F"); 
 
@@ -2798,7 +2723,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 45 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:94:44: '$^H'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:94:44: '$^H'
                     {
                     match("$^H"); 
 
@@ -2807,7 +2732,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 46 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:94:52: '$^I'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:94:52: '$^I'
                     {
                     match("$^I"); 
 
@@ -2816,7 +2741,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 47 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:94:60: '$^L'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:94:60: '$^L'
                     {
                     match("$^L"); 
 
@@ -2825,7 +2750,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 48 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:94:68: '$^M'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:94:68: '$^M'
                     {
                     match("$^M"); 
 
@@ -2834,7 +2759,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 49 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:95:4: '$^N'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:95:4: '$^N'
                     {
                     match("$^N"); 
 
@@ -2843,7 +2768,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 50 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:95:12: '$^O'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:95:12: '$^O'
                     {
                     match("$^O"); 
 
@@ -2852,7 +2777,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 51 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:95:20: '$^P'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:95:20: '$^P'
                     {
                     match("$^P"); 
 
@@ -2861,7 +2786,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 52 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:95:28: '$^R'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:95:28: '$^R'
                     {
                     match("$^R"); 
 
@@ -2870,7 +2795,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 53 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:95:36: '$^S'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:95:36: '$^S'
                     {
                     match("$^S"); 
 
@@ -2879,7 +2804,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 54 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:95:44: '$^T'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:95:44: '$^T'
                     {
                     match("$^T"); 
 
@@ -2888,7 +2813,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 55 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:95:52: '$^V'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:95:52: '$^V'
                     {
                     match("$^V"); 
 
@@ -2897,7 +2822,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 56 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:95:60: '$^W'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:95:60: '$^W'
                     {
                     match("$^W"); 
 
@@ -2906,7 +2831,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 57 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:95:68: '$^X'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:95:68: '$^X'
                     {
                     match("$^X"); 
 
@@ -2915,7 +2840,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 58 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:96:4: '$/'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:96:4: '$/'
                     {
                     match("$/"); 
 
@@ -2924,7 +2849,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 59 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:96:11: '$?'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:96:11: '$?'
                     {
                     match("$?"); 
 
@@ -2933,7 +2858,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 60 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:96:18: '$%'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:96:18: '$%'
                     {
                     match("$%"); 
 
@@ -2942,7 +2867,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 61 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:96:25: '$@'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:96:25: '$@'
                     {
                     match("$@"); 
 
@@ -2951,7 +2876,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 62 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:96:32: '$_'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:96:32: '$_'
                     {
                     match("$_"); 
 
@@ -2960,7 +2885,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 63 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:96:39: '$-'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:96:39: '$-'
                     {
                     match("$-"); 
 
@@ -2969,7 +2894,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 64 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:96:46: '$+'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:96:46: '$+'
                     {
                     match("$+"); 
 
@@ -2978,7 +2903,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 65 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:96:53: '$.'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:96:53: '$.'
                     {
                     match("$."); 
 
@@ -2987,7 +2912,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 66 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:96:60: '$|'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:96:60: '$|'
                     {
                     match("$|"); 
 
@@ -2996,7 +2921,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 67 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:96:67: '$!'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:96:67: '$!'
                     {
                     match("$!"); 
 
@@ -3005,7 +2930,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 68 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:97:4: '$;'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:97:4: '$;'
                     {
                     match("$;"); 
 
@@ -3014,7 +2939,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 69 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:97:11: '$~'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:97:11: '$~'
                     {
                     match("$~"); 
 
@@ -3023,7 +2948,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 70 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:97:18: '$$'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:97:18: '$$'
                     {
                     match("$$"); 
 
@@ -3032,7 +2957,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 71 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:97:25: '$`'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:97:25: '$`'
                     {
                     match("$`"); 
 
@@ -3041,7 +2966,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 72 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:97:32: '$<'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:97:32: '$<'
                     {
                     match("$<"); 
 
@@ -3050,7 +2975,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 73 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:97:39: '$>'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:97:39: '$>'
                     {
                     match("$>"); 
 
@@ -3059,7 +2984,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 74 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:97:46: '$('
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:97:46: '$('
                     {
                     match("$("); 
 
@@ -3068,7 +2993,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 75 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:97:53: '$)'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:97:53: '$)'
                     {
                     match("$)"); 
 
@@ -3077,7 +3002,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 76 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:97:60: '$,'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:97:60: '$,'
                     {
                     match("$,"); 
 
@@ -3086,7 +3011,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 77 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:98:4: '$['
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:98:4: '$['
                     {
                     match("$["); 
 
@@ -3095,7 +3020,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 78 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:98:11: '$]'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:98:11: '$]'
                     {
                     match("$]"); 
 
@@ -3104,7 +3029,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 79 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:98:18: '$:'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:98:18: '$:'
                     {
                     match("$:"); 
 
@@ -3113,7 +3038,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 80 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:98:25: '$*'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:98:25: '$*'
                     {
                     match("$*"); 
 
@@ -3122,7 +3047,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 81 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:98:32: '$#'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:98:32: '$#'
                     {
                     match("$#"); 
 
@@ -3131,7 +3056,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 82 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:98:39: '$='
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:98:39: '$='
                     {
                     match("$="); 
 
@@ -3140,7 +3065,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 83 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:98:46: '$^'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:98:46: '$^'
                     {
                     match("$^"); 
 
@@ -3149,7 +3074,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 84 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:98:53: '$&'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:98:53: '$&'
                     {
                     match("$&"); 
 
@@ -3158,7 +3083,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 85 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:99:4: '$\\''
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:99:4: '$\\''
                     {
                     match("$'"); 
 
@@ -3167,7 +3092,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 86 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:99:12: '$\\\\'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:99:12: '$\\\\'
                     {
                     match("$\\"); 
 
@@ -3176,7 +3101,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 87 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:99:20: '@+'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:99:20: '@+'
                     {
                     match("@+"); 
 
@@ -3185,7 +3110,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 88 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:99:27: '@-'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:99:27: '@-'
                     {
                     match("@-"); 
 
@@ -3194,7 +3119,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 89 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:99:34: '@_'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:99:34: '@_'
                     {
                     match("@_"); 
 
@@ -3203,7 +3128,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 90 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:99:41: '@$'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:99:41: '@$'
                     {
                     match("@$"); 
 
@@ -3212,7 +3137,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 91 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:99:48: '%!'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:99:48: '%!'
                     {
                     match("%!"); 
 
@@ -3221,7 +3146,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 92 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:99:55: '%@'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:99:55: '%@'
                     {
                     match("%@"); 
 
@@ -3230,7 +3155,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 93 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:99:62: '%^H'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:99:62: '%^H'
                     {
                     match("%^H"); 
 
@@ -3258,12 +3183,12 @@ public class PerlLexer extends Lexer {
         try {
             int _type = COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:103:2: ( '#' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' )
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:103:4: '#' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:103:2: ( '#' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:103:4: '#' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
             {
             match('#'); 
 
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:103:8: (~ ( '\\n' | '\\r' ) )*
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:103:8: (~ ( '\\n' | '\\r' ) )*
             loop4:
             do {
                 int alt4=2;
@@ -3276,7 +3201,7 @@ public class PerlLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:
+            	    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:
             	    {
             	    if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\t')||(input.LA(1) >= '\u000B' && input.LA(1) <= '\f')||(input.LA(1) >= '\u000E' && input.LA(1) <= '\uFFFF') ) {
             	        input.consume();
@@ -3297,7 +3222,7 @@ public class PerlLexer extends Lexer {
             } while (true);
 
 
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:103:22: ( '\\r' )?
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:103:22: ( '\\r' )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -3306,7 +3231,7 @@ public class PerlLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:103:22: '\\r'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:103:22: '\\r'
                     {
                     match('\r'); 
 
@@ -3336,7 +3261,7 @@ public class PerlLexer extends Lexer {
         try {
             int _type = NUMBER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:107:8: ( ( '0x' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+ ( '.' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+ )? ) | ( '0b' ( '0' | '1' )+ ( '.' ( '0' | '1' )+ )? ) | ( '0' .. '9' ) ( ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? ) )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:107:8: ( ( '0x' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+ ( '.' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+ )? ) | ( '0b' ( '0' | '1' )+ ( '.' ( '0' | '1' )+ )? ) | ( '0' .. '9' ) ( ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? ) )
             int alt15=3;
             int LA15_0 = input.LA(1);
 
@@ -3369,16 +3294,16 @@ public class PerlLexer extends Lexer {
             }
             switch (alt15) {
                 case 1 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:108:2: ( '0x' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+ ( '.' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+ )? )
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:108:2: ( '0x' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+ ( '.' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+ )? )
                     {
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:108:2: ( '0x' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+ ( '.' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+ )? )
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:108:3: '0x' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+ ( '.' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+ )?
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:108:2: ( '0x' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+ ( '.' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+ )? )
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:108:3: '0x' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+ ( '.' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+ )?
                     {
                     match("0x"); 
 
 
 
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:108:8: ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:108:8: ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+
                     int cnt6=0;
                     loop6:
                     do {
@@ -3392,7 +3317,7 @@ public class PerlLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:
+                    	    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:
                     	    {
                     	    if ( (input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'F')||(input.LA(1) >= 'a' && input.LA(1) <= 'f') ) {
                     	        input.consume();
@@ -3417,7 +3342,7 @@ public class PerlLexer extends Lexer {
                     } while (true);
 
 
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:108:42: ( '.' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+ )?
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:108:42: ( '.' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+ )?
                     int alt8=2;
                     int LA8_0 = input.LA(1);
 
@@ -3426,11 +3351,11 @@ public class PerlLexer extends Lexer {
                     }
                     switch (alt8) {
                         case 1 :
-                            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:108:43: '.' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+
+                            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:108:43: '.' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+
                             {
                             match('.'); 
 
-                            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:108:47: ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+
+                            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:108:47: ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+
                             int cnt7=0;
                             loop7:
                             do {
@@ -3444,7 +3369,7 @@ public class PerlLexer extends Lexer {
 
                                 switch (alt7) {
                             	case 1 :
-                            	    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:
+                            	    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:
                             	    {
                             	    if ( (input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'F')||(input.LA(1) >= 'a' && input.LA(1) <= 'f') ) {
                             	        input.consume();
@@ -3481,16 +3406,16 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:109:4: ( '0b' ( '0' | '1' )+ ( '.' ( '0' | '1' )+ )? )
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:109:4: ( '0b' ( '0' | '1' )+ ( '.' ( '0' | '1' )+ )? )
                     {
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:109:4: ( '0b' ( '0' | '1' )+ ( '.' ( '0' | '1' )+ )? )
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:109:5: '0b' ( '0' | '1' )+ ( '.' ( '0' | '1' )+ )?
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:109:4: ( '0b' ( '0' | '1' )+ ( '.' ( '0' | '1' )+ )? )
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:109:5: '0b' ( '0' | '1' )+ ( '.' ( '0' | '1' )+ )?
                     {
                     match("0b"); 
 
 
 
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:109:10: ( '0' | '1' )+
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:109:10: ( '0' | '1' )+
                     int cnt9=0;
                     loop9:
                     do {
@@ -3504,7 +3429,7 @@ public class PerlLexer extends Lexer {
 
                         switch (alt9) {
                     	case 1 :
-                    	    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:
+                    	    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:
                     	    {
                     	    if ( (input.LA(1) >= '0' && input.LA(1) <= '1') ) {
                     	        input.consume();
@@ -3529,7 +3454,7 @@ public class PerlLexer extends Lexer {
                     } while (true);
 
 
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:109:23: ( '.' ( '0' | '1' )+ )?
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:109:23: ( '.' ( '0' | '1' )+ )?
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -3538,11 +3463,11 @@ public class PerlLexer extends Lexer {
                     }
                     switch (alt11) {
                         case 1 :
-                            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:109:24: '.' ( '0' | '1' )+
+                            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:109:24: '.' ( '0' | '1' )+
                             {
                             match('.'); 
 
-                            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:109:28: ( '0' | '1' )+
+                            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:109:28: ( '0' | '1' )+
                             int cnt10=0;
                             loop10:
                             do {
@@ -3556,7 +3481,7 @@ public class PerlLexer extends Lexer {
 
                                 switch (alt10) {
                             	case 1 :
-                            	    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:
+                            	    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:
                             	    {
                             	    if ( (input.LA(1) >= '0' && input.LA(1) <= '1') ) {
                             	        input.consume();
@@ -3593,7 +3518,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:110:4: ( '0' .. '9' ) ( ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? )
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:110:4: ( '0' .. '9' ) ( ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? )
                     {
                     if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
                         input.consume();
@@ -3605,10 +3530,10 @@ public class PerlLexer extends Lexer {
                     }
 
 
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:110:15: ( ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? )
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:110:16: ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )?
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:110:15: ( ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? )
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:110:16: ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )?
                     {
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:110:16: ( '0' .. '9' )*
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:110:16: ( '0' .. '9' )*
                     loop12:
                     do {
                         int alt12=2;
@@ -3621,7 +3546,7 @@ public class PerlLexer extends Lexer {
 
                         switch (alt12) {
                     	case 1 :
-                    	    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:
+                    	    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:
                     	    {
                     	    if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
                     	        input.consume();
@@ -3642,7 +3567,7 @@ public class PerlLexer extends Lexer {
                     } while (true);
 
 
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:110:28: ( '.' ( '0' .. '9' )+ )?
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:110:28: ( '.' ( '0' .. '9' )+ )?
                     int alt14=2;
                     int LA14_0 = input.LA(1);
 
@@ -3651,11 +3576,11 @@ public class PerlLexer extends Lexer {
                     }
                     switch (alt14) {
                         case 1 :
-                            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:110:29: '.' ( '0' .. '9' )+
+                            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:110:29: '.' ( '0' .. '9' )+
                             {
                             match('.'); 
 
-                            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:110:33: ( '0' .. '9' )+
+                            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:110:33: ( '0' .. '9' )+
                             int cnt13=0;
                             loop13:
                             do {
@@ -3669,7 +3594,7 @@ public class PerlLexer extends Lexer {
 
                                 switch (alt13) {
                             	case 1 :
-                            	    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:
+                            	    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:
                             	    {
                             	    if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
                             	        input.consume();
@@ -3721,68 +3646,30 @@ public class PerlLexer extends Lexer {
         try {
             int _type = SUBST_OR_MATCH_OPER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:114:2: ( ( 'tr/' | 'qq/' | 'qx/' | 'qw/' | 'qr/' | 's/' | 'y/' | 'm/' | 'q/' ) )
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:114:4: ( 'tr/' | 'qq/' | 'qx/' | 'qw/' | 'qr/' | 's/' | 'y/' | 'm/' | 'q/' )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:114:2: ( ( 'tr/' | 's/' | 'y/' | 'm/' ) )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:114:4: ( 'tr/' | 's/' | 'y/' | 'm/' )
             {
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:114:4: ( 'tr/' | 'qq/' | 'qx/' | 'qw/' | 'qr/' | 's/' | 'y/' | 'm/' | 'q/' )
-            int alt16=9;
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:114:4: ( 'tr/' | 's/' | 'y/' | 'm/' )
+            int alt16=4;
             switch ( input.LA(1) ) {
             case 't':
                 {
                 alt16=1;
                 }
                 break;
-            case 'q':
-                {
-                switch ( input.LA(2) ) {
-                case 'q':
-                    {
-                    alt16=2;
-                    }
-                    break;
-                case 'x':
-                    {
-                    alt16=3;
-                    }
-                    break;
-                case 'w':
-                    {
-                    alt16=4;
-                    }
-                    break;
-                case 'r':
-                    {
-                    alt16=5;
-                    }
-                    break;
-                case '/':
-                    {
-                    alt16=9;
-                    }
-                    break;
-                default:
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 16, 2, input);
-
-                    throw nvae;
-
-                }
-
-                }
-                break;
             case 's':
                 {
-                alt16=6;
+                alt16=2;
                 }
                 break;
             case 'y':
                 {
-                alt16=7;
+                alt16=3;
                 }
                 break;
             case 'm':
                 {
-                alt16=8;
+                alt16=4;
                 }
                 break;
             default:
@@ -3795,7 +3682,7 @@ public class PerlLexer extends Lexer {
 
             switch (alt16) {
                 case 1 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:114:5: 'tr/'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:114:5: 'tr/'
                     {
                     match("tr/"); 
 
@@ -3804,43 +3691,7 @@ public class PerlLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:114:13: 'qq/'
-                    {
-                    match("qq/"); 
-
-
-
-                    }
-                    break;
-                case 3 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:114:21: 'qx/'
-                    {
-                    match("qx/"); 
-
-
-
-                    }
-                    break;
-                case 4 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:114:29: 'qw/'
-                    {
-                    match("qw/"); 
-
-
-
-                    }
-                    break;
-                case 5 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:114:37: 'qr/'
-                    {
-                    match("qr/"); 
-
-
-
-                    }
-                    break;
-                case 6 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:114:45: 's/'
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:114:13: 's/'
                     {
                     match("s/"); 
 
@@ -3848,8 +3699,8 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 7 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:114:52: 'y/'
+                case 3 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:114:20: 'y/'
                     {
                     match("y/"); 
 
@@ -3857,19 +3708,10 @@ public class PerlLexer extends Lexer {
 
                     }
                     break;
-                case 8 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:114:59: 'm/'
+                case 4 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:114:27: 'm/'
                     {
                     match("m/"); 
-
-
-
-                    }
-                    break;
-                case 9 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:114:66: 'q/'
-                    {
-                    match("q/"); 
 
 
 
@@ -3895,8 +3737,8 @@ public class PerlLexer extends Lexer {
         try {
             int _type = LBRACK;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:117:9: ( '[' )
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:117:11: '['
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:117:9: ( '[' )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:117:11: '['
             {
             match('['); 
 
@@ -3916,8 +3758,8 @@ public class PerlLexer extends Lexer {
         try {
             int _type = RBRACK;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:118:9: ( ']' )
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:118:11: ']'
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:118:9: ( ']' )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:118:11: ']'
             {
             match(']'); 
 
@@ -3937,8 +3779,8 @@ public class PerlLexer extends Lexer {
         try {
             int _type = LPAREN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:119:9: ( '(' )
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:119:11: '('
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:119:9: ( '(' )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:119:11: '('
             {
             match('('); 
 
@@ -3958,8 +3800,8 @@ public class PerlLexer extends Lexer {
         try {
             int _type = RPAREN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:120:9: ( ')' )
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:120:11: ')'
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:120:9: ( ')' )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:120:11: ')'
             {
             match(')'); 
 
@@ -3979,8 +3821,8 @@ public class PerlLexer extends Lexer {
         try {
             int _type = LCURLY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:121:9: ( '{' )
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:121:11: '{'
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:121:9: ( '{' )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:121:11: '{'
             {
             match('{'); 
 
@@ -4000,8 +3842,8 @@ public class PerlLexer extends Lexer {
         try {
             int _type = RCURLY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:122:9: ( '}' )
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:122:11: '}'
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:122:9: ( '}' )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:122:11: '}'
             {
             match('}'); 
 
@@ -4021,8 +3863,8 @@ public class PerlLexer extends Lexer {
         try {
             int _type = COMMA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:125:8: ( ',' )
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:125:10: ','
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:125:8: ( ',' )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:125:10: ','
             {
             match(','); 
 
@@ -4042,8 +3884,8 @@ public class PerlLexer extends Lexer {
         try {
             int _type = SEMI_COLON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:126:12: ( ';' )
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:126:14: ';'
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:126:12: ( ';' )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:126:14: ';'
             {
             match(';'); 
 
@@ -4063,8 +3905,8 @@ public class PerlLexer extends Lexer {
         try {
             int _type = COLON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:127:8: ( ':' )
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:127:10: ':'
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:127:8: ( ':' )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:127:10: ':'
             {
             match(':'); 
 
@@ -4084,8 +3926,8 @@ public class PerlLexer extends Lexer {
         try {
             int _type = DOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:128:6: ( '.' )
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:128:8: '.'
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:128:6: ( '.' )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:128:8: '.'
             {
             match('.'); 
 
@@ -4105,8 +3947,8 @@ public class PerlLexer extends Lexer {
         try {
             int _type = EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:131:7: ( '=' )
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:131:9: '='
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:131:7: ( '=' )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:131:9: '='
             {
             match('='); 
 
@@ -4126,8 +3968,8 @@ public class PerlLexer extends Lexer {
         try {
             int _type = PLUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:132:6: ( '+' )
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:132:8: '+'
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:132:6: ( '+' )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:132:8: '+'
             {
             match('+'); 
 
@@ -4147,8 +3989,8 @@ public class PerlLexer extends Lexer {
         try {
             int _type = MINUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:133:7: ( '-' )
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:133:9: '-'
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:133:7: ( '-' )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:133:9: '-'
             {
             match('-'); 
 
@@ -4168,8 +4010,8 @@ public class PerlLexer extends Lexer {
         try {
             int _type = MULTIPLY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:134:9: ( '*' )
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:134:11: '*'
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:134:9: ( '*' )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:134:11: '*'
             {
             match('*'); 
 
@@ -4189,8 +4031,8 @@ public class PerlLexer extends Lexer {
         try {
             int _type = DIVIDE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:135:8: ( '/' )
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:135:10: '/'
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:135:8: ( '/' )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:135:10: '/'
             {
             match('/'); 
 
@@ -4210,8 +4052,8 @@ public class PerlLexer extends Lexer {
         try {
             int _type = GT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:136:4: ( '>' )
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:136:6: '>'
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:136:4: ( '>' )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:136:6: '>'
             {
             match('>'); 
 
@@ -4231,8 +4073,8 @@ public class PerlLexer extends Lexer {
         try {
             int _type = LT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:137:4: ( '<' )
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:137:6: '<'
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:137:4: ( '<' )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:137:6: '<'
             {
             match('<'); 
 
@@ -4252,8 +4094,8 @@ public class PerlLexer extends Lexer {
         try {
             int _type = SQUOTE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:140:8: ( '\\'' )
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:140:10: '\\''
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:140:8: ( '\\'' )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:140:10: '\\''
             {
             match('\''); 
 
@@ -4273,8 +4115,8 @@ public class PerlLexer extends Lexer {
         try {
             int _type = DQUOTE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:141:8: ( '\"' )
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:141:10: '\"'
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:141:8: ( '\"' )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:141:10: '\"'
             {
             match('\"'); 
 
@@ -4294,10 +4136,18 @@ public class PerlLexer extends Lexer {
         try {
             int _type = BACKSLASH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:146:2: ( '\\\\' )
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:146:4: '\\\\'
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:146:2: ( '$' | '@' )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:
             {
-            match('\\'); 
+            if ( input.LA(1)=='$'||input.LA(1)=='@' ) {
+                input.consume();
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;
+            }
+
 
             }
 
@@ -4315,8 +4165,8 @@ public class PerlLexer extends Lexer {
         try {
             int _type = UNDERSCORE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:148:2: ( '_' )
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:148:4: '_'
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:148:2: ( '_' )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:148:4: '_'
             {
             match('_'); 
 
@@ -4336,8 +4186,8 @@ public class PerlLexer extends Lexer {
         try {
             int _type = VARIABLE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:150:10: ( ( '$' | '@' | '%' ) ( '$' | '@' | '%' | '#' )? ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )+ )
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:150:12: ( '$' | '@' | '%' ) ( '$' | '@' | '%' | '#' )? ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )+
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:150:10: ( ( '$' | '@' | '%' ) ( '$' | '@' | '%' | '#' )? ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )+ )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:150:12: ( '$' | '@' | '%' ) ( '$' | '@' | '%' | '#' )? ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )+
             {
             if ( (input.LA(1) >= '$' && input.LA(1) <= '%')||input.LA(1)=='@' ) {
                 input.consume();
@@ -4349,7 +4199,7 @@ public class PerlLexer extends Lexer {
             }
 
 
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:150:30: ( '$' | '@' | '%' | '#' )?
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:150:30: ( '$' | '@' | '%' | '#' )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -4358,7 +4208,7 @@ public class PerlLexer extends Lexer {
             }
             switch (alt17) {
                 case 1 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:
                     {
                     if ( (input.LA(1) >= '#' && input.LA(1) <= '%')||input.LA(1)=='@' ) {
                         input.consume();
@@ -4376,7 +4226,7 @@ public class PerlLexer extends Lexer {
             }
 
 
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:150:55: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )+
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:150:55: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )+
             int cnt18=0;
             loop18:
             do {
@@ -4390,7 +4240,7 @@ public class PerlLexer extends Lexer {
 
                 switch (alt18) {
             	case 1 :
-            	    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:
+            	    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:
             	    {
             	    if ( (input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
             	        input.consume();
@@ -4431,10 +4281,10 @@ public class PerlLexer extends Lexer {
         try {
             int _type = WORD_CHAR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:153:12: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' )+ )
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:153:14: ( 'a' .. 'z' | 'A' .. 'Z' | '_' )+
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:153:12: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' )+ )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:153:14: ( 'a' .. 'z' | 'A' .. 'Z' | '_' )+
             {
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:153:14: ( 'a' .. 'z' | 'A' .. 'Z' | '_' )+
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:153:14: ( 'a' .. 'z' | 'A' .. 'Z' | '_' )+
             int cnt19=0;
             loop19:
             do {
@@ -4448,7 +4298,7 @@ public class PerlLexer extends Lexer {
 
                 switch (alt19) {
             	case 1 :
-            	    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:
+            	    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:
             	    {
             	    if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
             	        input.consume();
@@ -4489,30 +4339,107 @@ public class PerlLexer extends Lexer {
         try {
             int _type = STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:157:5: ( '\"' ( EscapeSequence |~ ( '\\\\' | '\"' ) )* ( '\"' )? | '\\'' ( EscapeSequence |~ ( '\\\\' | '\\'' ) )* ( '\\'' )? )
-            int alt24=2;
-            int LA24_0 = input.LA(1);
+            CommonToken escaped=null;
+            int normal;
 
-            if ( (LA24_0=='\"') ) {
-                alt24=1;
-            }
-            else if ( (LA24_0=='\'') ) {
-                alt24=2;
-            }
-            else {
+            StringBuilder lBuf = new StringBuilder();
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:162:5: ( '\"' (escaped= EscapeSequence |normal=~ ( '\\\"' | '\\\\' ) )+ ( '\"' )? | '\\'' (escaped= EscapeSequence |normal=~ ( '\\'' | '\\\\' | '\\n' | '\\r' ) )+ ( '\\'' )? | 'q' ( 'q' | 'w' | 'r' )? '|' (escaped= EscapeSequence |normal=~ ( '\\|' | '\\\\' | '\\n' | '\\r' ) )+ '|' | 'q' ( 'q' | 'w' | 'r' )? '/' (escaped= EscapeSequence |normal=~ ( '\\/' | '\\\\' | '\\n' | '\\r' ) )* ( '/' )? | 'q' ( 'q' | 'w' | 'r' )? '{' (escaped= EscapeSequence |normal=~ ( '\\{' | '\\\\' | '\\n' | '\\r' ) )+ '}' | 'q' ( 'q' | 'w' | 'r' )? '(' (escaped= EscapeSequence |normal=~ ( '\\(' | '\\\\' ) )+ ( ')' )? )
+            int alt34=6;
+            switch ( input.LA(1) ) {
+            case '\"':
+                {
+                alt34=1;
+                }
+                break;
+            case '\'':
+                {
+                alt34=2;
+                }
+                break;
+            case 'q':
+                {
+                switch ( input.LA(2) ) {
+                case 'q':
+                case 'r':
+                case 'w':
+                    {
+                    switch ( input.LA(3) ) {
+                    case '|':
+                        {
+                        alt34=3;
+                        }
+                        break;
+                    case '/':
+                        {
+                        alt34=4;
+                        }
+                        break;
+                    case '{':
+                        {
+                        alt34=5;
+                        }
+                        break;
+                    case '(':
+                        {
+                        alt34=6;
+                        }
+                        break;
+                    default:
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 34, 4, input);
+
+                        throw nvae;
+
+                    }
+
+                    }
+                    break;
+                case '|':
+                    {
+                    alt34=3;
+                    }
+                    break;
+                case '/':
+                    {
+                    alt34=4;
+                    }
+                    break;
+                case '{':
+                    {
+                    alt34=5;
+                    }
+                    break;
+                case '(':
+                    {
+                    alt34=6;
+                    }
+                    break;
+                default:
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 34, 3, input);
+
+                    throw nvae;
+
+                }
+
+                }
+                break;
+            default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 24, 0, input);
+                    new NoViableAltException("", 34, 0, input);
 
                 throw nvae;
 
             }
-            switch (alt24) {
+
+            switch (alt34) {
                 case 1 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:157:8: '\"' ( EscapeSequence |~ ( '\\\\' | '\"' ) )* ( '\"' )?
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:163:12: '\"' (escaped= EscapeSequence |normal=~ ( '\\\"' | '\\\\' ) )+ ( '\"' )?
                     {
                     match('\"'); 
 
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:157:12: ( EscapeSequence |~ ( '\\\\' | '\"' ) )*
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:164:12: (escaped= EscapeSequence |normal=~ ( '\\\"' | '\\\\' ) )+
+                    int cnt20=0;
                     loop20:
                     do {
                         int alt20=3;
@@ -4528,16 +4455,26 @@ public class PerlLexer extends Lexer {
 
                         switch (alt20) {
                     	case 1 :
-                    	    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:157:15: EscapeSequence
+                    	    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:164:14: escaped= EscapeSequence
                     	    {
+                    	    int escapedStart1949 = getCharIndex();
+                    	    int escapedStartLine1949 = getLine();
+                    	    int escapedStartCharPos1949 = getCharPositionInLine();
                     	    mEscapeSequence(); 
+                    	    escaped = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, escapedStart1949, getCharIndex()-1);
+                    	    escaped.setLine(escapedStartLine1949);
+                    	    escaped.setCharPositionInLine(escapedStartCharPos1949);
 
+
+                    	    lBuf.append(getText());
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:157:32: ~ ( '\\\\' | '\"' )
+                    	    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:166:14: normal=~ ( '\\\"' | '\\\\' )
                     	    {
+                    	    normal= input.LA(1);
+
                     	    if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '!')||(input.LA(1) >= '#' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) {
                     	        input.consume();
                     	    }
@@ -4548,16 +4485,22 @@ public class PerlLexer extends Lexer {
                     	    }
 
 
+                    	    lBuf.appendCodePoint(normal);
+
                     	    }
                     	    break;
 
                     	default :
-                    	    break loop20;
+                    	    if ( cnt20 >= 1 ) break loop20;
+                                EarlyExitException eee =
+                                    new EarlyExitException(20, input);
+                                throw eee;
                         }
+                        cnt20++;
                     } while (true);
 
 
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:157:47: ( '\"' )?
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:167:12: ( '\"' )?
                     int alt21=2;
                     int LA21_0 = input.LA(1);
 
@@ -4566,7 +4509,7 @@ public class PerlLexer extends Lexer {
                     }
                     switch (alt21) {
                         case 1 :
-                            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:157:47: '\"'
+                            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:167:12: '\"'
                             {
                             match('\"'); 
 
@@ -4576,14 +4519,17 @@ public class PerlLexer extends Lexer {
                     }
 
 
+                    setText(lBuf.toString());
+
                     }
                     break;
                 case 2 :
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:158:7: '\\'' ( EscapeSequence |~ ( '\\\\' | '\\'' ) )* ( '\\'' )?
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:170:12: '\\'' (escaped= EscapeSequence |normal=~ ( '\\'' | '\\\\' | '\\n' | '\\r' ) )+ ( '\\'' )?
                     {
                     match('\''); 
 
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:158:12: ( EscapeSequence |~ ( '\\\\' | '\\'' ) )*
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:171:12: (escaped= EscapeSequence |normal=~ ( '\\'' | '\\\\' | '\\n' | '\\r' ) )+
+                    int cnt22=0;
                     loop22:
                     do {
                         int alt22=3;
@@ -4592,24 +4538,34 @@ public class PerlLexer extends Lexer {
                         if ( (LA22_0=='\\') ) {
                             alt22=1;
                         }
-                        else if ( ((LA22_0 >= '\u0000' && LA22_0 <= '&')||(LA22_0 >= '(' && LA22_0 <= '[')||(LA22_0 >= ']' && LA22_0 <= '\uFFFF')) ) {
+                        else if ( ((LA22_0 >= '\u0000' && LA22_0 <= '\t')||(LA22_0 >= '\u000B' && LA22_0 <= '\f')||(LA22_0 >= '\u000E' && LA22_0 <= '&')||(LA22_0 >= '(' && LA22_0 <= '[')||(LA22_0 >= ']' && LA22_0 <= '\uFFFF')) ) {
                             alt22=2;
                         }
 
 
                         switch (alt22) {
                     	case 1 :
-                    	    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:158:15: EscapeSequence
+                    	    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:171:14: escaped= EscapeSequence
                     	    {
+                    	    int escapedStart2076 = getCharIndex();
+                    	    int escapedStartLine2076 = getLine();
+                    	    int escapedStartCharPos2076 = getCharPositionInLine();
                     	    mEscapeSequence(); 
+                    	    escaped = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, escapedStart2076, getCharIndex()-1);
+                    	    escaped.setLine(escapedStartLine2076);
+                    	    escaped.setCharPositionInLine(escapedStartCharPos2076);
 
+
+                    	    lBuf.append(getText());
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:158:32: ~ ( '\\\\' | '\\'' )
+                    	    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:172:14: normal=~ ( '\\'' | '\\\\' | '\\n' | '\\r' )
                     	    {
-                    	    if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '&')||(input.LA(1) >= '(' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) {
+                    	    normal= input.LA(1);
+
+                    	    if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\t')||(input.LA(1) >= '\u000B' && input.LA(1) <= '\f')||(input.LA(1) >= '\u000E' && input.LA(1) <= '&')||(input.LA(1) >= '(' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) {
                     	        input.consume();
                     	    }
                     	    else {
@@ -4619,16 +4575,22 @@ public class PerlLexer extends Lexer {
                     	    }
 
 
+                    	    lBuf.appendCodePoint(normal);
+
                     	    }
                     	    break;
 
                     	default :
-                    	    break loop22;
+                    	    if ( cnt22 >= 1 ) break loop22;
+                                EarlyExitException eee =
+                                    new EarlyExitException(22, input);
+                                throw eee;
                         }
+                        cnt22++;
                     } while (true);
 
 
-                    // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:158:48: ( '\\'' )?
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:173:12: ( '\\'' )?
                     int alt23=2;
                     int LA23_0 = input.LA(1);
 
@@ -4637,7 +4599,7 @@ public class PerlLexer extends Lexer {
                     }
                     switch (alt23) {
                         case 1 :
-                            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:158:48: '\\''
+                            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:173:12: '\\''
                             {
                             match('\''); 
 
@@ -4646,6 +4608,454 @@ public class PerlLexer extends Lexer {
 
                     }
 
+
+                    setText(lBuf.toString());
+
+                    }
+                    break;
+                case 3 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:176:12: 'q' ( 'q' | 'w' | 'r' )? '|' (escaped= EscapeSequence |normal=~ ( '\\|' | '\\\\' | '\\n' | '\\r' ) )+ '|'
+                    {
+                    match('q'); 
+
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:176:16: ( 'q' | 'w' | 'r' )?
+                    int alt24=2;
+                    int LA24_0 = input.LA(1);
+
+                    if ( ((LA24_0 >= 'q' && LA24_0 <= 'r')||LA24_0=='w') ) {
+                        alt24=1;
+                    }
+                    switch (alt24) {
+                        case 1 :
+                            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:
+                            {
+                            if ( (input.LA(1) >= 'q' && input.LA(1) <= 'r')||input.LA(1)=='w' ) {
+                                input.consume();
+                            }
+                            else {
+                                MismatchedSetException mse = new MismatchedSetException(null,input);
+                                recover(mse);
+                                throw mse;
+                            }
+
+
+                            }
+                            break;
+
+                    }
+
+
+                    match('|'); 
+
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:177:12: (escaped= EscapeSequence |normal=~ ( '\\|' | '\\\\' | '\\n' | '\\r' ) )+
+                    int cnt25=0;
+                    loop25:
+                    do {
+                        int alt25=3;
+                        int LA25_0 = input.LA(1);
+
+                        if ( (LA25_0=='\\') ) {
+                            alt25=1;
+                        }
+                        else if ( ((LA25_0 >= '\u0000' && LA25_0 <= '\t')||(LA25_0 >= '\u000B' && LA25_0 <= '\f')||(LA25_0 >= '\u000E' && LA25_0 <= '[')||(LA25_0 >= ']' && LA25_0 <= '{')||(LA25_0 >= '}' && LA25_0 <= '\uFFFF')) ) {
+                            alt25=2;
+                        }
+
+
+                        switch (alt25) {
+                    	case 1 :
+                    	    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:177:14: escaped= EscapeSequence
+                    	    {
+                    	    int escapedStart2201 = getCharIndex();
+                    	    int escapedStartLine2201 = getLine();
+                    	    int escapedStartCharPos2201 = getCharPositionInLine();
+                    	    mEscapeSequence(); 
+                    	    escaped = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, escapedStart2201, getCharIndex()-1);
+                    	    escaped.setLine(escapedStartLine2201);
+                    	    escaped.setCharPositionInLine(escapedStartCharPos2201);
+
+
+                    	    lBuf.append(getText());
+
+                    	    }
+                    	    break;
+                    	case 2 :
+                    	    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:178:14: normal=~ ( '\\|' | '\\\\' | '\\n' | '\\r' )
+                    	    {
+                    	    normal= input.LA(1);
+
+                    	    if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\t')||(input.LA(1) >= '\u000B' && input.LA(1) <= '\f')||(input.LA(1) >= '\u000E' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '{')||(input.LA(1) >= '}' && input.LA(1) <= '\uFFFF') ) {
+                    	        input.consume();
+                    	    }
+                    	    else {
+                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
+                    	        recover(mse);
+                    	        throw mse;
+                    	    }
+
+
+                    	    lBuf.appendCodePoint(normal);
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    if ( cnt25 >= 1 ) break loop25;
+                                EarlyExitException eee =
+                                    new EarlyExitException(25, input);
+                                throw eee;
+                        }
+                        cnt25++;
+                    } while (true);
+
+
+                    match('|'); 
+
+                    setText(lBuf.toString());
+
+                    }
+                    break;
+                case 4 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:182:12: 'q' ( 'q' | 'w' | 'r' )? '/' (escaped= EscapeSequence |normal=~ ( '\\/' | '\\\\' | '\\n' | '\\r' ) )* ( '/' )?
+                    {
+                    match('q'); 
+
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:182:16: ( 'q' | 'w' | 'r' )?
+                    int alt26=2;
+                    int LA26_0 = input.LA(1);
+
+                    if ( ((LA26_0 >= 'q' && LA26_0 <= 'r')||LA26_0=='w') ) {
+                        alt26=1;
+                    }
+                    switch (alt26) {
+                        case 1 :
+                            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:
+                            {
+                            if ( (input.LA(1) >= 'q' && input.LA(1) <= 'r')||input.LA(1)=='w' ) {
+                                input.consume();
+                            }
+                            else {
+                                MismatchedSetException mse = new MismatchedSetException(null,input);
+                                recover(mse);
+                                throw mse;
+                            }
+
+
+                            }
+                            break;
+
+                    }
+
+
+                    match('/'); 
+
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:183:12: (escaped= EscapeSequence |normal=~ ( '\\/' | '\\\\' | '\\n' | '\\r' ) )*
+                    loop27:
+                    do {
+                        int alt27=3;
+                        int LA27_0 = input.LA(1);
+
+                        if ( (LA27_0=='\\') ) {
+                            alt27=1;
+                        }
+                        else if ( ((LA27_0 >= '\u0000' && LA27_0 <= '\t')||(LA27_0 >= '\u000B' && LA27_0 <= '\f')||(LA27_0 >= '\u000E' && LA27_0 <= '.')||(LA27_0 >= '0' && LA27_0 <= '[')||(LA27_0 >= ']' && LA27_0 <= '\uFFFF')) ) {
+                            alt27=2;
+                        }
+
+
+                        switch (alt27) {
+                    	case 1 :
+                    	    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:183:14: escaped= EscapeSequence
+                    	    {
+                    	    int escapedStart2327 = getCharIndex();
+                    	    int escapedStartLine2327 = getLine();
+                    	    int escapedStartCharPos2327 = getCharPositionInLine();
+                    	    mEscapeSequence(); 
+                    	    escaped = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, escapedStart2327, getCharIndex()-1);
+                    	    escaped.setLine(escapedStartLine2327);
+                    	    escaped.setCharPositionInLine(escapedStartCharPos2327);
+
+
+                    	    lBuf.append(getText());
+
+                    	    }
+                    	    break;
+                    	case 2 :
+                    	    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:184:14: normal=~ ( '\\/' | '\\\\' | '\\n' | '\\r' )
+                    	    {
+                    	    normal= input.LA(1);
+
+                    	    if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\t')||(input.LA(1) >= '\u000B' && input.LA(1) <= '\f')||(input.LA(1) >= '\u000E' && input.LA(1) <= '.')||(input.LA(1) >= '0' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) {
+                    	        input.consume();
+                    	    }
+                    	    else {
+                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
+                    	        recover(mse);
+                    	        throw mse;
+                    	    }
+
+
+                    	    lBuf.appendCodePoint(normal);
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop27;
+                        }
+                    } while (true);
+
+
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:185:12: ( '/' )?
+                    int alt28=2;
+                    int LA28_0 = input.LA(1);
+
+                    if ( (LA28_0=='/') ) {
+                        alt28=1;
+                    }
+                    switch (alt28) {
+                        case 1 :
+                            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:185:12: '/'
+                            {
+                            match('/'); 
+
+                            }
+                            break;
+
+                    }
+
+
+                    setText(lBuf.toString());
+
+                    }
+                    break;
+                case 5 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:188:12: 'q' ( 'q' | 'w' | 'r' )? '{' (escaped= EscapeSequence |normal=~ ( '\\{' | '\\\\' | '\\n' | '\\r' ) )+ '}'
+                    {
+                    match('q'); 
+
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:188:16: ( 'q' | 'w' | 'r' )?
+                    int alt29=2;
+                    int LA29_0 = input.LA(1);
+
+                    if ( ((LA29_0 >= 'q' && LA29_0 <= 'r')||LA29_0=='w') ) {
+                        alt29=1;
+                    }
+                    switch (alt29) {
+                        case 1 :
+                            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:
+                            {
+                            if ( (input.LA(1) >= 'q' && input.LA(1) <= 'r')||input.LA(1)=='w' ) {
+                                input.consume();
+                            }
+                            else {
+                                MismatchedSetException mse = new MismatchedSetException(null,input);
+                                recover(mse);
+                                throw mse;
+                            }
+
+
+                            }
+                            break;
+
+                    }
+
+
+                    match('{'); 
+
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:189:12: (escaped= EscapeSequence |normal=~ ( '\\{' | '\\\\' | '\\n' | '\\r' ) )+
+                    int cnt30=0;
+                    loop30:
+                    do {
+                        int alt30=3;
+                        int LA30_0 = input.LA(1);
+
+                        if ( (LA30_0=='}') ) {
+                            int LA30_1 = input.LA(2);
+
+                            if ( ((LA30_1 >= '\u0000' && LA30_1 <= '\t')||(LA30_1 >= '\u000B' && LA30_1 <= '\f')||(LA30_1 >= '\u000E' && LA30_1 <= 'z')||(LA30_1 >= '|' && LA30_1 <= '\uFFFF')) ) {
+                                alt30=2;
+                            }
+
+
+                        }
+                        else if ( (LA30_0=='\\') ) {
+                            alt30=1;
+                        }
+                        else if ( ((LA30_0 >= '\u0000' && LA30_0 <= '\t')||(LA30_0 >= '\u000B' && LA30_0 <= '\f')||(LA30_0 >= '\u000E' && LA30_0 <= '[')||(LA30_0 >= ']' && LA30_0 <= 'z')||LA30_0=='|'||(LA30_0 >= '~' && LA30_0 <= '\uFFFF')) ) {
+                            alt30=2;
+                        }
+
+
+                        switch (alt30) {
+                    	case 1 :
+                    	    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:189:14: escaped= EscapeSequence
+                    	    {
+                    	    int escapedStart2455 = getCharIndex();
+                    	    int escapedStartLine2455 = getLine();
+                    	    int escapedStartCharPos2455 = getCharPositionInLine();
+                    	    mEscapeSequence(); 
+                    	    escaped = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, escapedStart2455, getCharIndex()-1);
+                    	    escaped.setLine(escapedStartLine2455);
+                    	    escaped.setCharPositionInLine(escapedStartCharPos2455);
+
+
+                    	    lBuf.append(getText());
+
+                    	    }
+                    	    break;
+                    	case 2 :
+                    	    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:190:14: normal=~ ( '\\{' | '\\\\' | '\\n' | '\\r' )
+                    	    {
+                    	    normal= input.LA(1);
+
+                    	    if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\t')||(input.LA(1) >= '\u000B' && input.LA(1) <= '\f')||(input.LA(1) >= '\u000E' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= 'z')||(input.LA(1) >= '|' && input.LA(1) <= '\uFFFF') ) {
+                    	        input.consume();
+                    	    }
+                    	    else {
+                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
+                    	        recover(mse);
+                    	        throw mse;
+                    	    }
+
+
+                    	    lBuf.appendCodePoint(normal);
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    if ( cnt30 >= 1 ) break loop30;
+                                EarlyExitException eee =
+                                    new EarlyExitException(30, input);
+                                throw eee;
+                        }
+                        cnt30++;
+                    } while (true);
+
+
+                    match('}'); 
+
+                    setText(lBuf.toString());
+
+                    }
+                    break;
+                case 6 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:194:12: 'q' ( 'q' | 'w' | 'r' )? '(' (escaped= EscapeSequence |normal=~ ( '\\(' | '\\\\' ) )+ ( ')' )?
+                    {
+                    match('q'); 
+
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:194:16: ( 'q' | 'w' | 'r' )?
+                    int alt31=2;
+                    int LA31_0 = input.LA(1);
+
+                    if ( ((LA31_0 >= 'q' && LA31_0 <= 'r')||LA31_0=='w') ) {
+                        alt31=1;
+                    }
+                    switch (alt31) {
+                        case 1 :
+                            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:
+                            {
+                            if ( (input.LA(1) >= 'q' && input.LA(1) <= 'r')||input.LA(1)=='w' ) {
+                                input.consume();
+                            }
+                            else {
+                                MismatchedSetException mse = new MismatchedSetException(null,input);
+                                recover(mse);
+                                throw mse;
+                            }
+
+
+                            }
+                            break;
+
+                    }
+
+
+                    match('('); 
+
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:195:12: (escaped= EscapeSequence |normal=~ ( '\\(' | '\\\\' ) )+
+                    int cnt32=0;
+                    loop32:
+                    do {
+                        int alt32=3;
+                        int LA32_0 = input.LA(1);
+
+                        if ( ((LA32_0 >= '\u0000' && LA32_0 <= '\'')||(LA32_0 >= ')' && LA32_0 <= '[')||(LA32_0 >= ']' && LA32_0 <= '\uFFFF')) ) {
+                            alt32=2;
+                        }
+                        else if ( (LA32_0=='\\') ) {
+                            alt32=1;
+                        }
+
+
+                        switch (alt32) {
+                    	case 1 :
+                    	    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:195:14: escaped= EscapeSequence
+                    	    {
+                    	    int escapedStart2581 = getCharIndex();
+                    	    int escapedStartLine2581 = getLine();
+                    	    int escapedStartCharPos2581 = getCharPositionInLine();
+                    	    mEscapeSequence(); 
+                    	    escaped = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, escapedStart2581, getCharIndex()-1);
+                    	    escaped.setLine(escapedStartLine2581);
+                    	    escaped.setCharPositionInLine(escapedStartCharPos2581);
+
+
+                    	    lBuf.append(getText());
+
+                    	    }
+                    	    break;
+                    	case 2 :
+                    	    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:197:14: normal=~ ( '\\(' | '\\\\' )
+                    	    {
+                    	    normal= input.LA(1);
+
+                    	    if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\'')||(input.LA(1) >= ')' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) {
+                    	        input.consume();
+                    	    }
+                    	    else {
+                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
+                    	        recover(mse);
+                    	        throw mse;
+                    	    }
+
+
+                    	    lBuf.appendCodePoint(normal);
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    if ( cnt32 >= 1 ) break loop32;
+                                EarlyExitException eee =
+                                    new EarlyExitException(32, input);
+                                throw eee;
+                        }
+                        cnt32++;
+                    } while (true);
+
+
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:198:12: ( ')' )?
+                    int alt33=2;
+                    int LA33_0 = input.LA(1);
+
+                    if ( (LA33_0==')') ) {
+                        alt33=1;
+                    }
+                    switch (alt33) {
+                        case 1 :
+                            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:198:12: ')'
+                            {
+                            match(')'); 
+
+                            }
+                            break;
+
+                    }
+
+
+                    setText(lBuf.toString());
 
                     }
                     break;
@@ -4663,12 +5073,166 @@ public class PerlLexer extends Lexer {
     // $ANTLR start "EscapeSequence"
     public final void mEscapeSequence() throws RecognitionException {
         try {
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:163:7: ( '\\\\' . )
-            // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:163:11: '\\\\' .
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:206:7: ( '\\\\' ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '/' | '\\\\' | '|' ) )
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:207:7: '\\\\' ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '/' | '\\\\' | '|' )
             {
             match('\\'); 
 
-            matchAny(); 
+            // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:208:9: ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '/' | '\\\\' | '|' )
+            int alt35=10;
+            switch ( input.LA(1) ) {
+            case 'n':
+                {
+                alt35=1;
+                }
+                break;
+            case 'r':
+                {
+                alt35=2;
+                }
+                break;
+            case 't':
+                {
+                alt35=3;
+                }
+                break;
+            case 'b':
+                {
+                alt35=4;
+                }
+                break;
+            case 'f':
+                {
+                alt35=5;
+                }
+                break;
+            case '\"':
+                {
+                alt35=6;
+                }
+                break;
+            case '\'':
+                {
+                alt35=7;
+                }
+                break;
+            case '/':
+                {
+                alt35=8;
+                }
+                break;
+            case '\\':
+                {
+                alt35=9;
+                }
+                break;
+            case '|':
+                {
+                alt35=10;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 35, 0, input);
+
+                throw nvae;
+
+            }
+
+            switch (alt35) {
+                case 1 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:208:13: 'n'
+                    {
+                    match('n'); 
+
+                    setText("\n");
+
+                    }
+                    break;
+                case 2 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:209:13: 'r'
+                    {
+                    match('r'); 
+
+                    setText("\r");
+
+                    }
+                    break;
+                case 3 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:210:13: 't'
+                    {
+                    match('t'); 
+
+                    setText("\t");
+
+                    }
+                    break;
+                case 4 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:211:13: 'b'
+                    {
+                    match('b'); 
+
+                    setText("\b");
+
+                    }
+                    break;
+                case 5 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:212:13: 'f'
+                    {
+                    match('f'); 
+
+                    setText("\f");
+
+                    }
+                    break;
+                case 6 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:213:13: '\"'
+                    {
+                    match('\"'); 
+
+                    setText("\"");
+
+                    }
+                    break;
+                case 7 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:214:13: '\\''
+                    {
+                    match('\''); 
+
+                    setText("\'");
+
+                    }
+                    break;
+                case 8 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:215:13: '/'
+                    {
+                    match('/'); 
+
+                    setText("\\/");
+
+                    }
+                    break;
+                case 9 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:216:13: '\\\\'
+                    {
+                    match('\\'); 
+
+                    setText("\\\\");
+
+                    }
+                    break;
+                case 10 :
+                    // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:217:13: '|'
+                    {
+                    match('|'); 
+
+                    setText("\\|");
+
+                    }
+                    break;
+
+            }
+
 
             }
 
@@ -4681,12 +5245,12 @@ public class PerlLexer extends Lexer {
     // $ANTLR end "EscapeSequence"
 
     public void mTokens() throws RecognitionException {
-        // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:8: ( WHITESPACE | COMMANDS | SPECIAL_VAR | COMMENT | NUMBER | SUBST_OR_MATCH_OPER | LBRACK | RBRACK | LPAREN | RPAREN | LCURLY | RCURLY | COMMA | SEMI_COLON | COLON | DOT | EQUAL | PLUS | MINUS | MULTIPLY | DIVIDE | GT | LT | SQUOTE | DQUOTE | BACKSLASH | UNDERSCORE | VARIABLE | WORD_CHAR | STRING )
-        int alt25=30;
-        alt25 = dfa25.predict(input);
-        switch (alt25) {
+        // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:8: ( WHITESPACE | COMMANDS | SPECIAL_VAR | COMMENT | NUMBER | SUBST_OR_MATCH_OPER | LBRACK | RBRACK | LPAREN | RPAREN | LCURLY | RCURLY | COMMA | SEMI_COLON | COLON | DOT | EQUAL | PLUS | MINUS | MULTIPLY | DIVIDE | GT | LT | SQUOTE | DQUOTE | BACKSLASH | UNDERSCORE | VARIABLE | WORD_CHAR | STRING )
+        int alt36=30;
+        alt36 = dfa36.predict(input);
+        switch (alt36) {
             case 1 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:10: WHITESPACE
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:10: WHITESPACE
                 {
                 mWHITESPACE(); 
 
@@ -4694,7 +5258,7 @@ public class PerlLexer extends Lexer {
                 }
                 break;
             case 2 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:21: COMMANDS
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:21: COMMANDS
                 {
                 mCOMMANDS(); 
 
@@ -4702,7 +5266,7 @@ public class PerlLexer extends Lexer {
                 }
                 break;
             case 3 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:30: SPECIAL_VAR
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:30: SPECIAL_VAR
                 {
                 mSPECIAL_VAR(); 
 
@@ -4710,7 +5274,7 @@ public class PerlLexer extends Lexer {
                 }
                 break;
             case 4 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:42: COMMENT
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:42: COMMENT
                 {
                 mCOMMENT(); 
 
@@ -4718,7 +5282,7 @@ public class PerlLexer extends Lexer {
                 }
                 break;
             case 5 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:50: NUMBER
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:50: NUMBER
                 {
                 mNUMBER(); 
 
@@ -4726,7 +5290,7 @@ public class PerlLexer extends Lexer {
                 }
                 break;
             case 6 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:57: SUBST_OR_MATCH_OPER
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:57: SUBST_OR_MATCH_OPER
                 {
                 mSUBST_OR_MATCH_OPER(); 
 
@@ -4734,7 +5298,7 @@ public class PerlLexer extends Lexer {
                 }
                 break;
             case 7 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:77: LBRACK
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:77: LBRACK
                 {
                 mLBRACK(); 
 
@@ -4742,7 +5306,7 @@ public class PerlLexer extends Lexer {
                 }
                 break;
             case 8 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:84: RBRACK
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:84: RBRACK
                 {
                 mRBRACK(); 
 
@@ -4750,7 +5314,7 @@ public class PerlLexer extends Lexer {
                 }
                 break;
             case 9 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:91: LPAREN
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:91: LPAREN
                 {
                 mLPAREN(); 
 
@@ -4758,7 +5322,7 @@ public class PerlLexer extends Lexer {
                 }
                 break;
             case 10 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:98: RPAREN
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:98: RPAREN
                 {
                 mRPAREN(); 
 
@@ -4766,7 +5330,7 @@ public class PerlLexer extends Lexer {
                 }
                 break;
             case 11 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:105: LCURLY
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:105: LCURLY
                 {
                 mLCURLY(); 
 
@@ -4774,7 +5338,7 @@ public class PerlLexer extends Lexer {
                 }
                 break;
             case 12 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:112: RCURLY
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:112: RCURLY
                 {
                 mRCURLY(); 
 
@@ -4782,7 +5346,7 @@ public class PerlLexer extends Lexer {
                 }
                 break;
             case 13 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:119: COMMA
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:119: COMMA
                 {
                 mCOMMA(); 
 
@@ -4790,7 +5354,7 @@ public class PerlLexer extends Lexer {
                 }
                 break;
             case 14 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:125: SEMI_COLON
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:125: SEMI_COLON
                 {
                 mSEMI_COLON(); 
 
@@ -4798,7 +5362,7 @@ public class PerlLexer extends Lexer {
                 }
                 break;
             case 15 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:136: COLON
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:136: COLON
                 {
                 mCOLON(); 
 
@@ -4806,7 +5370,7 @@ public class PerlLexer extends Lexer {
                 }
                 break;
             case 16 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:142: DOT
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:142: DOT
                 {
                 mDOT(); 
 
@@ -4814,7 +5378,7 @@ public class PerlLexer extends Lexer {
                 }
                 break;
             case 17 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:146: EQUAL
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:146: EQUAL
                 {
                 mEQUAL(); 
 
@@ -4822,7 +5386,7 @@ public class PerlLexer extends Lexer {
                 }
                 break;
             case 18 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:152: PLUS
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:152: PLUS
                 {
                 mPLUS(); 
 
@@ -4830,7 +5394,7 @@ public class PerlLexer extends Lexer {
                 }
                 break;
             case 19 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:157: MINUS
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:157: MINUS
                 {
                 mMINUS(); 
 
@@ -4838,7 +5402,7 @@ public class PerlLexer extends Lexer {
                 }
                 break;
             case 20 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:163: MULTIPLY
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:163: MULTIPLY
                 {
                 mMULTIPLY(); 
 
@@ -4846,7 +5410,7 @@ public class PerlLexer extends Lexer {
                 }
                 break;
             case 21 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:172: DIVIDE
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:172: DIVIDE
                 {
                 mDIVIDE(); 
 
@@ -4854,7 +5418,7 @@ public class PerlLexer extends Lexer {
                 }
                 break;
             case 22 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:179: GT
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:179: GT
                 {
                 mGT(); 
 
@@ -4862,7 +5426,7 @@ public class PerlLexer extends Lexer {
                 }
                 break;
             case 23 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:182: LT
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:182: LT
                 {
                 mLT(); 
 
@@ -4870,7 +5434,7 @@ public class PerlLexer extends Lexer {
                 }
                 break;
             case 24 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:185: SQUOTE
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:185: SQUOTE
                 {
                 mSQUOTE(); 
 
@@ -4878,7 +5442,7 @@ public class PerlLexer extends Lexer {
                 }
                 break;
             case 25 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:192: DQUOTE
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:192: DQUOTE
                 {
                 mDQUOTE(); 
 
@@ -4886,7 +5450,7 @@ public class PerlLexer extends Lexer {
                 }
                 break;
             case 26 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:199: BACKSLASH
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:199: BACKSLASH
                 {
                 mBACKSLASH(); 
 
@@ -4894,7 +5458,7 @@ public class PerlLexer extends Lexer {
                 }
                 break;
             case 27 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:209: UNDERSCORE
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:209: UNDERSCORE
                 {
                 mUNDERSCORE(); 
 
@@ -4902,7 +5466,7 @@ public class PerlLexer extends Lexer {
                 }
                 break;
             case 28 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:220: VARIABLE
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:220: VARIABLE
                 {
                 mVARIABLE(); 
 
@@ -4910,7 +5474,7 @@ public class PerlLexer extends Lexer {
                 }
                 break;
             case 29 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:229: WORD_CHAR
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:229: WORD_CHAR
                 {
                 mWORD_CHAR(); 
 
@@ -4918,7 +5482,7 @@ public class PerlLexer extends Lexer {
                 }
                 break;
             case 30 :
-                // D:\\Source Code\\PerlOnNetBeans_GoogleCode\\branches\\netbeans8\\Grammar\\AntLR 3\\Perl.g:1:239: STRING
+                // D:\\Source Code\\Bitbucket\\PerlOnNetBeans\\branches\\feature\\grammar_enhancements\\Grammar\\AntLR 3\\Perl.g:1:239: STRING
                 {
                 mSTRING(); 
 
@@ -4933,109 +5497,104 @@ public class PerlLexer extends Lexer {
 
     protected DFA2 dfa2 = new DFA2(this);
     protected DFA3 dfa3 = new DFA3(this);
-    protected DFA25 dfa25 = new DFA25(this);
+    protected DFA36 dfa36 = new DFA36(this);
     static final String DFA2_eotS =
-        "\27\uffff\1\141\3\uffff\1\162\1\uffff\1\u0083\55\uffff\1\u00a8\13"+
-        "\uffff\1\u00ac\1\u00ae\11\uffff\1\u00b5\1\u00b7\2\uffff\1\u00ba"+
-        "\10\uffff\1\u00c1\26\uffff\1\u00e1\1\u00e3\22\uffff\1\u00f2\13\uffff"+
-        "\1\u0104\63\uffff\1\u0126\3\uffff\1\u012f\63\uffff\1\u0146\1\u0148"+
-        "\1\uffff\1\u014d\1\u014f\26\uffff\1\u0159\2\uffff\1\u015b\3\uffff"+
-        "\1\u015f\1\u0161\16\uffff\1\u016f\4\uffff\1\u0171\53\uffff\1\u017e"+
-        "\41\uffff";
+        "\113\uffff\1\u00a0\13\uffff\1\u00a4\1\u00a6\10\uffff\1\u00ad\1\u00af"+
+        "\2\uffff\1\u00b2\31\uffff\1\u00d7\22\uffff\1\u00e6\13\uffff\1\u00f8"+
+        "\61\uffff\1\u011a\3\uffff\1\u0123\61\uffff\1\u013a\1\u013c\1\uffff"+
+        "\1\u0141\1\u0143\26\uffff\1\u014d\2\uffff\1\u014f\3\uffff\1\u0153"+
+        "\1\u0155\16\uffff\1\u0163\4\uffff\1\u0165\53\uffff\1\u0172\41\uffff";
     static final String DFA2_eofS =
-        "\u0197\uffff";
+        "\u018b\uffff";
     static final String DFA2_minS =
         "\1\101\1\105\1\137\2\uffff\1\110\1\uffff\1\116\1\105\1\uffff\1\105"+
         "\1\142\1\151\1\141\1\142\1\141\1\143\1\145\1\uffff\1\146\1\uffff"+
-        "\1\145\2\141\1\145\1\143\1\141\1\161\1\141\1\143\1\145\1\143\2\141"+
-        "\3\uffff\1\104\15\uffff\1\156\2\uffff\1\144\1\157\1\uffff\1\156"+
-        "\1\uffff\1\155\1\146\4\uffff\1\163\1\144\3\uffff\1\145\3\uffff\1"+
-        "\162\1\164\6\uffff\1\144\4\uffff\1\146\2\156\1\143\4\uffff\1\147"+
-        "\2\uffff\1\170\1\164\1\uffff\1\145\1\144\1\uffff\1\143\1\uffff\1"+
-        "\160\1\151\3\uffff\1\157\4\uffff\1\141\3\uffff\1\145\1\151\2\uffff"+
-        "\1\143\1\154\2\uffff\1\141\1\142\1\155\1\uffff\1\154\1\145\1\165"+
-        "\1\146\1\uffff\1\144\4\uffff\1\151\7\uffff\1\144\2\uffff\1\155\1"+
-        "\157\1\163\1\156\1\uffff\1\143\2\uffff\1\145\1\147\1\uffff\1\163"+
-        "\1\uffff\1\145\1\143\11\uffff\1\141\1\uffff\1\143\4\uffff\1\156"+
-        "\2\uffff\1\153\2\uffff\1\156\3\uffff\1\144\11\uffff\1\153\1\uffff"+
-        "\1\143\1\uffff\1\147\1\uffff\1\143\1\uffff\1\153\1\uffff\1\151\3"+
-        "\uffff\1\163\1\uffff\1\143\1\154\1\144\1\145\5\uffff\1\145\2\uffff"+
-        "\1\151\1\164\11\uffff\1\145\11\uffff\1\162\5\uffff\1\141\2\uffff"+
-        "\1\162\1\157\1\uffff\3\145\1\154\5\uffff\1\144\1\141\1\164\2\144"+
-        "\6\uffff\1\147\1\145\4\uffff\1\145\1\143\10\uffff\1\144\2\uffff"+
-        "\1\163\2\uffff\1\145\1\160\1\144\4\uffff\1\145\1\163\1\164\3\uffff"+
-        "\1\151\1\145\1\162\1\143\1\164\4\uffff\1\146\1\uffff\1\151\5\uffff"+
-        "\1\151\3\uffff\1\164\17\uffff\1\164\1\142\1\uffff\1\164\3\uffff"+
-        "\1\166\1\153\4\uffff\1\156\2\uffff\1\160\1\142\1\171\1\uffff\1\157"+
-        "\1\142\1\156\1\145\2\uffff\1\171\1\uffff\1\141\1\142\1\171\5\uffff"+
-        "\1\141\2\uffff\1\171\1\uffff\1\156\2\uffff\1\156\2\uffff\1\141\2"+
-        "\uffff";
+        "\1\145\2\141\1\145\1\143\1\141\1\uffff\1\141\1\143\1\145\1\143\2"+
+        "\141\3\uffff\1\104\15\uffff\1\156\2\uffff\1\144\1\157\1\uffff\1"+
+        "\156\1\uffff\1\155\1\146\4\uffff\1\163\1\144\3\uffff\1\145\3\uffff"+
+        "\1\162\1\164\6\uffff\1\144\4\uffff\1\146\2\156\1\143\4\uffff\1\147"+
+        "\1\uffff\1\170\1\164\1\uffff\1\145\1\144\1\uffff\1\143\1\uffff\1"+
+        "\160\1\151\2\uffff\1\141\3\uffff\1\145\1\151\2\uffff\1\143\1\154"+
+        "\2\uffff\1\141\1\142\1\155\1\154\1\145\1\uffff\1\146\1\uffff\1\144"+
+        "\4\uffff\1\151\7\uffff\1\144\2\uffff\1\155\1\157\1\163\1\156\1\uffff"+
+        "\1\143\2\uffff\1\145\1\147\1\uffff\1\163\1\uffff\1\145\1\143\11"+
+        "\uffff\1\141\1\uffff\1\143\4\uffff\1\156\2\uffff\1\153\2\uffff\1"+
+        "\156\1\uffff\1\144\11\uffff\1\153\1\uffff\1\143\1\uffff\1\147\1"+
+        "\uffff\1\143\1\uffff\1\153\1\uffff\1\151\3\uffff\1\163\1\uffff\1"+
+        "\143\1\154\1\144\1\145\3\uffff\1\145\2\uffff\1\151\1\164\11\uffff"+
+        "\1\145\11\uffff\1\162\5\uffff\1\141\2\uffff\1\162\1\157\1\uffff"+
+        "\3\145\1\154\5\uffff\1\144\1\141\1\164\2\144\6\uffff\1\147\1\145"+
+        "\4\uffff\1\145\1\143\10\uffff\1\144\2\uffff\1\163\2\uffff\1\145"+
+        "\1\160\1\144\4\uffff\1\145\1\163\1\164\3\uffff\1\151\1\145\1\162"+
+        "\1\143\1\164\4\uffff\1\146\1\uffff\1\151\5\uffff\1\151\3\uffff\1"+
+        "\164\17\uffff\1\164\1\142\1\uffff\1\164\3\uffff\1\166\1\153\4\uffff"+
+        "\1\156\2\uffff\1\160\1\142\1\171\1\uffff\1\157\1\142\1\156\1\145"+
+        "\2\uffff\1\171\1\uffff\1\141\1\142\1\171\5\uffff\1\141\2\uffff\1"+
+        "\171\1\uffff\1\156\2\uffff\1\156\2\uffff\1\141\2\uffff";
     static final String DFA2_maxS =
         "\1\170\1\125\1\137\2\uffff\1\117\1\uffff\1\121\1\124\1\uffff\1\124"+
         "\1\164\1\154\1\162\1\165\1\170\1\157\1\164\1\uffff\1\157\1\uffff"+
-        "\1\151\1\164\1\171\1\157\2\165\1\170\1\155\1\171\1\162\1\164\1\145"+
-        "\1\162\3\uffff\1\120\15\uffff\1\156\2\uffff\1\162\1\157\1\uffff"+
+        "\1\151\1\164\1\171\1\157\2\165\1\uffff\1\155\1\171\1\162\1\164\1"+
+        "\145\1\162\3\uffff\1\120\15\uffff\1\156\2\uffff\1\162\1\157\1\uffff"+
         "\1\163\1\uffff\1\155\1\154\4\uffff\1\163\1\144\3\uffff\1\160\3\uffff"+
         "\1\162\1\164\6\uffff\1\164\4\uffff\1\146\1\156\1\163\1\147\4\uffff"+
-        "\1\147\2\uffff\1\170\1\164\1\uffff\1\145\1\144\1\uffff\1\143\1\uffff"+
-        "\1\163\1\157\3\uffff\1\157\4\uffff\1\167\3\uffff\1\164\1\165\2\uffff"+
-        "\2\162\2\uffff\1\165\1\142\1\163\1\uffff\1\154\1\155\1\165\1\146"+
-        "\1\uffff\1\164\4\uffff\1\162\7\uffff\1\155\2\uffff\1\167\1\157\1"+
-        "\163\1\164\1\uffff\1\157\2\uffff\1\151\1\163\1\uffff\1\164\1\uffff"+
-        "\1\155\1\163\11\uffff\1\153\1\uffff\1\163\4\uffff\1\156\2\uffff"+
-        "\1\153\2\uffff\1\156\3\uffff\1\144\11\uffff\1\153\1\uffff\1\157"+
-        "\1\uffff\1\163\1\uffff\1\167\1\uffff\1\153\1\uffff\1\151\3\uffff"+
-        "\1\163\1\uffff\1\167\1\154\1\144\1\145\5\uffff\1\151\2\uffff\1\151"+
-        "\1\164\11\uffff\1\145\11\uffff\1\167\5\uffff\1\154\2\uffff\1\162"+
-        "\1\157\1\uffff\1\145\1\167\1\157\1\154\5\uffff\1\144\1\141\1\164"+
-        "\1\160\1\144\6\uffff\1\167\1\157\4\uffff\1\145\1\164\10\uffff\1"+
-        "\144\2\uffff\1\163\2\uffff\1\154\1\160\1\144\4\uffff\1\156\1\163"+
-        "\1\164\3\uffff\1\157\1\165\1\162\1\143\1\164\4\uffff\1\146\1\uffff"+
-        "\1\151\5\uffff\1\157\3\uffff\1\164\17\uffff\1\164\1\145\1\uffff"+
-        "\1\164\3\uffff\1\166\1\153\4\uffff\1\156\2\uffff\1\160\1\145\1\171"+
-        "\1\uffff\1\157\1\145\1\157\1\153\2\uffff\1\171\1\uffff\1\156\1\145"+
-        "\1\171\5\uffff\1\156\2\uffff\1\171\1\uffff\1\160\2\uffff\1\156\2"+
-        "\uffff\1\165\2\uffff";
+        "\1\147\1\uffff\1\170\1\164\1\uffff\1\145\1\144\1\uffff\1\143\1\uffff"+
+        "\1\163\1\157\2\uffff\1\167\3\uffff\1\164\1\165\2\uffff\2\162\2\uffff"+
+        "\1\165\1\142\1\163\1\154\1\155\1\uffff\1\146\1\uffff\1\164\4\uffff"+
+        "\1\162\7\uffff\1\155\2\uffff\1\167\1\157\1\163\1\164\1\uffff\1\157"+
+        "\2\uffff\1\151\1\163\1\uffff\1\164\1\uffff\1\155\1\163\11\uffff"+
+        "\1\153\1\uffff\1\163\4\uffff\1\156\2\uffff\1\153\2\uffff\1\156\1"+
+        "\uffff\1\144\11\uffff\1\153\1\uffff\1\157\1\uffff\1\163\1\uffff"+
+        "\1\167\1\uffff\1\153\1\uffff\1\151\3\uffff\1\163\1\uffff\1\167\1"+
+        "\154\1\144\1\145\3\uffff\1\151\2\uffff\1\151\1\164\11\uffff\1\145"+
+        "\11\uffff\1\167\5\uffff\1\154\2\uffff\1\162\1\157\1\uffff\1\145"+
+        "\1\167\1\157\1\154\5\uffff\1\144\1\141\1\164\1\160\1\144\6\uffff"+
+        "\1\167\1\157\4\uffff\1\145\1\164\10\uffff\1\144\2\uffff\1\163\2"+
+        "\uffff\1\154\1\160\1\144\4\uffff\1\156\1\163\1\164\3\uffff\1\157"+
+        "\1\165\1\162\1\143\1\164\4\uffff\1\146\1\uffff\1\151\5\uffff\1\157"+
+        "\3\uffff\1\164\17\uffff\1\164\1\145\1\uffff\1\164\3\uffff\1\166"+
+        "\1\153\4\uffff\1\156\2\uffff\1\160\1\145\1\171\1\uffff\1\157\1\145"+
+        "\1\157\1\153\2\uffff\1\171\1\uffff\1\156\1\145\1\171\5\uffff\1\156"+
+        "\2\uffff\1\171\1\uffff\1\160\2\uffff\1\156\2\uffff\1\165\2\uffff";
     static final String DFA2_acceptS =
         "\3\uffff\1\7\1\10\1\uffff\1\12\2\uffff\1\17\10\uffff\1\152\1\uffff"+
-        "\1\157\15\uffff\1\u00fb\1\1\1\22\1\uffff\1\11\1\23\1\13\1\14\1\15"+
-        "\1\16\1\20\1\21\1\24\1\25\1\26\1\27\1\30\1\uffff\1\33\1\34\2\uffff"+
-        "\1\46\1\uffff\1\52\2\uffff\1\57\1\60\1\61\1\62\2\uffff\1\73\1\74"+
-        "\1\75\1\uffff\1\102\1\103\1\104\2\uffff\1\145\1\146\1\147\1\150"+
-        "\1\151\1\153\1\uffff\1\156\1\160\1\161\1\162\4\uffff\1\175\1\176"+
-        "\1\u0080\1\u0081\1\uffff\1\u0086\1\177\2\uffff\1\u008b\2\uffff\1"+
-        "\u0090\1\uffff\1\u0093\2\uffff\1\u0099\1\u009b\1\u009c\1\uffff\1"+
-        "\u009f\1\u00a0\1\u009a\1\u00a1\1\uffff\1\u00b0\1\u00b1\1\u00b3\2"+
-        "\uffff\1\u00ca\1\u00cb\2\uffff\1\u00d2\1\u00d3\3\uffff\1\u00b2\4"+
-        "\uffff\1\u00e9\1\uffff\1\u00f1\1\u00f2\1\u00f3\1\u00f4\1\uffff\1"+
-        "\u00f9\1\u00fa\1\2\1\3\1\4\1\5\1\6\1\uffff\1\35\1\36\4\uffff\1\51"+
-        "\1\uffff\1\55\1\56\2\uffff\1\76\1\uffff\1\101\2\uffff\1\112\1\154"+
-        "\1\155\1\164\1\163\1\166\1\165\1\167\1\170\1\uffff\1\174\1\uffff"+
-        "\1\u0088\1\u0087\1\u008a\1\u0089\1\uffff\1\u008f\1\u008e\1\uffff"+
-        "\1\u0094\1\u0095\1\uffff\1\u0098\1\u009d\1\u009e\1\uffff\1\u00a7"+
-        "\1\u00a8\1\u00a9\1\u00aa\1\u00ab\1\u00ac\1\u00ad\1\u00ae\1\u00af"+
-        "\1\uffff\1\u00b6\1\uffff\1\u00ba\1\uffff\1\u00c4\1\uffff\1\u00c9"+
-        "\1\uffff\1\u00ce\1\uffff\1\u00d1\1\u00d4\1\u00d5\1\uffff\1\u00d8"+
-        "\4\uffff\1\u00e6\1\u00e5\1\u00e8\1\u00e7\1\u00ea\1\uffff\1\u00ed"+
-        "\1\u00ee\2\uffff\1\u00f7\1\u00f8\1\31\1\32\1\37\1\40\1\41\1\43\1"+
-        "\42\1\uffff\1\47\1\50\1\53\1\54\1\63\1\64\1\65\1\66\1\67\1\uffff"+
-        "\1\72\1\77\1\100\1\106\1\107\1\uffff\1\105\1\113\2\uffff\1\122\4"+
-        "\uffff\1\173\1\u0082\1\u0083\1\u0084\1\u0085\5\uffff\1\u00b7\1\u00b8"+
-        "\1\u00b9\1\u00bb\1\u00bc\1\u00bd\2\uffff\1\u00c5\1\u00c6\1\u00c7"+
-        "\1\u00c8\2\uffff\1\u00d7\1\u00d6\1\u00d9\1\u00da\1\u00db\1\u00dc"+
-        "\1\u00dd\1\u00de\1\uffff\1\u00e2\1\u00e1\1\uffff\1\u00eb\1\u00ec"+
-        "\3\uffff\1\70\1\71\1\110\1\111\3\uffff\1\126\1\127\1\130\5\uffff"+
-        "\1\u008d\1\u008c\1\u0092\1\u0091\1\uffff\1\u00a3\1\uffff\1\u00a6"+
-        "\1\u00a2\1\u00b5\1\u00b4\1\u00be\1\uffff\1\u00c1\1\u00c2\1\u00c3"+
-        "\1\uffff\1\u00cf\1\u00d0\1\u00e0\1\u00df\1\u00e4\1\u00e3\1\u00ef"+
-        "\1\u00f0\1\u00f6\1\u00f5\1\45\1\44\1\114\1\115\1\116\2\uffff\1\131"+
-        "\1\uffff\1\135\1\136\1\137\2\uffff\1\172\1\171\1\u0097\1\u0096\1"+
-        "\uffff\1\u00bf\1\u00c0\3\uffff\1\125\4\uffff\1\u00cd\1\u00cc\1\uffff"+
-        "\1\121\3\uffff\1\142\1\143\1\144\1\u00a4\1\u00a5\1\uffff\1\123\1"+
-        "\124\1\uffff\1\134\1\uffff\1\117\1\120\1\uffff\1\140\1\141\1\uffff"+
-        "\1\132\1\133";
+        "\1\157\6\uffff\1\u0099\6\uffff\1\u00f2\1\1\1\22\1\uffff\1\11\1\23"+
+        "\1\13\1\14\1\15\1\16\1\20\1\21\1\24\1\25\1\26\1\27\1\30\1\uffff"+
+        "\1\33\1\34\2\uffff\1\46\1\uffff\1\52\2\uffff\1\57\1\60\1\61\1\62"+
+        "\2\uffff\1\73\1\74\1\75\1\uffff\1\102\1\103\1\104\2\uffff\1\145"+
+        "\1\146\1\147\1\150\1\151\1\153\1\uffff\1\156\1\160\1\161\1\162\4"+
+        "\uffff\1\175\1\176\1\177\1\u0080\1\uffff\1\u0085\2\uffff\1\u008a"+
+        "\2\uffff\1\u008f\1\uffff\1\u0092\2\uffff\1\u0098\1\u009a\1\uffff"+
+        "\1\u00a9\1\u00aa\1\u00ab\2\uffff\1\u00c2\1\u00c3\2\uffff\1\u00ca"+
+        "\1\u00cb\5\uffff\1\u00dd\1\uffff\1\u00e0\1\uffff\1\u00e8\1\u00e9"+
+        "\1\u00ea\1\u00eb\1\uffff\1\u00f0\1\u00f1\1\2\1\3\1\4\1\5\1\6\1\uffff"+
+        "\1\35\1\36\4\uffff\1\51\1\uffff\1\55\1\56\2\uffff\1\76\1\uffff\1"+
+        "\101\2\uffff\1\112\1\154\1\155\1\164\1\163\1\166\1\165\1\167\1\170"+
+        "\1\uffff\1\174\1\uffff\1\u0087\1\u0086\1\u0089\1\u0088\1\uffff\1"+
+        "\u008e\1\u008d\1\uffff\1\u0093\1\u0094\1\uffff\1\u0097\1\uffff\1"+
+        "\u00a0\1\u00a1\1\u00a2\1\u00a3\1\u00a4\1\u00a5\1\u00a6\1\u00a7\1"+
+        "\u00a8\1\uffff\1\u00ae\1\uffff\1\u00b2\1\uffff\1\u00bc\1\uffff\1"+
+        "\u00c1\1\uffff\1\u00c6\1\uffff\1\u00c9\1\u00cc\1\u00cd\1\uffff\1"+
+        "\u00d0\4\uffff\1\u00df\1\u00de\1\u00e1\1\uffff\1\u00e4\1\u00e5\2"+
+        "\uffff\1\u00ee\1\u00ef\1\31\1\32\1\37\1\40\1\41\1\43\1\42\1\uffff"+
+        "\1\47\1\50\1\53\1\54\1\63\1\64\1\65\1\66\1\67\1\uffff\1\72\1\77"+
+        "\1\100\1\106\1\107\1\uffff\1\105\1\113\2\uffff\1\122\4\uffff\1\173"+
+        "\1\u0081\1\u0082\1\u0083\1\u0084\5\uffff\1\u00af\1\u00b0\1\u00b1"+
+        "\1\u00b3\1\u00b4\1\u00b5\2\uffff\1\u00bd\1\u00be\1\u00bf\1\u00c0"+
+        "\2\uffff\1\u00cf\1\u00ce\1\u00d1\1\u00d2\1\u00d3\1\u00d4\1\u00d5"+
+        "\1\u00d6\1\uffff\1\u00da\1\u00d9\1\uffff\1\u00e2\1\u00e3\3\uffff"+
+        "\1\70\1\71\1\110\1\111\3\uffff\1\126\1\127\1\130\5\uffff\1\u008c"+
+        "\1\u008b\1\u0091\1\u0090\1\uffff\1\u009c\1\uffff\1\u009f\1\u009b"+
+        "\1\u00ad\1\u00ac\1\u00b6\1\uffff\1\u00b9\1\u00ba\1\u00bb\1\uffff"+
+        "\1\u00c7\1\u00c8\1\u00d8\1\u00d7\1\u00dc\1\u00db\1\u00e6\1\u00e7"+
+        "\1\u00ed\1\u00ec\1\45\1\44\1\114\1\115\1\116\2\uffff\1\131\1\uffff"+
+        "\1\135\1\136\1\137\2\uffff\1\172\1\171\1\u0096\1\u0095\1\uffff\1"+
+        "\u00b7\1\u00b8\3\uffff\1\125\4\uffff\1\u00c5\1\u00c4\1\uffff\1\121"+
+        "\3\uffff\1\142\1\143\1\144\1\u009d\1\u009e\1\uffff\1\123\1\124\1"+
+        "\uffff\1\134\1\uffff\1\117\1\120\1\uffff\1\140\1\141\1\uffff\1\132"+
+        "\1\133";
     static final String DFA2_specialS =
-        "\u0197\uffff}>";
+        "\u018b\uffff}>";
     static final String[] DFA2_transitionS = {
             "\1\3\1\4\1\5\1\6\1\7\1\uffff\1\10\1\uffff\1\11\2\uffff\1\12"+
             "\1\uffff\1\1\20\uffff\1\2\1\uffff\1\13\1\14\1\15\1\16\1\17\1"+
@@ -5068,26 +5627,22 @@ public class PerlLexer extends Lexer {
             "\1\126\1\uffff\1\127\1\uffff\1\130\3\uffff\1\131\5\uffff\1"+
             "\132\3\uffff\1\133\1\134",
             "\1\135\11\uffff\1\136\7\uffff\1\137\5\uffff\1\140",
-            "\1\142\11\uffff\1\143",
-            "\1\144\14\uffff\1\145\1\uffff\1\146\2\uffff\1\147",
-            "\1\150\7\uffff\1\151\5\uffff\1\152\2\uffff\1\153\2\uffff\1"+
-            "\154",
-            "\1\155\1\156\2\uffff\1\157\1\uffff\1\160\1\161",
-            "\1\163\3\uffff\1\164\3\uffff\1\165\3\uffff\1\166",
-            "\1\167\1\uffff\1\170\2\uffff\1\171\1\172\2\uffff\1\173\2\uffff"+
-            "\1\174\1\175\1\176\1\177\1\uffff\1\u0080\1\u0081\3\uffff\1\u0082",
-            "\1\u0084\3\uffff\1\u0085\10\uffff\1\u0086",
-            "\1\u0087\11\uffff\1\u0088\1\u0089\4\uffff\1\u008a\1\u008b",
-            "\1\u008c\3\uffff\1\u008d",
-            "\1\u008e\6\uffff\1\u008f\11\uffff\1\u0090",
+            "\1\141\11\uffff\1\142",
+            "\1\143\14\uffff\1\144\1\uffff\1\145\2\uffff\1\146",
+            "\1\147\7\uffff\1\150\5\uffff\1\151\2\uffff\1\152\2\uffff\1"+
+            "\153",
+            "",
+            "\1\154\3\uffff\1\155\3\uffff\1\156\3\uffff\1\157",
+            "\1\160\1\uffff\1\161\2\uffff\1\162\1\163\2\uffff\1\164\2\uffff"+
+            "\1\165\1\166\1\167\1\170\1\uffff\1\171\1\172\3\uffff\1\173",
+            "\1\174\3\uffff\1\175\10\uffff\1\176",
+            "\1\177\11\uffff\1\u0080\1\u0081\4\uffff\1\u0082\1\u0083",
+            "\1\u0084\3\uffff\1\u0085",
+            "\1\u0086\6\uffff\1\u0087\11\uffff\1\u0088",
             "",
             "",
             "",
-            "\1\u0094\1\u0095\1\u0091\5\uffff\1\u0092\3\uffff\1\u0093",
-            "",
-            "",
-            "",
-            "",
+            "\1\u008c\1\u008d\1\u0089\5\uffff\1\u008a\3\uffff\1\u008b",
             "",
             "",
             "",
@@ -5096,369 +5651,361 @@ public class PerlLexer extends Lexer {
             "",
             "",
             "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u008e",
+            "",
+            "",
+            "\1\u008f\10\uffff\1\u0090\1\uffff\1\u0091\2\uffff\1\u0092",
+            "\1\u0093",
+            "",
+            "\1\u0094\4\uffff\1\u0095",
             "",
             "\1\u0096",
+            "\1\u0097\5\uffff\1\u0098",
             "",
             "",
-            "\1\u0097\10\uffff\1\u0098\1\uffff\1\u0099\2\uffff\1\u009a",
-            "\1\u009b",
             "",
-            "\1\u009c\4\uffff\1\u009d",
+            "",
+            "\1\u0099",
+            "\1\u009a",
+            "",
+            "",
+            "",
+            "\1\u009b\3\uffff\1\u009c\6\uffff\1\u009d",
+            "",
+            "",
             "",
             "\1\u009e",
-            "\1\u009f\5\uffff\1\u00a0",
-            "",
-            "",
-            "",
-            "",
-            "\1\u00a1",
-            "\1\u00a2",
-            "",
-            "",
-            "",
-            "\1\u00a3\3\uffff\1\u00a4\6\uffff\1\u00a5",
-            "",
-            "",
-            "",
-            "\1\u00a6",
-            "\1\u00a7",
+            "\1\u009f",
             "",
             "",
             "",
             "",
             "",
             "",
-            "\1\u00a9\17\uffff\1\u00aa",
+            "\1\u00a1\17\uffff\1\u00a2",
+            "",
+            "",
+            "",
+            "",
+            "\1\u00a3",
+            "\1\u00a5",
+            "\1\u00a7\4\uffff\1\u00a8",
+            "\1\u00a9\3\uffff\1\u00aa",
             "",
             "",
             "",
             "",
             "\1\u00ab",
-            "\1\u00ad",
-            "\1\u00af\4\uffff\1\u00b0",
-            "\1\u00b1\3\uffff\1\u00b2",
             "",
+            "\1\u00ac",
+            "\1\u00ae",
             "",
-            "",
+            "\1\u00b0",
+            "\1\u00b1",
             "",
             "\1\u00b3",
             "",
+            "\1\u00b4\2\uffff\1\u00b5",
+            "\1\u00b6\5\uffff\1\u00b7",
             "",
-            "\1\u00b4",
-            "\1\u00b6",
             "",
-            "\1\u00b8",
-            "\1\u00b9",
+            "\1\u00b8\1\uffff\1\u00b9\1\u00ba\1\uffff\1\u00bb\7\uffff\1"+
+            "\u00bc\2\uffff\1\u00bd\1\uffff\1\u00be\1\u00bf\1\uffff\1\u00c0"+
+            "\1\u00c1",
             "",
-            "\1\u00bb",
             "",
-            "\1\u00bc\2\uffff\1\u00bd",
-            "\1\u00be\5\uffff\1\u00bf",
             "",
+            "\1\u00c2\6\uffff\1\u00c3\1\u00c4\1\u00c5\5\uffff\1\u00c6",
+            "\1\u00c7\3\uffff\1\u00c8\7\uffff\1\u00c9",
             "",
             "",
-            "\1\u00c0",
+            "\1\u00ca\16\uffff\1\u00cb",
+            "\1\u00cc\5\uffff\1\u00cd",
             "",
             "",
+            "\1\u00ce\23\uffff\1\u00cf",
+            "\1\u00d0",
+            "\1\u00d1\5\uffff\1\u00d2",
+            "\1\u00d3",
+            "\1\u00d4\7\uffff\1\u00d5",
             "",
+            "\1\u00d6",
             "",
-            "\1\u00c2\1\uffff\1\u00c3\1\u00c4\1\uffff\1\u00c5\7\uffff\1"+
-            "\u00c6\2\uffff\1\u00c7\1\uffff\1\u00c8\1\u00c9\1\uffff\1\u00ca"+
-            "\1\u00cb",
+            "\1\u00d8\7\uffff\1\u00d9\3\uffff\1\u00da\2\uffff\1\u00db\1"+
+            "\u00dc",
             "",
             "",
             "",
-            "\1\u00cc\6\uffff\1\u00cd\1\u00ce\1\u00cf\5\uffff\1\u00d0",
-            "\1\u00d1\3\uffff\1\u00d2\7\uffff\1\u00d3",
             "",
+            "\1\u00dd\4\uffff\1\u00de\3\uffff\1\u00df",
             "",
-            "\1\u00d4\16\uffff\1\u00d5",
-            "\1\u00d6\5\uffff\1\u00d7",
             "",
             "",
-            "\1\u00d8\23\uffff\1\u00d9",
-            "\1\u00da",
-            "\1\u00db\5\uffff\1\u00dc",
             "",
-            "\1\u00dd",
-            "\1\u00de\7\uffff\1\u00df",
-            "\1\u00e0",
-            "\1\u00e2",
             "",
-            "\1\u00e4\7\uffff\1\u00e5\3\uffff\1\u00e6\2\uffff\1\u00e7\1"+
-            "\u00e8",
             "",
             "",
+            "\1\u00e0\10\uffff\1\u00e1",
             "",
             "",
-            "\1\u00e9\4\uffff\1\u00ea\3\uffff\1\u00eb",
+            "\1\u00e2\2\uffff\1\u00e3\6\uffff\1\u00e4",
+            "\1\u00e5",
+            "\1\u00e7",
+            "\1\u00e8\5\uffff\1\u00e9",
             "",
+            "\1\u00ea\13\uffff\1\u00eb",
             "",
             "",
+            "\1\u00ec\3\uffff\1\u00ed",
+            "\1\u00ee\1\u00ef\5\uffff\1\u00f0\1\uffff\1\u00f1\2\uffff\1"+
+            "\u00f2",
             "",
+            "\1\u00f3\1\u00f4",
             "",
+            "\1\u00f5\5\uffff\1\u00f6\1\uffff\1\u00f7",
+            "\1\u00f9\3\uffff\1\u00fa\1\u00fb\3\uffff\1\u00fc\1\uffff\1"+
+            "\u00fd\1\uffff\1\u00fe\2\uffff\1\u00ff",
             "",
             "",
-            "\1\u00ec\10\uffff\1\u00ed",
             "",
             "",
-            "\1\u00ee\2\uffff\1\u00ef\6\uffff\1\u00f0",
-            "\1\u00f1",
-            "\1\u00f3",
-            "\1\u00f4\5\uffff\1\u00f5",
             "",
-            "\1\u00f6\13\uffff\1\u00f7",
             "",
             "",
-            "\1\u00f8\3\uffff\1\u00f9",
-            "\1\u00fa\1\u00fb\5\uffff\1\u00fc\1\uffff\1\u00fd\2\uffff\1"+
-            "\u00fe",
             "",
-            "\1\u00ff\1\u0100",
             "",
-            "\1\u0101\5\uffff\1\u0102\1\uffff\1\u0103",
-            "\1\u0105\3\uffff\1\u0106\1\u0107\3\uffff\1\u0108\1\uffff\1"+
-            "\u0109\1\uffff\1\u010a\2\uffff\1\u010b",
+            "\1\u0100\11\uffff\1\u0101",
             "",
+            "\1\u0102\3\uffff\1\u0103\12\uffff\1\u0104\1\u0105",
             "",
             "",
             "",
             "",
+            "\1\u0106",
             "",
             "",
+            "\1\u0107",
             "",
             "",
-            "\1\u010c\11\uffff\1\u010d",
+            "\1\u0108",
             "",
-            "\1\u010e\3\uffff\1\u010f\12\uffff\1\u0110\1\u0111",
+            "\1\u0109",
             "",
             "",
             "",
             "",
-            "\1\u0112",
             "",
             "",
-            "\1\u0113",
             "",
             "",
-            "\1\u0114",
             "",
+            "\1\u010a",
             "",
+            "\1\u010b\3\uffff\1\u010c\7\uffff\1\u010d",
             "",
-            "\1\u0115",
+            "\1\u010e\1\u010f\5\uffff\1\u0110\1\uffff\1\u0111\2\uffff\1"+
+            "\u0112",
             "",
+            "\1\u0113\3\uffff\1\u0114\12\uffff\1\u0115\4\uffff\1\u0116",
             "",
+            "\1\u0117",
             "",
+            "\1\u0118",
             "",
             "",
             "",
+            "\1\u0119",
             "",
-            "",
-            "",
-            "\1\u0116",
-            "",
-            "\1\u0117\3\uffff\1\u0118\7\uffff\1\u0119",
-            "",
-            "\1\u011a\1\u011b\5\uffff\1\u011c\1\uffff\1\u011d\2\uffff\1"+
-            "\u011e",
-            "",
-            "\1\u011f\3\uffff\1\u0120\12\uffff\1\u0121\4\uffff\1\u0122",
-            "",
-            "\1\u0123",
-            "",
+            "\1\u011b\13\uffff\1\u011c\2\uffff\1\u011d\1\u011e\1\u011f\2"+
+            "\uffff\1\u0120",
+            "\1\u0121",
+            "\1\u0122",
             "\1\u0124",
             "",
             "",
             "",
-            "\1\u0125",
+            "\1\u0125\3\uffff\1\u0126",
             "",
-            "\1\u0127\13\uffff\1\u0128\2\uffff\1\u0129\1\u012a\1\u012b\2"+
-            "\uffff\1\u012c",
-            "\1\u012d",
+            "",
+            "\1\u0127",
+            "\1\u0128",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u0129",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u012a\4\uffff\1\u012b",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u012c\12\uffff\1\u012d",
+            "",
+            "",
             "\1\u012e",
+            "\1\u012f",
+            "",
             "\1\u0130",
+            "\1\u0131\1\uffff\1\u0132\10\uffff\1\u0133\1\uffff\1\u0134\4"+
+            "\uffff\1\u0135",
+            "\1\u0136\11\uffff\1\u0137",
+            "\1\u0138",
             "",
             "",
             "",
             "",
             "",
-            "\1\u0131\3\uffff\1\u0132",
-            "",
-            "",
-            "\1\u0133",
-            "\1\u0134",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u0135",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u0136\4\uffff\1\u0137",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u0138\12\uffff\1\u0139",
-            "",
-            "",
-            "\1\u013a",
+            "\1\u0139",
             "\1\u013b",
-            "",
-            "\1\u013c",
-            "\1\u013d\1\uffff\1\u013e\10\uffff\1\u013f\1\uffff\1\u0140\4"+
-            "\uffff\1\u0141",
-            "\1\u0142\11\uffff\1\u0143",
-            "\1\u0144",
+            "\1\u013d",
+            "\1\u013e\7\uffff\1\u013f\3\uffff\1\u0140",
+            "\1\u0142",
             "",
             "",
             "",
             "",
             "",
-            "\1\u0145",
-            "\1\u0147",
+            "",
+            "\1\u0144\12\uffff\1\u0145\4\uffff\1\u0146",
+            "\1\u0147\11\uffff\1\u0148",
+            "",
+            "",
+            "",
+            "",
             "\1\u0149",
-            "\1\u014a\7\uffff\1\u014b\3\uffff\1\u014c",
+            "\1\u014a\20\uffff\1\u014b",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u014c",
+            "",
+            "",
             "\1\u014e",
             "",
             "",
+            "\1\u0150\6\uffff\1\u0151",
+            "\1\u0152",
+            "\1\u0154",
             "",
             "",
             "",
             "",
-            "\1\u0150\12\uffff\1\u0151\4\uffff\1\u0152",
-            "\1\u0153\11\uffff\1\u0154",
-            "",
-            "",
-            "",
-            "",
-            "\1\u0155",
-            "\1\u0156\20\uffff\1\u0157",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u0158",
-            "",
-            "",
+            "\1\u0156\1\uffff\1\u0157\6\uffff\1\u0158",
+            "\1\u0159",
             "\1\u015a",
             "",
             "",
-            "\1\u015c\6\uffff\1\u015d",
-            "\1\u015e",
+            "",
+            "\1\u015b\5\uffff\1\u015c",
+            "\1\u015d\10\uffff\1\u015e\6\uffff\1\u015f",
             "\1\u0160",
+            "\1\u0161",
+            "\1\u0162",
             "",
             "",
             "",
             "",
-            "\1\u0162\1\uffff\1\u0163\6\uffff\1\u0164",
-            "\1\u0165",
+            "\1\u0164",
+            "",
             "\1\u0166",
             "",
             "",
             "",
+            "",
+            "",
             "\1\u0167\5\uffff\1\u0168",
-            "\1\u0169\10\uffff\1\u016a\6\uffff\1\u016b",
-            "\1\u016c",
+            "",
+            "",
+            "",
+            "\1\u0169",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u016a",
+            "\1\u016b\2\uffff\1\u016c",
+            "",
             "\1\u016d",
+            "",
+            "",
+            "",
             "\1\u016e",
+            "\1\u016f",
             "",
             "",
             "",
             "",
             "\1\u0170",
             "",
-            "\1\u0172",
             "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u0173\5\uffff\1\u0174",
-            "",
-            "",
-            "",
+            "\1\u0171",
+            "\1\u0173\2\uffff\1\u0174",
             "\1\u0175",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "",
             "\1\u0176",
             "\1\u0177\2\uffff\1\u0178",
-            "",
-            "\1\u0179",
-            "",
-            "",
-            "",
-            "\1\u017a",
-            "\1\u017b",
-            "",
-            "",
-            "",
-            "",
-            "\1\u017c",
+            "\1\u0179\1\u017a",
+            "\1\u017b\5\uffff\1\u017c",
             "",
             "",
             "\1\u017d",
-            "\1\u017f\2\uffff\1\u0180",
-            "\1\u0181",
             "",
+            "\1\u017e\14\uffff\1\u017f",
+            "\1\u0180\2\uffff\1\u0181",
             "\1\u0182",
-            "\1\u0183\2\uffff\1\u0184",
-            "\1\u0185\1\u0186",
-            "\1\u0187\5\uffff\1\u0188",
-            "",
-            "",
-            "\1\u0189",
-            "",
-            "\1\u018a\14\uffff\1\u018b",
-            "\1\u018c\2\uffff\1\u018d",
-            "\1\u018e",
             "",
             "",
             "",
             "",
             "",
-            "\1\u018f\14\uffff\1\u0190",
+            "\1\u0183\14\uffff\1\u0184",
             "",
             "",
-            "\1\u0191",
+            "\1\u0185",
             "",
-            "\1\u0192\1\uffff\1\u0193",
-            "",
-            "",
-            "\1\u0194",
+            "\1\u0186\1\uffff\1\u0187",
             "",
             "",
-            "\1\u0195\23\uffff\1\u0196",
+            "\1\u0188",
+            "",
+            "",
+            "\1\u0189\23\uffff\1\u018a",
             "",
             ""
     };
@@ -5493,7 +6040,7 @@ public class PerlLexer extends Lexer {
             this.transition = DFA2_transition;
         }
         public String getDescription() {
-            return "57:1: COMMANDS : ( 'NULL' | '__FILE__' | '__LINE__' | '__PACKAGE__' | '__DATA__' | '__END__' | 'AUTOLOAD' | 'BEGIN' | 'CORE' | 'DESTROY' | 'END' | 'EQ' | 'GE' | 'GT' | 'INIT' | 'LE' | 'LT' | 'NE' | 'CHECK' | 'abs' | 'accept' | 'alarm' | 'and' | 'atan2' | 'bind' | 'binmode' | 'bless' | 'caller' | 'chdir' | 'chmod' | 'chomp' | 'chop' | 'chown' | 'chr' | 'chroot' | 'close' | 'closedir' | 'cmp' | 'connect' | 'continue' | 'cos' | 'crypt' | 'dbmclose' | 'dbmopen' | 'defined' | 'delete' | 'die' | 'do' | 'dump' | 'each' | 'else' | 'elsif' | 'endgrent' | 'endhostent' | 'endnetent' | 'endprotoent' | 'endpwent' | 'endservent' | 'eof' | 'eq' | 'eval' | 'exec' | 'exists' | 'exit' | 'exp' | 'fcntl' | 'fileno' | 'flock' | 'for' | 'foreach' | 'fork' | 'format' | 'formline' | 'ge' | 'getc' | 'getgrent' | 'getgrgid' | 'getgrnam' | 'gethostbyaddr' | 'gethostbyname' | 'gethostent' | 'getlogin' | 'getnetbyaddr' | 'getnetbyname' | 'getnetent' | 'getpeername' | 'getpgrp' | 'getppid' | 'getpriority' | 'getprotobyname' | 'getprotobynumber' | 'getprotoent' | 'getpwent' | 'getpwnam' | 'getpwuid' | 'getservbyname' | 'getservbyport' | 'getservent' | 'getsockname' | 'getsockopt' | 'glob' | 'gmtime' | 'goto' | 'grep' | 'gt' | 'hex' | 'if' | 'index' | 'int' | 'ioctl' | 'join' | 'keys' | 'kill' | 'last' | 'lc' | 'lcfirst' | 'le' | 'length' | 'link' | 'listen' | 'local' | 'localtime' | 'lock' | 'log' | 'lstat' | 'lt' | 'm' | 'map' | 'mkdir' | 'msgctl' | 'msgget' | 'msgrcv' | 'msgsnd' | 'my' | 'ne' | 'next' | 'no' | 'not' | 'oct' | 'open' | 'opendir' | 'or' | 'ord' | 'our' | 'pack' | 'package' | 'pipe' | 'pop' | 'pos' | 'print' | 'printf' | 'prototype' | 'push' | 'q' | 'qq' | 'qr' | 'quotemeta' | 'qu' | 'qw' | 'qx' | 'rand' | 'read' | 'readdir' | 'readline' | 'readlink' | 'readpipe' | 'recv' | 'redo' | 'ref' | 'rename' | 'require' | 'reset' | 'return' | 'reverse' | 'rewinddir' | 'rindex' | 'rmdir' | 's' | 'scalar' | 'seek' | 'seekdir' | 'select' | 'semctl' | 'semget' | 'semop' | 'send' | 'setgrent' | 'sethostent' | 'setnetent' | 'setpgrp' | 'setpriority' | 'setprotoent' | 'setpwent' | 'setservent' | 'setsockopt' | 'shift' | 'shmctl' | 'shmget' | 'shmread' | 'shmwrite' | 'shutdown' | 'sin' | 'sleep' | 'socket' | 'socketpair' | 'sort' | 'splice' | 'split' | 'sprintf' | 'sqrt' | 'srand' | 'stat' | 'study' | 'sub' | 'substr' | 'symlink' | 'syscall' | 'sysopen' | 'sysread' | 'sysseek' | 'system' | 'syswrite' | 'tell' | 'telldir' | 'tie' | 'tied' | 'time' | 'times' | 'tr' | 'truncate' | 'uc' | 'ucfirst' | 'umask' | 'undef' | 'unless' | 'unlink' | 'unpack' | 'unshift' | 'untie' | 'until' | 'use' | 'utime' | 'values' | 'vec' | 'wait' | 'waitpid' | 'wantarray' | 'warn' | 'while' | 'write' | 'xor' );";
+            return "57:1: COMMANDS : ( 'NULL' | '__FILE__' | '__LINE__' | '__PACKAGE__' | '__DATA__' | '__END__' | 'AUTOLOAD' | 'BEGIN' | 'CORE' | 'DESTROY' | 'END' | 'EQ' | 'GE' | 'GT' | 'INIT' | 'LE' | 'LT' | 'NE' | 'CHECK' | 'abs' | 'accept' | 'alarm' | 'and' | 'atan2' | 'bind' | 'binmode' | 'bless' | 'caller' | 'chdir' | 'chmod' | 'chomp' | 'chop' | 'chown' | 'chr' | 'chroot' | 'close' | 'closedir' | 'cmp' | 'connect' | 'continue' | 'cos' | 'crypt' | 'dbmclose' | 'dbmopen' | 'defined' | 'delete' | 'die' | 'do' | 'dump' | 'each' | 'else' | 'elsif' | 'endgrent' | 'endhostent' | 'endnetent' | 'endprotoent' | 'endpwent' | 'endservent' | 'eof' | 'eq' | 'eval' | 'exec' | 'exists' | 'exit' | 'exp' | 'fcntl' | 'fileno' | 'flock' | 'for' | 'foreach' | 'fork' | 'format' | 'formline' | 'ge' | 'getc' | 'getgrent' | 'getgrgid' | 'getgrnam' | 'gethostbyaddr' | 'gethostbyname' | 'gethostent' | 'getlogin' | 'getnetbyaddr' | 'getnetbyname' | 'getnetent' | 'getpeername' | 'getpgrp' | 'getppid' | 'getpriority' | 'getprotobyname' | 'getprotobynumber' | 'getprotoent' | 'getpwent' | 'getpwnam' | 'getpwuid' | 'getservbyname' | 'getservbyport' | 'getservent' | 'getsockname' | 'getsockopt' | 'glob' | 'gmtime' | 'goto' | 'grep' | 'gt' | 'hex' | 'if' | 'index' | 'int' | 'ioctl' | 'join' | 'keys' | 'kill' | 'last' | 'lc' | 'lcfirst' | 'le' | 'length' | 'link' | 'listen' | 'local' | 'localtime' | 'lock' | 'log' | 'lstat' | 'lt' | 'map' | 'mkdir' | 'msgctl' | 'msgget' | 'msgrcv' | 'msgsnd' | 'my' | 'ne' | 'next' | 'no' | 'not' | 'oct' | 'open' | 'opendir' | 'or' | 'ord' | 'our' | 'pack' | 'package' | 'pipe' | 'pop' | 'pos' | 'print' | 'printf' | 'prototype' | 'push' | 'quotemeta' | 'rand' | 'read' | 'readdir' | 'readline' | 'readlink' | 'readpipe' | 'recv' | 'redo' | 'ref' | 'rename' | 'require' | 'reset' | 'return' | 'reverse' | 'rewinddir' | 'rindex' | 'rmdir' | 'scalar' | 'seek' | 'seekdir' | 'select' | 'semctl' | 'semget' | 'semop' | 'send' | 'setgrent' | 'sethostent' | 'setnetent' | 'setpgrp' | 'setpriority' | 'setprotoent' | 'setpwent' | 'setservent' | 'setsockopt' | 'shift' | 'shmctl' | 'shmget' | 'shmread' | 'shmwrite' | 'shutdown' | 'sin' | 'sleep' | 'socket' | 'socketpair' | 'sort' | 'splice' | 'split' | 'sprintf' | 'sqrt' | 'srand' | 'stat' | 'study' | 'sub' | 'substr' | 'symlink' | 'syscall' | 'sysopen' | 'sysread' | 'sysseek' | 'system' | 'syswrite' | 'tell' | 'telldir' | 'tie' | 'tied' | 'time' | 'times' | 'truncate' | 'uc' | 'ucfirst' | 'umask' | 'undef' | 'unless' | 'unlink' | 'unpack' | 'unshift' | 'untie' | 'until' | 'use' | 'utime' | 'values' | 'vec' | 'wait' | 'waitpid' | 'wantarray' | 'warn' | 'while' | 'write' | 'xor' );";
         }
     }
     static final String DFA3_eotS =
@@ -5663,265 +6210,264 @@ public class PerlLexer extends Lexer {
             return "88:4: ( '*^A' | '*^C' | '*^D' | '*^E' | '*^F' | '*^I' | '*^L' | '*^N' | '*^O' | '*^P' | '*^R' | '*^S' | '*^T' | '*^V' | '*^W' | '*^X' | '*/' | '*?' | '*%' | '*@' | '*_' | '*-' | '*+' | '*.' | '*|' | '*,' | '*;' | '*~' | '*:' | '*^' | '*<' | '*>' | '*(' | '*)' | '*\\'' | '*\\\\' | '$$m' | '$$s' | '$\"' | '$^A' | '$^C' | '$^D' | '$^E' | '$^F' | '$^H' | '$^I' | '$^L' | '$^M' | '$^N' | '$^O' | '$^P' | '$^R' | '$^S' | '$^T' | '$^V' | '$^W' | '$^X' | '$/' | '$?' | '$%' | '$@' | '$_' | '$-' | '$+' | '$.' | '$|' | '$!' | '$;' | '$~' | '$$' | '$`' | '$<' | '$>' | '$(' | '$)' | '$,' | '$[' | '$]' | '$:' | '$*' | '$#' | '$=' | '$^' | '$&' | '$\\'' | '$\\\\' | '@+' | '@-' | '@_' | '@$' | '%!' | '%@' | '%^H' )";
         }
     }
-    static final String DFA25_eotS =
-        "\2\uffff\1\76\1\102\24\76\1\u0085\3\76\1\u0085\1\76\1\u0085\5\76"+
-        "\1\u00b5\5\uffff\1\76\20\uffff\1\u00bf\1\u00c1\2\uffff\1\76\1\u0085"+
-        "\1\76\1\uffff\6\76\3\u0085\1\76\2\u0085\20\76\1\u0085\5\76\1\u0085"+
-        "\6\76\1\u0085\4\76\1\u0085\1\76\1\u0085\6\76\2\u0085\3\76\1\u0085"+
-        "\3\76\1\u0085\2\uffff\2\u0085\2\76\1\u0085\6\76\5\u0085\22\76\2"+
-        "\u0085\12\76\2\uffff\5\u00b4\1\uffff\3\u00b4\3\uffff\13\76\1\u0085"+
-        "\1\76\1\u0085\2\76\1\u0085\7\76\1\u0085\1\76\1\u0085\1\76\1\u0085"+
-        "\4\76\1\u0085\4\76\1\u0085\3\76\1\u0085\3\76\1\u0085\5\76\1\u0085"+
-        "\1\76\1\u0085\12\76\1\u0085\1\76\1\u0085\3\76\2\u0085\1\76\2\u0085"+
-        "\2\76\2\u0085\10\76\1\u0085\21\76\1\u0085\11\76\1\u0085\3\76\1\u0085"+
-        "\11\76\1\u0085\2\76\1\u0085\5\76\1\u0085\2\u00b4\1\u0085\7\76\1"+
-        "\u0085\2\76\1\u0085\3\76\1\u0085\6\76\1\u0085\12\76\3\u0085\6\76"+
-        "\2\u0085\1\76\1\u0085\4\76\1\u0085\1\76\1\u0085\6\76\1\u0085\1\76"+
-        "\2\u0085\2\76\4\u0085\2\76\1\u0085\2\76\1\u0085\6\76\4\u0085\2\76"+
-        "\1\u0085\1\76\4\u0085\11\76\1\u0085\4\76\1\u0085\15\76\1\u0085\2"+
-        "\76\1\u0085\1\76\1\u0085\11\76\3\u0085\13\76\1\u0085\1\76\1\u0085"+
-        "\10\76\2\u0085\2\76\1\u0085\1\76\1\u0085\1\76\4\u0085\1\76\1\u0085"+
-        "\2\76\1\u0085\4\76\1\u0085\7\76\1\u0085\1\76\1\u0085\17\76\2\u0085"+
-        "\3\76\3\u0085\6\76\1\u0085\7\76\1\u0085\4\76\1\u0085\5\76\1\u0085"+
-        "\10\76\1\u0085\5\76\1\u0085\2\76\1\u0085\1\76\2\u0085\11\76\1\u0085"+
-        "\2\76\2\u0085\4\76\3\u0085\3\76\2\u0085\7\76\1\u0085\1\76\2\u0085"+
-        "\6\76\1\u0085\6\76\2\u0085\1\76\1\u0085\21\76\1\u0085\1\76\2\u0085"+
-        "\1\76\4\u0085\2\76\1\u0085\5\76\1\u0085\1\76\1\u0085\2\76\2\u0085"+
-        "\1\76\3\u0085\11\76\2\u0085\3\76\2\u0085\1\76\1\u0085\5\76\1\u0085"+
-        "\4\76\3\u0085\1\76\1\u0085\6\76\1\u0085\1\76\2\u0085\1\76\1\u0085"+
-        "\2\76\2\u0085\6\76\1\u0085\11\76\2\u0085\7\76\1\u0085\1\76\2\u0085"+
-        "\2\76\1\u0085\2\76\2\u0085\1\76\1\u0085\3\76\1\u0085\5\76\1\u0085"+
-        "\3\76\6\u0085\1\76\1\u0085\1\76\3\u0085\1\76\2\u0085\1\76\6\u0085"+
-        "\3\76\1\u0085\1\76\4\u0085\2\76\1\u0085\5\76\3\u0085\7\76\3\u0085"+
-        "\1\76\1\u0085\4\76\1\u0085\2\76\2\u0085\1\76\2\u0085\3\76\1\u0085"+
-        "\6\76\1\u0085\10\76\4\u0085\1\76\1\u0085\5\76\1\u0085\1\76\1\u0085"+
-        "\1\76\1\u0085\2\76\1\u0085\10\76\1\u0085\1\76\2\u0085\2\76\5\u0085"+
-        "\4\76\2\u0085\1\76\1\u0085\2\76\3\u0085\2\76\2\u0085\4\76\2\u0085"+
-        "\2\76\3\u0085\2\76\1\u0085";
-    static final String DFA25_eofS =
-        "\u03b8\uffff";
-    static final String DFA25_minS =
+    static final String DFA36_eotS =
+        "\2\uffff\1\75\1\101\40\75\1\u00b1\2\u00b7\3\uffff\1\75\20\uffff"+
+        "\1\u00bc\1\u00bd\1\uffff\1\75\1\u00bf\1\75\1\uffff\6\75\3\u00bf"+
+        "\1\75\2\u00bf\20\75\1\u00bf\5\75\1\u00bf\6\75\1\u00bf\4\75\1\u00bf"+
+        "\1\75\1\u00bf\6\75\2\u00bf\3\75\1\u00bf\3\75\1\u00bf\1\uffff\2\u00bf"+
+        "\2\75\1\u00bf\10\75\1\uffff\23\75\1\u00bf\12\75\2\uffff\5\u00b0"+
+        "\2\uffff\3\u00b0\2\uffff\1\75\1\uffff\12\75\1\u00bf\1\75\1\u00bf"+
+        "\2\75\1\u00bf\7\75\1\u00bf\1\75\1\u00bf\1\75\1\u00bf\4\75\1\u00bf"+
+        "\4\75\1\u00bf\3\75\1\u00bf\3\75\1\u00bf\5\75\1\u00bf\1\75\1\u00bf"+
+        "\12\75\1\u00bf\1\75\1\u00bf\3\75\2\u00bf\1\75\2\u00bf\2\75\2\u00bf"+
+        "\10\75\1\u00bf\21\75\1\u00bf\11\75\1\u00bf\3\75\1\u00bf\11\75\1"+
+        "\u00bf\2\75\1\u00bf\5\75\1\u00bf\2\u00b0\1\u00bf\7\75\1\u00bf\2"+
+        "\75\1\u00bf\3\75\1\u00bf\6\75\1\u00bf\12\75\3\u00bf\6\75\2\u00bf"+
+        "\1\75\1\u00bf\4\75\1\u00bf\1\75\1\u00bf\6\75\1\u00bf\1\75\2\u00bf"+
+        "\2\75\4\u00bf\2\75\1\u00bf\2\75\1\u00bf\6\75\4\u00bf\2\75\1\u00bf"+
+        "\1\75\4\u00bf\11\75\1\u00bf\4\75\1\u00bf\15\75\1\u00bf\2\75\1\u00bf"+
+        "\1\75\1\u00bf\11\75\3\u00bf\13\75\1\u00bf\1\75\1\u00bf\10\75\2\u00bf"+
+        "\2\75\1\u00bf\1\75\1\u00bf\1\75\4\u00bf\1\75\1\u00bf\2\75\1\u00bf"+
+        "\4\75\1\u00bf\7\75\1\u00bf\1\75\1\u00bf\17\75\2\u00bf\3\75\3\u00bf"+
+        "\6\75\1\u00bf\7\75\1\u00bf\4\75\1\u00bf\5\75\1\u00bf\10\75\1\u00bf"+
+        "\5\75\1\u00bf\2\75\1\u00bf\1\75\2\u00bf\11\75\1\u00bf\2\75\2\u00bf"+
+        "\4\75\3\u00bf\3\75\2\u00bf\7\75\1\u00bf\1\75\2\u00bf\6\75\1\u00bf"+
+        "\6\75\2\u00bf\1\75\1\u00bf\21\75\1\u00bf\1\75\2\u00bf\1\75\4\u00bf"+
+        "\2\75\1\u00bf\5\75\1\u00bf\1\75\1\u00bf\2\75\2\u00bf\1\75\3\u00bf"+
+        "\11\75\2\u00bf\3\75\2\u00bf\1\75\1\u00bf\5\75\1\u00bf\4\75\3\u00bf"+
+        "\1\75\1\u00bf\6\75\1\u00bf\1\75\2\u00bf\1\75\1\u00bf\2\75\2\u00bf"+
+        "\6\75\1\u00bf\11\75\2\u00bf\7\75\1\u00bf\1\75\2\u00bf\2\75\1\u00bf"+
+        "\2\75\2\u00bf\1\75\1\u00bf\3\75\1\u00bf\5\75\1\u00bf\3\75\6\u00bf"+
+        "\1\75\1\u00bf\1\75\3\u00bf\1\75\2\u00bf\1\75\6\u00bf\3\75\1\u00bf"+
+        "\1\75\4\u00bf\2\75\1\u00bf\5\75\3\u00bf\7\75\3\u00bf\1\75\1\u00bf"+
+        "\4\75\1\u00bf\2\75\2\u00bf\1\75\2\u00bf\3\75\1\u00bf\6\75\1\u00bf"+
+        "\10\75\4\u00bf\1\75\1\u00bf\5\75\1\u00bf\1\75\1\u00bf\1\75\1\u00bf"+
+        "\2\75\1\u00bf\10\75\1\u00bf\1\75\2\u00bf\2\75\5\u00bf\4\75\2\u00bf"+
+        "\1\75\1\u00bf\2\75\3\u00bf\2\75\2\u00bf\4\75\2\u00bf\2\75\3\u00bf"+
+        "\2\75\1\u00bf";
+    static final String DFA36_eofS =
+        "\u03b5\uffff";
+    static final String DFA36_minS =
         "\1\11\1\uffff\1\105\1\101\1\125\1\105\1\110\1\105\1\116\1\105\1"+
         "\116\1\105\1\142\1\151\1\141\1\142\1\141\1\143\2\145\1\146\1\157"+
-        "\1\145\1\141\1\57\1\145\1\143\1\141\1\57\1\141\1\57\1\145\1\143"+
-        "\2\141\1\157\1\45\1\41\1\43\1\41\2\uffff\1\57\20\uffff\2\0\2\uffff"+
+        "\1\145\1\141\1\57\1\145\1\143\1\141\1\50\1\141\1\57\1\145\1\143"+
+        "\2\141\1\157\1\45\1\41\1\43\1\41\2\uffff\1\57\20\uffff\2\0\1\uffff"+
         "\1\114\1\101\1\104\1\uffff\1\124\1\107\1\122\1\105\1\123\1\104\3"+
         "\101\1\111\2\101\1\163\1\143\1\141\1\144\1\141\1\156\1\145\1\154"+
         "\1\144\1\157\1\160\1\156\1\171\1\155\1\146\1\145\1\101\1\155\1\143"+
         "\1\163\1\144\1\146\1\101\1\141\1\145\1\156\1\154\1\157\1\162\1\101"+
         "\1\157\2\164\1\145\1\101\1\170\1\101\1\144\1\143\1\151\1\171\1\154"+
-        "\1\163\2\101\1\156\1\143\1\164\1\101\1\160\1\144\1\147\1\101\2\uffff"+
-        "\2\101\1\164\1\145\1\101\1\162\1\143\2\160\1\151\1\163\2\57\1\101"+
-        "\2\57\1\156\1\141\1\156\1\144\1\141\1\145\1\151\1\156\1\145\1\143"+
-        "\1\154\1\162\2\141\1\142\1\155\1\154\1\145\1\57\1\101\1\141\1\144"+
-        "\1\145\1\151\1\154\1\143\3\151\1\162\2\uffff\5\60\1\uffff\3\60\3"+
-        "\uffff\1\114\2\111\2\101\1\116\1\117\1\111\1\105\1\103\1\124\1\101"+
-        "\1\124\1\101\1\145\1\162\1\101\1\156\1\144\1\163\1\154\1\151\1\157"+
-        "\1\155\1\101\1\163\1\101\1\156\1\101\1\160\1\143\1\151\1\145\1\101"+
-        "\1\160\1\150\1\145\1\147\1\101\1\154\1\143\1\163\1\101\1\164\1\145"+
-        "\1\143\1\101\1\143\1\142\1\151\1\157\1\160\1\101\1\145\1\101\1\164"+
-        "\1\156\1\163\1\154\1\164\1\151\1\147\1\153\1\164\1\141\1\101\1\141"+
-        "\1\101\1\151\1\143\1\164\2\101\1\156\2\101\1\153\1\145\2\101\1\156"+
-        "\1\164\1\150\1\164\2\144\1\166\1\157\1\101\1\141\1\165\1\145\1\165"+
-        "\1\145\1\151\1\144\1\151\1\154\1\153\1\145\1\143\1\144\1\147\1\146"+
-        "\1\143\1\164\1\101\1\145\1\153\1\164\2\151\1\164\1\156\1\164\1\144"+
-        "\1\101\1\154\1\143\1\154\1\101\1\145\1\156\1\151\1\163\2\145\1\141"+
-        "\1\150\1\151\1\101\1\155\1\165\1\101\2\164\1\156\1\154\1\164\1\101"+
-        "\2\60\1\101\1\114\1\116\1\103\1\124\1\104\1\114\1\116\1\101\1\113"+
-        "\1\122\1\101\1\160\1\155\1\62\1\101\1\157\1\163\1\145\1\162\1\144"+
-        "\1\160\1\101\1\156\1\157\2\145\1\151\1\164\1\154\1\160\1\156\1\164"+
-        "\3\101\1\146\1\162\1\157\1\145\1\162\1\145\2\101\1\164\1\101\1\154"+
-        "\1\156\1\153\1\141\1\101\1\141\1\101\1\162\2\157\3\145\1\101\1\155"+
-        "\2\101\1\170\1\154\4\101\1\162\1\164\1\101\1\145\1\154\1\101\1\164"+
-        "\1\162\1\164\1\145\1\143\1\156\4\101\1\164\1\157\1\101\1\145\4\101"+
-        "\1\155\1\151\1\164\2\162\1\156\1\145\1\162\1\141\1\101\1\143\1\164"+
-        "\1\145\1\160\1\101\1\162\1\157\1\145\1\147\1\145\2\164\2\145\1\162"+
-        "\1\144\1\160\1\145\1\101\1\143\1\156\1\101\1\144\1\101\1\171\1\164"+
-        "\1\151\1\141\1\160\3\145\1\162\3\101\1\143\1\162\1\153\1\146\1\163"+
-        "\1\156\1\143\1\151\3\145\1\101\1\141\1\101\2\145\2\105\1\113\1\101"+
-        "\1\137\1\117\2\101\1\117\1\164\1\101\1\144\1\101\1\162\4\101\1\164"+
-        "\1\101\1\143\1\156\1\101\1\157\3\145\1\101\1\145\1\163\1\164\1\157"+
-        "\1\145\1\162\1\163\1\101\1\157\1\101\1\143\1\164\1\151\1\145\1\163"+
-        "\1\147\1\164\1\145\1\162\2\151\1\145\1\162\1\143\1\145\2\101\1\163"+
-        "\1\150\1\156\3\101\1\154\1\164\1\166\1\144\1\151\1\147\1\101\1\164"+
-        "\1\155\3\151\1\145\1\162\1\101\1\156\1\163\1\144\1\170\1\101\1\162"+
-        "\1\151\1\164\1\154\1\164\1\101\1\145\1\163\1\164\1\162\1\151\1\145"+
-        "\1\162\1\143\1\101\1\154\1\164\1\141\1\151\1\157\1\101\1\164\1\145"+
-        "\1\101\1\164\2\101\1\162\1\156\1\154\1\145\1\141\1\145\1\155\2\151"+
-        "\1\101\1\141\1\163\2\101\1\163\2\153\1\146\3\101\1\163\1\151\1\162"+
-        "\2\101\2\137\1\101\2\137\1\101\1\131\1\101\1\145\2\101\1\151\1\164"+
-        "\1\165\1\163\1\156\1\144\1\101\1\156\1\164\1\145\1\164\1\156\1\166"+
-        "\2\101\1\150\1\101\2\156\1\151\1\141\1\164\1\151\1\142\1\162\1\160"+
-        "\1\144\1\157\1\164\1\156\1\141\1\151\1\166\1\153\1\101\1\164\2\101"+
-        "\1\151\4\101\1\162\1\145\1\101\1\171\1\145\1\162\1\156\1\160\1\101"+
-        "\1\145\1\101\1\145\1\144\2\101\1\162\3\101\1\156\1\164\1\145\1\160"+
-        "\1\157\1\164\1\156\1\166\1\153\2\101\1\144\1\164\1\167\2\101\1\146"+
-        "\1\101\1\153\1\154\1\156\1\144\1\153\1\101\1\164\1\162\2\164\3\101"+
-        "\1\164\1\101\1\144\1\162\2\137\1\107\1\137\1\101\1\104\2\101\1\162"+
-        "\1\101\2\145\2\101\1\164\1\145\1\156\1\157\1\164\1\145\1\101\1\145"+
-        "\1\164\1\144\1\155\1\142\1\156\1\171\2\156\2\101\1\162\1\157\1\164"+
-        "\1\155\1\144\1\142\1\156\1\101\1\155\2\101\1\160\1\164\1\101\2\145"+
-        "\2\101\1\151\1\101\1\164\1\145\1\156\1\101\1\162\1\157\1\164\1\145"+
-        "\1\157\1\101\1\145\1\156\1\141\6\101\1\145\1\101\1\145\3\101\1\141"+
-        "\2\101\1\105\6\101\1\156\1\164\1\145\1\101\1\156\4\101\1\171\1\156"+
-        "\1\101\1\141\1\164\1\141\1\151\1\142\3\101\1\171\1\156\1\141\1\160"+
-        "\2\145\1\141\3\101\1\162\1\101\1\156\1\164\1\151\1\145\1\101\1\156"+
-        "\1\160\2\101\1\151\2\101\1\171\1\137\1\164\1\101\1\156\1\164\1\141"+
-        "\1\164\1\144\1\141\1\101\1\155\1\164\1\171\2\156\1\164\1\155\1\164"+
-        "\4\101\1\164\1\101\1\164\1\156\2\164\1\162\1\101\1\137\1\101\1\164"+
-        "\1\101\1\144\1\141\1\101\1\144\1\155\1\145\1\171\1\156\1\164\1\141"+
-        "\1\157\1\101\1\145\2\101\1\171\1\164\5\101\1\144\1\155\1\162\1\145"+
-        "\2\101\1\141\1\101\1\155\1\162\3\101\1\162\1\145\2\101\2\155\1\145"+
-        "\1\164\2\101\1\145\1\142\3\101\1\145\1\162\1\101";
-    static final String DFA25_maxS =
+        "\1\163\2\101\1\156\1\143\1\164\1\101\1\160\1\144\1\147\1\101\1\uffff"+
+        "\2\101\1\164\1\145\1\101\1\162\1\143\2\160\1\151\1\163\1\157\1\50"+
+        "\1\uffff\1\156\1\141\1\156\1\144\1\141\1\145\1\151\1\156\1\145\1"+
+        "\143\1\154\1\162\2\141\1\142\1\155\1\154\1\145\1\57\1\101\1\141"+
+        "\1\144\1\145\1\151\1\154\1\143\3\151\1\162\2\uffff\5\60\2\uffff"+
+        "\3\60\2\uffff\1\114\1\uffff\2\111\2\101\1\116\1\117\1\111\1\105"+
+        "\1\103\1\124\1\101\1\124\1\101\1\145\1\162\1\101\1\156\1\144\1\163"+
+        "\1\154\1\151\1\157\1\155\1\101\1\163\1\101\1\156\1\101\1\160\1\143"+
+        "\1\151\1\145\1\101\1\160\1\150\1\145\1\147\1\101\1\154\1\143\1\163"+
+        "\1\101\1\164\1\145\1\143\1\101\1\143\1\142\1\151\1\157\1\160\1\101"+
+        "\1\145\1\101\1\164\1\156\1\163\1\154\1\164\1\151\1\147\1\153\1\164"+
+        "\1\141\1\101\1\141\1\101\1\151\1\143\1\164\2\101\1\156\2\101\1\153"+
+        "\1\145\2\101\1\156\1\164\1\150\1\164\2\144\1\166\1\157\1\101\1\141"+
+        "\1\165\1\145\1\165\1\145\1\151\1\144\1\151\1\154\1\153\1\145\1\143"+
+        "\1\144\1\147\1\146\1\143\1\164\1\101\1\145\1\153\1\164\2\151\1\164"+
+        "\1\156\1\164\1\144\1\101\1\154\1\143\1\154\1\101\1\145\1\156\1\151"+
+        "\1\163\2\145\1\141\1\150\1\151\1\101\1\155\1\165\1\101\2\164\1\156"+
+        "\1\154\1\164\1\101\2\60\1\101\1\114\1\116\1\103\1\124\1\104\1\114"+
+        "\1\116\1\101\1\113\1\122\1\101\1\160\1\155\1\62\1\101\1\157\1\163"+
+        "\1\145\1\162\1\144\1\160\1\101\1\156\1\157\2\145\1\151\1\164\1\154"+
+        "\1\160\1\156\1\164\3\101\1\146\1\162\1\157\1\145\1\162\1\145\2\101"+
+        "\1\164\1\101\1\154\1\156\1\153\1\141\1\101\1\141\1\101\1\162\2\157"+
+        "\3\145\1\101\1\155\2\101\1\170\1\154\4\101\1\162\1\164\1\101\1\145"+
+        "\1\154\1\101\1\164\1\162\1\164\1\145\1\143\1\156\4\101\1\164\1\157"+
+        "\1\101\1\145\4\101\1\155\1\151\1\164\2\162\1\156\1\145\1\162\1\141"+
+        "\1\101\1\143\1\164\1\145\1\160\1\101\1\162\1\157\1\145\1\147\1\145"+
+        "\2\164\2\145\1\162\1\144\1\160\1\145\1\101\1\143\1\156\1\101\1\144"+
+        "\1\101\1\171\1\164\1\151\1\141\1\160\3\145\1\162\3\101\1\143\1\162"+
+        "\1\153\1\146\1\163\1\156\1\143\1\151\3\145\1\101\1\141\1\101\2\145"+
+        "\2\105\1\113\1\101\1\137\1\117\2\101\1\117\1\164\1\101\1\144\1\101"+
+        "\1\162\4\101\1\164\1\101\1\143\1\156\1\101\1\157\3\145\1\101\1\145"+
+        "\1\163\1\164\1\157\1\145\1\162\1\163\1\101\1\157\1\101\1\143\1\164"+
+        "\1\151\1\145\1\163\1\147\1\164\1\145\1\162\2\151\1\145\1\162\1\143"+
+        "\1\145\2\101\1\163\1\150\1\156\3\101\1\154\1\164\1\166\1\144\1\151"+
+        "\1\147\1\101\1\164\1\155\3\151\1\145\1\162\1\101\1\156\1\163\1\144"+
+        "\1\170\1\101\1\162\1\151\1\164\1\154\1\164\1\101\1\145\1\163\1\164"+
+        "\1\162\1\151\1\145\1\162\1\143\1\101\1\154\1\164\1\141\1\151\1\157"+
+        "\1\101\1\164\1\145\1\101\1\164\2\101\1\162\1\156\1\154\1\145\1\141"+
+        "\1\145\1\155\2\151\1\101\1\141\1\163\2\101\1\163\2\153\1\146\3\101"+
+        "\1\163\1\151\1\162\2\101\2\137\1\101\2\137\1\101\1\131\1\101\1\145"+
+        "\2\101\1\151\1\164\1\165\1\163\1\156\1\144\1\101\1\156\1\164\1\145"+
+        "\1\164\1\156\1\166\2\101\1\150\1\101\2\156\1\151\1\141\1\164\1\151"+
+        "\1\142\1\162\1\160\1\144\1\157\1\164\1\156\1\141\1\151\1\166\1\153"+
+        "\1\101\1\164\2\101\1\151\4\101\1\162\1\145\1\101\1\171\1\145\1\162"+
+        "\1\156\1\160\1\101\1\145\1\101\1\145\1\144\2\101\1\162\3\101\1\156"+
+        "\1\164\1\145\1\160\1\157\1\164\1\156\1\166\1\153\2\101\1\144\1\164"+
+        "\1\167\2\101\1\146\1\101\1\153\1\154\1\156\1\144\1\153\1\101\1\164"+
+        "\1\162\2\164\3\101\1\164\1\101\1\144\1\162\2\137\1\107\1\137\1\101"+
+        "\1\104\2\101\1\162\1\101\2\145\2\101\1\164\1\145\1\156\1\157\1\164"+
+        "\1\145\1\101\1\145\1\164\1\144\1\155\1\142\1\156\1\171\2\156\2\101"+
+        "\1\162\1\157\1\164\1\155\1\144\1\142\1\156\1\101\1\155\2\101\1\160"+
+        "\1\164\1\101\2\145\2\101\1\151\1\101\1\164\1\145\1\156\1\101\1\162"+
+        "\1\157\1\164\1\145\1\157\1\101\1\145\1\156\1\141\6\101\1\145\1\101"+
+        "\1\145\3\101\1\141\2\101\1\105\6\101\1\156\1\164\1\145\1\101\1\156"+
+        "\4\101\1\171\1\156\1\101\1\141\1\164\1\141\1\151\1\142\3\101\1\171"+
+        "\1\156\1\141\1\160\2\145\1\141\3\101\1\162\1\101\1\156\1\164\1\151"+
+        "\1\145\1\101\1\156\1\160\2\101\1\151\2\101\1\171\1\137\1\164\1\101"+
+        "\1\156\1\164\1\141\1\164\1\144\1\141\1\101\1\155\1\164\1\171\2\156"+
+        "\1\164\1\155\1\164\4\101\1\164\1\101\1\164\1\156\2\164\1\162\1\101"+
+        "\1\137\1\101\1\164\1\101\1\144\1\141\1\101\1\144\1\155\1\145\1\171"+
+        "\1\156\1\164\1\141\1\157\1\101\1\145\2\101\1\171\1\164\5\101\1\144"+
+        "\1\155\1\162\1\145\2\101\1\141\1\101\1\155\1\162\3\101\1\162\1\145"+
+        "\2\101\2\155\1\145\1\164\2\101\1\145\1\142\3\101\1\145\1\162\1\101";
+    static final String DFA36_maxS =
         "\1\175\1\uffff\1\125\1\172\1\125\1\105\1\117\1\105\1\121\1\124\1"+
         "\116\1\124\1\164\1\154\1\162\1\165\1\170\1\157\1\164\1\145\2\157"+
-        "\1\151\1\164\1\172\1\157\2\165\1\172\1\155\1\172\1\162\1\164\1\145"+
-        "\1\162\1\157\2\176\2\172\2\uffff\1\57\20\uffff\2\uffff\2\uffff\1"+
+        "\1\151\1\164\1\171\1\157\2\165\1\174\1\155\1\171\1\162\1\164\1\145"+
+        "\1\162\1\157\2\176\2\172\2\uffff\1\57\20\uffff\2\uffff\1\uffff\1"+
         "\114\1\172\1\120\1\uffff\1\124\1\107\1\122\1\105\1\123\1\104\3\172"+
         "\1\111\2\172\1\163\1\143\1\141\1\144\1\141\1\156\1\145\1\154\1\162"+
         "\1\157\1\160\1\163\1\171\1\155\1\154\1\145\1\172\1\155\1\143\1\163"+
         "\1\144\1\146\1\172\1\141\1\160\1\156\1\154\1\157\1\162\1\172\1\157"+
         "\2\164\1\145\1\172\1\170\1\172\1\164\1\143\1\151\1\171\1\154\1\163"+
-        "\2\172\1\163\1\147\1\164\1\172\1\160\1\144\1\147\1\172\2\uffff\2"+
-        "\172\1\164\1\145\1\172\1\162\1\143\1\160\1\163\1\157\1\163\5\172"+
-        "\1\156\1\167\1\156\1\144\1\141\1\164\1\165\1\156\1\145\3\162\1\141"+
-        "\1\165\1\142\1\163\1\154\1\155\2\172\1\141\1\164\1\145\1\151\1\154"+
-        "\1\143\1\162\2\151\1\162\2\uffff\5\172\1\uffff\3\172\3\uffff\1\114"+
-        "\2\111\2\101\1\116\1\117\1\111\1\105\1\103\1\124\1\172\1\124\1\172"+
-        "\1\145\1\162\1\172\1\156\1\155\1\163\1\154\1\151\1\157\1\167\1\172"+
-        "\1\163\1\172\1\164\1\172\1\160\1\157\1\151\1\145\1\172\1\160\1\150"+
-        "\1\151\1\163\1\172\1\154\1\143\1\164\1\172\1\164\1\145\1\143\1\172"+
-        "\1\163\1\142\1\151\1\157\1\160\1\172\1\145\1\172\1\164\1\156\1\163"+
-        "\1\154\1\164\1\151\1\147\1\153\1\164\1\153\1\172\1\141\1\172\1\151"+
-        "\1\163\1\164\2\172\1\156\2\172\1\153\1\145\2\172\1\156\1\164\1\150"+
-        "\1\164\2\144\1\166\1\157\1\172\1\141\1\165\1\145\1\165\1\145\1\151"+
-        "\1\144\1\151\1\154\1\153\1\145\1\157\1\144\1\163\1\146\1\167\1\164"+
-        "\1\172\1\145\1\153\1\164\2\151\1\164\1\156\1\164\1\144\1\172\1\154"+
-        "\1\167\1\154\1\172\1\145\1\156\1\151\1\163\1\145\1\151\1\141\1\150"+
-        "\1\151\1\172\1\155\1\165\1\172\2\164\1\156\1\154\1\164\4\172\1\114"+
-        "\1\116\1\103\1\124\1\104\1\114\1\116\1\172\1\113\1\122\1\172\1\160"+
-        "\1\155\1\62\1\172\1\157\1\163\1\145\1\162\1\144\1\160\1\172\1\156"+
-        "\1\157\2\145\1\151\1\164\1\154\1\160\1\156\1\164\3\172\1\146\1\162"+
-        "\1\157\1\145\1\167\1\145\2\172\1\164\1\172\1\154\1\156\1\153\1\141"+
-        "\1\172\1\154\1\172\1\162\2\157\1\145\1\167\1\157\1\172\1\155\2\172"+
-        "\1\170\1\154\4\172\1\162\1\164\1\172\1\145\1\154\1\172\1\164\1\162"+
-        "\1\164\1\145\1\143\1\156\4\172\1\164\1\157\1\172\1\145\4\172\1\155"+
-        "\1\151\1\164\2\162\1\156\1\145\1\162\1\141\1\172\1\143\1\164\1\145"+
-        "\1\160\1\172\1\162\1\157\1\145\1\167\1\157\2\164\2\145\1\162\1\144"+
-        "\1\160\1\145\1\172\1\164\1\156\1\172\1\144\1\172\1\171\1\164\1\151"+
-        "\1\141\1\160\3\145\1\162\3\172\1\143\1\162\1\153\1\146\1\163\1\156"+
-        "\1\143\1\151\1\154\2\145\1\172\1\141\1\172\2\145\2\105\1\113\1\101"+
-        "\1\137\1\117\2\172\1\117\1\164\1\172\1\144\1\172\1\162\4\172\1\164"+
-        "\1\172\1\143\1\156\1\172\1\157\3\145\1\172\1\145\1\163\1\164\1\157"+
-        "\1\145\1\162\1\163\1\172\1\157\1\172\1\143\1\164\1\151\1\156\1\163"+
-        "\1\147\1\164\1\145\1\162\1\151\1\157\1\165\1\162\1\143\1\145\2\172"+
-        "\1\163\1\150\1\156\3\172\1\154\1\164\1\166\1\144\1\151\1\147\1\172"+
-        "\1\164\1\155\3\151\1\145\1\162\1\172\1\156\1\163\1\144\1\170\1\172"+
-        "\1\162\1\151\1\164\1\154\1\164\1\172\1\145\1\163\1\164\1\162\1\157"+
-        "\1\145\1\162\1\143\1\172\1\154\1\164\1\141\1\151\1\157\1\172\1\164"+
-        "\1\145\1\172\1\164\2\172\1\162\1\156\1\154\1\145\1\141\1\145\1\155"+
-        "\2\151\1\172\1\141\1\163\2\172\1\163\2\153\1\146\3\172\1\163\1\151"+
-        "\1\162\2\172\2\137\1\101\2\137\1\101\1\131\1\172\1\145\2\172\1\151"+
-        "\1\164\1\165\1\163\1\156\1\144\1\172\1\156\1\164\1\145\1\164\1\156"+
-        "\1\166\2\172\1\150\1\172\2\156\1\151\1\141\1\164\1\151\1\145\1\162"+
-        "\1\160\1\144\1\157\1\164\1\156\1\141\1\151\1\166\1\153\1\172\1\164"+
-        "\2\172\1\151\4\172\1\162\1\145\1\172\1\171\1\145\1\162\1\156\1\160"+
-        "\1\172\1\145\1\172\1\145\1\144\2\172\1\162\3\172\1\156\1\164\1\145"+
-        "\1\160\1\157\1\164\1\156\1\166\1\153\2\172\1\144\1\164\1\167\2\172"+
-        "\1\146\1\172\1\153\1\154\1\156\1\144\1\153\1\172\1\164\1\162\2\164"+
-        "\3\172\1\164\1\172\1\144\1\162\2\137\1\107\1\137\1\172\1\104\2\172"+
-        "\1\162\1\172\2\145\2\172\1\164\1\145\1\156\1\157\1\164\1\145\1\172"+
-        "\1\145\1\164\1\144\1\155\1\145\1\156\1\171\2\156\2\172\1\162\1\157"+
-        "\1\164\1\155\1\144\1\145\1\157\1\172\1\155\2\172\1\160\1\164\1\172"+
-        "\1\153\1\145\2\172\1\151\1\172\1\164\1\145\1\156\1\172\1\162\1\157"+
-        "\1\164\1\145\1\157\1\172\1\145\1\156\1\141\6\172\1\145\1\172\1\145"+
-        "\3\172\1\141\2\172\1\105\6\172\1\156\1\164\1\145\1\172\1\156\4\172"+
-        "\1\171\1\156\1\172\1\156\1\164\1\141\1\151\1\145\3\172\1\171\1\156"+
-        "\1\141\1\160\2\145\1\141\3\172\1\162\1\172\1\156\1\164\1\151\1\145"+
-        "\1\172\1\156\1\160\2\172\1\151\2\172\1\171\1\137\1\164\1\172\1\156"+
-        "\1\164\1\156\1\164\1\144\1\141\1\172\1\155\1\164\1\171\1\156\1\160"+
-        "\1\164\1\155\1\164\4\172\1\164\1\172\1\164\1\156\2\164\1\162\1\172"+
-        "\1\137\1\172\1\164\1\172\1\144\1\141\1\172\1\144\1\155\1\145\1\171"+
-        "\1\156\1\164\1\141\1\157\1\172\1\145\2\172\1\171\1\164\5\172\1\144"+
-        "\1\155\1\162\1\145\2\172\1\165\1\172\1\155\1\162\3\172\1\162\1\145"+
-        "\2\172\2\155\1\145\1\164\2\172\1\145\1\142\3\172\1\145\1\162\1\172";
-    static final String DFA25_acceptS =
+        "\2\172\1\163\1\147\1\164\1\172\1\160\1\144\1\147\1\172\1\uffff\2"+
+        "\172\1\164\1\145\1\172\1\162\1\143\1\160\1\163\1\157\1\163\1\157"+
+        "\1\174\1\uffff\1\156\1\167\1\156\1\144\1\141\1\164\1\165\1\156\1"+
+        "\145\3\162\1\141\1\165\1\142\1\163\1\154\1\155\1\165\1\172\1\141"+
+        "\1\164\1\145\1\151\1\154\1\143\1\162\2\151\1\162\2\uffff\5\172\2"+
+        "\uffff\3\172\2\uffff\1\114\1\uffff\2\111\2\101\1\116\1\117\1\111"+
+        "\1\105\1\103\1\124\1\172\1\124\1\172\1\145\1\162\1\172\1\156\1\155"+
+        "\1\163\1\154\1\151\1\157\1\167\1\172\1\163\1\172\1\164\1\172\1\160"+
+        "\1\157\1\151\1\145\1\172\1\160\1\150\1\151\1\163\1\172\1\154\1\143"+
+        "\1\164\1\172\1\164\1\145\1\143\1\172\1\163\1\142\1\151\1\157\1\160"+
+        "\1\172\1\145\1\172\1\164\1\156\1\163\1\154\1\164\1\151\1\147\1\153"+
+        "\1\164\1\153\1\172\1\141\1\172\1\151\1\163\1\164\2\172\1\156\2\172"+
+        "\1\153\1\145\2\172\1\156\1\164\1\150\1\164\2\144\1\166\1\157\1\172"+
+        "\1\141\1\165\1\145\1\165\1\145\1\151\1\144\1\151\1\154\1\153\1\145"+
+        "\1\157\1\144\1\163\1\146\1\167\1\164\1\172\1\145\1\153\1\164\2\151"+
+        "\1\164\1\156\1\164\1\144\1\172\1\154\1\167\1\154\1\172\1\145\1\156"+
+        "\1\151\1\163\1\145\1\151\1\141\1\150\1\151\1\172\1\155\1\165\1\172"+
+        "\2\164\1\156\1\154\1\164\4\172\1\114\1\116\1\103\1\124\1\104\1\114"+
+        "\1\116\1\172\1\113\1\122\1\172\1\160\1\155\1\62\1\172\1\157\1\163"+
+        "\1\145\1\162\1\144\1\160\1\172\1\156\1\157\2\145\1\151\1\164\1\154"+
+        "\1\160\1\156\1\164\3\172\1\146\1\162\1\157\1\145\1\167\1\145\2\172"+
+        "\1\164\1\172\1\154\1\156\1\153\1\141\1\172\1\154\1\172\1\162\2\157"+
+        "\1\145\1\167\1\157\1\172\1\155\2\172\1\170\1\154\4\172\1\162\1\164"+
+        "\1\172\1\145\1\154\1\172\1\164\1\162\1\164\1\145\1\143\1\156\4\172"+
+        "\1\164\1\157\1\172\1\145\4\172\1\155\1\151\1\164\2\162\1\156\1\145"+
+        "\1\162\1\141\1\172\1\143\1\164\1\145\1\160\1\172\1\162\1\157\1\145"+
+        "\1\167\1\157\2\164\2\145\1\162\1\144\1\160\1\145\1\172\1\164\1\156"+
+        "\1\172\1\144\1\172\1\171\1\164\1\151\1\141\1\160\3\145\1\162\3\172"+
+        "\1\143\1\162\1\153\1\146\1\163\1\156\1\143\1\151\1\154\2\145\1\172"+
+        "\1\141\1\172\2\145\2\105\1\113\1\101\1\137\1\117\2\172\1\117\1\164"+
+        "\1\172\1\144\1\172\1\162\4\172\1\164\1\172\1\143\1\156\1\172\1\157"+
+        "\3\145\1\172\1\145\1\163\1\164\1\157\1\145\1\162\1\163\1\172\1\157"+
+        "\1\172\1\143\1\164\1\151\1\156\1\163\1\147\1\164\1\145\1\162\1\151"+
+        "\1\157\1\165\1\162\1\143\1\145\2\172\1\163\1\150\1\156\3\172\1\154"+
+        "\1\164\1\166\1\144\1\151\1\147\1\172\1\164\1\155\3\151\1\145\1\162"+
+        "\1\172\1\156\1\163\1\144\1\170\1\172\1\162\1\151\1\164\1\154\1\164"+
+        "\1\172\1\145\1\163\1\164\1\162\1\157\1\145\1\162\1\143\1\172\1\154"+
+        "\1\164\1\141\1\151\1\157\1\172\1\164\1\145\1\172\1\164\2\172\1\162"+
+        "\1\156\1\154\1\145\1\141\1\145\1\155\2\151\1\172\1\141\1\163\2\172"+
+        "\1\163\2\153\1\146\3\172\1\163\1\151\1\162\2\172\2\137\1\101\2\137"+
+        "\1\101\1\131\1\172\1\145\2\172\1\151\1\164\1\165\1\163\1\156\1\144"+
+        "\1\172\1\156\1\164\1\145\1\164\1\156\1\166\2\172\1\150\1\172\2\156"+
+        "\1\151\1\141\1\164\1\151\1\145\1\162\1\160\1\144\1\157\1\164\1\156"+
+        "\1\141\1\151\1\166\1\153\1\172\1\164\2\172\1\151\4\172\1\162\1\145"+
+        "\1\172\1\171\1\145\1\162\1\156\1\160\1\172\1\145\1\172\1\145\1\144"+
+        "\2\172\1\162\3\172\1\156\1\164\1\145\1\160\1\157\1\164\1\156\1\166"+
+        "\1\153\2\172\1\144\1\164\1\167\2\172\1\146\1\172\1\153\1\154\1\156"+
+        "\1\144\1\153\1\172\1\164\1\162\2\164\3\172\1\164\1\172\1\144\1\162"+
+        "\2\137\1\107\1\137\1\172\1\104\2\172\1\162\1\172\2\145\2\172\1\164"+
+        "\1\145\1\156\1\157\1\164\1\145\1\172\1\145\1\164\1\144\1\155\1\145"+
+        "\1\156\1\171\2\156\2\172\1\162\1\157\1\164\1\155\1\144\1\145\1\157"+
+        "\1\172\1\155\2\172\1\160\1\164\1\172\1\153\1\145\2\172\1\151\1\172"+
+        "\1\164\1\145\1\156\1\172\1\162\1\157\1\164\1\145\1\157\1\172\1\145"+
+        "\1\156\1\141\6\172\1\145\1\172\1\145\3\172\1\141\2\172\1\105\6\172"+
+        "\1\156\1\164\1\145\1\172\1\156\4\172\1\171\1\156\1\172\1\156\1\164"+
+        "\1\141\1\151\1\145\3\172\1\171\1\156\1\141\1\160\2\145\1\141\3\172"+
+        "\1\162\1\172\1\156\1\164\1\151\1\145\1\172\1\156\1\160\2\172\1\151"+
+        "\2\172\1\171\1\137\1\164\1\172\1\156\1\164\1\156\1\164\1\144\1\141"+
+        "\1\172\1\155\1\164\1\171\1\156\1\160\1\164\1\155\1\164\4\172\1\164"+
+        "\1\172\1\164\1\156\2\164\1\162\1\172\1\137\1\172\1\164\1\172\1\144"+
+        "\1\141\1\172\1\144\1\155\1\145\1\171\1\156\1\164\1\141\1\157\1\172"+
+        "\1\145\2\172\1\171\1\164\5\172\1\144\1\155\1\162\1\145\2\172\1\165"+
+        "\1\172\1\155\1\162\3\172\1\162\1\145\2\172\2\155\1\145\1\164\2\172"+
+        "\1\145\1\142\3\172\1\145\1\162\1\172";
+    static final String DFA36_acceptS =
         "\1\uffff\1\1\46\uffff\1\4\1\5\1\uffff\1\7\1\10\1\11\1\12\1\13\1"+
         "\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\25\1\26\1\27\2\uffff\1"+
-        "\32\1\35\3\uffff\1\33\101\uffff\1\6\1\2\56\uffff\1\3\1\24\5\uffff"+
-        "\1\34\3\uffff\1\30\1\36\1\31\u02f6\uffff";
-    static final String DFA25_specialS =
-        "\73\uffff\1\1\1\0\u037b\uffff}>";
-    static final String[] DFA25_transitionS = {
+        "\35\3\uffff\1\33\101\uffff\1\6\15\uffff\1\36\36\uffff\1\3\1\24\5"+
+        "\uffff\1\32\1\34\3\uffff\1\30\1\31\1\uffff\1\2\u02f5\uffff";
+    static final String DFA36_specialS =
+        "\73\uffff\1\1\1\0\u0378\uffff}>";
+    static final String[] DFA36_transitionS = {
             "\2\1\2\uffff\1\1\22\uffff\1\1\1\uffff\1\74\1\50\1\45\1\47\1"+
             "\uffff\1\73\1\55\1\56\1\44\1\66\1\61\1\67\1\64\1\70\12\51\1"+
             "\63\1\62\1\72\1\65\1\71\1\uffff\1\46\1\4\1\5\1\6\1\7\1\10\1"+
-            "\76\1\11\1\76\1\12\2\76\1\13\1\76\1\2\14\76\1\53\1\75\1\54\1"+
-            "\uffff\1\3\1\uffff\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1"+
-            "\24\1\25\1\26\1\27\1\30\1\31\1\32\1\33\1\34\1\35\1\36\1\37\1"+
-            "\40\1\41\1\42\1\43\1\52\1\76\1\57\1\uffff\1\60",
+            "\75\1\11\1\75\1\12\2\75\1\13\1\75\1\2\14\75\1\53\1\uffff\1\54"+
+            "\1\uffff\1\3\1\uffff\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23"+
+            "\1\24\1\25\1\26\1\27\1\30\1\31\1\32\1\33\1\34\1\35\1\36\1\37"+
+            "\1\40\1\41\1\42\1\43\1\52\1\75\1\57\1\uffff\1\60",
             "",
-            "\1\100\17\uffff\1\77",
-            "\32\76\4\uffff\1\101\1\uffff\32\76",
+            "\1\77\17\uffff\1\76",
+            "\32\75\4\uffff\1\100\1\uffff\32\75",
+            "\1\102",
             "\1\103",
-            "\1\104",
-            "\1\106\6\uffff\1\105",
-            "\1\107",
-            "\1\110\2\uffff\1\111",
-            "\1\112\16\uffff\1\113",
-            "\1\114",
-            "\1\115\16\uffff\1\116",
-            "\1\117\1\120\10\uffff\1\121\1\uffff\1\122\5\uffff\1\123",
-            "\1\124\2\uffff\1\125",
-            "\1\126\6\uffff\1\127\3\uffff\1\130\1\131\1\uffff\1\132\2\uffff"+
-            "\1\133",
-            "\1\134\2\uffff\1\135\3\uffff\1\136\5\uffff\1\137\5\uffff\1"+
-            "\140",
-            "\1\141\12\uffff\1\142\1\uffff\1\143\1\144\1\uffff\1\145\4\uffff"+
-            "\1\146\1\uffff\1\147",
-            "\1\150\5\uffff\1\151\2\uffff\1\152\2\uffff\1\153",
-            "\1\154\6\uffff\1\155\1\156\1\uffff\1\157\2\uffff\1\160\1\uffff"+
+            "\1\105\6\uffff\1\104",
+            "\1\106",
+            "\1\107\2\uffff\1\110",
+            "\1\111\16\uffff\1\112",
+            "\1\113",
+            "\1\114\16\uffff\1\115",
+            "\1\116\1\117\10\uffff\1\120\1\uffff\1\121\5\uffff\1\122",
+            "\1\123\2\uffff\1\124",
+            "\1\125\6\uffff\1\126\3\uffff\1\127\1\130\1\uffff\1\131\2\uffff"+
+            "\1\132",
+            "\1\133\2\uffff\1\134\3\uffff\1\135\5\uffff\1\136\5\uffff\1"+
+            "\137",
+            "\1\140\12\uffff\1\141\1\uffff\1\142\1\143\1\uffff\1\144\4\uffff"+
+            "\1\145\1\uffff\1\146",
+            "\1\147\5\uffff\1\150\2\uffff\1\151\2\uffff\1\152",
+            "\1\153\6\uffff\1\154\1\155\1\uffff\1\156\2\uffff\1\157\1\uffff"+
+            "\1\160",
             "\1\161",
-            "\1\162",
-            "\1\163\7\uffff\1\164\1\165",
-            "\1\166",
-            "\1\167\3\uffff\1\170",
-            "\1\171\1\uffff\1\172\1\uffff\1\173\3\uffff\1\174\5\uffff\1"+
-            "\175\3\uffff\1\176\1\177",
-            "\1\u0084\21\uffff\32\76\4\uffff\1\76\1\uffff\1\u0080\11\76"+
-            "\1\u0081\7\76\1\u0082\5\76\1\u0083\1\76",
-            "\1\u0086\11\uffff\1\u0087",
-            "\1\u0088\14\uffff\1\u0089\1\uffff\1\u008a\2\uffff\1\u008b",
-            "\1\u008c\7\uffff\1\u008d\5\uffff\1\u008e\2\uffff\1\u008f\2"+
-            "\uffff\1\u0090",
-            "\1\u0084\21\uffff\32\76\4\uffff\1\76\1\uffff\20\76\1\u0091"+
-            "\1\u0092\2\76\1\u0093\1\76\1\u0094\1\u0095\2\76",
-            "\1\u0096\3\uffff\1\u0097\3\uffff\1\u0098\3\uffff\1\u0099",
-            "\1\u0084\21\uffff\32\76\4\uffff\1\76\1\uffff\2\76\1\u009a\1"+
-            "\76\1\u009b\2\76\1\u009c\1\u009d\2\76\1\u009e\2\76\1\u009f\1"+
-            "\u00a0\1\u00a1\1\u00a2\1\76\1\u00a3\1\u00a4\3\76\1\u00a5\1\76",
-            "\1\u00a6\3\uffff\1\u00a7\10\uffff\1\u00a8",
-            "\1\u00a9\11\uffff\1\u00aa\1\u00ab\4\uffff\1\u00ac\1\u00ad",
-            "\1\u00ae\3\uffff\1\u00af",
-            "\1\u00b0\6\uffff\1\u00b1\11\uffff\1\u00b2",
-            "\1\u00b3",
-            "\1\u00b4\1\uffff\3\u00b4\1\uffff\5\u00b4\12\uffff\3\u00b4\1"+
-            "\uffff\3\u00b4\33\uffff\1\u00b4\1\uffff\2\u00b4\34\uffff\1\u00b4"+
-            "\1\uffff\1\u00b4",
-            "\2\u00b4\1\u00ba\1\u00b6\1\u00b7\12\u00b4\12\u00bb\6\u00b4"+
-            "\1\u00b8\32\u00bb\4\u00b4\1\u00b9\1\u00b4\32\u00bb\1\uffff\1"+
-            "\u00b4\1\uffff\1\u00b4",
-            "\1\u00bb\1\u00bd\1\u00bb\5\uffff\1\u00b4\1\uffff\1\u00b4\2"+
-            "\uffff\12\u00bb\6\uffff\33\u00bb\4\uffff\1\u00bc\1\uffff\32"+
-            "\u00bb",
-            "\1\u00b4\1\uffff\3\u00bb\12\uffff\12\u00bb\6\uffff\1\u00be"+
-            "\32\u00bb\3\uffff\1\u00b4\1\u00bb\1\uffff\32\u00bb",
+            "\1\162\7\uffff\1\163\1\164",
+            "\1\165",
+            "\1\166\3\uffff\1\167",
+            "\1\170\1\uffff\1\171\1\uffff\1\172\3\uffff\1\173\5\uffff\1"+
+            "\174\3\uffff\1\175\1\176",
+            "\1\u0083\61\uffff\1\177\11\uffff\1\u0080\7\uffff\1\u0081\5"+
+            "\uffff\1\u0082",
+            "\1\u0084\11\uffff\1\u0085",
+            "\1\u0086\14\uffff\1\u0087\1\uffff\1\u0088\2\uffff\1\u0089",
+            "\1\u008a\7\uffff\1\u008b\5\uffff\1\u008c\2\uffff\1\u008d\2"+
+            "\uffff\1\u008e",
+            "\1\u0091\6\uffff\1\u0091\101\uffff\2\u0090\2\uffff\1\u008f"+
+            "\1\uffff\1\u0090\3\uffff\2\u0091",
+            "\1\u0092\3\uffff\1\u0093\3\uffff\1\u0094\3\uffff\1\u0095",
+            "\1\u0083\63\uffff\1\u0096\1\uffff\1\u0097\2\uffff\1\u0098\1"+
+            "\u0099\2\uffff\1\u009a\2\uffff\1\u009b\1\u009c\1\u009d\1\u009e"+
+            "\1\uffff\1\u009f\1\u00a0\3\uffff\1\u00a1",
+            "\1\u00a2\3\uffff\1\u00a3\10\uffff\1\u00a4",
+            "\1\u00a5\11\uffff\1\u00a6\1\u00a7\4\uffff\1\u00a8\1\u00a9",
+            "\1\u00aa\3\uffff\1\u00ab",
+            "\1\u00ac\6\uffff\1\u00ad\11\uffff\1\u00ae",
+            "\1\u00af",
+            "\1\u00b0\1\uffff\3\u00b0\1\uffff\5\u00b0\12\uffff\3\u00b0\1"+
+            "\uffff\3\u00b0\33\uffff\1\u00b0\1\uffff\2\u00b0\34\uffff\1\u00b0"+
+            "\1\uffff\1\u00b0",
+            "\2\u00b0\1\u00b6\1\u00b2\1\u00b3\12\u00b0\12\u00b8\6\u00b0"+
+            "\1\u00b4\32\u00b8\4\u00b0\1\u00b5\1\u00b0\32\u00b8\1\uffff\1"+
+            "\u00b0\1\uffff\1\u00b0",
+            "\1\u00b8\1\u00ba\1\u00b8\5\uffff\1\u00b0\1\uffff\1\u00b0\2"+
+            "\uffff\12\u00b8\6\uffff\33\u00b8\4\uffff\1\u00b9\1\uffff\32"+
+            "\u00b8",
+            "\1\u00b0\1\uffff\3\u00b8\12\uffff\12\u00b8\6\uffff\1\u00bb"+
+            "\32\u00b8\3\uffff\1\u00b0\1\u00b8\1\uffff\32\u00b8",
             "",
             "",
-            "\1\u0084",
-            "",
-            "",
+            "\1\u0083",
             "",
             "",
             "",
@@ -5936,146 +6482,147 @@ public class PerlLexer extends Lexer {
             "",
             "",
             "",
-            "\0\u00c0",
-            "\0\u00c0",
             "",
             "",
-            "\1\u00c2",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u00c6\1\u00c7\1\u00c3\5\uffff\1\u00c4\3\uffff\1\u00c5",
+            "\12\u0091\1\uffff\2\u0091\1\uffff\31\u0091\1\uffff\uffd8\u0091",
+            "\42\u0091\1\uffff\uffdd\u0091",
             "",
+            "\1\u00be",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u00c3\1\u00c4\1\u00c0\5\uffff\1\u00c1\3\uffff\1\u00c2",
+            "",
+            "\1\u00c5",
+            "\1\u00c6",
+            "\1\u00c7",
             "\1\u00c8",
             "\1\u00c9",
             "\1\u00ca",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u00cb",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u00cc",
             "\1\u00cd",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u00ce",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u00cf",
             "\1\u00d0",
             "\1\u00d1",
             "\1\u00d2",
             "\1\u00d3",
-            "\1\u00d4",
-            "\1\u00d5",
-            "\1\u00d6",
-            "\1\u00d7\10\uffff\1\u00d8\1\uffff\1\u00d9\2\uffff\1\u00da",
-            "\1\u00db",
+            "\1\u00d4\10\uffff\1\u00d5\1\uffff\1\u00d6\2\uffff\1\u00d7",
+            "\1\u00d8",
+            "\1\u00d9",
+            "\1\u00da\4\uffff\1\u00db",
             "\1\u00dc",
-            "\1\u00dd\4\uffff\1\u00de",
-            "\1\u00df",
+            "\1\u00dd",
+            "\1\u00de\5\uffff\1\u00df",
             "\1\u00e0",
-            "\1\u00e1\5\uffff\1\u00e2",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u00e1",
+            "\1\u00e2",
             "\1\u00e3",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u00e4",
             "\1\u00e5",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u00e6",
-            "\1\u00e7",
-            "\1\u00e8",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u00e9",
-            "\1\u00ea\3\uffff\1\u00eb\6\uffff\1\u00ec",
+            "\1\u00e7\3\uffff\1\u00e8\6\uffff\1\u00e9",
+            "\1\u00ea",
+            "\1\u00eb",
+            "\1\u00ec",
             "\1\u00ed",
-            "\1\u00ee",
+            "\32\75\4\uffff\1\75\1\uffff\23\75\1\u00ee\6\75",
             "\1\u00ef",
             "\1\u00f0",
-            "\32\76\4\uffff\1\76\1\uffff\23\76\1\u00f1\6\76",
+            "\1\u00f1",
             "\1\u00f2",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u00f3",
-            "\1\u00f4",
-            "\1\u00f5",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u00f4\17\uffff\1\u00f5",
             "\1\u00f6",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u00f7\17\uffff\1\u00f8",
+            "\1\u00f7",
+            "\1\u00f8",
             "\1\u00f9",
             "\1\u00fa",
-            "\1\u00fb",
-            "\1\u00fc",
-            "\1\u00fd",
-            "\32\76\4\uffff\1\76\1\uffff\5\76\1\u00fe\24\76",
-            "\32\76\4\uffff\1\76\1\uffff\15\76\1\u00ff\14\76",
-            "\1\u0100\4\uffff\1\u0101",
-            "\1\u0102\3\uffff\1\u0103",
+            "\32\75\4\uffff\1\75\1\uffff\5\75\1\u00fb\24\75",
+            "\32\75\4\uffff\1\75\1\uffff\15\75\1\u00fc\14\75",
+            "\1\u00fd\4\uffff\1\u00fe",
+            "\1\u00ff\3\uffff\1\u0100",
+            "\1\u0101",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u0102",
+            "\1\u0103",
             "\1\u0104",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u0105",
-            "\1\u0106",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "",
+            "\32\75\4\uffff\1\75\1\uffff\27\75\1\u0105\2\75",
+            "\32\75\4\uffff\1\75\1\uffff\23\75\1\u0106\6\75",
             "\1\u0107",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "",
-            "",
-            "\32\76\4\uffff\1\76\1\uffff\27\76\1\u0108\2\76",
-            "\32\76\4\uffff\1\76\1\uffff\23\76\1\u0109\6\76",
+            "\1\u0108",
+            "\32\75\4\uffff\1\75\1\uffff\3\75\1\u0109\26\75",
             "\1\u010a",
             "\1\u010b",
-            "\32\76\4\uffff\1\76\1\uffff\3\76\1\u010c\26\76",
-            "\1\u010d",
-            "\1\u010e",
-            "\1\u010f",
-            "\1\u0110\2\uffff\1\u0111",
-            "\1\u0112\5\uffff\1\u0113",
-            "\1\u0114",
-            "\1\u0084\21\uffff\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u0084\21\uffff\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\16\76\1\u0115\13\76",
-            "\1\u0084\21\uffff\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u0084\21\uffff\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u0116",
-            "\1\u0117\1\uffff\1\u0118\1\u0119\1\uffff\1\u011a\7\uffff\1"+
-            "\u011b\2\uffff\1\u011c\1\uffff\1\u011d\1\u011e\1\uffff\1\u011f"+
+            "\1\u010c",
+            "\1\u010d\2\uffff\1\u010e",
+            "\1\u010f\5\uffff\1\u0110",
+            "\1\u0111",
+            "\1\u0112",
+            "\1\u0091\6\uffff\1\u0091\113\uffff\2\u0091",
+            "",
+            "\1\u0113",
+            "\1\u0114\1\uffff\1\u0115\1\u0116\1\uffff\1\u0117\7\uffff\1"+
+            "\u0118\2\uffff\1\u0119\1\uffff\1\u011a\1\u011b\1\uffff\1\u011c"+
+            "\1\u011d",
+            "\1\u011e",
+            "\1\u011f",
             "\1\u0120",
-            "\1\u0121",
-            "\1\u0122",
-            "\1\u0123",
-            "\1\u0124\6\uffff\1\u0125\1\u0126\1\u0127\5\uffff\1\u0128",
-            "\1\u0129\3\uffff\1\u012a\7\uffff\1\u012b",
-            "\1\u012c",
-            "\1\u012d",
-            "\1\u012e\16\uffff\1\u012f",
-            "\1\u0130\5\uffff\1\u0131",
-            "\1\u0132",
+            "\1\u0121\6\uffff\1\u0122\1\u0123\1\u0124\5\uffff\1\u0125",
+            "\1\u0126\3\uffff\1\u0127\7\uffff\1\u0128",
+            "\1\u0129",
+            "\1\u012a",
+            "\1\u012b\16\uffff\1\u012c",
+            "\1\u012d\5\uffff\1\u012e",
+            "\1\u012f",
+            "\1\u0130",
+            "\1\u0131\23\uffff\1\u0132",
             "\1\u0133",
-            "\1\u0134\23\uffff\1\u0135",
+            "\1\u0134\5\uffff\1\u0135",
             "\1\u0136",
-            "\1\u0137\5\uffff\1\u0138",
-            "\1\u0139",
-            "\1\u013a\7\uffff\1\u013b",
-            "\1\u0084\21\uffff\32\76\4\uffff\1\76\1\uffff\24\76\1\u013c"+
-            "\5\76",
-            "\32\76\4\uffff\1\76\1\uffff\5\76\1\u013d\24\76",
-            "\1\u013e",
-            "\1\u013f\7\uffff\1\u0140\3\uffff\1\u0141\2\uffff\1\u0142\1"+
-            "\u0143",
+            "\1\u0137\7\uffff\1\u0138",
+            "\1\u0083\105\uffff\1\u0139",
+            "\32\75\4\uffff\1\75\1\uffff\5\75\1\u013a\24\75",
+            "\1\u013b",
+            "\1\u013c\7\uffff\1\u013d\3\uffff\1\u013e\2\uffff\1\u013f\1"+
+            "\u0140",
+            "\1\u0141",
+            "\1\u0142",
+            "\1\u0143",
             "\1\u0144",
-            "\1\u0145",
-            "\1\u0146",
-            "\1\u0147",
-            "\1\u0148\4\uffff\1\u0149\3\uffff\1\u014a",
-            "\1\u014b",
-            "\1\u014c",
+            "\1\u0145\4\uffff\1\u0146\3\uffff\1\u0147",
+            "\1\u0148",
+            "\1\u0149",
+            "\1\u014a",
+            "",
+            "",
+            "\12\u00b8\7\uffff\32\u00b8\4\uffff\1\u00b8\1\uffff\14\u00b8"+
+            "\1\u014b\5\u00b8\1\u014c\7\u00b8",
+            "\12\u00b8\7\uffff\32\u00b8\4\uffff\1\u00b8\1\uffff\32\u00b8",
+            "\12\u00b8\7\uffff\32\u00b8\4\uffff\1\u00b8\1\uffff\32\u00b8",
+            "\12\u00b8\7\uffff\32\u00b8\4\uffff\1\u00b8\1\uffff\32\u00b8",
+            "\12\u00b8\7\uffff\32\u00b8\4\uffff\1\u00b8\1\uffff\32\u00b8",
+            "",
+            "",
+            "\12\u00b8\7\uffff\32\u00b8\4\uffff\1\u00b8\1\uffff\32\u00b8",
+            "\12\u00b8\7\uffff\32\u00b8\4\uffff\1\u00b8\1\uffff\32\u00b8",
+            "\12\u00b8\7\uffff\32\u00b8\4\uffff\1\u00b8\1\uffff\32\u00b8",
+            "",
+            "",
             "\1\u014d",
             "",
-            "",
-            "\12\u00bb\7\uffff\32\u00bb\4\uffff\1\u00bb\1\uffff\14\u00bb"+
-            "\1\u014e\5\u00bb\1\u014f\7\u00bb",
-            "\12\u00bb\7\uffff\32\u00bb\4\uffff\1\u00bb\1\uffff\32\u00bb",
-            "\12\u00bb\7\uffff\32\u00bb\4\uffff\1\u00bb\1\uffff\32\u00bb",
-            "\12\u00bb\7\uffff\32\u00bb\4\uffff\1\u00bb\1\uffff\32\u00bb",
-            "\12\u00bb\7\uffff\32\u00bb\4\uffff\1\u00bb\1\uffff\32\u00bb",
-            "",
-            "\12\u00bb\7\uffff\32\u00bb\4\uffff\1\u00bb\1\uffff\32\u00bb",
-            "\12\u00bb\7\uffff\32\u00bb\4\uffff\1\u00bb\1\uffff\32\u00bb",
-            "\12\u00bb\7\uffff\32\u00bb\4\uffff\1\u00bb\1\uffff\32\u00bb",
-            "",
-            "",
-            "",
+            "\1\u014e",
+            "\1\u014f",
             "\1\u0150",
             "\1\u0151",
             "\1\u0152",
@@ -6084,90 +6631,90 @@ public class PerlLexer extends Lexer {
             "\1\u0155",
             "\1\u0156",
             "\1\u0157",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0158",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0159",
             "\1\u015a",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u015b",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u015c",
-            "\1\u015d",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
+            "\1\u015c\10\uffff\1\u015d",
             "\1\u015e",
-            "\1\u015f\10\uffff\1\u0160",
+            "\1\u015f",
+            "\1\u0160",
             "\1\u0161",
-            "\1\u0162",
-            "\1\u0163",
-            "\1\u0164",
-            "\1\u0165\2\uffff\1\u0166\6\uffff\1\u0167",
-            "\32\76\4\uffff\1\76\1\uffff\16\76\1\u0168\13\76",
+            "\1\u0162\2\uffff\1\u0163\6\uffff\1\u0164",
+            "\32\75\4\uffff\1\75\1\uffff\16\75\1\u0165\13\75",
+            "\1\u0166",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u0167\5\uffff\1\u0168",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0169",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u016a\5\uffff\1\u016b",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
+            "\1\u016a\13\uffff\1\u016b",
             "\1\u016c",
-            "\1\u016d\13\uffff\1\u016e",
+            "\1\u016d",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u016e",
             "\1\u016f",
-            "\1\u0170",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u0171",
-            "\1\u0172",
-            "\1\u0173\3\uffff\1\u0174",
-            "\1\u0175\1\u0176\5\uffff\1\u0177\1\uffff\1\u0178\2\uffff\1"+
-            "\u0179",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u017a",
+            "\1\u0170\3\uffff\1\u0171",
+            "\1\u0172\1\u0173\5\uffff\1\u0174\1\uffff\1\u0175\2\uffff\1"+
+            "\u0176",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u0177",
+            "\1\u0178",
+            "\1\u0179\1\u017a",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u017b",
-            "\1\u017c\1\u017d",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u017e",
-            "\1\u017f",
-            "\1\u0180",
-            "\32\76\4\uffff\1\76\1\uffff\4\76\1\u0181\5\76\1\u0182\1\76"+
-            "\1\u0183\15\76",
-            "\1\u0184\3\uffff\1\u0185\1\u0186\3\uffff\1\u0187\1\uffff\1"+
-            "\u0188\1\uffff\1\u0189\2\uffff\1\u018a",
+            "\1\u017c",
+            "\1\u017d",
+            "\32\75\4\uffff\1\75\1\uffff\4\75\1\u017e\5\75\1\u017f\1\75"+
+            "\1\u0180\15\75",
+            "\1\u0181\3\uffff\1\u0182\1\u0183\3\uffff\1\u0184\1\uffff\1"+
+            "\u0185\1\uffff\1\u0186\2\uffff\1\u0187",
+            "\1\u0188",
+            "\1\u0189",
+            "\1\u018a",
             "\1\u018b",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u018c",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u018d",
             "\1\u018e",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u018f",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0190",
             "\1\u0191",
             "\1\u0192",
             "\1\u0193",
             "\1\u0194",
             "\1\u0195",
-            "\1\u0196",
-            "\1\u0197",
+            "\1\u0196\11\uffff\1\u0197",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0198",
-            "\1\u0199\11\uffff\1\u019a",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u019b",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u019c",
-            "\1\u019d\3\uffff\1\u019e\12\uffff\1\u019f\1\u01a0",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u0199",
+            "\1\u019a\3\uffff\1\u019b\12\uffff\1\u019c\1\u019d",
+            "\1\u019e",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u019f",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u01a0",
             "\1\u01a1",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u01a2",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u01a3",
             "\1\u01a4",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u01a5",
             "\1\u01a6",
             "\1\u01a7",
             "\1\u01a8",
             "\1\u01a9",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u01aa",
             "\1\u01ab",
             "\1\u01ac",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u01ad",
             "\1\u01ae",
             "\1\u01af",
@@ -6176,76 +6723,76 @@ public class PerlLexer extends Lexer {
             "\1\u01b2",
             "\1\u01b3",
             "\1\u01b4",
-            "\1\u01b5",
-            "\1\u01b6",
-            "\1\u01b7",
-            "\1\u01b8\3\uffff\1\u01b9\7\uffff\1\u01ba",
-            "\1\u01bb",
-            "\1\u01bc\1\u01bd\5\uffff\1\u01be\1\uffff\1\u01bf\2\uffff\1"+
-            "\u01c0",
-            "\1\u01c1",
-            "\1\u01c2\3\uffff\1\u01c3\12\uffff\1\u01c4\4\uffff\1\u01c5",
+            "\1\u01b5\3\uffff\1\u01b6\7\uffff\1\u01b7",
+            "\1\u01b8",
+            "\1\u01b9\1\u01ba\5\uffff\1\u01bb\1\uffff\1\u01bc\2\uffff\1"+
+            "\u01bd",
+            "\1\u01be",
+            "\1\u01bf\3\uffff\1\u01c0\12\uffff\1\u01c1\4\uffff\1\u01c2",
+            "\1\u01c3",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u01c4",
+            "\1\u01c5",
             "\1\u01c6",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u01c7",
             "\1\u01c8",
             "\1\u01c9",
             "\1\u01ca",
             "\1\u01cb",
             "\1\u01cc",
-            "\1\u01cd",
+            "\32\75\4\uffff\1\75\1\uffff\22\75\1\u01cd\7\75",
             "\1\u01ce",
-            "\1\u01cf",
-            "\32\76\4\uffff\1\76\1\uffff\22\76\1\u01d0\7\76",
-            "\1\u01d1",
-            "\1\u01d2\13\uffff\1\u01d3\2\uffff\1\u01d4\1\u01d5\1\u01d6\2"+
-            "\uffff\1\u01d7",
+            "\1\u01cf\13\uffff\1\u01d0\2\uffff\1\u01d1\1\u01d2\1\u01d3\2"+
+            "\uffff\1\u01d4",
+            "\1\u01d5",
+            "\32\75\4\uffff\1\75\1\uffff\3\75\1\u01d6\26\75",
+            "\1\u01d7",
             "\1\u01d8",
-            "\32\76\4\uffff\1\76\1\uffff\3\76\1\u01d9\26\76",
+            "\1\u01d9",
             "\1\u01da",
             "\1\u01db",
-            "\1\u01dc",
-            "\1\u01dd",
+            "\1\u01dc\3\uffff\1\u01dd",
             "\1\u01de",
-            "\1\u01df\3\uffff\1\u01e0",
+            "\1\u01df",
+            "\1\u01e0",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u01e1",
             "\1\u01e2",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u01e3",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u01e4",
             "\1\u01e5",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u01e6",
             "\1\u01e7",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\12\u00b8\7\uffff\32\u00b8\4\uffff\1\u00b8\1\uffff\32\u00b8",
+            "\12\u00b8\7\uffff\32\u00b8\4\uffff\1\u00b8\1\uffff\32\u00b8",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u01e8",
             "\1\u01e9",
             "\1\u01ea",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\12\u00bb\7\uffff\32\u00bb\4\uffff\1\u00bb\1\uffff\32\u00bb",
-            "\12\u00bb\7\uffff\32\u00bb\4\uffff\1\u00bb\1\uffff\32\u00bb",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u01eb",
             "\1\u01ec",
             "\1\u01ed",
             "\1\u01ee",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u01ef",
             "\1\u01f0",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u01f1",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u01f2",
+            "\1\u00bf",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u01f3",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u01f4",
             "\1\u01f5",
-            "\1\u0085",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u01f6",
             "\1\u01f7",
             "\1\u01f8",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u01f9",
             "\1\u01fa",
             "\1\u01fb",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u01fc",
             "\1\u01fd",
             "\1\u01fe",
@@ -6253,302 +6800,302 @@ public class PerlLexer extends Lexer {
             "\1\u0200",
             "\1\u0201",
             "\1\u0202",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0203",
             "\1\u0204",
             "\1\u0205",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0206",
-            "\1\u0207",
-            "\1\u0208",
+            "\1\u0207\4\uffff\1\u0208",
             "\1\u0209",
-            "\1\u020a\4\uffff\1\u020b",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u020a",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u020b",
             "\1\u020c",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u020d",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u020e",
-            "\1\u020f",
-            "\1\u0210",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u020f\12\uffff\1\u0210",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0211",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u0212\12\uffff\1\u0213",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
+            "\1\u0212",
+            "\1\u0213",
             "\1\u0214",
-            "\1\u0215",
-            "\1\u0216",
-            "\1\u0217",
-            "\1\u0218\1\uffff\1\u0219\10\uffff\1\u021a\1\uffff\1\u021b\4"+
-            "\uffff\1\u021c",
-            "\1\u021d\11\uffff\1\u021e",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
+            "\1\u0215\1\uffff\1\u0216\10\uffff\1\u0217\1\uffff\1\u0218\4"+
+            "\uffff\1\u0219",
+            "\1\u021a\11\uffff\1\u021b",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u021c",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u021d",
+            "\1\u021e",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u021f",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0220",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0221",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0222",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0223",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0224",
             "\1\u0225",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0226",
             "\1\u0227",
             "\1\u0228",
-            "\1\u0229",
-            "\1\u022a",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\3\75\1\u0229\26\75",
+            "\32\75\4\uffff\1\75\1\uffff\1\u022a\31\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u022b",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\3\76\1\u022c\26\76",
-            "\32\76\4\uffff\1\76\1\uffff\1\u022d\31\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u022e",
-            "\1\u022f",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u0230",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\3\76\1\u0231\7\76\1\u0232\3\76"+
-            "\1\u0233\12\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
+            "\1\u022c",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u022d",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\3\75\1\u022e\7\75\1\u022f\3\75"+
+            "\1\u0230\12\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u0231",
+            "\1\u0232",
+            "\1\u0233",
             "\1\u0234",
             "\1\u0235",
             "\1\u0236",
             "\1\u0237",
             "\1\u0238",
             "\1\u0239",
-            "\1\u023a",
+            "\32\75\4\uffff\1\75\1\uffff\3\75\1\u023a\26\75",
             "\1\u023b",
             "\1\u023c",
-            "\32\76\4\uffff\1\76\1\uffff\3\76\1\u023d\26\76",
+            "\1\u023d",
             "\1\u023e",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u023f",
             "\1\u0240",
             "\1\u0241",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u0242",
-            "\1\u0243",
-            "\1\u0244",
-            "\1\u0245\12\uffff\1\u0246\4\uffff\1\u0247",
-            "\1\u0248\11\uffff\1\u0249",
+            "\1\u0242\12\uffff\1\u0243\4\uffff\1\u0244",
+            "\1\u0245\11\uffff\1\u0246",
+            "\1\u0247",
+            "\1\u0248",
+            "\1\u0249",
             "\1\u024a",
             "\1\u024b",
             "\1\u024c",
             "\1\u024d",
             "\1\u024e",
-            "\1\u024f",
-            "\1\u0250",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u024f\20\uffff\1\u0250",
             "\1\u0251",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u0252\20\uffff\1\u0253",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u0252",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u0253",
             "\1\u0254",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0255",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0256",
             "\1\u0257",
             "\1\u0258",
             "\1\u0259",
             "\1\u025a",
             "\1\u025b",
-            "\1\u025c",
-            "\1\u025d",
+            "\32\75\4\uffff\1\75\1\uffff\3\75\1\u025c\26\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\22\75\1\u025d\7\75",
             "\1\u025e",
-            "\32\76\4\uffff\1\76\1\uffff\3\76\1\u025f\26\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\22\76\1\u0260\7\76",
+            "\1\u025f",
+            "\1\u0260",
             "\1\u0261",
             "\1\u0262",
             "\1\u0263",
             "\1\u0264",
             "\1\u0265",
-            "\1\u0266",
-            "\1\u0267",
+            "\1\u0266\6\uffff\1\u0267",
             "\1\u0268",
-            "\1\u0269\6\uffff\1\u026a",
+            "\1\u0269",
+            "\32\75\4\uffff\1\75\1\uffff\17\75\1\u026a\12\75",
             "\1\u026b",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u026c",
-            "\32\76\4\uffff\1\76\1\uffff\17\76\1\u026d\12\76",
+            "\1\u026d",
             "\1\u026e",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u026f",
             "\1\u0270",
             "\1\u0271",
             "\1\u0272",
             "\1\u0273",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0274",
             "\1\u0275",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0276",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0277",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0278",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u0279",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
+            "\32\75\4\uffff\1\75\1\uffff\3\75\1\u0279\26\75",
             "\1\u027a",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u027b",
-            "\32\76\4\uffff\1\76\1\uffff\3\76\1\u027c\26\76",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u027c",
             "\1\u027d",
             "\1\u027e",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u027f",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0280",
             "\1\u0281",
             "\1\u0282",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0283",
             "\1\u0284",
             "\1\u0285",
             "\1\u0286",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0287",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0288",
             "\1\u0289",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u028a",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u028b",
-            "\1\u028c",
-            "\1\u028d",
-            "\1\u028e\1\uffff\1\u028f\6\uffff\1\u0290",
+            "\1\u028b\1\uffff\1\u028c\6\uffff\1\u028d",
+            "\1\u028e",
+            "\1\u028f",
+            "\1\u0290",
             "\1\u0291",
             "\1\u0292",
             "\1\u0293",
-            "\1\u0294",
-            "\1\u0295",
-            "\1\u0296",
-            "\1\u0297\5\uffff\1\u0298",
-            "\1\u0299\10\uffff\1\u029a\6\uffff\1\u029b",
+            "\1\u0294\5\uffff\1\u0295",
+            "\1\u0296\10\uffff\1\u0297\6\uffff\1\u0298",
+            "\1\u0299",
+            "\1\u029a",
+            "\1\u029b",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u029c",
             "\1\u029d",
             "\1\u029e",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u029f",
+            "\32\75\4\uffff\1\75\1\uffff\23\75\1\u029f\6\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u02a0",
             "\1\u02a1",
-            "\32\76\4\uffff\1\76\1\uffff\23\76\1\u02a2\6\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
+            "\1\u02a2",
             "\1\u02a3",
             "\1\u02a4",
             "\1\u02a5",
-            "\1\u02a6",
+            "\32\75\4\uffff\1\75\1\uffff\5\75\1\u02a6\24\75",
             "\1\u02a7",
             "\1\u02a8",
-            "\32\76\4\uffff\1\76\1\uffff\5\76\1\u02a9\24\76",
+            "\1\u02a9",
             "\1\u02aa",
             "\1\u02ab",
             "\1\u02ac",
             "\1\u02ad",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u02ae",
             "\1\u02af",
             "\1\u02b0",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u02b1",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u02b2",
             "\1\u02b3",
             "\1\u02b4",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u02b5",
             "\1\u02b6",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u02b7",
             "\1\u02b8",
             "\1\u02b9",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u02ba",
-            "\1\u02bb",
-            "\1\u02bc",
+            "\1\u02bb\5\uffff\1\u02bc",
             "\1\u02bd",
-            "\1\u02be\5\uffff\1\u02bf",
+            "\1\u02be",
+            "\1\u02bf",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u02c0",
             "\1\u02c1",
             "\1\u02c2",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u02c3",
             "\1\u02c4",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u02c5",
             "\1\u02c6",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u02c7",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u02c8",
             "\1\u02c9",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u02ca",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u02cb",
             "\1\u02cc",
             "\1\u02cd",
             "\1\u02ce",
             "\1\u02cf",
             "\1\u02d0",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u02d1",
             "\1\u02d2",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u02d3",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u02d4",
             "\1\u02d5",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u02d6",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u02d7",
             "\1\u02d8",
             "\1\u02d9",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u02da",
             "\1\u02db",
             "\1\u02dc",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u02dd",
             "\1\u02de",
             "\1\u02df",
             "\1\u02e0",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u02e1",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u02e2",
             "\1\u02e3",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u02e4",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u02e5",
             "\1\u02e6",
             "\1\u02e7",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u02e8",
             "\1\u02e9",
             "\1\u02ea",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u02eb",
             "\1\u02ec",
             "\1\u02ed",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u02ee",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u02ef",
             "\1\u02f0",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u02f1",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u02f2",
             "\1\u02f3",
             "\1\u02f4",
-            "\1\u02f5",
-            "\1\u02f6",
+            "\1\u02f5\2\uffff\1\u02f6",
             "\1\u02f7",
-            "\1\u02f8\2\uffff\1\u02f9",
+            "\1\u02f8",
+            "\1\u02f9",
             "\1\u02fa",
             "\1\u02fb",
             "\1\u02fc",
@@ -6556,321 +7103,318 @@ public class PerlLexer extends Lexer {
             "\1\u02fe",
             "\1\u02ff",
             "\1\u0300",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0301",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0302",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0303",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0304",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0305",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0306",
             "\1\u0307",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0308",
             "\1\u0309",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u030a",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u030b",
             "\1\u030c",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u030d",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u030e",
             "\1\u030f",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0310",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0311",
             "\1\u0312",
             "\1\u0313",
             "\1\u0314",
             "\1\u0315",
             "\1\u0316",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0317",
             "\1\u0318",
             "\1\u0319",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u031a",
+            "\32\75\4\uffff\1\75\1\uffff\17\75\1\u031a\12\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u031b",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u031c",
-            "\32\76\4\uffff\1\76\1\uffff\17\76\1\u031d\12\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
+            "\1\u031d",
             "\1\u031e",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u031f",
             "\1\u0320",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0321",
             "\1\u0322",
             "\1\u0323",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0324",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0325",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0326",
             "\1\u0327",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0328",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0329",
             "\1\u032a",
             "\1\u032b",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u032c",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u032d",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u032e",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u032f",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0330",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0331",
             "\1\u0332",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0333",
             "\1\u0334",
             "\1\u0335",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0336",
             "\1\u0337",
             "\1\u0338",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0339",
-            "\1\u033a",
-            "\1\u033b",
+            "\1\u033a\2\uffff\1\u033b",
             "\1\u033c",
-            "\1\u033d\2\uffff\1\u033e",
+            "\1\u033d",
+            "\1\u033e",
             "\1\u033f",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0340",
             "\1\u0341",
             "\1\u0342",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0343",
             "\1\u0344",
-            "\1\u0345",
-            "\1\u0346",
-            "\1\u0347",
-            "\1\u0348\2\uffff\1\u0349",
-            "\1\u034a\1\u034b",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u034c",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u034d",
+            "\1\u0345\2\uffff\1\u0346",
+            "\1\u0347\1\u0348",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u0349",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u034a",
+            "\1\u034b",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u034c\5\uffff\1\u034d",
             "\1\u034e",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u034f\5\uffff\1\u0350",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u034f",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u0350",
             "\1\u0351",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0352",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0353",
             "\1\u0354",
             "\1\u0355",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0356",
             "\1\u0357",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0358",
             "\1\u0359",
             "\1\u035a",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u035b",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u035c",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u035d",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u035e",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u035f",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0360",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0361",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0362",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0363",
             "\1\u0364",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u0365",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u0366",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u0365\14\uffff\1\u0366",
             "\1\u0367",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u0368\14\uffff\1\u0369",
-            "\1\u036a",
-            "\1\u036b",
+            "\1\u0368",
+            "\1\u0369",
+            "\1\u036a\2\uffff\1\u036b",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u036c",
-            "\1\u036d\2\uffff\1\u036e",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
+            "\1\u036d",
+            "\1\u036e",
             "\1\u036f",
             "\1\u0370",
             "\1\u0371",
             "\1\u0372",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0373",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0374",
             "\1\u0375",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0376",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0377",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0378",
             "\1\u0379",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u037a",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u037b",
             "\1\u037c",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u037d",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u037e",
             "\1\u037f",
-            "\1\u0380",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u0381",
+            "\1\u0380\14\uffff\1\u0381",
             "\1\u0382",
-            "\1\u0383\14\uffff\1\u0384",
+            "\1\u0383",
+            "\1\u0384",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0385",
             "\1\u0386",
             "\1\u0387",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0388",
-            "\1\u0389",
-            "\1\u038a",
+            "\1\u0389\1\uffff\1\u038a",
             "\1\u038b",
-            "\1\u038c\1\uffff\1\u038d",
+            "\1\u038c",
+            "\1\u038d",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u038e",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u038f",
             "\1\u0390",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0391",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0392",
             "\1\u0393",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0394",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0395",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0396",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0397",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u0398",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u0399",
             "\1\u039a",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u039b",
             "\1\u039c",
             "\1\u039d",
             "\1\u039e",
             "\1\u039f",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u03a0",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u03a1",
             "\1\u03a2",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u03a3",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u03a4",
             "\1\u03a5",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u03a6",
-            "\1\u03a7",
-            "\1\u03a8",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u03a7\23\uffff\1\u03a8",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u03a9",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u03aa\23\uffff\1\u03ab",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
+            "\1\u03aa",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\1\u03ab",
             "\1\u03ac",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u03ad",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u03ae",
             "\1\u03af",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u03b0",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u03b1",
             "\1\u03b2",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
+            "\32\75\4\uffff\1\75\1\uffff\32\75",
             "\1\u03b3",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
             "\1\u03b4",
-            "\1\u03b5",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\32\76\4\uffff\1\76\1\uffff\32\76",
-            "\1\u03b6",
-            "\1\u03b7",
-            "\32\76\4\uffff\1\76\1\uffff\32\76"
+            "\32\75\4\uffff\1\75\1\uffff\32\75"
     };
 
-    static final short[] DFA25_eot = DFA.unpackEncodedString(DFA25_eotS);
-    static final short[] DFA25_eof = DFA.unpackEncodedString(DFA25_eofS);
-    static final char[] DFA25_min = DFA.unpackEncodedStringToUnsignedChars(DFA25_minS);
-    static final char[] DFA25_max = DFA.unpackEncodedStringToUnsignedChars(DFA25_maxS);
-    static final short[] DFA25_accept = DFA.unpackEncodedString(DFA25_acceptS);
-    static final short[] DFA25_special = DFA.unpackEncodedString(DFA25_specialS);
-    static final short[][] DFA25_transition;
+    static final short[] DFA36_eot = DFA.unpackEncodedString(DFA36_eotS);
+    static final short[] DFA36_eof = DFA.unpackEncodedString(DFA36_eofS);
+    static final char[] DFA36_min = DFA.unpackEncodedStringToUnsignedChars(DFA36_minS);
+    static final char[] DFA36_max = DFA.unpackEncodedStringToUnsignedChars(DFA36_maxS);
+    static final short[] DFA36_accept = DFA.unpackEncodedString(DFA36_acceptS);
+    static final short[] DFA36_special = DFA.unpackEncodedString(DFA36_specialS);
+    static final short[][] DFA36_transition;
 
     static {
-        int numStates = DFA25_transitionS.length;
-        DFA25_transition = new short[numStates][];
+        int numStates = DFA36_transitionS.length;
+        DFA36_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA25_transition[i] = DFA.unpackEncodedString(DFA25_transitionS[i]);
+            DFA36_transition[i] = DFA.unpackEncodedString(DFA36_transitionS[i]);
         }
     }
 
-    class DFA25 extends DFA {
+    class DFA36 extends DFA {
 
-        public DFA25(BaseRecognizer recognizer) {
+        public DFA36(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 25;
-            this.eot = DFA25_eot;
-            this.eof = DFA25_eof;
-            this.min = DFA25_min;
-            this.max = DFA25_max;
-            this.accept = DFA25_accept;
-            this.special = DFA25_special;
-            this.transition = DFA25_transition;
+            this.decisionNumber = 36;
+            this.eot = DFA36_eot;
+            this.eof = DFA36_eof;
+            this.min = DFA36_min;
+            this.max = DFA36_max;
+            this.accept = DFA36_accept;
+            this.special = DFA36_special;
+            this.transition = DFA36_transition;
         }
         public String getDescription() {
             return "1:1: Tokens : ( WHITESPACE | COMMANDS | SPECIAL_VAR | COMMENT | NUMBER | SUBST_OR_MATCH_OPER | LBRACK | RBRACK | LPAREN | RPAREN | LCURLY | RCURLY | COMMA | SEMI_COLON | COLON | DOT | EQUAL | PLUS | MINUS | MULTIPLY | DIVIDE | GT | LT | SQUOTE | DQUOTE | BACKSLASH | UNDERSCORE | VARIABLE | WORD_CHAR | STRING );";
@@ -6880,29 +7424,29 @@ public class PerlLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA25_60 = input.LA(1);
+                        int LA36_60 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA25_60 >= '\u0000' && LA25_60 <= '\uFFFF')) ) {s = 192;}
+                        if ( ((LA36_60 >= '\u0000' && LA36_60 <= '!')||(LA36_60 >= '#' && LA36_60 <= '\uFFFF')) ) {s = 145;}
 
-                        else s = 193;
+                        else s = 189;
 
                         if ( s>=0 ) return s;
                         break;
 
                     case 1 : 
-                        int LA25_59 = input.LA(1);
+                        int LA36_59 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA25_59 >= '\u0000' && LA25_59 <= '\uFFFF')) ) {s = 192;}
+                        if ( ((LA36_59 >= '\u0000' && LA36_59 <= '\t')||(LA36_59 >= '\u000B' && LA36_59 <= '\f')||(LA36_59 >= '\u000E' && LA36_59 <= '&')||(LA36_59 >= '(' && LA36_59 <= '\uFFFF')) ) {s = 145;}
 
-                        else s = 191;
+                        else s = 188;
 
                         if ( s>=0 ) return s;
                         break;
             }
             NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 25, _s, input);
+                new NoViableAltException(getDescription(), 36, _s, input);
             error(nvae);
             throw nvae;
         }

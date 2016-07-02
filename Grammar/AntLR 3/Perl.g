@@ -1,8 +1,8 @@
-grammar Perl;
+	grammar Perl;
 
 options {
 		memoize=true; 
-		k=1;
+		k=2;
 		output = AST;
 		ASTLabelType = CommonTree;
 		backtrack = true;
@@ -68,17 +68,17 @@ COMMANDS:	'NULL' | '__FILE__' | '__LINE__' | '__PACKAGE__' | '__DATA__' | '__END
 		| 'getservbyname' | 'getservbyport' | 'getservent' | 'getsockname' | 'getsockopt' | 'glob' | 'gmtime' 
 		| 'goto' | 'grep' | 'gt' | 'hex' | 'if' | 'index' | 'int' | 'ioctl' | 'join' | 'keys' | 'kill' | 'last' 
 		| 'lc' | 'lcfirst' | 'le' | 'length' | 'link' | 'listen' | 'local' | 'localtime' | 'lock' | 'log' 
-		| 'lstat' | 'lt' | 'm' | 'map' | 'mkdir' | 'msgctl' | 'msgget' | 'msgrcv' | 'msgsnd' | 'my' | 'ne' 
+		| 'lstat' | 'lt' | 'map' | 'mkdir' | 'msgctl' | 'msgget' | 'msgrcv' | 'msgsnd' | 'my' | 'ne' 
 		| 'next' | 'no' | 'not' | 'oct' | 'open' | 'opendir' | 'or' | 'ord' | 'our' | 'pack' | 'package' 
-		| 'pipe' | 'pop' | 'pos' | 'print' | 'printf' | 'prototype' | 'push' | 'q' | 'qq' | 'qr' | 'quotemeta' 
-		| 'qu' | 'qw' | 'qx' | 'rand' | 'read' | 'readdir' | 'readline' | 'readlink' | 'readpipe' | 'recv' 
+		| 'pipe' | 'pop' | 'pos' | 'print' | 'printf' | 'prototype' | 'push' | 'quotemeta' 
+		| 'rand' | 'read' | 'readdir' | 'readline' | 'readlink' | 'readpipe' | 'recv' 
 		| 'redo' | 'ref' | 'rename' | 'require' | 'reset' | 'return' | 'reverse' | 'rewinddir' | 'rindex' 
-		| 'rmdir' | 's' | 'scalar' | 'seek' | 'seekdir' | 'select' | 'semctl' | 'semget' | 'semop' | 'send' 
+		| 'rmdir' | 'scalar' | 'seek' | 'seekdir' | 'select' | 'semctl' | 'semget' | 'semop' | 'send' 
 		| 'setgrent' | 'sethostent' | 'setnetent' | 'setpgrp' | 'setpriority' | 'setprotoent' | 'setpwent' 
 		| 'setservent' | 'setsockopt' | 'shift' | 'shmctl' | 'shmget' | 'shmread' | 'shmwrite' | 'shutdown' 
 		| 'sin' | 'sleep' | 'socket' | 'socketpair' | 'sort' | 'splice' | 'split' | 'sprintf' | 'sqrt' 
 		| 'srand' | 'stat' | 'study' | 'sub' | 'substr' | 'symlink' | 'syscall' | 'sysopen' | 'sysread' 
-		| 'sysseek' | 'system' | 'syswrite' | 'tell' | 'telldir' | 'tie' | 'tied' | 'time' | 'times' | 'tr' 
+		| 'sysseek' | 'system' | 'syswrite' | 'tell' | 'telldir' | 'tie' | 'tied' | 'time' | 'times'  
 		| 'truncate' | 'uc' | 'ucfirst' | 'umask' | 'undef' | 'unless' | 'unlink' | 'unpack' | 'unshift' 
 		| 'untie' | 'until' | 'use' | 'utime' | 'values' | 'vec' | 'wait' | 'waitpid' | 'wantarray' | 'warn' 
 		| 'while' | 'write' |  'xor'
@@ -111,7 +111,7 @@ NUMBER	:
 	;
 	
 SUBST_OR_MATCH_OPER
-	: ('tr/' | 'qq/' | 'qx/' | 'qw/' | 'qr/' | 's/' | 'y/' | 'm/' | 'q/');
+	: ('tr/' | 's/' | 'y/' | 'm/');
 
 //Brackets
 LBRACK		: '[' ;
@@ -143,7 +143,7 @@ DQUOTE	:	'"';
 
 //Miscellaneous
 BACKSLASH
-	:	'\\';
+	:	'$'|'@';
 UNDERSCORE
 	:	'_';
 
@@ -152,14 +152,69 @@ VARIABLE	: ('$' | '@' | '%') ('$' | '@' | '%' | '#')? ('a'..'z'|'A'..'Z'|'0'..'9
 
 WORD_CHAR 	: ('a'..'z'|'A'..'Z'|'_')+
 	;
-
+/*
 STRING
     :  '"' (  EscapeSequence | ~('\\'|'"') )* '"'? 
     | '\'' (  EscapeSequence | ~('\\'|'\'') )* '\''? ; 
+*/
+STRING      
+@init{StringBuilder lBuf = new StringBuilder();}
+    :   
+           '"' 
+           ( escaped=EscapeSequence {lBuf.append(getText());} | 
+             //normal=~('"'|'\\'|'\n'|'\r')     {lBuf.appendCodePoint(normal);} )* 
+             normal=~('\"'|'\\')     {lBuf.appendCodePoint(normal);} )+ 
+           '"'?     
+           {setText(lBuf.toString());}
+           |
+           '\'' 
+           ( escaped=EscapeSequence {lBuf.append(getText());} | 
+             normal=~('\''|'\\'|'\n'|'\r')     {lBuf.appendCodePoint(normal);} )+
+           '\''?   
+           {setText(lBuf.toString());}
+           |
+           'q' ('q'|'w'|'r')? '|' 
+           ( escaped=EscapeSequence {lBuf.append(getText());} | 
+             normal=~('\|'|'\\'|'\n'|'\r')     {lBuf.appendCodePoint(normal);} )+ 
+           '|'    
+           {setText(lBuf.toString());}
+           |
+           'q' ('q'|'w'|'r')? '/' 
+           ( escaped=EscapeSequence {lBuf.append(getText());} | 
+             normal=~('\/'|'\\'|'\n'|'\r')     {lBuf.appendCodePoint(normal);} )* 
+           '/'?     
+           {setText(lBuf.toString());}
+           |
+           'q' ('q'|'w'|'r')? '{' 
+           ( escaped=EscapeSequence {lBuf.append(getText());} | 
+             normal=~('\{'|'\\'|'\n'|'\r')     {lBuf.appendCodePoint(normal);} )+
+           '}'     
+           {setText(lBuf.toString());}
+           |
+           'q' ('q'|'w'|'r')? '(' 
+           ( escaped=EscapeSequence {lBuf.append(getText());} | 
+             //normal=~('\('|'\\'|'\n'|'\r')     {lBuf.appendCodePoint(normal);} )* 
+             normal=~('\('|'\\')     {lBuf.appendCodePoint(normal);} )+ 
+           ')'?     
+           {setText(lBuf.toString());}
+    ;
+
     
 fragment
 EscapeSequence
-      :   '\\' .
+      :   //'\\' .
+      '\\'
+        (   'n'    {setText("\n");}
+        |   'r'    {setText("\r");}
+        |   't'    {setText("\t");}
+        |   'b'    {setText("\b");}
+        |   'f'    {setText("\f");}
+        |   '"'    {setText("\"");}
+        |   '\''   {setText("\'");}
+        |   '/'    {setText("\\/");}
+        |   '\\'   {setText("\\\\");}
+        |   '|'    {setText("\\|");}
+        )
     ;
 //POD	:	'=p'('o')?('d')?
 //		(.)*
