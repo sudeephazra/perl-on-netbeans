@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import javax.swing.text.JTextComponent;
+import org.language.perl.file.PerlFileDataObject;
 import org.language.perl.utilities.PerlConstants;
 import org.netbeans.api.editor.EditorRegistry;
 import org.openide.cookies.EditorCookie;
@@ -27,10 +28,12 @@ displayName = "#CTL_perlDocAction")
 @Messages("CTL_perlDocAction=PerlDOC Help")
 public final class perlDocAction implements ActionListener {
 
-    private final EditorCookie context;
-
-    public perlDocAction(EditorCookie context) {
+    //private final EditorCookie context;
+    private final PerlFileDataObject context;
+    
+    public perlDocAction(PerlFileDataObject context) {
         this.context = context;
+        
     }
 
     @Override
