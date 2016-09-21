@@ -5,10 +5,10 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.event.ChangeListener;
-import org.antlr.runtime.ANTLRStringStream;
-import org.antlr.runtime.CommonTokenStream;
-import org.antlr.runtime.RecognitionException;
-import org.antlr.runtime.tree.CommonTree;
+import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.CharStream;
+import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.RecognitionException;
 import org.language.perl.grammar.PerlLexer;
 import org.language.perl.grammar.PerlParser;
 import org.netbeans.modules.csl.api.Error;
@@ -18,26 +18,28 @@ import org.netbeans.modules.parsing.api.Task;
 import org.netbeans.modules.parsing.spi.ParseException;
 import org.netbeans.modules.parsing.spi.Parser;
 import org.netbeans.modules.parsing.spi.SourceModificationEvent;
+import org.language.perl.grammar.AntlrCharStream;
 
 public class Perl5Parser extends Parser {
 
     private Snapshot snapshot;
     private PerlParser parser;
     private PerlLexer lexer;
-    private CommonTree tree;
+    //private CommonTree tree;
     private CommonTokenStream tokens;
 
     
     public void parse(Snapshot snapshot, Task task, SourceModificationEvent event) {
         this.snapshot = snapshot;
-        ANTLRStringStream stream = new ANTLRStringStream(snapshot.getText().toString());
+        ANTLRInputStream stream = new ANTLRInputStream(snapshot.getText().toString());
+        
         lexer = new PerlLexer(stream);
         tokens = new CommonTokenStream(lexer);
         parser = new PerlParser(tokens);
         //parser = new PerlParser(new CommonTokenStream(lexer));
 
         try {
-            parser.parseSource();
+            parser.prog();
         } catch (RecognitionException ex) {
             Logger.getLogger(PerlParser.class.getName()).log(Level.WARNING, null, ex);
         }
@@ -46,7 +48,7 @@ public class Perl5Parser extends Parser {
     
     @Override
     public Result getResult(Task task) throws ParseException {
-        return new PerlEditorParserResult(snapshot, parser, lexer, tree, tokens);
+        return new PerlEditorParserResult(snapshot, parser, lexer, /*tree,*/ tokens);
     }
 
     
@@ -67,15 +69,15 @@ public class Perl5Parser extends Parser {
 
         private PerlParser parser;
         private PerlLexer lexer;
-        private CommonTree tree;
+        //private CommonTree tree;
         private CommonTokenStream tokens;
         private boolean valid = true;
 
-        PerlEditorParserResult(Snapshot snapshot, PerlParser parser, PerlLexer lexer, CommonTree tree, CommonTokenStream tokens) {
+        PerlEditorParserResult(Snapshot snapshot, PerlParser parser, PerlLexer lexer, /*CommonTree tree,*/ CommonTokenStream tokens) {
             super(snapshot);
             this.parser = parser;
             this.lexer = lexer;
-            this.tree = tree;
+            //this.tree = tree;
             this.tokens = tokens;
 
         }
@@ -84,9 +86,9 @@ public class Perl5Parser extends Parser {
             return lexer;
         }
 
-        public CommonTree getTree() {
-            return tree;
-        }
+//        public CommonTree getTree() {
+//            return tree;
+//        }
 
         public CommonTokenStream getTokens() {
             return tokens;

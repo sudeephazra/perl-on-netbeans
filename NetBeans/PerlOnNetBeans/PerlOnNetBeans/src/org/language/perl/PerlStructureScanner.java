@@ -12,10 +12,10 @@ import java.util.List;
 import java.util.Map;
 import javax.swing.text.Document;
 import javax.swing.text.StyledDocument;
-import org.antlr.runtime.CommonTokenStream;
-import org.antlr.runtime.Token;
-import org.antlr.runtime.tree.CommonTree;
-import org.antlr.runtime.tree.Tree;
+import org.antlr.v4.runtime.ParserRuleContext;
+import org.antlr.v4.runtime.Token;
+import org.antlr.v4.runtime.tree.ParseTree;
+import org.antlr.v4.runtime.tree.Tree;
 import org.language.perl.grammar.PerlLexer;
 import org.language.perl.parser.Perl5Parser.PerlEditorParserResult;
 import org.netbeans.modules.csl.api.OffsetRange;
@@ -47,7 +47,7 @@ public class PerlStructureScanner implements StructureScanner  {
         return new StructureScanner.Configuration(true, false);
     }
     
-    protected static Tree getLastChild(CommonTree tree, int lastToken) {
+    protected static Tree getLastChild(ParserRuleContext tree, int lastToken) {
         Tree lastChild = tree.getChild(tree.getChildCount() - lastToken);
         if (lastChild.getChildCount() > 0) {
             do {
@@ -60,7 +60,7 @@ public class PerlStructureScanner implements StructureScanner  {
     
     private void collectTokenFolds(Map<String, List<OffsetRange>> folds, ParserResult pr, Document document) {
         if (pr != null) {
-            CommonTokenStream tokens = ((PerlEditorParserResult) pr).getTokens();
+            org.antlr.v4.runtime.CommonTokenStream tokens = ((PerlEditorParserResult) pr).getTokens();
             for (int i = 0; i < tokens.getTokens().size(); i++) {
                 Token token = (Token) (tokens.getTokens().get(i));
 //                if (token.getType() == PerlLexer.POD) {
@@ -70,7 +70,7 @@ public class PerlStructureScanner implements StructureScanner  {
         }
     }
     
-     private void collectGrammarFolds(Map<String, List<OffsetRange>> folds, CommonTree tree, Document document) {
+     private void collectGrammarFolds(Map<String, List<OffsetRange>> folds, ParserRuleContext tree, Document document) {
 //        if (tree != null) {
 //            for (int i = 0; i < tree.getChildCount(); i++) {
 //                switch (tree.getChild(i).getType()) {
@@ -99,14 +99,14 @@ public class PerlStructureScanner implements StructureScanner  {
 //        }
     }
      
-    private void addFold(String foldType, Map<String, List<OffsetRange>> folds, CommonTree tree, Document document, int firstToken, int lastToken) {
-        Tree firstChild = tree.getChild(firstToken);
-        Tree lastChild = getLastChild(tree, lastToken);
-        if (firstChild.getLine() != 0 && lastChild.getLine() != 0 && lastChild.getLine() - firstChild.getLine() > 1) {
-            int start = NbDocument.findLineOffset((StyledDocument) document, firstChild.getLine() - 1) + firstChild.getCharPositionInLine() + firstChild.getText().length();
-            int end = NbDocument.findLineOffset((StyledDocument) document, lastChild.getLine() - 1) + lastChild.getCharPositionInLine();
-            createFold(foldType, folds, start, end);
-        }
+    private void addFold(String foldType, Map<String, List<OffsetRange>> folds, ParserRuleContext tree, Document document, int firstToken, int lastToken) {
+        ParseTree firstChild = tree.getChild(firstToken);
+        ParseTree lastChild = (ParseTree) getLastChild(tree, lastToken);
+//        if (firstChild.getLine() != 0 && lastChild.getLine() != 0 && lastChild.getLine() - firstChild.getLine() > 1) {
+//            int start = NbDocument.findLineOffset((StyledDocument) document, firstChild.getLine() - 1) + firstChild.getCharPositionInLine() + firstChild.getText().length();
+//            int end = NbDocument.findLineOffset((StyledDocument) document, lastChild.getLine() - 1) + lastChild.getCharPositionInLine();
+//            createFold(foldType, folds, start, end);
+//        }
     }
 
     private void addFold(String foldType, Map<String, List<OffsetRange>> folds, Token token, Document document) {

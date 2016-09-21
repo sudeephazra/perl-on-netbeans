@@ -1,7 +1,4 @@
 // Generated from Perl.g4 by ANTLR 4.5
-package org.language.perl.grammar;
-import java.util.ArrayList;
-import java.util.List;
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
@@ -80,20 +77,41 @@ public class PerlLexer extends Lexer {
 	}
 
 	@Override
+
 	public Vocabulary getVocabulary() {
 		return VOCABULARY;
 	}
 
-	
-	
-	public static class SyntaxError { 
-		   public RecognitionException exception; 
-		   public String message; 
-		   public int line; 
-		   public int charPositionInLine; 
-		   public int start = -1; 
-		   public int stop = -1; 
-	} 
+
+		
+		public List<SyntaxError> syntaxErrors = new ArrayList<SyntaxError>();
+	    	@Override 
+		public String getErrorMessage(RecognitionException e, String[] tokenNames) { 
+		      String message = super.getErrorMessage(e, tokenNames); 
+		      SyntaxError syntaxError = new SyntaxError(); 
+		      if (e.token != null && e.token instanceof CommonToken) { 
+		         CommonToken ct = (CommonToken) e.token; 
+		         syntaxError.start = ct.getStartIndex(); 
+		         syntaxError.stop = ct.getStopIndex()+1; 
+		      } 
+		       
+		      syntaxError.exception = e; 
+		      syntaxError.message = message; 
+		
+	      	      syntaxErrors.add(syntaxError); 
+		      return message; 
+		
+		} 
+		
+		public static class SyntaxError { 
+			   public RecognitionException exception; 
+			   public String message; 
+			   public int line; 
+			   public int charPositionInLine; 
+			   public int start = -1; 
+			   public int stop = -1; 
+		} 
+
 
 	public PerlLexer(CharStream input) {
 		super(input);

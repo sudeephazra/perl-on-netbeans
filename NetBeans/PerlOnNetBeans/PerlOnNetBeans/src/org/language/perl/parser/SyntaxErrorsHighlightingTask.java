@@ -3,8 +3,8 @@ package org.language.perl.parser;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.text.Document;
-import org.antlr.runtime.RecognitionException;
-
+import org.antlr.v4.runtime.RecognitionException;
+import org.language.perl.grammar.PerlLexer.SyntaxError;
 import org.netbeans.modules.parsing.spi.Parser;
 import org.netbeans.modules.parsing.spi.Parser.Result;
 import org.netbeans.modules.parsing.spi.ParserResultTask;
@@ -14,7 +14,6 @@ import org.netbeans.spi.editor.hints.ErrorDescription;
 import org.netbeans.spi.editor.hints.ErrorDescriptionFactory;
 import org.netbeans.spi.editor.hints.HintsController;
 import org.netbeans.spi.editor.hints.Severity;
-import org.language.perl.grammar.PerlParser.SyntaxError;
 
 public class SyntaxErrorsHighlightingTask extends ParserResultTask<Parser.Result> {
     
@@ -36,10 +35,10 @@ public class SyntaxErrorsHighlightingTask extends ParserResultTask<Parser.Result
             List<ErrorDescription> errors = new ArrayList<ErrorDescription>(); 
 
             for (SyntaxError syntaxError : syntaxErrors) { 
-              RecognitionException exception = syntaxError.exception; 
-              String message = syntaxError.message; 
+                RecognitionException exception = syntaxError.exception; 
+                String message = syntaxError.message; 
 
-              int line = exception.line; 
+              int line = exception.getOffendingToken().getLine();
               if (line <= 0 || syntaxError.start <= 0) { 
                 continue; 
               } 

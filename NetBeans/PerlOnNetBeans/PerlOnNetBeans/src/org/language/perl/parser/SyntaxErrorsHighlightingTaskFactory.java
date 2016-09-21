@@ -10,7 +10,7 @@ import java.util.Set;
 import org.netbeans.modules.parsing.api.Snapshot;
 import org.netbeans.modules.parsing.spi.SchedulerTask;
 import org.netbeans.modules.parsing.spi.TaskFactory;
-
+/*
 public class SyntaxErrorsHighlightingTaskFactory extends TaskFactory{
     
     @Override
@@ -20,3 +20,4 @@ public class SyntaxErrorsHighlightingTaskFactory extends TaskFactory{
        }
 
 }
+*/
