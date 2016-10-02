@@ -6,3 +6,4 @@
 #
 
 package ${name}
+package ${package}

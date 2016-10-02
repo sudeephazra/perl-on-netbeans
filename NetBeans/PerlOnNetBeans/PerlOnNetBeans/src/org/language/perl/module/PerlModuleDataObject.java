@@ -89,7 +89,7 @@ public class PerlModuleDataObject extends MultiDataObject {
 
     public PerlModuleDataObject(FileObject pf, MultiFileLoader loader) throws DataObjectExistsException, IOException {
         super(pf, loader);
-        registerEditor(PerlConstants.MIME_TYPE, false);
+        registerEditor(PerlConstants.MIME_TYPE, true);
         getLookup().lookup(DataEditorSupport.class).setMIMEType(PerlConstants.MIME_TYPE);
     }
 

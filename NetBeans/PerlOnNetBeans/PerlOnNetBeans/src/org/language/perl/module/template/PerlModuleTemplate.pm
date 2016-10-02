@@ -5,6 +5,4 @@
 # @Created ${date} ${time}
 #
 
-package ${Title}
-Location ${Location}
-Project ${Project}
+package ${PackageName}

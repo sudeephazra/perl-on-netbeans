@@ -15,6 +15,7 @@ import javax.swing.JComponent;
 import javax.swing.KeyStroke;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import org.language.perl.utilities.PerlConstants;
 
 /**
  *
@@ -40,7 +41,7 @@ public class PerlModuleTemplateDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         
-        File fileRoot = new File("D:\\Backup");
+        File fileRoot = new File(PerlConstants.TEMP_DIRECTORY);
 
         DefaultMutableTreeNode root = new DefaultMutableTreeNode(fileRoot);
         DefaultTreeModel model = new DefaultTreeModel(root);

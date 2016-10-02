@@ -6,7 +6,10 @@
 package org.language.perl.module.template;
 
 import java.awt.Component;
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,6 +19,7 @@ import java.util.NoSuchElementException;
 import java.util.Set;
 import javax.swing.JComponent;
 import javax.swing.event.ChangeListener;
+import org.language.perl.utilities.PerlConstants;
 import org.netbeans.api.project.Project;
 import org.netbeans.api.project.ProjectUtils;
 import org.netbeans.api.project.SourceGroup;
@@ -29,10 +33,10 @@ import org.openide.loaders.DataObject;
 import org.openide.util.NbBundle.Messages;
 
 // TODO the following section is disabled to use the existing file menu
-//@TemplateRegistration(folder = "Perl", displayName = "#PerlModuleTemplateWizardIterator_displayName", 
-//        iconBase = "org/language/perl/images/perl-module.png", description = "perlModuleTemplate.html",
-//        scriptEngine = "freemarker", content = "PerlModuleTemplate.pm")
-//@Messages("PerlModuleTemplateWizardIterator_displayName=New Perl Module")
+@TemplateRegistration(folder = "Perl", displayName = "#PerlModuleTemplateWizardIterator_displayName", 
+        iconBase = "org/language/perl/images/perl-module.png", description = "perlModuleTemplate.html",
+        scriptEngine = "freemarker", content = "PerlModuleTemplate.pm")
+@Messages("PerlModuleTemplateWizardIterator_displayName=New Perl Module")
 // TODO the above section is disabled to use the existing file menu
 
 public final class PerlModuleTemplateWizardIterator implements WizardDescriptor.InstantiatingIterator<WizardDescriptor> {
@@ -84,15 +88,17 @@ public final class PerlModuleTemplateWizardIterator implements WizardDescriptor.
         FileObject createdFile = null;
         
         // Read Title from wizard 
-        String PackageName = (String) wizard.getProperty("Title");
-        String PackageLocation = (String) wizard.getProperty("Location");
-        String ProjectDirectory = (String) wizard.getProperty("Project");
+        String ModuleName = (String) wizard.getProperty("ModuleName");
+        String PackageName = (String) wizard.getProperty("PackageName");
+        String ModuleInPackageLocation = (String) wizard.getProperty("ModuleInPackageLocation");
+        String ProjectFolder = (String) wizard.getProperty("ProjectFolder");
+                
         // FreeMarker Template will get its variables from HashMap.
         // HashMap key is the variable name.
         Map args = new HashMap();
-        args.put("Title", PackageName);
-        args.put("Location", PackageLocation);
-        args.put("Project", ProjectDirectory);
+        args.put("ModuleName", ModuleName);
+        args.put("ModuleInPackageLocation", ModuleInPackageLocation);
+        args.put("ProjectFolder", ProjectFolder);
 
         //Get the template and convert it:
         FileObject template = Templates.getTemplate(wizard);
@@ -104,10 +110,16 @@ public final class PerlModuleTemplateWizardIterator implements WizardDescriptor.
 
         //Get the class:
         String targetName = Templates.getTargetName(wizard);
-
+        
         //Define the template from the above,
         //passing the package, the file name, and the map of strings to the template:
-        DataObject dobj = dTemplate.createFromTemplate(df, targetName, args);
+        String path = df.getPrimaryFile().getPath() + PerlConstants.FILE_SEPARATOR + ModuleName;
+        String base = ProjectFolder;
+        String relative = new File(base).toURI().relativize(new File(path).toURI()).getPath();
+        PackageName = relative.replace(PerlConstants.FILE_SEPARATOR, PerlConstants.MODULE_SEPARATOR);
+        
+        args.put("PackageName", PackageName);
+        DataObject dobj = dTemplate.createFromTemplate(df, ModuleName, args);
 
         //Obtain a FileObject:
         createdFile = dobj.getPrimaryFile();

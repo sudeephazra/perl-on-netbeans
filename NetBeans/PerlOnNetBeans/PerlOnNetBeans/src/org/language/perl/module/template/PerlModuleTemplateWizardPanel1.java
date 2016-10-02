@@ -72,9 +72,10 @@ public class PerlModuleTemplateWizardPanel1 implements WizardDescriptor.Panel<Wi
 
     @Override
     public void storeSettings(WizardDescriptor wiz) {
-        wiz.putProperty("Title", PerlModuleTemplateVisualPanel1.TITLE);
-        wiz.putProperty("Location", PerlModuleTemplateVisualPanel1.LOCATION);
-        wiz.putProperty("Project", this.p.getProjectDirectory().toString());
+        wiz.putProperty("ModuleName", PerlModuleTemplateVisualPanel1.MODULE_NAME);
+        wiz.putProperty("PackageName", PerlModuleTemplateVisualPanel1.PACKAGE_NAME);
+        wiz.putProperty("ModuleInPackageLocation", PerlModuleTemplateVisualPanel1.LOCATION);
+        wiz.putProperty("ProjectFolder", this.p.getProjectDirectory().getPath());
         
     }
     
