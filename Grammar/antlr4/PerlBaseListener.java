@@ -1,4 +1,5 @@
 // Generated from Perl.g4 by ANTLR 4.5
+package org.language.perl.grammar;
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.misc.NotNull;

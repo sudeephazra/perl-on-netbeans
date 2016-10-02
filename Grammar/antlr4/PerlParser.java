@@ -1,4 +1,5 @@
 // Generated from Perl.g4 by ANTLR 4.5
+package org.language.perl.grammar;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -86,36 +87,6 @@ public class PerlParser extends Parser {
 
 	@Override
 	public ATN getATN() { return _ATN; }
-
-
-		
-		public List<SyntaxError> syntaxErrors = new ArrayList<SyntaxError>();
-	    	@Override 
-		public String getErrorMessage(RecognitionException e, String[] tokenNames) { 
-		      String message = super.getErrorMessage(e, tokenNames); 
-		      SyntaxError syntaxError = new SyntaxError(); 
-		      if (e.token != null && e.token instanceof CommonToken) { 
-		         CommonToken ct = (CommonToken) e.token; 
-		         syntaxError.start = ct.getStartIndex(); 
-		         syntaxError.stop = ct.getStopIndex()+1; 
-		      } 
-		       
-		      syntaxError.exception = e; 
-		      syntaxError.message = message; 
-		
-	      	      syntaxErrors.add(syntaxError); 
-		      return message; 
-		
-		} 
-		
-		public static class SyntaxError { 
-			   public RecognitionException exception; 
-			   public String message; 
-			   public int line; 
-			   public int charPositionInLine; 
-			   public int start = -1; 
-			   public int stop = -1; 
-		} 
 
 	public PerlParser(TokenStream input) {
 		super(input);

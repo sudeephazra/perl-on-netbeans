@@ -87,26 +87,7 @@ public class PerlParser extends Parser {
 
 	@Override
 	public ATN getATN() { return _ATN; }
-        
-        public List<PerlLexer.SyntaxError> syntaxErrors = new ArrayList<PerlLexer.SyntaxError>();
-		 
-	public String getErrorMessage(RecognitionException e, String[] tokenNames) { 
-		  String message = getErrorMessage(e, tokenNames); 
-		  PerlLexer.SyntaxError syntaxError = new PerlLexer.SyntaxError(); 
-		  if (e.getOffendingToken() != null && e.getOffendingToken() instanceof CommonToken) { 
-			 CommonToken ct = (CommonToken) e.getOffendingToken(); 
-			 syntaxError.start = ct.getStartIndex(); 
-			 syntaxError.stop = ct.getStopIndex()+1; 
-		  } 
-		   
-		  syntaxError.exception = e; 
-		  syntaxError.message = message; 
-	
-			  syntaxErrors.add(syntaxError); 
-		  return message; 
-	
-	} 
-        
+
 	public PerlParser(TokenStream input) {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);

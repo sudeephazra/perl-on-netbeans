@@ -8,7 +8,7 @@ options {
 		ASTLabelType = CommonTree;
 		backtrack = true;
 	}
-*/
+
 @members {
 	
 	public List<SyntaxError> syntaxErrors = new ArrayList<SyntaxError>();
@@ -39,10 +39,10 @@ options {
 		   public int stop = -1; 
 	} 
 }
+*/
 
-
-//@parser::header {package org.language.perl.grammar;}
-//@lexer::header {package org.language.perl.grammar;}
+@parser::header {package org.language.perl.grammar;}
+@lexer::header {package org.language.perl.grammar;}
 
 
 prog:	(.)*? EOF; 
@@ -144,7 +144,7 @@ NUMBER: DIGITS | OCTAL_DIGITS | HEX_DIGITS;
 fragment CHAR
 	: 'a'..'z'|'A'..'Z';
 CHARACTERS
-	: CHAR (CHAR)*;
+	: CHAR (CHAR | DIGITS)*;
 
 
 
