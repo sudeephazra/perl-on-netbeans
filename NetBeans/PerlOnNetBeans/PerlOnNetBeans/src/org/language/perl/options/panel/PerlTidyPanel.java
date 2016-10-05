@@ -20,14 +20,15 @@ final public class PerlTidyPanel extends javax.swing.JPanel {
 
         //Converting the jPanel to a groupBox equivalent
         jPanel1.setBorder(BorderFactory.createTitledBorder("HTML Options"));
-        
+        jPanel2.setBorder(BorderFactory.createTitledBorder("Formatting Options"));
+        jPanel3.setBorder(BorderFactory.createTitledBorder("Additional Parameters"));
         //Disabling HTML Output options for the first BETA release
         //jCheckBox2.setEnabled(false);
         //jCheckBox3.setEnabled(false);
         //jTextField4.setEnabled(false);
         //jRadioButton3.setEnabled(false);
         //jRadioButton4.setEnabled(false);
-        
+
     }
 
     /**
@@ -40,15 +41,12 @@ final public class PerlTidyPanel extends javax.swing.JPanel {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
+        buttonGroup4 = new javax.swing.ButtonGroup();
+        buttonGroup5 = new javax.swing.ButtonGroup();
         jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
         jPanel1 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -60,6 +58,23 @@ final public class PerlTidyPanel extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jTextField6 = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
+        jRadioButton5 = new javax.swing.JRadioButton();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel1, "Perl::Tidy Binary Location");
 
@@ -69,18 +84,6 @@ final public class PerlTidyPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel2, "Columns per Indentation Level");
-
-        jTextField2.setText("4");
-
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel3, "(Default is 4)");
-
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel4, "Maximum Line Length");
-
-        jTextField3.setText("80");
-
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel5, "(Default is 80)");
 
         org.openide.awt.Mnemonics.setLocalizedText(jCheckBox1, "Generate Log File");
 
@@ -140,7 +143,7 @@ final public class PerlTidyPanel extends javax.swing.JPanel {
                         .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,7 +161,7 @@ final public class PerlTidyPanel extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jRadioButton4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
                             .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -166,6 +169,122 @@ final public class PerlTidyPanel extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton3)))
                 .addContainerGap())
+        );
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel2, "Columns per Indentation Level");
+
+        jTextField2.setText("4");
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel3, "(Default is 4)");
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel4, "Maximum Line Length");
+
+        jTextField3.setText("80");
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel5, "(Default is 80)");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel3))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(23, 23, 23)
+                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel5)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        buttonGroup2.add(jRadioButton1);
+        org.openide.awt.Mnemonics.setLocalizedText(jRadioButton1, "Use Tidy Config File");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
+
+        buttonGroup2.add(jRadioButton2);
+        org.openide.awt.Mnemonics.setLocalizedText(jRadioButton2, "Use Tidy Parameters");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
+
+        org.openide.awt.Mnemonics.setLocalizedText(jButton4, "...");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        buttonGroup2.add(jRadioButton5);
+        org.openide.awt.Mnemonics.setLocalizedText(jRadioButton5, "Use PBP Config");
+        jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton5ActionPerformed(evt);
+            }
+        });
+
+        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox2, "Generate HTML Output");
+        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox2ActionPerformed(evt);
+            }
+        });
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel7, "Additional Parameters");
+
+        jLabel9.setForeground(new java.awt.Color(102, 102, 102));
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel9, "For example: -sbt -lp -ci ");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel9))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -178,27 +297,27 @@ final public class PerlTidyPanel extends javax.swing.JPanel {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(33, 33, 33)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel3))
+                            .addComponent(jRadioButton5)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jCheckBox1))
-                                .addGap(23, 23, 23)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel5)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                    .addComponent(jLabel1)
+                                    .addComponent(jRadioButton1))
+                                .addGap(33, 33, 33)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jRadioButton2)
+                            .addComponent(jCheckBox2)
+                            .addComponent(jCheckBox1))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -211,19 +330,24 @@ final public class PerlTidyPanel extends javax.swing.JPanel {
                     .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
+                    .addComponent(jRadioButton1)
+                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
+                .addComponent(jRadioButton5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jRadioButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jCheckBox1)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jCheckBox2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -271,14 +395,124 @@ final public class PerlTidyPanel extends javax.swing.JPanel {
                 //System.out.println("problem accessing file"+file.getAbsolutePath());
                 JOptionPane.showMessageDialog(null, "Unable to set HTML output folder");
             }
-            
-            
+
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        int returnVal = fileChooser.showSaveDialog(this);
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            File file = fileChooser.getSelectedFile();
+            try {
+                jTextField6.setText(file.getAbsolutePath());
+            } catch (Exception ex) {
+                //System.out.println("problem accessing file"+file.getAbsolutePath());
+                JOptionPane.showMessageDialog(null, "Unable to set Tidy config file");
+            }
+
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+        if (jRadioButton1.isSelected()) {
+            jTextField6.setEnabled(true);
+            jButton4.setEnabled(true);
+            jPanel2.setEnabled(false);
+            jTextField2.setEnabled(false);
+            jTextField3.setEnabled(false);
+            jLabel2.setEnabled(false);
+            jLabel3.setEnabled(false);
+            jLabel4.setEnabled(false);
+            jLabel5.setEnabled(false);
+        } else {
+            jTextField6.setEnabled(false);
+            jButton4.setEnabled(false);
+            jPanel2.setEnabled(true);
+            jTextField2.setEnabled(true);
+            jTextField3.setEnabled(true);
+            jLabel2.setEnabled(true);
+            jLabel3.setEnabled(true);
+            jLabel4.setEnabled(true);
+            jLabel5.setEnabled(true);
+        }
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        // TODO add your handling code here:
+        if (jRadioButton2.isSelected()) {
+            jTextField6.setEnabled(false);
+            jButton4.setEnabled(false);
+            jPanel2.setEnabled(true);
+            jTextField2.setEnabled(true);
+            jTextField3.setEnabled(true);
+            jLabel2.setEnabled(true);
+            jLabel3.setEnabled(true);
+            jLabel4.setEnabled(true);
+            jLabel5.setEnabled(true);
+        } else {
+            jTextField6.setEnabled(true);
+            jButton4.setEnabled(true);
+            jPanel2.setEnabled(false);
+            jTextField2.setEnabled(false);
+            jTextField3.setEnabled(false);
+            jLabel2.setEnabled(false);
+            jLabel3.setEnabled(false);
+            jLabel4.setEnabled(false);
+            jLabel5.setEnabled(false);
+        }
+
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
+        // TODO add your handling code here:
+        if (jRadioButton5.isSelected()) {
+            jTextField6.setEnabled(false);
+            jButton4.setEnabled(false);
+            jPanel2.setEnabled(false);
+            jTextField2.setEnabled(false);
+            jTextField3.setEnabled(false);
+            jLabel2.setEnabled(false);
+            jLabel3.setEnabled(false);
+            jLabel4.setEnabled(false);
+            jLabel5.setEnabled(false);
+        }
+    }//GEN-LAST:event_jRadioButton5ActionPerformed
+
+    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+        // TODO add your handling code here:
+        if (jCheckBox2.isSelected()) {
+            jPanel1.setEnabled(true);
+            jTextField4.setEnabled(true);
+            jTextField5.setEnabled(true);
+            jLabel6.setEnabled(true);
+            jLabel8.setEnabled(true);
+            jRadioButton3.setEnabled(true);
+            jRadioButton4.setEnabled(true);
+            jCheckBox3.setEnabled(true);
+            jButton2.setEnabled(true);
+            jButton3.setEnabled(true);
+        } else {
+            jPanel1.setEnabled(false);
+            jTextField4.setEnabled(false);
+            jTextField5.setEnabled(false);
+            jLabel6.setEnabled(false);
+            jLabel8.setEnabled(false);
+            jRadioButton3.setEnabled(false);
+            jRadioButton4.setEnabled(false);
+            jCheckBox3.setEnabled(false);
+            jButton2.setEnabled(false);
+            jButton3.setEnabled(false);
+        }
+        
+    }//GEN-LAST:event_jCheckBox2ActionPerformed
 
     void load() {
         jTextField1.setText(NbPreferences.forModule(PerlTidyPanel.class).get("perlTidyBinary", ""));
@@ -287,11 +521,15 @@ final public class PerlTidyPanel extends javax.swing.JPanel {
         jTextField4.setText(NbPreferences.forModule(PerlTidyPanel.class).get("perlTidyCSSFile", ""));
         jTextField5.setText(NbPreferences.forModule(PerlTidyPanel.class).get("perlCustomHTMLOutputFolder", ""));
         jCheckBox1.setSelected(NbPreferences.forModule(PerlTidyPanel.class).getBoolean("perlTidyGenerateLog", false));
-        //jCheckBox2.setSelected(NbPreferences.forModule(PerlTidyPanel.class).getBoolean("perlTidyGenerateHTML", false));
+        jCheckBox2.setSelected(NbPreferences.forModule(PerlTidyPanel.class).getBoolean("perlTidyGenerateHTML", false));
+        jRadioButton1.setSelected(NbPreferences.forModule(PerlTidyPanel.class).getBoolean("perlTidyUseConfigFile", false));
+        jTextField6.setText(NbPreferences.forModule(PerlTidyPanel.class).get("perlTidyConfigFile", ""));
+        jRadioButton2.setSelected(NbPreferences.forModule(PerlTidyPanel.class).getBoolean("perlTidyUseConfigParameters", false));
+        jRadioButton5.setSelected(NbPreferences.forModule(PerlTidyPanel.class).getBoolean("perlTidyUsePBPConfig", false));
         jCheckBox3.setSelected(NbPreferences.forModule(PerlTidyPanel.class).getBoolean("perlTidyGenerateHTMLTableOfContents", false));
         jRadioButton3.setSelected(NbPreferences.forModule(PerlTidyPanel.class).getBoolean("perlTidyHTMLWithPRE", false));
         jRadioButton4.setSelected(NbPreferences.forModule(PerlTidyPanel.class).getBoolean("perlTidyHTMLWithFRAME", false));
-
+        jTextField7.setText(NbPreferences.forModule(PerlTidyPanel.class).get("perlTidyAdditionalParameters", ""));
     }
 
     void store() {
@@ -301,10 +539,15 @@ final public class PerlTidyPanel extends javax.swing.JPanel {
         NbPreferences.forModule(PerlTidyPanel.class).put("perlTidyCSSFile", jTextField4.getText());
         NbPreferences.forModule(PerlTidyPanel.class).put("perlCustomHTMLOutputFolder", jTextField5.getText());
         NbPreferences.forModule(PerlTidyPanel.class).putBoolean("perlTidyGenerateLog", jCheckBox1.isSelected());
-        //NbPreferences.forModule(PerlTidyPanel.class).putBoolean("perlTidyGenerateHTML", jCheckBox2.isSelected());
+        NbPreferences.forModule(PerlTidyPanel.class).putBoolean("perlTidyGenerateHTML", jCheckBox2.isSelected());
+        NbPreferences.forModule(PerlTidyPanel.class).putBoolean("perlTidyUseConfigFile", jRadioButton1.isSelected());
+        NbPreferences.forModule(PerlTidyPanel.class).putBoolean("perlTidyUseConfigParameters", jRadioButton2.isSelected());
+        NbPreferences.forModule(PerlTidyPanel.class).putBoolean("perlTidyUsePBPConfig", jRadioButton5.isSelected());
+        NbPreferences.forModule(PerlTidyPanel.class).put("perlTidyConfigFile", jTextField6.getText());
         NbPreferences.forModule(PerlTidyPanel.class).putBoolean("perlTidyGenerateHTMLTableOfContents", jCheckBox3.isSelected());
         NbPreferences.forModule(PerlTidyPanel.class).putBoolean("perlTidyHTMLWithPRE", jRadioButton3.isSelected());
         NbPreferences.forModule(PerlTidyPanel.class).putBoolean("perlTidyHTMLWithFRAME", jRadioButton4.isSelected());
+        NbPreferences.forModule(PerlTidyPanel.class).put("perlTidyAdditionalParameters", jTextField7.getText());
     }
 
     boolean valid() {
@@ -314,10 +557,15 @@ final public class PerlTidyPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.ButtonGroup buttonGroup4;
+    private javax.swing.ButtonGroup buttonGroup5;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -325,14 +573,23 @@ final public class PerlTidyPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
     // End of variables declaration//GEN-END:variables
 }

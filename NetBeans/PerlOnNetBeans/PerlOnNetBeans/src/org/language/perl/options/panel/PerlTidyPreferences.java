@@ -32,7 +32,12 @@ public class PerlTidyPreferences {
         boolean perlTidyGenerateLog = pref.getBoolean("perlTidyGenerateLog", false);
         return perlTidyGenerateLog;
     }
-
+    
+    public boolean getPerlTidyGenerateHTML() {
+        boolean perlTidyGenerateHTML = pref.getBoolean("perlTidyGenerateHTML", false);
+        return perlTidyGenerateHTML;
+    }
+    
     public boolean getPerlTidyGenerateHTMLTableOfContents() {
         boolean perlTidyGenerateHTMLTableOfContents = pref.getBoolean("perlTidyGenerateHTMLTableOfContents", false);
         return perlTidyGenerateHTMLTableOfContents;
@@ -67,4 +72,27 @@ public class PerlTidyPreferences {
         String executableFolder = perlTidy.getParent();
         return executableFolder;
     }
+
+    public boolean getPerlTidyUseConfigFile() {
+        boolean perlTidyUseConfigFile = pref.getBoolean("perlTidyUseConfigFile", false);
+        return perlTidyUseConfigFile;
+    }
+    
+    public String getPerlTidyConfigFile() {
+        String perlTidyConfigFile = pref.get("perlTidyUseConfigFile", "").trim();
+        return perlTidyConfigFile;
+    }
+    
+    public boolean getPerlTidyUsePBPConfig() {
+        boolean perlTidyUsePBPConfig = pref.getBoolean("perlTidyUsePBPConfig", false);
+        return perlTidyUsePBPConfig;
+    }
+    
+    public String getPerlTidyAdditionalParameters() {
+        String perlTidyAdditionalParameters = pref.get("perlTidyAdditionalParameters", "").trim();
+        return perlTidyAdditionalParameters;
+    }
+    
+    
+    
 }
