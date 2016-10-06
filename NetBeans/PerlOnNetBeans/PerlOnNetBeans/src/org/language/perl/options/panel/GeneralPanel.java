@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import org.language.perl.utilities.PerlConstants;
 import org.openide.util.NbPreferences;
 
 final public class GeneralPanel extends javax.swing.JPanel {
@@ -40,7 +41,13 @@ final public class GeneralPanel extends javax.swing.JPanel {
         removeButton = new javax.swing.JButton();
         clearAllButton = new javax.swing.JButton();
 
+        setMaximumSize(new java.awt.Dimension(465, 191));
+        setMinimumSize(new java.awt.Dimension(465, 191));
+
         org.openide.awt.Mnemonics.setLocalizedText(jLabel1, "PERL Executable");
+
+        jTextField1.setMaximumSize(new java.awt.Dimension(260, 6));
+        jTextField1.setMinimumSize(new java.awt.Dimension(260, 6));
 
         org.openide.awt.Mnemonics.setLocalizedText(browseButton, "Browse");
         browseButton.addActionListener(new java.awt.event.ActionListener() {
@@ -85,8 +92,8 @@ final public class GeneralPanel extends javax.swing.JPanel {
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
-                    .addComponent(jTextField1))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(removeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -176,7 +183,7 @@ final public class GeneralPanel extends javax.swing.JPanel {
         jTextField1.setText(NbPreferences.forModule(GeneralPanel.class).get("perlBinary", ""));
         //Add library here
         List fileList = new ArrayList();
-        fileList = Arrays.asList(NbPreferences.forModule(GeneralPanel.class).get("perlLibrary", "").split("\\n"));
+        fileList = Arrays.asList(NbPreferences.forModule(GeneralPanel.class).get("perlLibrary", "").split(";"));
         jList1.setListData(fileList.toArray());
         
     }
@@ -187,10 +194,12 @@ final public class GeneralPanel extends javax.swing.JPanel {
         String fileList = "";
         if (jList1.getModel().getSize() >= 1) {
             for (int i = 0; i < jList1.getModel().getSize(); i++) {
-                fileList = fileList + jList1.getModel().getElementAt(i).toString() + "\n";
+                fileList = fileList + jList1.getModel().getElementAt(i).toString() + ";";
             }
         }
+        fileList = fileList.replaceAll(";$", "");
         NbPreferences.forModule(GeneralPanel.class).put("perlLibrary", fileList);
+        
     }
 
     boolean valid() {

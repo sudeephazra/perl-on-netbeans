@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.util.prefs.Preferences;
 import org.language.perl.file.PerlFileDataObject;
 import org.language.perl.options.panel.GeneralPanel;
+import org.language.perl.options.panel.GeneralPanelPreferences;
 import org.language.perl.utilities.PerlConstants;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
@@ -58,27 +59,26 @@ public final class SyntaxCheckAction implements ActionListener {
         File file = FileUtil.toFile(context.getPrimaryFile());
         String fileName = file.getAbsolutePath();
         
-        Preferences pref = NbPreferences.forModule(GeneralPanel.class);
-        String perlBinary = pref.get("perlBinary", "").trim();
-        String perlLibrary = pref.get("perlLibrary", "").trim();
+//        Preferences pref = NbPreferences.forModule(GeneralPanel.class);
+//        String perlBinary = pref.get("perlBinary", "").trim();
+//        String perlLibrary = pref.get("perlLibrary", "").trim();
+        GeneralPanelPreferences perlPreferences = new GeneralPanelPreferences();
+        String perlCustomBinary = perlPreferences.getPerlCustomBinary();
+        String perlLibrary = perlPreferences.getPerlCustomLibrary();
         
         PerlExecution myExecution = new PerlExecution();
         myExecution.setRedirectError(true);
         myExecution.setWorkingDirectory(file.getParent().toString());
         myExecution.setDisplayName(file.getName() + " (Syntax Checking)");
-        if (perlBinary.equals(""))
+        if (perlCustomBinary.equals(""))
         {
             myExecution.setCommand(PerlConstants.PERL_DEFAULT);
         } else {
-            myExecution.setCommand(perlBinary);
+            myExecution.setCommand(perlCustomBinary);
         }
         myExecution.setCommandArgs(" -c ");
-        if (!perlLibrary.equalsIgnoreCase("")) {
-            String[] libPaths = perlLibrary.split("\\n");
-            for (String s : libPaths) {
-                myExecution.setCommandArgs(myExecution.getCommandArgs() + " -I ");
-                myExecution.setCommandArgs(myExecution.getCommandArgs() + " \"" + s + "\" ");
-            }
+        if (!perlLibrary.equals("")) {
+            myExecution.setCommandArgs(perlLibrary);
         }
         try {
             myExecution.setRawScript(fileName);
@@ -104,27 +104,26 @@ public final class SyntaxCheckAction implements ActionListener {
         File file = FileUtil.toFile(context.getPrimaryFile());
         String fileName = file.getAbsolutePath();
         
-        Preferences pref = NbPreferences.forModule(GeneralPanel.class);
-        String perlBinary = pref.get("perlBinary", "").trim();
-        String perlLibrary = pref.get("perlLibrary", "").trim();
+//        Preferences pref = NbPreferences.forModule(GeneralPanel.class);
+//        String perlBinary = pref.get("perlBinary", "").trim();
+//        String perlLibrary = pref.get("perlLibrary", "").trim();
+        GeneralPanelPreferences perlPreferences = new GeneralPanelPreferences();
+        String perlCustomBinary = perlPreferences.getPerlCustomBinary();
+        String perlLibrary = perlPreferences.getPerlCustomLibrary();
         
         PerlExecution myExecution = new PerlExecution();
         myExecution.setRedirectError(true);
         myExecution.setWorkingDirectory(file.getParent().toString());
         myExecution.setDisplayName(file.getName() + " (Syntax Checking)");
-        if (perlBinary.equals(""))
+        if (perlCustomBinary.equals(""))
         {
             myExecution.setCommand(PerlConstants.PERL_DEFAULT);
         } else {
-            myExecution.setCommand(perlBinary);
+            myExecution.setCommand(perlCustomBinary);
         }
         myExecution.setCommandArgs(" -c ");
-        if (!perlLibrary.equalsIgnoreCase("")) {
-            String[] libPaths = perlLibrary.split("\\n");
-            for (String s : libPaths) {
-                myExecution.setCommandArgs(myExecution.getCommandArgs() + " -I ");
-                myExecution.setCommandArgs(myExecution.getCommandArgs() + " \"" + s + "\" ");
-            }
+        if (!perlLibrary.equals("")) {
+            myExecution.setCommandArgs(perlLibrary);
         }
         try {
             myExecution.setRawScript(fileName);

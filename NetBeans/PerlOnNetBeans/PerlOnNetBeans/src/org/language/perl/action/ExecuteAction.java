@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.util.prefs.Preferences;
 import org.language.perl.file.PerlFileDataObject;
 import org.language.perl.options.panel.GeneralPanel;
+import org.language.perl.options.panel.GeneralPanelPreferences;
 import org.language.perl.utilities.PerlConstants;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
@@ -54,27 +55,25 @@ public final class ExecuteAction implements ActionListener {
         File file = FileUtil.toFile(context.getPrimaryFile());
         String fileName = file.getAbsolutePath();
 
-        Preferences pref = NbPreferences.forModule(GeneralPanel.class);
-        String perlBinary = pref.get("perlBinary", "").trim();
-        String perlLibrary = pref.get("perlLibrary", "").trim();
-
+//        Preferences pref = NbPreferences.forModule(GeneralPanel.class);
+//        String perlBinary = pref.get("perlBinary", "").trim();
+//        String perlLibrary = pref.get("perlLibrary", "").trim();
+        GeneralPanelPreferences perlPreferences = new GeneralPanelPreferences();
+        String perlCustomBinary = perlPreferences.getPerlCustomBinary();
+        String perlLibrary = perlPreferences.getPerlCustomLibrary();
+        
         PerlExecution myExecution = new PerlExecution();
         myExecution.setRedirectError(true);
         myExecution.setWorkingDirectory(file.getParent().toString());
         myExecution.setDisplayName(file.getName() + " (Execute)");
-        if (perlBinary.equals("")) {
+        if (perlCustomBinary.equals("")) {
             myExecution.setCommand(PerlConstants.PERL_DEFAULT);
         } else {
-            myExecution.setCommand(perlBinary);
+            myExecution.setCommand(perlCustomBinary);
         }
         myExecution.setCommandArgs(" -w ");
-
-        if (!perlLibrary.equalsIgnoreCase("")) {
-            String[] libPaths = perlLibrary.split("\\n");
-            for (String s : libPaths) {
-                myExecution.setCommandArgs(myExecution.getCommandArgs() + " -I ");
-                myExecution.setCommandArgs(myExecution.getCommandArgs() + "\"" + s + "\" ");
-            }
+        if (!perlLibrary.equals("")) {
+            myExecution.setCommandArgs(perlLibrary);
         }
         //Removing the need to create a new file for output buffer flushing
         myExecution.setCommandArgs(myExecution.getCommandArgs() + " -I ");
@@ -89,7 +88,7 @@ public final class ExecuteAction implements ActionListener {
         myExecution.run();
 
     }
-    
+
     public void runPerlFile() {
         if (context.isModified() == true) {
             SaveCookie sc = context.getLookup().lookup(SaveCookie.class);
@@ -103,39 +102,37 @@ public final class ExecuteAction implements ActionListener {
         File file = FileUtil.toFile(context.getPrimaryFile());
         String fileName = file.getAbsolutePath();
 
-        Preferences pref = NbPreferences.forModule(GeneralPanel.class);
-        String perlBinary = pref.get("perlBinary", "").trim();
-        String perlLibrary = pref.get("perlLibrary", "").trim();
-
+//        Preferences pref = NbPreferences.forModule(GeneralPanel.class);
+//        String perlBinary = pref.get("perlBinary", "").trim();
+//        String perlLibrary = pref.get("perlLibrary", "").trim();
+//        
+        GeneralPanelPreferences perlPreferences = new GeneralPanelPreferences();
+        String perlCustomBinary = perlPreferences.getPerlCustomBinary();
+        String perlLibrary = perlPreferences.getPerlCustomLibrary();
+        
         PerlExecution myExecution = new PerlExecution();
         myExecution.setRedirectError(true);
         myExecution.setWorkingDirectory(file.getParent().toString());
         myExecution.setDisplayName(file.getName() + " (Execute)");
-        if (perlBinary.equals("")) {
+        if (perlCustomBinary.equals("")) {
             myExecution.setCommand(PerlConstants.PERL_DEFAULT);
         } else {
-            myExecution.setCommand(perlBinary);
+            myExecution.setCommand(perlCustomBinary);
         }
         myExecution.setCommandArgs(" -w ");
-
-        if (!perlLibrary.equalsIgnoreCase("")) {
-            String[] libPaths = perlLibrary.split("\\n");
-            for (String s : libPaths) {
-                myExecution.setCommandArgs(myExecution.getCommandArgs() + " -I ");
-                myExecution.setCommandArgs(myExecution.getCommandArgs() + "\"" + s + "\" ");
-            }
+        if (!perlLibrary.equals("")) {
+            myExecution.setCommandArgs(perlLibrary);
         }
         //Removing the need to create a new file for output buffer flushing
-        myExecution.setCommandArgs(myExecution.getCommandArgs() + " -I ");
-        myExecution.setCommandArgs(myExecution.getCommandArgs() + 
-                "\"" + myExecution.getBundledPerlAutoflushPath() + "\"" );
+        myExecution.setCommandArgs(myExecution.getCommandArgs()
+                + PerlConstants.INCLUDE_LIBRARY_FLAG
+                + " \"" + myExecution.getBundledPerlAutoflushPath() + "\" ");
         myExecution.setCommandArgs(myExecution.getCommandArgs() + " -MDevel::Autoflush ");
         try {
             myExecution.setRawScript(fileName);
         } catch (IOException ex) {
             Exceptions.printStackTrace(ex);
         }
-//        myExecution.run();
         if (file.exists()) {
             myExecution.run();
         } else {

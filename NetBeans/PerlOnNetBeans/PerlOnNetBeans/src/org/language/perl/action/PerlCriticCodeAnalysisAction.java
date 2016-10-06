@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 import org.language.perl.file.PerlFileDataObject;
+import org.language.perl.options.panel.GeneralPanelPreferences;
 import org.language.perl.options.panel.PerlCriticPreferences;
 import org.language.perl.utilities.CheckInstalledPerlModules;
 import org.language.perl.utilities.PerlConstants;
@@ -49,14 +50,17 @@ public final class PerlCriticCodeAnalysisAction implements ActionListener {
         }
         File file = FileUtil.toFile(context.getPrimaryFile());
         String fileName = file.getAbsolutePath();
-
+        
+        GeneralPanelPreferences perlPreferences = new GeneralPanelPreferences();
+        String perlCustomBinary = perlPreferences.getPerlCustomBinary();
+        String perlLibrary = perlPreferences.getPerlCustomLibrary();
+        
         PerlCriticPreferences criticPref = new PerlCriticPreferences();
         String perlCriticBinary = criticPref.getPerlCriticBinary();
         String perlCriticSeverity = criticPref.getPerlCriticSeverity();
         String perlCriticForce = criticPref.getPerlCriticForce();
         String perlCriticTheme = criticPref.getPerlCriticTheme();
         
-
         PerlExecution myExecution = new PerlExecution();
         myExecution.setRedirectError(true);
         myExecution.setWorkingDirectory(file.getParent().toString());

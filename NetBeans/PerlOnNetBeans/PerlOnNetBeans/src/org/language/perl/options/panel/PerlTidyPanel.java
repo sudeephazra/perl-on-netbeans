@@ -22,12 +22,6 @@ final public class PerlTidyPanel extends javax.swing.JPanel {
         jPanel1.setBorder(BorderFactory.createTitledBorder("HTML Options"));
         jPanel2.setBorder(BorderFactory.createTitledBorder("Formatting Options"));
         jPanel3.setBorder(BorderFactory.createTitledBorder("Additional Parameters"));
-        //Disabling HTML Output options for the first BETA release
-        //jCheckBox2.setEnabled(false);
-        //jCheckBox3.setEnabled(false);
-        //jTextField4.setEnabled(false);
-        //jRadioButton3.setEnabled(false);
-        //jRadioButton4.setEnabled(false);
 
     }
 
@@ -75,6 +69,8 @@ final public class PerlTidyPanel extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jTextField7 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
+
+        jTextField1.setMaximumSize(new java.awt.Dimension(260, 6));
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel1, "Perl::Tidy Binary Location");
 
@@ -374,7 +370,7 @@ final public class PerlTidyPanel extends javax.swing.JPanel {
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             File file = fileChooser.getSelectedFile();
             try {
-                jTextField1.setText(file.getAbsolutePath());
+                jTextField4.setText(file.getAbsolutePath());
             } catch (Exception ex) {
                 //System.out.println("problem accessing file"+file.getAbsolutePath());
                 JOptionPane.showMessageDialog(null, "Unable to set CSS file options.");

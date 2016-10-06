@@ -29,6 +29,7 @@ public final class PerlConstants {
     public static final String LINE_COMMENT_PREFIX = "#";
     
     public static final String LANGUAGE_NAME = "Perl";
+    public static final String INCLUDE_LIBRARY_FLAG = " -I ";
     
     public static final String PERL_DANCER_WIN = "dancer.bat";
     public static final String PERL_DANCER_UIX = "dancer";

@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 import org.language.perl.file.PerlFileDataObject;
+import org.language.perl.options.panel.GeneralPanelPreferences;
 import org.language.perl.options.panel.PerlTidyPreferences;
 import org.language.perl.utilities.PerlConstants;
 import org.openide.awt.ActionID;
@@ -54,6 +55,10 @@ public final class exportToHTMLAction implements ActionListener {
         File file = FileUtil.toFile(context.getPrimaryFile());
         String fileName = file.getAbsolutePath();
         
+        GeneralPanelPreferences perlPreferences = new GeneralPanelPreferences();
+        String perlCustomBinary = perlPreferences.getPerlCustomBinary();
+        String perlLibrary = perlPreferences.getPerlCustomLibrary();
+        
         PerlTidyPreferences tidyPref = new PerlTidyPreferences();
         String perlTidyBinary = tidyPref.getPerlTidyBinary();
         boolean perlTidyGenerateHTMLTableOfContents = tidyPref.getPerlTidyGenerateHTMLTableOfContents();
@@ -75,7 +80,14 @@ public final class exportToHTMLAction implements ActionListener {
                 return;
             }
             myExecution.setWorkingDirectory(bundledTidy.getAbsolutePath());
-            myExecution.setCommand(PerlConstants.PERL_DEFAULT);
+            if (perlCustomBinary.equals("")) {
+                myExecution.setCommand(PerlConstants.PERL_DEFAULT);
+            } else {
+                myExecution.setCommand(perlCustomBinary);
+            }
+            if (!perlLibrary.equals("")) {
+                myExecution.setCommandArgs(perlLibrary);
+            }
             myExecution.setCommandArgs(PerlConstants.PERL_TIDY_BINARY);
         } else {
             myExecution.setCommand(perlTidyBinary);
@@ -109,7 +121,7 @@ public final class exportToHTMLAction implements ActionListener {
         }
         if (!perlCustomHTMLOutputFolder.equals(""))
         {
-            myExecution.setCommandArgs(myExecution.getCommandArgs() + " -o=" + perlCustomHTMLOutputFolder + File.separator + file.getName() + ".html");
+            myExecution.setCommandArgs(myExecution.getCommandArgs() + " -opath=" + perlCustomHTMLOutputFolder + File.separator + file.getName() + ".html");
         }
         
         try {
