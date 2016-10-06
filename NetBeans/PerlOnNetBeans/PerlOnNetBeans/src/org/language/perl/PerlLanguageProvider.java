@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package org.language.perl;
 
+import java.util.Collection;
+import java.util.Collections;
 import org.language.perl.editor.PerlFormatter;
 import org.language.perl.lexer.PerlTokenId;
 import org.language.perl.parser.Perl5Parser;
@@ -16,13 +17,14 @@ import org.netbeans.modules.csl.api.StructureScanner;
 import org.netbeans.modules.csl.spi.DefaultLanguageConfig;
 import org.netbeans.modules.csl.spi.LanguageRegistration;
 import org.netbeans.modules.parsing.spi.Parser;
+import org.openide.filesystems.FileObject;
 
 /**
  *
  * @author Sudeep
  */
 @LanguageRegistration(mimeType = PerlConstants.MIME_TYPE)
-public class PerlLanguageProvider extends DefaultLanguageConfig  {
+public class PerlLanguageProvider extends DefaultLanguageConfig {
 
     @Override
     public Language<PerlTokenId> getLexerLanguage() {
@@ -33,7 +35,7 @@ public class PerlLanguageProvider extends DefaultLanguageConfig  {
     public String getDisplayName() {
         return PerlConstants.LANGUAGE_NAME;
     }
-    
+
     @Override
     public StructureScanner getStructureScanner() {
         return new PerlStructureScanner();
@@ -43,17 +45,17 @@ public class PerlLanguageProvider extends DefaultLanguageConfig  {
     public boolean hasStructureScanner() {
         return true;
     }
-    
+
     @Override
     public Parser getParser() {
         return new Perl5Parser();
     }
-    
+
     @Override
     public String getLineCommentPrefix() {
         return PerlConstants.LINE_COMMENT_PREFIX;
     }
-    
+
     @Override
     public boolean hasFormatter() {
         return true;

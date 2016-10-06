@@ -10,14 +10,13 @@ import java.util.Set;
 import org.netbeans.modules.parsing.api.Snapshot;
 import org.netbeans.modules.parsing.spi.SchedulerTask;
 import org.netbeans.modules.parsing.spi.TaskFactory;
-/*
+
 public class SyntaxErrorsHighlightingTaskFactory extends TaskFactory{
     
     @Override
     public Collection<? extends SchedulerTask> create (Snapshot snapshot) {
-           //return (Set) Collections.singleton (new SyntaxErrorsHighlightingTask ());
             return Collections.singleton (new SyntaxErrorsHighlightingTask ());
        }
 
 }
-*/
+
