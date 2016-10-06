@@ -4,7 +4,6 @@ package org.language.perl.lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
 import org.language.perl.grammar.AntlrCharStream;
-
 import org.language.perl.grammar.PerlLexer;
 import org.netbeans.spi.lexer.Lexer;
 import org.netbeans.spi.lexer.LexerRestartInfo;

@@ -4,9 +4,8 @@
  */
 package org.language.perl.options.panel;
 
-import java.io.File;
 import java.util.prefs.Preferences;
-import org.openide.modules.InstalledFileLocator;
+import org.language.perl.utilities.PerlBundledUtilities;
 import org.openide.util.NbPreferences;
 
 public class PerlTidyPreferences {
@@ -64,13 +63,8 @@ public class PerlTidyPreferences {
     }
 
     public String getBundledPerlTidyPath() {
-
-        File perlTidy = InstalledFileLocator.getDefault().locate(
-                "perltidy/perltidy",
-                "org.languages.perl",
-                false);
-        String executableFolder = perlTidy.getParent();
-        return executableFolder;
+        PerlBundledUtilities perlTidy = new PerlBundledUtilities();
+        return perlTidy.getBundledPerlTidyPath();
     }
 
     public boolean getPerlTidyUseConfigFile() {

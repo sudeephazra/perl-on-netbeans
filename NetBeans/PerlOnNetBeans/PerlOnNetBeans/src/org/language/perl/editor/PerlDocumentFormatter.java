@@ -11,7 +11,6 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.Position;
 import org.netbeans.api.lexer.Token;
 import org.language.perl.lexer.PerlTokenId;
-import org.language.perl.lexer.TokenType;
 import org.language.perl.parser.Perl5Parser.PerlEditorParserResult;
 import org.netbeans.api.lexer.TokenSequence;
 import org.netbeans.editor.BaseDocument;

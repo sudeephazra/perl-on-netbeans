@@ -11,13 +11,14 @@ import java.util.Scanner;
 import java.util.concurrent.Future;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.language.perl.utilities.PerlBundledUtilities;
 import org.netbeans.api.extexecution.ExecutionDescriptor;
 import org.netbeans.api.extexecution.ExecutionService;
 import org.netbeans.api.extexecution.ExternalProcessBuilder;
 import org.netbeans.api.extexecution.input.InputProcessor;
 import org.openide.util.Exceptions;
-import org.openide.modules.InstalledFileLocator;
 
+@SuppressWarnings("deprecation")
 public class PerlExecution {
     
     //Execution commands
@@ -198,13 +199,8 @@ public class PerlExecution {
     }
     
     public String getBundledPerlAutoflushPath() {
-
-        File perlAutoflush = InstalledFileLocator.getDefault().locate(
-                "autoflush/Autoflush.pod",
-                "org.languages.perl",
-                false);
-        String flushFolder = perlAutoflush.getParent();
-        return flushFolder;
+        PerlBundledUtilities flushFolder = new PerlBundledUtilities();
+        return flushFolder.getBundledPerlAutoflushPath();
     }
     
     public synchronized String getRawScript() {

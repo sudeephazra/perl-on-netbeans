@@ -8,15 +8,13 @@ package org.language.perl.completion;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.URL;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 import javax.swing.text.Element;
 import javax.swing.text.JTextComponent;
 import javax.swing.text.StyledDocument;
+import org.language.perl.utilities.PerlBundledUtilities;
 import org.language.perl.utilities.PerlConstants;
 import org.netbeans.api.editor.mimelookup.MimeRegistration;
 import org.netbeans.spi.editor.completion.CompletionProvider;
@@ -24,7 +22,6 @@ import org.netbeans.spi.editor.completion.CompletionResultSet;
 import org.netbeans.spi.editor.completion.CompletionTask;
 import org.netbeans.spi.editor.completion.support.AsyncCompletionQuery;
 import org.netbeans.spi.editor.completion.support.AsyncCompletionTask;
-import org.openide.modules.InstalledFileLocator;
 import org.openide.util.Exceptions;
 
 /**
@@ -83,11 +80,8 @@ public class PerlCompletionProvider implements CompletionProvider {
     }
 
     public String getBundledPerlBarewordsFile() {
-        File perl_barewords = InstalledFileLocator.getDefault().locate(
-                "perl_barewords.txt",
-                "org.language.perl.completion",
-                false);
-        return perl_barewords.getAbsolutePath();
+        PerlBundledUtilities bundledBarewordsFile = new PerlBundledUtilities();
+        return bundledBarewordsFile.getBundledPerlBarewordsFile();
     }
     
     static int getRowFirstNonWhite(StyledDocument doc, int offset)
@@ -137,11 +131,6 @@ public class PerlCompletionProvider implements CompletionProvider {
                 complete(component, offset, "}");
             } else if (fragment.endsWith("[")) {
                 complete(component, offset, "]");
-                //            } else if (fragment.endsWith("\"")) {
-                //                complete(component, offset, " \"");
-                //            } else if (fragment.endsWith("\'")) {
-                //                complete(component, offset, " \'");
-                //            } 
             } else if (fragment.endsWith("=pod")) {
                 complete(component, offset, "\n\r=cut");
             }

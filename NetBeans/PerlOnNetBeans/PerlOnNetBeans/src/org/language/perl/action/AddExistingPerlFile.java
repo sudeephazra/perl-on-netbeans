@@ -18,7 +18,6 @@ import org.openide.filesystems.FileUtil;
 import org.openide.util.Exceptions;
 import org.openide.util.NbBundle.Messages;
 
-
 @ActionID(
     category = "File",
 id = "org.language.perl.action.AddExistingPerlFile")

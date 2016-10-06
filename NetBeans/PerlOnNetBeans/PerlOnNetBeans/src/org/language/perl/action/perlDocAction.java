@@ -11,7 +11,6 @@ import javax.swing.text.JTextComponent;
 import org.language.perl.file.PerlFileDataObject;
 import org.language.perl.utilities.PerlConstants;
 import org.netbeans.api.editor.EditorRegistry;
-import org.openide.cookies.EditorCookie;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.awt.ActionRegistration;

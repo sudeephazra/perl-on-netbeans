@@ -7,6 +7,7 @@ package org.language.perl.action;
 import java.io.IOException;
 import org.netbeans.api.extexecution.input.InputProcessor;
 
+@SuppressWarnings("deprecation")
 public class PerlOutputProcessor implements InputProcessor {
     StringBuilder builder = new StringBuilder();
     @Override

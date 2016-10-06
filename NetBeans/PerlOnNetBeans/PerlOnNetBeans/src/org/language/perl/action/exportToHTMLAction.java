@@ -70,7 +70,7 @@ public final class exportToHTMLAction implements ActionListener {
         
         PerlExecution myExecution = new PerlExecution();
         myExecution.setRedirectError(true);
-        myExecution.setWorkingDirectory(file.getParent().toString());
+        myExecution.setWorkingDirectory(file.getParent());
         myExecution.setDisplayName(file.getName() + " (Source Code -> HTML)");
         if (perlTidyBinary.equals(""))
         {
@@ -132,14 +132,6 @@ public final class exportToHTMLAction implements ActionListener {
         
         Thread codeHTMLExporterThread = new Thread(new PerlHTMLGeneratorThread(myExecution));
         codeHTMLExporterThread.start();
-        /*
-        try {
-            codeHTMLExporterThread.join();
-        } catch (InterruptedException ex) {
-            Exceptions.printStackTrace(ex);
-        }
-        */
-        
     }
     
    public class PerlHTMLGeneratorThread implements Runnable {

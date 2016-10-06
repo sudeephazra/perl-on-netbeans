@@ -30,7 +30,6 @@ public class GeneralPanelPreferences {
             perlLibrary = perlLibrary + PerlConstants.INCLUDE_LIBRARY_FLAG 
                     + "\"" + value + "\"";
         }
-//        perlLibrary = perlLibraryList.replace(";", PerlConstants.INCLUDE_LIBRARY_FLAG);
         return perlLibrary;
     }
 }

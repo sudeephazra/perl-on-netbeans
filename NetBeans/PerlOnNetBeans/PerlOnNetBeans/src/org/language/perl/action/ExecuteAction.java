@@ -8,9 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
-import java.util.prefs.Preferences;
 import org.language.perl.file.PerlFileDataObject;
-import org.language.perl.options.panel.GeneralPanel;
 import org.language.perl.options.panel.GeneralPanelPreferences;
 import org.language.perl.utilities.PerlConstants;
 import org.openide.awt.ActionID;
@@ -20,7 +18,6 @@ import org.openide.cookies.SaveCookie;
 import org.openide.filesystems.FileUtil;
 import org.openide.util.Exceptions;
 import org.openide.util.NbBundle.Messages;
-import org.openide.util.NbPreferences;
 
 @ActionID(
         category = "File",
@@ -102,10 +99,6 @@ public final class ExecuteAction implements ActionListener {
         File file = FileUtil.toFile(context.getPrimaryFile());
         String fileName = file.getAbsolutePath();
 
-//        Preferences pref = NbPreferences.forModule(GeneralPanel.class);
-//        String perlBinary = pref.get("perlBinary", "").trim();
-//        String perlLibrary = pref.get("perlLibrary", "").trim();
-//        
         GeneralPanelPreferences perlPreferences = new GeneralPanelPreferences();
         String perlCustomBinary = perlPreferences.getPerlCustomBinary();
         String perlLibrary = perlPreferences.getPerlCustomLibrary();

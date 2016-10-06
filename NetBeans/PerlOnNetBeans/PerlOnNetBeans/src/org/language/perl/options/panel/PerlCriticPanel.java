@@ -31,10 +31,10 @@ final public class PerlCriticPanel extends javax.swing.JPanel {
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox();
+        jComboBox2 = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
@@ -50,13 +50,13 @@ final public class PerlCriticPanel extends javax.swing.JPanel {
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel2, "Criticism Severity");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel3, "(Lower value is less strict)");
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel4, "Force");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "False", "True" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "False", "True" }));
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel5, "(Ignore the \"##no critic\" annotation)");
 
@@ -152,8 +152,8 @@ final public class PerlCriticPanel extends javax.swing.JPanel {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

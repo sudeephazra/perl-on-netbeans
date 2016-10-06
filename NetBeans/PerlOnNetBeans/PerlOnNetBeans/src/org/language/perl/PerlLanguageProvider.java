@@ -5,8 +5,6 @@
  */
 package org.language.perl;
 
-import java.util.Collection;
-import java.util.Collections;
 import org.language.perl.editor.PerlFormatter;
 import org.language.perl.lexer.PerlTokenId;
 import org.language.perl.parser.Perl5Parser;
@@ -17,7 +15,6 @@ import org.netbeans.modules.csl.api.StructureScanner;
 import org.netbeans.modules.csl.spi.DefaultLanguageConfig;
 import org.netbeans.modules.csl.spi.LanguageRegistration;
 import org.netbeans.modules.parsing.spi.Parser;
-import org.openide.filesystems.FileObject;
 
 /**
  *

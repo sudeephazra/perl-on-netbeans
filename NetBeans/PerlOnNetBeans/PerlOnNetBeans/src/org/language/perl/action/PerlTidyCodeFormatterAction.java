@@ -77,7 +77,7 @@ public class PerlTidyCodeFormatterAction implements ActionListener {
         
         PerlExecution myExecution = new PerlExecution();
         myExecution.setRedirectError(true);
-        myExecution.setWorkingDirectory(file.getParent().toString());
+        myExecution.setWorkingDirectory(file.getParent());
         myExecution.setDisplayName(file.getName() + PerlConstants.PERL_CODE_FORMATING_OUTPUT_WINDOW_TITLE);
         if (perlTidyBinary.equals("")) {
             File bundledTidy = new File(tidyPref.getBundledPerlTidyPath());

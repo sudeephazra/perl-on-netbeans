@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 import org.language.perl.utilities.PerlConstants;
 import org.openide.util.NbPreferences;
 
+@SuppressWarnings("unchecked")
 final public class GeneralPanel extends javax.swing.JPanel {
 
     private final GeneralOptionsPanelController controller;
@@ -36,7 +37,7 @@ final public class GeneralPanel extends javax.swing.JPanel {
         browseButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
+        jList1 = new javax.swing.JList<>();
         addButton = new javax.swing.JButton();
         removeButton = new javax.swing.JButton();
         clearAllButton = new javax.swing.JButton();
@@ -144,7 +145,7 @@ final public class GeneralPanel extends javax.swing.JPanel {
         fileChooser.setMultiSelectionEnabled(true);
         fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         //int returnVal = fileChooser.showOpenDialog(this);
-        List fileList = new ArrayList();
+        List<String> fileList = new ArrayList<>();
         if (jList1.getModel().getSize() >= 1) {
             for (int i = 0; i < jList1.getModel().getSize(); i++) {
                 fileList.add(jList1.getModel().getElementAt(i).toString());
@@ -162,7 +163,7 @@ final public class GeneralPanel extends javax.swing.JPanel {
 
     private void removeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeButtonActionPerformed
 
-        List fileList = new ArrayList();
+        List<String> fileList = new ArrayList<>();
         //If any files were added previously, get all of them into the list
         for (int i = 0; i < jList1.getModel().getSize(); i++) {
             fileList.add(jList1.getModel().getElementAt(i).toString());
@@ -174,7 +175,7 @@ final public class GeneralPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_removeButtonActionPerformed
 
     private void clearAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearAllButtonActionPerformed
-        List fileList = new ArrayList();
+        List<String> fileList = new ArrayList<>();
         fileList.clear();
         jList1.setListData(fileList.toArray());
     }//GEN-LAST:event_clearAllButtonActionPerformed
@@ -182,7 +183,7 @@ final public class GeneralPanel extends javax.swing.JPanel {
     void load() {
         jTextField1.setText(NbPreferences.forModule(GeneralPanel.class).get("perlBinary", ""));
         //Add library here
-        List fileList = new ArrayList();
+        List<String> fileList = new ArrayList<>();
         fileList = Arrays.asList(NbPreferences.forModule(GeneralPanel.class).get("perlLibrary", "").split(";"));
         jList1.setListData(fileList.toArray());
         
@@ -212,7 +213,7 @@ final public class GeneralPanel extends javax.swing.JPanel {
     private javax.swing.JButton clearAllButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JList jList1;
+    private javax.swing.JList<Object> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JButton removeButton;

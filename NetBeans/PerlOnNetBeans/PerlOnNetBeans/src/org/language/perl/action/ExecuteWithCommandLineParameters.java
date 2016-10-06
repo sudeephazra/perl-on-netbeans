@@ -4,10 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
-import java.util.prefs.Preferences;
 import javax.swing.JOptionPane;
 import org.language.perl.file.PerlFileDataObject;
-import org.language.perl.options.panel.GeneralPanel;
 import org.language.perl.options.panel.GeneralPanelPreferences;
 import org.language.perl.utilities.PerlConstants;
 import org.openide.awt.ActionID;
@@ -18,7 +16,6 @@ import org.openide.cookies.SaveCookie;
 import org.openide.filesystems.FileUtil;
 import org.openide.util.Exceptions;
 import org.openide.util.NbBundle.Messages;
-import org.openide.util.NbPreferences;
 
 /**
  *
