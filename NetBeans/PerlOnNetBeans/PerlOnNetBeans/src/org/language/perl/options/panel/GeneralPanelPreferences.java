@@ -24,11 +24,13 @@ public class GeneralPanelPreferences {
 
     public String getPerlCustomLibrary() {
         String perlLibraryList = pref.get("perlLibrary", "");
-        String[] perlLibraryLocations = perlLibraryList.split(";");
         String perlLibrary = "";
-        for (String value : perlLibraryLocations) {
-            perlLibrary = perlLibrary + PerlConstants.INCLUDE_LIBRARY_FLAG 
-                    + "\"" + value + "\"";
+        if (!perlLibraryList.equals("")) {
+            String[] perlLibraryLocations = perlLibraryList.split(";");
+            for (String value : perlLibraryLocations) {
+                perlLibrary = perlLibrary + PerlConstants.INCLUDE_LIBRARY_FLAG
+                        + "\"" + value + "\"";
+            }
         }
         return perlLibrary;
     }
