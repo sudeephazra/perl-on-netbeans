@@ -37,7 +37,7 @@ final public class GeneralPanel extends javax.swing.JPanel {
         browseButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        jList1 = new javax.swing.JList();
         addButton = new javax.swing.JButton();
         removeButton = new javax.swing.JButton();
         clearAllButton = new javax.swing.JButton();
@@ -45,7 +45,7 @@ final public class GeneralPanel extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(465, 191));
         setMinimumSize(new java.awt.Dimension(465, 191));
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel1, "PERL Executable");
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel1, "Perl Executable");
 
         jTextField1.setMaximumSize(new java.awt.Dimension(260, 6));
         jTextField1.setMinimumSize(new java.awt.Dimension(260, 6));
@@ -213,7 +213,7 @@ final public class GeneralPanel extends javax.swing.JPanel {
     private javax.swing.JButton clearAllButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JList<Object> jList1;
+    private javax.swing.JList jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JButton removeButton;

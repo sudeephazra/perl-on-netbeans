@@ -8,6 +8,7 @@
             <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/parser/Perl5Parser.java</file>
             <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/grammar/PerlLexer.java</file>
             <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/grammar/AntlrCharStream.java</file>
+            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/module/template/PerlModuleTemplateWizardIterator.java</file>
         </group>
     </open-files>
 </project-private>
