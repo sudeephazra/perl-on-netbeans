@@ -61,7 +61,7 @@ public class PerlStructureScanner implements StructureScanner  {
         if (pr != null) {
             org.antlr.v4.runtime.CommonTokenStream tokens = ((PerlEditorParserResult) pr).getTokens();
             for (int i = 0; i < tokens.getTokens().size(); i++) {
-                Token token = (Token) (tokens.getTokens().get(i));
+                Token token = (tokens.getTokens().get(i));
 //                if (token.getType() == PerlLexer.POD) {
 //                    addFold(FOLD_TYPE, folds, token, document);
 //                }
