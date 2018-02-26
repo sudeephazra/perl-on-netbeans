@@ -121,7 +121,12 @@ public final class ExecuteAction implements ActionListener {
         myExecution.setCommandArgs(myExecution.getCommandArgs()
                 + PerlConstants.INCLUDE_LIBRARY_FLAG
                 + " \"" + myExecution.getBundledPerlAutoflushPath() + "\" ");
-        myExecution.setCommandArgs(myExecution.getCommandArgs() + " -MDevel::Autoflush ");
+        myExecution.setCommandArgs(myExecution.getCommandArgs()
+                + " -MDevel::Autoflush ");
+        //Adding current folder for include list as it is not allowed
+        //by default in taint mode
+        myExecution.setCommandArgs(myExecution.getCommandArgs()
+                + " -I " + myExecution.getWorkingDirectory());
         try {
             myExecution.setRawScript(fileName);
         } catch (IOException ex) {
