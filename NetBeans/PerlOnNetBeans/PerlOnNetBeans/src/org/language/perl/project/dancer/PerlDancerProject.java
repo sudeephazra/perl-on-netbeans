@@ -14,9 +14,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.text.Document;
 import javax.swing.text.JTextComponent;
-import org.language.perl.action.ExecuteAction;
+import org.language.perl.action.PerlExecution;
 import org.language.perl.action.SyntaxCheckAction;
 import org.language.perl.file.PerlFileDataObject;
+import org.language.perl.options.panel.GeneralPanelPreferences;
 import org.language.perl.utilities.PerlConstants;
 import org.netbeans.api.annotations.common.StaticResource;
 import org.netbeans.api.editor.EditorRegistry;
@@ -34,9 +35,7 @@ import org.netbeans.spi.project.ui.support.DefaultProjectOperations;
 import org.openide.actions.FileSystemAction;
 import org.openide.awt.HtmlBrowser;
 import org.openide.filesystems.FileObject;
-import org.openide.filesystems.FileUtil;
 import org.openide.loaders.DataFolder;
-import org.openide.loaders.DataObject;
 import org.openide.loaders.DataObjectNotFoundException;
 import org.openide.nodes.AbstractNode;
 import org.openide.nodes.FilterNode;
@@ -82,7 +81,7 @@ public class PerlDancerProject implements Project {
         return lkp;
     }
 
-       private final class PerlDancerProjectActionProvider implements ActionProvider {
+    private final class PerlDancerProjectActionProvider implements ActionProvider {
 
         private final String[] supported = new String[]{
             ActionProvider.COMMAND_DELETE,
@@ -95,11 +94,11 @@ public class PerlDancerProject implements Project {
 
         };
         PerlDancerProject project;
-        
+
         PerlDancerProjectActionProvider(PerlDancerProject p) {
             this.project = p;
         }
-        
+
         @Override
         public String[] getSupportedActions() {
             return supported;
@@ -123,17 +122,70 @@ public class PerlDancerProject implements Project {
                     || string.equalsIgnoreCase(ActionProvider.COMMAND_RUN_SINGLE)) {
                 JTextComponent editor = EditorRegistry.lastFocusedComponent();
                 if (editor == null) {
-                    JOptionPane.showMessageDialog(null, "No file selected. Please open the file bin/app.pl file.");
+                    JOptionPane.showMessageDialog(null, "No file selected. Please open the file bin/app.psgi file.");
                     return;
                 }
                 Document document = editor.getDocument();
-                if (NbEditorUtilities.getMimeType(document).equals(PerlConstants.MIME_TYPE)) {
-                    ExecuteAction execute
-                            = new ExecuteAction((PerlFileDataObject) NbEditorUtilities.getDataObject(document));
-                    execute.runPerlFile();
+                //Execute the app.psgi file
+                String currentFile = NbEditorUtilities.getFileObject(document).getPath();
+                String currentFilaName = NbEditorUtilities.getFileObject(document).getNameExt();
+                if (!currentFilaName.equals("app.psgi")) {
+                    JOptionPane.showMessageDialog(null,
+                            "Please open and run the file bin\\app.psgi to execute the project.",
+                            "Unable to run Dancer2 project",
+                            JOptionPane.ERROR_MESSAGE);
+                    return;
+                } else {
+                    //When the app.psgi file is executed
+                    File file = new File(currentFile);
+                    String fileName = file.getAbsolutePath();
+
+                    GeneralPanelPreferences perlPreferences = new GeneralPanelPreferences();
+                    String perlCustomBinary = perlPreferences.getPerlCustomBinary();
+                    String perlLibrary = perlPreferences.getPerlCustomLibrary();
+                    String perlPlackupLibraryLocation = perlPreferences.getPerlDancer2Location();
+
+                    PerlExecution myExecution = new PerlExecution();
+                    myExecution.setRedirectError(true);
+                    myExecution.setWorkingDirectory(file.getParent());
+                    myExecution.setDisplayName(file.getName() + " (Execute Dancer2)");
+                    if (perlCustomBinary.equals("")) {
+                        myExecution.setCommand(PerlConstants.PERL_DEFAULT);
+                    } else {
+                        myExecution.setCommand(perlCustomBinary);
+                    }
+                    if (!perlLibrary.equals("")) {
+                        myExecution.setCommandArgs(perlLibrary);
+                    }
+                    if (!perlPlackupLibraryLocation.equals("")) {
+                        if(!(new File(perlPlackupLibraryLocation
+                                + PerlConstants.FILE_SEPARATOR
+                                + PerlConstants.PERL_DANCER2_PLACKUP)).exists()) {
+                            JOptionPane.showMessageDialog(null,
+                            "The plackup file does not exist in the Dancer2 location.",
+                            "Unable to run Dancer2 project",
+                            JOptionPane.ERROR_MESSAGE);
+                            return;
+                        }
+                        myExecution.setCommandArgs(perlPlackupLibraryLocation
+                                + PerlConstants.FILE_SEPARATOR
+                                + PerlConstants.PERL_DANCER2_PLACKUP);
+                    } else {
+                        myExecution.setCommandArgs(PerlConstants.PERL_DANCER2_PLACKUP);
+                    }
+                    try {
+                        myExecution.setRawScript(fileName);
+                    } catch (IOException ex) {
+                        Exceptions.printStackTrace(ex);
+                    }
+                    if (file.exists()) {
+                        myExecution.run();
+                    } else {
+                        return;
+                    }
                 }
                 try {
-                    HtmlBrowser.URLDisplayer.getDefault().showURL(new URL(PerlConstants.DANCER_DEFAULT_URL));
+                    HtmlBrowser.URLDisplayer.getDefault().showURL(new URL(PerlConstants.DANCER2_DEFAULT_URL));
                 } catch (MalformedURLException ex) {
                     Exceptions.printStackTrace(ex);
                 }
@@ -163,11 +215,11 @@ public class PerlDancerProject implements Project {
                 return true;
             } else if (command.equals(ActionProvider.COMMAND_RENAME)) {
                 return true;
-            } else if (command.equals(ActionProvider.COMMAND_RUN)) { 
+            } else if (command.equals(ActionProvider.COMMAND_RUN)) {
                 return true;
-            } else if (command.equals(ActionProvider.COMMAND_RUN_SINGLE)) { 
+            } else if (command.equals(ActionProvider.COMMAND_RUN_SINGLE)) {
                 return true;
-            } else if (command.equals(ActionProvider.COMMAND_COMPILE_SINGLE)) { 
+            } else if (command.equals(ActionProvider.COMMAND_COMPILE_SINGLE)) {
                 return true;
             } else {
                 throw new IllegalArgumentException(command);
@@ -288,7 +340,7 @@ public class PerlDancerProject implements Project {
             return null;
         }
     }
-    
+
     private final class PerlDancerProjectMoveOrRenameOperation implements MoveOrRenameOperationImplementation {
 
         @Override

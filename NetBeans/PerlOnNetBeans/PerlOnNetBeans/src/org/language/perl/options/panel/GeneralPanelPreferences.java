@@ -21,6 +21,11 @@ public class GeneralPanelPreferences {
         String perlCustomBinary = pref.get("perlBinary", "").trim();
         return perlCustomBinary;
     }
+    
+    public String getPerlDancer2Location() {
+        String perlDancer2Location = pref.get("perlDancer2Location", "").trim();
+        return perlDancer2Location;
+    }
 
     public String getPerlCustomLibrary() {
         String perlLibraryList = pref.get("perlLibrary", "");
@@ -28,8 +33,10 @@ public class GeneralPanelPreferences {
         if (!perlLibraryList.equals("")) {
             String[] perlLibraryLocations = perlLibraryList.split(";");
             for (String value : perlLibraryLocations) {
-                perlLibrary = perlLibrary + PerlConstants.INCLUDE_LIBRARY_FLAG
+                if (!value.equals("")) {
+                    perlLibrary = perlLibrary + PerlConstants.INCLUDE_LIBRARY_FLAG
                         + "\"" + value + "\"";
+                }
             }
         }
         return perlLibrary;

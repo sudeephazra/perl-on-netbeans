@@ -189,17 +189,17 @@ public class PerlDancerProjectPanelVisual extends JPanel implements DocumentList
             return false;
         }
         
-        CheckInstalledPerlModules perlDancer = new CheckInstalledPerlModules();
-        if (perlDancer.isPerlDancerInstalled() == false) {
+        CheckInstalledPerlModules perlDancer2 = new CheckInstalledPerlModules();
+        if (perlDancer2.isPerlDancer2Installed() == false) {
             wizardDescriptor.putProperty("WizardPanel_errorMessage", 
-                    "Dancer Framework is not installed. Please install Dancer and YAML to continue.");
+                    "Dancer2 Framework is not installed for the current Perl installation.");
             return false;
         }
         
         CheckInstalledPerlModules perlYAML = new CheckInstalledPerlModules();
         if (perlYAML.isYAMLInstalled() == false) {
             wizardDescriptor.putProperty("WizardPanel_errorMessage", 
-                    "YAML is not installed. Please install it to continue.");
+                    "YAML is not installed for the current Perl installation.");
             return false;
         }
         

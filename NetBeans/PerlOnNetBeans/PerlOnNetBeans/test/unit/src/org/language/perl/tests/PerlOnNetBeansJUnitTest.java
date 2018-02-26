@@ -8,13 +8,14 @@ package org.language.perl.tests;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
+import org.junit.*;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import org.netbeans.jellytools.*;
+import org.netbeans.jellytools.actions.Action;
 import org.netbeans.jellytools.actions.ActionNoBlock;
 import org.netbeans.junit.NbModuleSuite;
 import org.netbeans.junit.NbTestCase;
@@ -24,16 +25,13 @@ import org.openide.util.Exceptions;
  *
  * @author Sudeep
  */
-public class PerlOnNetBeansJUnitTest extends NbTestCase {
+public class PerlOnNetBeansJUnitTest extends JellyTestCase  {
 
     public static junit.framework.Test suite() {
         return NbModuleSuite.createConfiguration(PerlOnNetBeansJUnitTest.class).
                 gui(true).
                 clusters(".*").
                 failOnMessage(Level.SEVERE).
-                // TODO: Can be enables if the java.lang.ClassCastException: org.netbeans.api.project.ProjectUtils$AnnotateIconProxyProjectInformation
-                // cannot be cast to org.netbeans.modules.scala.project.J2SEProject$Info is solved
-                //                failOnException(Level.INFO).
                 suite();
     }
 
@@ -62,7 +60,7 @@ public class PerlOnNetBeansJUnitTest extends NbTestCase {
 
     //Testing application launch
     @Test
-    public void testApplicationLaunch() {
+    public void test1_ApplicationLaunch() {
         new ActionNoBlock("Help|About", null).performMenu();
         new NbDialogOperator("About").closeByButton();
     }
@@ -71,7 +69,7 @@ public class PerlOnNetBeansJUnitTest extends NbTestCase {
     
     //Test new perl project creation
     @Test
-    public void testNewPerlProject() {
+    public void test2_NewPerlProjectAndAddFile() {
         String testProjectName = "TestingPerlProject_" + UUID.randomUUID().toString();
         NewProjectWizardOperator newProjectWizard = NewProjectWizardOperator.invoke();
         newProjectWizard.selectCategory("Perl");
@@ -82,12 +80,7 @@ public class PerlOnNetBeansJUnitTest extends NbTestCase {
         newProjectName.txtProjectName().typeText(testProjectName);
         
         newProjectWizard.finish();
-
-    }
-
-    //Test new perl file creation
-    @Test
-    public void testNewPerlFile() {
+        
         String testFileName = "TestingPerlFile_" + UUID.randomUUID().toString();
         NewFileWizardOperator op = NewFileWizardOperator.invoke();
         op.selectCategory("Perl");
@@ -99,17 +92,43 @@ public class PerlOnNetBeansJUnitTest extends NbTestCase {
 
         op.finish();
         try {
-            TimeUnit.MINUTES.sleep(1);
+            TimeUnit.SECONDS.sleep(10);
         } catch (InterruptedException ex) {
             Exceptions.printStackTrace(ex);
         }
+        
+        String testModuleFileName = "TestingPerlModule_" + UUID.randomUUID().toString();
+        NewFileWizardOperator op_module = NewFileWizardOperator.invoke();
+        op_module.selectCategory("Perl");
+        op_module.selectFileType("New Perl Module");
+        op_module.next();
+
+        NewJavaFileNameLocationStepOperator newModuleFileName = new NewJavaFileNameLocationStepOperator();
+        newModuleFileName.txtObjectName().typeText(testModuleFileName);
+
+        op_module.finish();
+        try {
+            TimeUnit.SECONDS.sleep(10);
+        } catch (InterruptedException ex) {
+            Exceptions.printStackTrace(ex);
+        }
+
     }
 
-    //Test adding a print statement to the file
-    
-    
-    
-    
-    
-    
+    //Perl Dancer project
+    @Test
+    public void test4_NewPerlDancerProject() {
+        new Action("Tools|Options", null).perform();
+//        String testProjectName = "TestingPerlDancerProject_" + UUID.randomUUID().toString();
+//        NewProjectWizardOperator newProjectWizard = NewProjectWizardOperator.invoke();
+//        newProjectWizard.selectCategory("Perl");
+//        newProjectWizard.selectProject("Perl Dancer Project");
+//        newProjectWizard.next();
+//        
+//        NewJavaProjectNameLocationStepOperator newProjectName = new NewJavaProjectNameLocationStepOperator();
+//        newProjectName.txtProjectName().typeText(testProjectName);
+//        newProjectWizard.finish();
+
+    }
+  
 }
