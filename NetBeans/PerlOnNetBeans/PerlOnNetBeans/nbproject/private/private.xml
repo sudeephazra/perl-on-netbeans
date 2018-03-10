@@ -3,12 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/PerlStructureScanner.java</file>
-            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/test/unit/src/org/language/perl/tests/PerlOnNetBeansJUnitTest.java</file>
             <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/parser/Perl5Parser.java</file>
-            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/grammar/PerlLexer.java</file>
-            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/grammar/AntlrCharStream.java</file>
-            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/module/template/PerlModuleTemplateWizardIterator.java</file>
+            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/project/dancer/PerlDancerProject.java</file>
+            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/action/PerlExecution.java</file>
+            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/dancer/PerlDancerAppInitiator.java</file>
+            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/nbproject/project.properties</file>
+            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/action/ExecuteAction.java</file>
+            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/utilities/CheckInstalledPerlModules.java</file>
+            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/project/dancer/PerlDancerProjectWizardIterator.java</file>
+            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/test/unit/src/org/language/perl/tests/PerlOnNetBeansJUnitTest.java</file>
+            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/PerlStructureScanner.java</file>
+            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/nbproject/project.xml</file>
         </group>
     </open-files>
 </project-private>

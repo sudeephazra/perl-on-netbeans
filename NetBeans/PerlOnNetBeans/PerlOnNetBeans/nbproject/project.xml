@@ -7,22 +7,6 @@
             <suite-component/>
             <module-dependencies>
                 <dependency>
-                    <code-name-base>org.antlr.v4</code-name-base>
-                    <build-prerequisite/>
-                    <compile-dependency/>
-                    <run-dependency>
-                        <specification-version>1.0</specification-version>
-                    </run-dependency>
-                </dependency>
-                <dependency>
-                    <code-name-base>org.junit</code-name-base>
-                    <build-prerequisite/>
-                    <compile-dependency/>
-                    <run-dependency>
-                        <specification-version>1.0</specification-version>
-                    </run-dependency>
-                </dependency>
-                <dependency>
                     <code-name-base>org.netbeans.api.annotations.common</code-name-base>
                     <build-prerequisite/>
                     <compile-dependency/>
@@ -40,15 +24,6 @@
                         <specification-version>2.47.1.2.1.1.8</specification-version>
                     </run-dependency>
                 </dependency>
-                <!--<dependency>
-                    <code-name-base>org.netbeans.modules.csl.types</code-name-base>
-                    <build-prerequisite/>
-                    <compile-dependency/>
-                    <run-dependency>
-                        <release-version>1</release-version>
-                        <specification-version>1.0.1</specification-version>
-                    </run-dependency>
-                </dependency>-->
                 <dependency>
                     <code-name-base>org.netbeans.modules.editor</code-name-base>
                     <build-prerequisite/>
@@ -370,14 +345,6 @@
                         <specification-version>8.22.1</specification-version>
                     </run-dependency>
                 </dependency>
-                <!--<dependency>
-                    <code-name-base>org.openide.util.ui</code-name-base>
-                    <build-prerequisite/>
-                    <compile-dependency/>
-                    <run-dependency>
-                        <specification-version>9.6.1</specification-version>
-                    </run-dependency>
-                </dependency>-->
                 <dependency>
                     <code-name-base>org.openide.windows</code-name-base>
                     <build-prerequisite/>
@@ -421,6 +388,10 @@
                 <package>org.language.perl.project.existing.sources</package>
                 <package>org.language.perl.utilities</package>
             </friend-packages>
+            <class-path-extension>
+                <runtime-relative-path>ext/antlr-4.5.3-complete.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/antlr-4.5.3-complete.jar</binary-origin>
+            </class-path-extension>
         </data>
     </configuration>
 </project>
