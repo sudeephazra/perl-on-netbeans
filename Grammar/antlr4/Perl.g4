@@ -152,10 +152,18 @@ ESCAPE_SEQUENCE
       			: '\\' ('"'|'\''|'/'|'\\'|'|')  ;
 
 STRING
-	: '"'  (ESCAPE_SEQUENCE|.)+? '"'
-	| '\'' (ESCAPE_SEQUENCE|.)+? '\''
+	: '"'  (ESCAPE_SEQUENCE|WHITESPACE|.)*? '"'
+	| '\'' (ESCAPE_SEQUENCE|WHITESPACE|.)*? '\''
+	| 'q' ('q'|'w'|'r')? '|' (ESCAPE_SEQUENCE|.)*? '|'
+	| 'q' ('q'|'w'|'r')? '/' (ESCAPE_SEQUENCE|.)*? '/'
+	| 'q' ('q'|'w'|'r')? '{' (ESCAPE_SEQUENCE|.)*? '}'
+	| 'q' ('q'|'w'|'r')? '(' (ESCAPE_SEQUENCE|.)*? ')'
+/*	
+	| '"'  (ESCAPE_SEQUENCE|WHITESPACE|.)+? '"'
+	| '\'' (ESCAPE_SEQUENCE|WHITESPACE|.)+? '\''
 	| 'q' ('q'|'w'|'r')? '|' (ESCAPE_SEQUENCE|.)+? '|'
 	| 'q' ('q'|'w'|'r')? '/' (ESCAPE_SEQUENCE|.)+? '/'
 	| 'q' ('q'|'w'|'r')? '{' (ESCAPE_SEQUENCE|.)+? '}'
 	| 'q' ('q'|'w'|'r')? '(' (ESCAPE_SEQUENCE|.)+? ')'
+*/
 	;

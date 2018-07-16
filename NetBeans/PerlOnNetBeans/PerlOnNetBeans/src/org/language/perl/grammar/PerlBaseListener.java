@@ -1,4 +1,4 @@
-// Generated from Perl.g4 by ANTLR 4.5
+// Generated from Perl.g4 by ANTLR 4.5.3
 package org.language.perl.grammar;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -10,7 +10,6 @@ import org.antlr.v4.runtime.tree.TerminalNode;
  * which can be extended to create a listener which only needs to handle a subset
  * of the available methods.
  */
-@SuppressWarnings("deprecation")
 public class PerlBaseListener implements PerlListener {
 	/**
 	 * {@inheritDoc}

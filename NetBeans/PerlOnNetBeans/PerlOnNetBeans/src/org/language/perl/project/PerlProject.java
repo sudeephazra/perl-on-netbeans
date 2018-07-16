@@ -19,6 +19,7 @@ import javax.swing.text.Document;
 import javax.swing.text.JTextComponent;
 import org.language.perl.action.ExecuteAction;
 import org.language.perl.action.SyntaxCheckAction;
+import org.language.perl.debugger.PerlDebugger;
 import org.language.perl.file.PerlFileDataObject;
 import org.language.perl.utilities.PerlConstants;
 import org.netbeans.api.annotations.common.StaticResource;
@@ -58,6 +59,7 @@ public class PerlProject implements Project {
     private final FileObject projectDir;
     private final ProjectState state;
     private Lookup lkp;
+    PerlDebugger debugger;
 
     PerlProject(FileObject dir, ProjectState state) {
         this.projectDir = dir;
@@ -94,7 +96,8 @@ public class PerlProject implements Project {
             ActionProvider.COMMAND_RENAME,
             ActionProvider.COMMAND_RUN_SINGLE,
             ActionProvider.COMMAND_RUN,
-            ActionProvider.COMMAND_COMPILE_SINGLE
+            ActionProvider.COMMAND_COMPILE_SINGLE,
+            ActionProvider.COMMAND_DEBUG
 
         };
 
@@ -149,6 +152,10 @@ public class PerlProject implements Project {
                     execute.runSyntaxCheck();
                 }
             }
+
+            if (string.equalsIgnoreCase(ActionProvider.COMMAND_DEBUG)) {
+                debugger.startDebugger();
+            }
         }
 
         @Override
@@ -168,6 +175,8 @@ public class PerlProject implements Project {
             } else if (command.equals(ActionProvider.COMMAND_RUN_SINGLE)) { //for enabling the debugger button.
                 return true;
             } else if (command.equals(ActionProvider.COMMAND_COMPILE_SINGLE)) { //for enabling the debugger button.
+                return true;
+            } else if (command.equals(ActionProvider.COMMAND_DEBUG)) {
                 return true;
             } else {
                 throw new IllegalArgumentException(command);

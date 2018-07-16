@@ -1,6 +1,5 @@
-// Generated from Perl.g4 by ANTLR 4.5
+// Generated from Perl.g4 by ANTLR 4.5.3
 package org.language.perl.grammar;
-import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
