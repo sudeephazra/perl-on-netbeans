@@ -2,12 +2,16 @@ How to run and Debug Grammar
 ----------------------------
 Step 1: Go to the folder where the grammar file is
 Step 2: Run 
-	java -jar C:\JAVA_LIBS\antlr-4.5-complete.jar Perl.g4
+	java -jar C:\JAVA_LIBS\antlr-4.5-complete.jar -package org.language.perl.grammar Perl.g4
 Step 3: Run 
-	javac Perl*.java
+	javac -cp ".;C:\JAVA_LIBS\antlr-4.5-complete.jar" Perl*.java
 Step 4: Run
-	java -cp ".;C:\JAVA_LIBS\antlr-4.5.3-complete.jar" org.antlr.v4.gui.TestRig Perl prog -gui
-Step 5: Test with most of the test cases for lexer tokens
+	i. To test the Lexer
+	java -cp ".;C:\JAVA_LIBS\antlr-4.5-complete.jar" org.antlr.v4.gui.TestRig Perl prog -tokens -gui
+	ii. To test the Parser
+	java -cp ".;C:\JAVA_LIBS\antlr-4.5-complete.jar" org.antlr.v4.gui.TestRig Perl prog -tree -gui
+Step 5: Paste the test code and press ^Z on Windows
+Step 6: Test with most of the test cases for lexer tokens
 
 Some points
 -----------
