@@ -95,7 +95,7 @@ public final class PerlModuleTemplateWizardIterator implements WizardDescriptor.
                 
         // FreeMarker Template will get its variables from HashMap.
         // HashMap key is the variable name.
-        Map args = new HashMap();
+        Map<String, String> args = new HashMap <>();
         args.put("ModuleName", ModuleName);
         args.put("ModuleInPackageLocation", ModuleInPackageLocation);
         args.put("ProjectFolder", ProjectFolder);

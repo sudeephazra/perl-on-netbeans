@@ -44,10 +44,10 @@ import org.xml.sax.InputSource;
         iconBase = "org/language/perl/project/dancer/PerDancerProject.png", 
         content = "PerlDancerProject.zip", position = 300)
 @Messages("PerlDancerProject_displayName=Perl Dancer Project")
-public class PerlDancerProjectWizardIterator implements WizardDescriptor./*Progress*/InstantiatingIterator {
+public class PerlDancerProjectWizardIterator implements WizardDescriptor.InstantiatingIterator<WizardDescriptor> {
 
     private int index;
-    private WizardDescriptor.Panel[] panels;
+    private WizardDescriptor.Panel<WizardDescriptor>[] panels;
     private WizardDescriptor wiz;
 
     public PerlDancerProjectWizardIterator() {
@@ -56,8 +56,9 @@ public class PerlDancerProjectWizardIterator implements WizardDescriptor./*Progr
     public static PerlDancerProjectWizardIterator createIterator() {
         return new PerlDancerProjectWizardIterator();
     }
-
-    private WizardDescriptor.Panel[] createPanels() {
+    
+    @SuppressWarnings("unchecked")
+    private WizardDescriptor.Panel<WizardDescriptor>[] createPanels() {
         return new WizardDescriptor.Panel[]{
             new PerlDancerProjectWizardPanel(),};
     }
@@ -69,8 +70,8 @@ public class PerlDancerProjectWizardIterator implements WizardDescriptor./*Progr
     }
 
     @Override
-    public Set/*<FileObject>*/ instantiate(/*ProgressHandle handle*/) throws IOException {
-        Set<FileObject> resultSet = new LinkedHashSet<FileObject>();
+    public Set<FileObject> instantiate() throws IOException {
+        Set<FileObject> resultSet = new LinkedHashSet<>();
         File dirF = FileUtil.normalizeFile((File) wiz.getProperty("projdir"));
         //dirF.mkdirs();
         PerlDancerAppInitiator dancerApp = new PerlDancerAppInitiator();
@@ -168,7 +169,7 @@ public class PerlDancerProjectWizardIterator implements WizardDescriptor./*Progr
     }
 
     @Override
-    public WizardDescriptor.Panel current() {
+    public WizardDescriptor.Panel<WizardDescriptor> current() {
         return panels[index];
     }
 

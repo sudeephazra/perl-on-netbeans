@@ -18,8 +18,8 @@ import org.openide.util.NbBundle;
 /**
  * Panel just asking for basic info.
  */
-public class PerlDancerProjectWizardPanel implements WizardDescriptor.Panel,
-        WizardDescriptor.ValidatingPanel, WizardDescriptor.FinishablePanel {
+public class PerlDancerProjectWizardPanel implements WizardDescriptor.Panel<WizardDescriptor>,
+        WizardDescriptor.ValidatingPanel<WizardDescriptor>, WizardDescriptor.FinishablePanel<WizardDescriptor> {
 
     private WizardDescriptor wizardDescriptor;
     private PerlDancerProjectPanelVisual component;
@@ -38,7 +38,7 @@ public class PerlDancerProjectWizardPanel implements WizardDescriptor.Panel,
 
     @Override
     public HelpCtx getHelp() {
-        return new HelpCtx(PerlDancerProjectWizardPanel.class);
+        return new HelpCtx(PerlDancerProjectWizardPanel.class.getName().trim());
     }
 
     @Override
@@ -75,18 +75,6 @@ public class PerlDancerProjectWizardPanel implements WizardDescriptor.Panel,
     }
 
     @Override
-    public void readSettings(Object settings) {
-        wizardDescriptor = (WizardDescriptor) settings;
-        component.read(wizardDescriptor);
-    }
-
-    @Override
-    public void storeSettings(Object settings) {
-        WizardDescriptor d = (WizardDescriptor) settings;
-        component.store(d);
-    }
-
-    @Override
     public boolean isFinishPanel() {
         return true;
     }
@@ -95,6 +83,18 @@ public class PerlDancerProjectWizardPanel implements WizardDescriptor.Panel,
     public void validate() throws WizardValidationException {
         getComponent();
         component.validate(wizardDescriptor);
+    }
+
+    @Override
+    public void readSettings(WizardDescriptor data) {
+        wizardDescriptor = data;
+        component.read(wizardDescriptor);
+    }
+
+    @Override
+    public void storeSettings(WizardDescriptor data) {
+        WizardDescriptor d = data;
+        component.store(d);
     }
 
 }

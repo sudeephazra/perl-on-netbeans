@@ -43,10 +43,10 @@ import org.xml.sax.InputSource;
         iconBase = "org/language/perl/project/existing/sources/PerlProjectWithExistingSources.png", 
         content = "PerlProjectWithExistingSourcesProject.zip", position = 200)
 @Messages("PerlProjectWithExistingSources_displayName=Perl Project With Existing Sources")
-public class PerlProjectWithExistingSourcesWizardIterator implements WizardDescriptor./*Progress*/InstantiatingIterator {
+public class PerlProjectWithExistingSourcesWizardIterator implements WizardDescriptor.InstantiatingIterator<WizardDescriptor> {
 
     private int index;
-    private WizardDescriptor.Panel[] panels;
+    private WizardDescriptor.Panel<WizardDescriptor>[] panels;
     private WizardDescriptor wiz;
 
     public PerlProjectWithExistingSourcesWizardIterator() {
@@ -55,8 +55,9 @@ public class PerlProjectWithExistingSourcesWizardIterator implements WizardDescr
     public static PerlProjectWithExistingSourcesWizardIterator createIterator() {
         return new PerlProjectWithExistingSourcesWizardIterator();
     }
-
-    private WizardDescriptor.Panel[] createPanels() {
+    
+    @SuppressWarnings("unchecked")
+    private WizardDescriptor.Panel<WizardDescriptor>[] createPanels() {
         return new WizardDescriptor.Panel[]{
             new PerlProjectWithExistingSourcesWizardPanel(),};
     }
@@ -68,7 +69,7 @@ public class PerlProjectWithExistingSourcesWizardIterator implements WizardDescr
     }
 
     @Override
-    public Set/*<FileObject>*/ instantiate(/*ProgressHandle handle*/) throws IOException {
+    public Set<FileObject> instantiate() throws IOException {
         Set<FileObject> resultSet = new LinkedHashSet<FileObject>();
         File dirF = FileUtil.normalizeFile((File) wiz.getProperty("projdir"));
         dirF.mkdirs();
@@ -163,7 +164,7 @@ public class PerlProjectWithExistingSourcesWizardIterator implements WizardDescr
     }
 
     @Override
-    public WizardDescriptor.Panel current() {
+    public WizardDescriptor.Panel<WizardDescriptor> current() {
         return panels[index];
     }
 

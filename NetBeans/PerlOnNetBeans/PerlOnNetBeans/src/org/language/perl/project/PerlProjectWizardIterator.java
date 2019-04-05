@@ -43,10 +43,10 @@ import org.xml.sax.InputSource;
         iconBase = "org/language/perl/project/PerlProject.png", 
         content = "PerlProjectProject.zip", position = 100)
 @Messages("PerlProject_displayName=Perl Project")
-public class PerlProjectWizardIterator implements WizardDescriptor./*Progress*/InstantiatingIterator {
+public class PerlProjectWizardIterator implements WizardDescriptor.InstantiatingIterator <WizardDescriptor> {
 
     private int index;
-    private WizardDescriptor.Panel[] panels;
+    private WizardDescriptor.Panel<WizardDescriptor>[] panels;
     private WizardDescriptor wiz;
 
     public PerlProjectWizardIterator() {
@@ -56,9 +56,12 @@ public class PerlProjectWizardIterator implements WizardDescriptor./*Progress*/I
         return new PerlProjectWizardIterator();
     }
 
-    private WizardDescriptor.Panel[] createPanels() {
-        return new WizardDescriptor.Panel[]{
-            new PerlProjectWizardPanel(),};
+    @SuppressWarnings("unchecked")
+    private WizardDescriptor.Panel<WizardDescriptor>[] createPanels() {
+        return new WizardDescriptor.Panel[]
+        {
+            new PerlProjectWizardPanel()
+        };
     }
 
     private String[] createSteps() {
@@ -67,8 +70,9 @@ public class PerlProjectWizardIterator implements WizardDescriptor./*Progress*/I
         };
     }
 
-    public Set/*<FileObject>*/ instantiate(/*ProgressHandle handle*/) throws IOException {
-        Set<FileObject> resultSet = new LinkedHashSet<FileObject>();
+    @Override
+    public Set<FileObject> instantiate() throws IOException {
+        Set<FileObject> resultSet = new LinkedHashSet<>();
         File dirF = FileUtil.normalizeFile((File) wiz.getProperty("projdir"));
         dirF.mkdirs();
 
@@ -95,6 +99,7 @@ public class PerlProjectWizardIterator implements WizardDescriptor./*Progress*/I
         return resultSet;
     }
 
+    @Override
     public void initialize(WizardDescriptor wiz) {
         this.wiz = wiz;
         index = 0;
@@ -120,6 +125,7 @@ public class PerlProjectWizardIterator implements WizardDescriptor./*Progress*/I
         }
     }
 
+    @Override
     public void uninitialize(WizardDescriptor wiz) {
         this.wiz.putProperty("projdir", null);
         this.wiz.putProperty("name", null);
@@ -127,19 +133,23 @@ public class PerlProjectWizardIterator implements WizardDescriptor./*Progress*/I
         panels = null;
     }
 
+    @Override
     public String name() {
         return MessageFormat.format("{0} of {1}",
                 new Object[]{new Integer(index + 1), new Integer(panels.length)});
     }
 
+    @Override
     public boolean hasNext() {
         return index < panels.length - 1;
     }
 
+    @Override
     public boolean hasPrevious() {
         return index > 0;
     }
 
+    @Override
     public void nextPanel() {
         if (!hasNext()) {
             throw new NoSuchElementException();
@@ -147,6 +157,7 @@ public class PerlProjectWizardIterator implements WizardDescriptor./*Progress*/I
         index++;
     }
 
+    @Override
     public void previousPanel() {
         if (!hasPrevious()) {
             throw new NoSuchElementException();
@@ -154,11 +165,13 @@ public class PerlProjectWizardIterator implements WizardDescriptor./*Progress*/I
         index--;
     }
 
-    public WizardDescriptor.Panel current() {
+    @Override
+    public WizardDescriptor.Panel<WizardDescriptor> current() {
         return panels[index];
     }
 
     // If nothing unusual changes in the middle of the wizard, simply:
+    @Override
     public final void addChangeListener(ChangeListener l) {
     }
 

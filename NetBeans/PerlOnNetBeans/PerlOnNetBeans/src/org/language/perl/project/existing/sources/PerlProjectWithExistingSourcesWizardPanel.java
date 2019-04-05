@@ -18,8 +18,8 @@ import org.openide.util.NbBundle;
 /**
  * Panel just asking for basic info.
  */
-public class PerlProjectWithExistingSourcesWizardPanel implements WizardDescriptor.Panel,
-        WizardDescriptor.ValidatingPanel, WizardDescriptor.FinishablePanel {
+public class PerlProjectWithExistingSourcesWizardPanel implements WizardDescriptor.Panel<WizardDescriptor>,
+        WizardDescriptor.ValidatingPanel<WizardDescriptor>, WizardDescriptor.FinishablePanel<WizardDescriptor> {
 
     private WizardDescriptor wizardDescriptor;
     private PerlProjectWithExistingSourcesPanelVisual component;
@@ -35,23 +35,27 @@ public class PerlProjectWithExistingSourcesWizardPanel implements WizardDescript
         return component;
     }
 
+    @Override
     public HelpCtx getHelp() {
-        return new HelpCtx(PerlProjectWithExistingSourcesWizardPanel.class);
+        return new HelpCtx(PerlProjectWithExistingSourcesWizardPanel.class.getName().trim());
     }
 
+    @Override
     public boolean isValid() {
         getComponent();
         return component.valid(wizardDescriptor);
     }
 
-    private final Set<ChangeListener> listeners = new HashSet<ChangeListener>(1); // or can use ChangeSupport in NB 6.0
+    private final Set<ChangeListener> listeners = new HashSet<>(1); // or can use ChangeSupport in NB 6.0
 
+    @Override
     public final void addChangeListener(ChangeListener l) {
         synchronized (listeners) {
             listeners.add(l);
         }
     }
 
+    @Override
     public final void removeChangeListener(ChangeListener l) {
         synchronized (listeners) {
             listeners.remove(l);
@@ -61,7 +65,7 @@ public class PerlProjectWithExistingSourcesWizardPanel implements WizardDescript
     protected final void fireChangeEvent() {
         Set<ChangeListener> ls;
         synchronized (listeners) {
-            ls = new HashSet<ChangeListener>(listeners);
+            ls = new HashSet<>(listeners);
         }
         ChangeEvent ev = new ChangeEvent(this);
         for (ChangeListener l : ls) {
@@ -69,23 +73,27 @@ public class PerlProjectWithExistingSourcesWizardPanel implements WizardDescript
         }
     }
 
-    public void readSettings(Object settings) {
-        wizardDescriptor = (WizardDescriptor) settings;
-        component.read(wizardDescriptor);
-    }
-
-    public void storeSettings(Object settings) {
-        WizardDescriptor d = (WizardDescriptor) settings;
-        component.store(d);
-    }
-
+    @Override
     public boolean isFinishPanel() {
         return true;
     }
 
+    @Override
     public void validate() throws WizardValidationException {
         getComponent();
         component.validate(wizardDescriptor);
+    }
+
+    @Override
+    public void readSettings(WizardDescriptor data) {
+        wizardDescriptor = data;
+        component.read(wizardDescriptor);
+    }
+
+    @Override
+    public void storeSettings(WizardDescriptor data) {
+        WizardDescriptor d = data;
+        component.store(d);
     }
 
 }
