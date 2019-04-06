@@ -52,20 +52,16 @@ public final class SyntaxCheckAction implements ActionListener {
             }
         }
         //Check the syntax of the file
-        //new Thread(new PerlSyntaxCheckerThread()).start();
         File file = FileUtil.toFile(context.getPrimaryFile());
         String fileName = file.getAbsolutePath();
         
-//        Preferences pref = NbPreferences.forModule(GeneralPanel.class);
-//        String perlBinary = pref.get("perlBinary", "").trim();
-//        String perlLibrary = pref.get("perlLibrary", "").trim();
         GeneralPanelPreferences perlPreferences = new GeneralPanelPreferences();
         String perlCustomBinary = perlPreferences.getPerlCustomBinary();
         String perlLibrary = perlPreferences.getPerlCustomLibrary();
         
         PerlExecution myExecution = new PerlExecution();
         myExecution.setRedirectError(true);
-        myExecution.setWorkingDirectory(file.getParent().toString());
+        myExecution.setWorkingDirectory(file.getParent());
         myExecution.setDisplayName(file.getName() + " (Syntax Checking)");
         if (perlCustomBinary.equals(""))
         {
@@ -97,13 +93,9 @@ public final class SyntaxCheckAction implements ActionListener {
             }
         }
         //Check the syntax of the file
-        //new Thread(new PerlSyntaxCheckerThread()).start();
         File file = FileUtil.toFile(context.getPrimaryFile());
         String fileName = file.getAbsolutePath();
         
-//        Preferences pref = NbPreferences.forModule(GeneralPanel.class);
-//        String perlBinary = pref.get("perlBinary", "").trim();
-//        String perlLibrary = pref.get("perlLibrary", "").trim();
         GeneralPanelPreferences perlPreferences = new GeneralPanelPreferences();
         String perlCustomBinary = perlPreferences.getPerlCustomBinary();
         String perlLibrary = perlPreferences.getPerlCustomLibrary();

@@ -104,7 +104,7 @@ public final class PerlCriticCodeAnalysisAction implements ActionListener {
 
         try {
             myExecution.setRawScript(fileName);
-        } catch (Exception ex) {
+        } catch (IOException ex) {
             Exceptions.printStackTrace(ex);
         }
 

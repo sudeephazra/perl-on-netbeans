@@ -53,9 +53,6 @@ public final class ExecuteAction implements ActionListener {
         File file = FileUtil.toFile(context.getPrimaryFile());
         String fileName = file.getAbsolutePath();
 
-//        Preferences pref = NbPreferences.forModule(GeneralPanel.class);
-//        String perlBinary = pref.get("perlBinary", "").trim();
-//        String perlLibrary = pref.get("perlLibrary", "").trim();
         GeneralPanelPreferences perlPreferences = new GeneralPanelPreferences();
         String perlCustomBinary = perlPreferences.getPerlCustomBinary();
         String perlLibrary = perlPreferences.getPerlCustomLibrary();

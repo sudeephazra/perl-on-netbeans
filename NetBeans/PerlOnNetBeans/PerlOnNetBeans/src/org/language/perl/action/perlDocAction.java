@@ -58,7 +58,6 @@ public final class perlDocAction implements ActionListener {
         myExecution.setRedirectError(true);
         myExecution.setWorkingDirectory(System.getProperty("user.dir"));
         myExecution.setDisplayName("Perl DOC Help");
-        //myExecution.setCommand("perldoc.bat");
         myExecution.setCommand(getPerlDoc());
         myExecution.setCommandArgs(" -f");
         myExecution.setCommandArgs(myExecution.getCommandArgs() + selectedText);
@@ -68,12 +67,10 @@ public final class perlDocAction implements ActionListener {
         {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
-        
     }
     
     public String getPerlDoc()
     {
-        //String path = System.getProperty("user.dir") + File.separator + "bin" + File.separator;
         String executableName = null;
         switch( Utilities.getOperatingSystem() )
         {
