@@ -8,6 +8,7 @@ import java.io.File;
 import javax.swing.BorderFactory;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import org.language.perl.utilities.PerlUtilities;
 import org.openide.util.NbPreferences;
 
 final public class PerlTidyPanel extends javax.swing.JPanel {
@@ -22,7 +23,19 @@ final public class PerlTidyPanel extends javax.swing.JPanel {
         jPanel1.setBorder(BorderFactory.createTitledBorder("HTML Options"));
         jPanel2.setBorder(BorderFactory.createTitledBorder("Formatting Options"));
         jPanel3.setBorder(BorderFactory.createTitledBorder("Additional Parameters"));
-
+        
+        if (jRadioButton1.isSelected() == Boolean.FALSE
+                && jRadioButton2.isSelected() == Boolean.FALSE
+                && jRadioButton5.isSelected() == Boolean.FALSE) {
+            jRadioButton5.setSelected(Boolean.TRUE);
+            jRadioButton5.doClick();
+        }
+        
+        if (jCheckBox2.isSelected() == true) {
+            PerlUtilities.setPanelEnabled(jPanel1, Boolean.TRUE);
+        } else {
+            PerlUtilities.setPanelEnabled(jPanel1, Boolean.FALSE);
+        }
     }
 
     /**
@@ -412,102 +425,47 @@ final public class PerlTidyPanel extends javax.swing.JPanel {
                 //System.out.println("problem accessing file"+file.getAbsolutePath());
                 JOptionPane.showMessageDialog(null, "Unable to set Tidy config file");
             }
-
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         // TODO add your handling code here:
-        if (jRadioButton1.isSelected()) {
+        if (jRadioButton1.isSelected() == Boolean.TRUE) {
             jTextField6.setEnabled(true);
             jButton4.setEnabled(true);
-            jPanel2.setEnabled(false);
-            jTextField2.setEnabled(false);
-            jTextField3.setEnabled(false);
-            jLabel2.setEnabled(false);
-            jLabel3.setEnabled(false);
-            jLabel4.setEnabled(false);
-            jLabel5.setEnabled(false);
+            PerlUtilities.setPanelEnabled(jPanel2, Boolean.FALSE);
         } else {
             jTextField6.setEnabled(false);
             jButton4.setEnabled(false);
-            jPanel2.setEnabled(true);
-            jTextField2.setEnabled(true);
-            jTextField3.setEnabled(true);
-            jLabel2.setEnabled(true);
-            jLabel3.setEnabled(true);
-            jLabel4.setEnabled(true);
-            jLabel5.setEnabled(true);
         }
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
         // TODO add your handling code here:
         if (jRadioButton2.isSelected()) {
-            jTextField6.setEnabled(false);
-            jButton4.setEnabled(false);
-            jPanel2.setEnabled(true);
-            jTextField2.setEnabled(true);
-            jTextField3.setEnabled(true);
-            jLabel2.setEnabled(true);
-            jLabel3.setEnabled(true);
-            jLabel4.setEnabled(true);
-            jLabel5.setEnabled(true);
+            PerlUtilities.setPanelEnabled(jPanel2, Boolean.TRUE);
         } else {
-            jTextField6.setEnabled(true);
-            jButton4.setEnabled(true);
-            jPanel2.setEnabled(false);
-            jTextField2.setEnabled(false);
-            jTextField3.setEnabled(false);
-            jLabel2.setEnabled(false);
-            jLabel3.setEnabled(false);
-            jLabel4.setEnabled(false);
-            jLabel5.setEnabled(false);
+            PerlUtilities.setPanelEnabled(jPanel2, Boolean.FALSE);
         }
 
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
         // TODO add your handling code here:
-        if (jRadioButton5.isSelected()) {
-            jTextField6.setEnabled(false);
-            jButton4.setEnabled(false);
-            jPanel2.setEnabled(false);
-            jTextField2.setEnabled(false);
-            jTextField3.setEnabled(false);
-            jLabel2.setEnabled(false);
-            jLabel3.setEnabled(false);
-            jLabel4.setEnabled(false);
-            jLabel5.setEnabled(false);
+        if (jRadioButton5.isSelected() == Boolean.TRUE) {
+            PerlUtilities.setPanelEnabled(jPanel2, Boolean.FALSE);
+            jTextField6.setEnabled(Boolean.FALSE);
+            jButton4.setEnabled(Boolean.FALSE);
         }
     }//GEN-LAST:event_jRadioButton5ActionPerformed
 
     private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
         // TODO add your handling code here:
-        if (jCheckBox2.isSelected()) {
-            jPanel1.setEnabled(true);
-            jTextField4.setEnabled(true);
-            jTextField5.setEnabled(true);
-            jLabel6.setEnabled(true);
-            jLabel8.setEnabled(true);
-            jRadioButton3.setEnabled(true);
-            jRadioButton4.setEnabled(true);
-            jCheckBox3.setEnabled(true);
-            jButton2.setEnabled(true);
-            jButton3.setEnabled(true);
+        if (jCheckBox2.isSelected() == Boolean.TRUE) {
+            PerlUtilities.setPanelEnabled(jPanel1, Boolean.TRUE);
         } else {
-            jPanel1.setEnabled(false);
-            jTextField4.setEnabled(false);
-            jTextField5.setEnabled(false);
-            jLabel6.setEnabled(false);
-            jLabel8.setEnabled(false);
-            jRadioButton3.setEnabled(false);
-            jRadioButton4.setEnabled(false);
-            jCheckBox3.setEnabled(false);
-            jButton2.setEnabled(false);
-            jButton3.setEnabled(false);
+            PerlUtilities.setPanelEnabled(jPanel1, Boolean.FALSE);
         }
-        
     }//GEN-LAST:event_jCheckBox2ActionPerformed
 
     void load() {
