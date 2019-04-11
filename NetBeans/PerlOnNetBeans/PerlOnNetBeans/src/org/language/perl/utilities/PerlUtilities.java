@@ -11,6 +11,7 @@ import javax.swing.Icon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 
@@ -31,41 +32,52 @@ public class PerlUtilities {
 
             //Disabling combobox
             if (comp instanceof JComboBox) {
-                    comp.setVisible(false);
+                comp.setVisible(false);
             }
 
             //Disabling the labels
             if (comp instanceof JLabel) {
-                    comp.setVisible(false);
+                comp.setVisible(false);
             }
-            
+
             //Disabling all textfields
             if (comp instanceof JTextField) {
-                    comp.setVisible(false);
+                comp.setVisible(false);
             }
-            
-            
+
             //Disabling the Up folder icon
             if (comp instanceof JButton) {
                 JButton b = (JButton) comp;
                 Icon icon = b.getIcon();
                 if (icon != null
-                        && (icon == UIManager.getIcon("FileChooser.upFolderIcon") 
+                        && (icon == UIManager.getIcon("FileChooser.upFolderIcon")
                         || icon == UIManager.getIcon("FileChooser.newFolderIcon")
-                        || icon == UIManager.getIcon("FileView.computerIcon")
-                        )) {
+                        || icon == UIManager.getIcon("FileView.computerIcon"))) {
                     b.setVisible(false);
                 }
-                
-                if ( (!"Open".equals(b.getText())) && (!"Cancel".equals(b.getText()))) {
+
+                if ((!"Open".equals(b.getText())) && (!"Cancel".equals(b.getText()))) {
                     b.setVisible(false);
                 }
-                
-                
+
             } else if (comp instanceof Container) {
                 disableUpFolderButton((Container) comp);
             }
         }
 
     }
+
+    public static void setPanelEnabled(JPanel panel, Boolean isEnabled) {
+        panel.setEnabled(isEnabled);
+
+        Component[] components = panel.getComponents();
+
+        for (Component component : components) {
+            if (component instanceof JPanel) {
+                setPanelEnabled((JPanel) component, isEnabled);
+            }
+            component.setEnabled(isEnabled);
+        }
+    }
+    
 }

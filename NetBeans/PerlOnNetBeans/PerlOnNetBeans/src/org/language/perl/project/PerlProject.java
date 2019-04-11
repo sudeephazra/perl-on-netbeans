@@ -80,8 +80,10 @@ public class PerlProject implements Project {
                 new PerlProjectCopyOperation(),
                 new PerlProjectDeleteOperation(this),
                 this,
-                new Info(),
-                new PerlProjectLogicalView(this),});
+                new PerlProjectInfo(),
+                new PerlProjectLogicalView(this),
+                new PerlProjectCustomizerProperties(this)
+            });
         }
         return lkp;
     }
@@ -95,8 +97,7 @@ public class PerlProject implements Project {
             ActionProvider.COMMAND_RENAME,
             ActionProvider.COMMAND_RUN_SINGLE,
             ActionProvider.COMMAND_RUN,
-            ActionProvider.COMMAND_COMPILE_SINGLE/*,
-            ActionProvider.COMMAND_DEBUG*/
+            ActionProvider.COMMAND_COMPILE_SINGLE
 
         };
 
@@ -151,10 +152,6 @@ public class PerlProject implements Project {
                     execute.runSyntaxCheck();
                 }
             }
-
-//            if (string.equalsIgnoreCase(ActionProvider.COMMAND_DEBUG)) {
-//                debugger.startDebugger();
-//            }
         }
 
         @Override
@@ -184,7 +181,7 @@ public class PerlProject implements Project {
     }
 
     //New Info class
-    private final class Info implements ProjectInformation {
+    private final class PerlProjectInfo implements ProjectInformation {
 
         @StaticResource()
         public static final String PERL_ICON = "org/language/perl/images/perl-project.png";
@@ -273,6 +270,7 @@ public class PerlProject implements Project {
                     CommonProjectActions.renameProjectAction(),
                     CommonProjectActions.deleteProjectAction(),
                     CommonProjectActions.closeProjectAction(),
+                    CommonProjectActions.customizeProjectAction(), //Adding project properties
                     SystemAction.get(FileSystemAction.class)
                 };
             }
@@ -326,12 +324,12 @@ public class PerlProject implements Project {
 
         @Override
         public List<FileObject> getMetadataFiles() {
-            return new ArrayList<FileObject>();
+            return new ArrayList<>();
         }
 
         @Override
         public List<FileObject> getDataFiles() {
-            return new ArrayList<FileObject>();
+            return new ArrayList<>();
         }
 
     }
@@ -350,12 +348,12 @@ public class PerlProject implements Project {
 
         @Override
         public List<FileObject> getMetadataFiles() {
-            return new ArrayList<FileObject>();
+            return new ArrayList<>();
         }
 
         @Override
         public List<FileObject> getDataFiles() {
-            return new ArrayList<FileObject>();
+            return new ArrayList<>();
         }
 
     }
@@ -380,12 +378,12 @@ public class PerlProject implements Project {
 
         @Override
         public List<FileObject> getMetadataFiles() {
-            return new ArrayList<FileObject>();
+            return new ArrayList<>();
         }
 
         @Override
         public List<FileObject> getDataFiles() {
-            List<FileObject> files = new ArrayList<FileObject>();
+            List<FileObject> files = new ArrayList<>();
             FileObject[] projectChildren = project.getProjectDirectory().getChildren();
             for (FileObject fileObject : projectChildren) {
                 addFile(project.getProjectDirectory(), fileObject.getNameExt(), files);

@@ -70,8 +70,10 @@ public class PerlProjectWithExistingSources implements Project {
                 new PerlProjectExistingSourcesCopyOperation(),
                 new PerlProjectExistingSourcesDeleteOperation(this),
                 this,
-                new Info(),
-                new PerlProjectExistingSourcesLogicalView(this),});
+                new PerlProjectExistingSourcesInfo(),
+                new PerlProjectExistingSourcesLogicalView(this),
+                new PerlProjectExistingSourcesCustomizerProperties(this)
+            });
         }
         return lkp;
     }
@@ -167,7 +169,7 @@ public class PerlProjectWithExistingSources implements Project {
     }
 
     //New Info class
-    private final class Info implements ProjectInformation {
+    private final class PerlProjectExistingSourcesInfo implements ProjectInformation {
 
         @StaticResource()
         public static final String PERL_ICON = "org/language/perl/images/perl-project-existing-sources.png";
@@ -253,6 +255,7 @@ public class PerlProjectWithExistingSources implements Project {
                     CommonProjectActions.renameProjectAction(),
                     CommonProjectActions.deleteProjectAction(),
                     CommonProjectActions.closeProjectAction(),
+                    CommonProjectActions.customizeProjectAction(),
                     SystemAction.get(FileSystemAction.class) // Version Control is done from here
                 };
             }
@@ -304,12 +307,12 @@ public class PerlProjectWithExistingSources implements Project {
 
         @Override
         public List<FileObject> getMetadataFiles() {
-            return new ArrayList<FileObject>();
+            return new ArrayList<>();
         }
 
         @Override
         public List<FileObject> getDataFiles() {
-            return new ArrayList<FileObject>();
+            return new ArrayList<>();
         }
 
     }
@@ -328,12 +331,12 @@ public class PerlProjectWithExistingSources implements Project {
 
         @Override
         public List<FileObject> getMetadataFiles() {
-            return new ArrayList<FileObject>();
+            return new ArrayList<>();
         }
 
         @Override
         public List<FileObject> getDataFiles() {
-            return new ArrayList<FileObject>();
+            return new ArrayList<>();
         }
 
     }
@@ -358,12 +361,12 @@ public class PerlProjectWithExistingSources implements Project {
 
         @Override
         public List<FileObject> getMetadataFiles() {
-            return new ArrayList<FileObject>();
+            return new ArrayList<>();
         }
 
         @Override
         public List<FileObject> getDataFiles() {
-            List<FileObject> files = new ArrayList<FileObject>();
+            List<FileObject> files = new ArrayList<>();
             FileObject[] projectChildren = project.getProjectDirectory().getChildren();
             for (FileObject fileObject : projectChildren) {
                 addFile(project.getProjectDirectory(), fileObject.getNameExt(), files);
