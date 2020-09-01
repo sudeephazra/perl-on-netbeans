@@ -2,20 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/parser/Perl5Parser.java</file>
-            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/project/dancer/PerlDancerProject.java</file>
-            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/action/PerlExecution.java</file>
-            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/action/ExecuteAction.java</file>
-            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/completion/PerlKeywordCompletionItem.java</file>
-            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/test/unit/src/org/language/perl/tests/PerlOnNetBeansJUnitTest.java</file>
-            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/action/perlDocAction.java</file>
-            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/dancer/PerlDancerAppInitiator.java</file>
-            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/grammar/PerlLexer.java</file>
-            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/lexer/Perl5Lexer.java</file>
-            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/utilities/CheckInstalledPerlModules.java</file>
-            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/file/package-info.java</file>
-            <file>file:/D:/Source%20Code/Bitbucket/PerlOnNetBeans/branches/develop/NetBeans/PerlOnNetBeans/PerlOnNetBeans/src/org/language/perl/project/dancer/PerlDancerProjectWizardIterator.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

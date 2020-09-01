@@ -1,6 +1,5 @@
 package org.language.perl.lexer;
 
-
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
 import org.language.perl.grammar.AntlrCharStream;

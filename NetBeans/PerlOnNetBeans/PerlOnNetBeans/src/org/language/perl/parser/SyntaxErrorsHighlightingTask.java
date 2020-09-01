@@ -1,23 +1,37 @@
 package org.language.perl.parser;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.text.Document;
+import org.antlr.v4.runtime.RecognitionException;
+import org.language.perl.parser.Perl5Parser.PerlEditorParserResult;
 import org.netbeans.modules.parsing.spi.Parser;
 import org.netbeans.modules.parsing.spi.Parser.Result;
 import org.netbeans.modules.parsing.spi.ParserResultTask;
 import org.netbeans.modules.parsing.spi.Scheduler;
 import org.netbeans.modules.parsing.spi.SchedulerEvent;
+import org.netbeans.spi.editor.hints.ErrorDescription;
+import org.netbeans.spi.editor.hints.ErrorDescriptionFactory;
+import org.netbeans.spi.editor.hints.HintsController;
 
-public class SyntaxErrorsHighlightingTask extends ParserResultTask<Parser.Result> {
-    
-    public boolean cancelled = false; 
-    
+public class SyntaxErrorsHighlightingTask extends ParserResultTask {
+
+    public boolean cancelled = false;
+
     public SyntaxErrorsHighlightingTask() {
     }
-    
+
     @Override
-    public void run(Result result, SchedulerEvent event) {
+    public void run(Result r, SchedulerEvent event) {
+//        PerlEditorParserResult result = (PerlEditorParserResult) r;
+//        Document document = result.getSnapshot().getSource().getDocument(false);
+//        List<ErrorDescription> errors = new ArrayList<ErrorDescription> ();
+//        for ( PerlEditorParserResult.Error error : result.getErrors() ) {
+//            
+//        }
 //         try { 
 //            List<SyntaxError> syntaxErrors = ((Perl5Parser.PerlEditorParserResult)result).getPerlParser().syntaxErrors; 
-//
 //            if (syntaxErrors == null) { 
 //              return; 
 //            } 
@@ -49,19 +63,18 @@ public class SyntaxErrorsHighlightingTask extends ParserResultTask<Parser.Result
     public int getPriority() {
         return 100;
     }
-    
+
     @Override
     public Class<? extends Scheduler> getSchedulerClass() {
         return Scheduler.EDITOR_SENSITIVE_TASK_SCHEDULER;
     }
-    
+
     @Override
     public void cancel() {
-        cancelled = true; 
+        cancelled = true;
     }
-    
-    
-    protected final synchronized boolean isCancelled() { 
-        return cancelled; 
-    } 
+
+    protected final synchronized boolean isCancelled() {
+        return cancelled;
+    }
 }

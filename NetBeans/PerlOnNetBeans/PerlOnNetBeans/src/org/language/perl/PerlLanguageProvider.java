@@ -5,6 +5,7 @@
  */
 package org.language.perl;
 
+import java.util.logging.Logger;
 import org.language.perl.editor.PerlFormatter;
 import org.language.perl.lexer.PerlTokenId;
 import org.language.perl.parser.Perl5Parser;
@@ -23,6 +24,8 @@ import org.netbeans.modules.parsing.spi.Parser;
 @LanguageRegistration(mimeType = PerlConstants.MIME_TYPE)
 public class PerlLanguageProvider extends DefaultLanguageConfig {
 
+    private static final Logger LOG = Logger.getLogger(PerlLanguageProvider.class.getName());
+    
     @Override
     public Language<PerlTokenId> getLexerLanguage() {
         return PerlTokenId.getLanguage();
