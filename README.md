@@ -17,12 +17,14 @@ Version: Release 0.6
 Date: TBD
 
 - Fixed highlighting issue with empty strings
+
 ---
 Version: Release 0.5.1
 
 Date: 10-Mar-2018
 
 - Combined external libraries into the plugin to correct plugin verification issues
+
 ---
 Version: Release 0.5
 
@@ -37,8 +39,9 @@ Features:
 - UI improvements
 - Performance improvements
 - Upgraded underlying helper libraries 
+
 ---
-Version: Release 0.4
+Version: Release 0.4   
 
 Date: 19-May-2015
 
@@ -50,4 +53,5 @@ Date: 19-May-2015
 - Theme support
 - Added Dancer support
 - Removed extra menu buttons
+
 ---
