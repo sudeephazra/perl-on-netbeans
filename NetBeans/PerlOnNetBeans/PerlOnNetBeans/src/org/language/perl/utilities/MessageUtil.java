@@ -13,6 +13,7 @@ import org.openide.NotifyDescriptor;
  *
  * @author Sudeep
  */
+@SuppressWarnings("deprecation")
 public class MessageUtil {
     private MessageUtil() {}
 

@@ -1,0 +1,33 @@
+How to run and Debug Grammar
+----------------------------
+Step 1: Go to the folder where the grammar file is
+Step 2: Run 
+	java -jar C:\JAVA_LIBS\antlr-4.5.3-complete.jar -package org.language.perl.grammar Perl.g4
+Step 3: Run 
+	javac -cp ".;C:\JAVA_LIBS\antlr-4.5.3-complete.jar" Perl*.java
+Step 4: Run
+	i. To test the Lexer
+	java -cp ".;C:\JAVA_LIBS\antlr-4.5.3-complete.jar" org.antlr.v4.gui.TestRig Perl prog -tokens -gui
+	ii. To test the Parser
+	java -cp ".;C:\JAVA_LIBS\antlr-4.5.3-complete.jar" org.antlr.v4.gui.TestRig Perl prog -tree -gui
+Step 5: Paste the test code and press ^Z on Windows
+Step 6: Test with most of the test cases for lexer tokens
+
+Some points
+-----------
+
+1. Grammar package
+------------------
+The grammar file has two statements that ensure that the output lexer and parser files are in the right package.
+
+@parser::header {package org.language.perl.grammar;}
+@lexer::header {package org.language.perl.grammar;}
+
+
+The statements need to be commented out durin the TestRig tests but are required during the generation of the Lexer and Parser classes to be used by Netbeans.
+
+2. Token out of sync (Null token exception)
+-------------------------------------------
+Everytime the grammar file is modified by adding or removing lexer tokens, please make sure that the generated tokens and the tokens in the file org.language.perl.lexer.TokenType are in sync. If they are not in sync, then you might get invalid tokens exception.
+
+

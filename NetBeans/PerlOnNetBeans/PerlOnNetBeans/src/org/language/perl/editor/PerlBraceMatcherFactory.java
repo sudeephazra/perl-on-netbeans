@@ -6,13 +6,14 @@
 
 package org.language.perl.editor;
 
+import org.language.perl.utilities.PerlConstants;
 import org.netbeans.api.editor.mimelookup.MimeRegistration;
 import org.netbeans.spi.editor.bracesmatching.BracesMatcher;
 import org.netbeans.spi.editor.bracesmatching.BracesMatcherFactory;
 import org.netbeans.spi.editor.bracesmatching.MatcherContext;
 import org.netbeans.spi.editor.bracesmatching.support.BracesMatcherSupport;
 
-@MimeRegistration(mimeType="text/x-perl", service=BracesMatcherFactory.class)
+@MimeRegistration(mimeType = PerlConstants.MIME_TYPE, service = BracesMatcherFactory.class)
 public class PerlBraceMatcherFactory implements BracesMatcherFactory  {
 
     @Override

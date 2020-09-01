@@ -6,12 +6,14 @@ package org.language.perl.grammar;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.antlr.runtime.CharStream;
+import org.antlr.v4.runtime.CharStream;
+import org.antlr.v4.runtime.misc.Interval;
+
 import org.netbeans.spi.lexer.LexerInput;
 
 public class AntlrCharStream implements CharStream {
 
-    private class CharStreamState {
+     private class CharStreamState {
         int index;
         int line;
         int charPositionInLine;
@@ -32,31 +34,32 @@ public class AntlrCharStream implements CharStream {
     }
 
     @Override
+    public String getText(Interval intrvl) {
+        return input.readText().toString();
+    }
+    
     public String substring(int start, int stop) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    @Override
     public int LT(int i) {
         return LA(i);
     }
 
-    @Override
     public int getLine() {
         return line;
     }
 
-    @Override
     public void setLine(int line) {
         this.line = line;
     }
 
-    @Override
+
     public void setCharPositionInLine(int pos) {
         this.charPositionInLine = pos;
     }
 
-    @Override
+
     public int getCharPositionInLine() {
         return charPositionInLine;
     }
@@ -109,12 +112,12 @@ public class AntlrCharStream implements CharStream {
         return markDepth;
     }
 
-    @Override
+
     public void rewind() {
         rewind(lastMarker);
     }
 
-    @Override
+
     public void rewind(int marker) {
         CharStreamState state = markers.get(marker);
         // restore stream state
@@ -132,7 +135,7 @@ public class AntlrCharStream implements CharStream {
         markDepth--;
     }
 
-    @Override
+ 
     public void seek(int index) {
         if (index < this.index) {
             backup(this.index - index);

@@ -10,8 +10,9 @@ import java.io.File;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 import org.language.perl.file.PerlFileDataObject;
+import org.language.perl.options.panel.GeneralPanelPreferences;
 import org.language.perl.options.panel.PerlTidyPreferences;
-import org.language.perl.utilities.PerlUtilsConstants;
+import org.language.perl.utilities.PerlConstants;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.awt.ActionReferences;
@@ -22,11 +23,11 @@ import org.openide.util.Exceptions;
 import org.openide.util.NbBundle.Messages;
 
 @ActionID(
-    category = "Build",
-id = "org.netbeans.perl.file.PerlTidyCodeFormatterAction")
+        category = "Build",
+        id = "org.netbeans.perl.file.PerlTidyCodeFormatterAction")
 @ActionRegistration(
-    iconBase = "org/language/perl/images/file-code-format.gif",
-displayName = "#CTL_PerlTidyCodeFormatterAction")
+        iconBase = "org/language/perl/images/file-code-format.gif",
+        displayName = "#CTL_PerlTidyCodeFormatterAction")
 @ActionReferences({
     @ActionReference(path = "Toolbars/Build", position = 450),
     @ActionReference(path = "Loaders/text/x-perl/Actions", position = 137, separatorAfter = 143)
@@ -53,17 +54,31 @@ public class PerlTidyCodeFormatterAction implements ActionListener {
 
         File file = FileUtil.toFile(context.getPrimaryFile());
         String fileName = file.getAbsolutePath();
-
+        
+        GeneralPanelPreferences perlPreferences = new GeneralPanelPreferences();
+        String perlCustomBinary = perlPreferences.getPerlCustomBinary();
+        String perlLibrary = perlPreferences.getPerlCustomLibrary();
+        
         PerlTidyPreferences tidyPref = new PerlTidyPreferences();
         String perlTidyBinary = tidyPref.getPerlTidyBinary();
         String perlTidyColumnIndentation = tidyPref.getPerlTidyColumnIndentation();
         String perlTidyLineLength = tidyPref.getPerlTidyLineLength();
         boolean perlTidyGenerateLog = tidyPref.getPerlTidyGenerateLog();
-
+        boolean perlTidyUseConfigFile = tidyPref.getPerlTidyUseConfigFile();
+        String perlTidyConfigFile = tidyPref.getPerlTidyConfigFile();
+        boolean perlTidyUsePBPConfig = tidyPref.getPerlTidyUsePBPConfig();
+        boolean perlTidyGenerateHTML = tidyPref.getPerlTidyGenerateHTML();
+        boolean perlTidyGenerateHTMLTableOfContents = tidyPref.getPerlTidyGenerateHTMLTableOfContents();
+        boolean perlTidyHTMLWithPRE = tidyPref.getPerlTidyHTMLWithPRE();
+        boolean perlTidyHTMLWithFRAME = tidyPref.getPerlTidyHTMLWithFRAME();
+        String perlTidyCSSFile = tidyPref.getPerlTidyCSSFile();
+        String perlCustomHTMLOutputFolder = tidyPref.getPerlTidyCustomHTMLOutputFolder();
+        String perlTidyAdditionalParameters = tidyPref.getPerlTidyAdditionalParameters();
+        
         PerlExecution myExecution = new PerlExecution();
         myExecution.setRedirectError(true);
-        myExecution.setWorkingDirectory(file.getParent().toString());
-        myExecution.setDisplayName(file.getName() + " (Source Code Formatting)");
+        myExecution.setWorkingDirectory(file.getParent());
+        myExecution.setDisplayName(file.getName() + PerlConstants.PERL_CODE_FORMATING_OUTPUT_WINDOW_TITLE);
         if (perlTidyBinary.equals("")) {
             File bundledTidy = new File(tidyPref.getBundledPerlTidyPath());
             if (!bundledTidy.exists()) {
@@ -71,8 +86,15 @@ public class PerlTidyCodeFormatterAction implements ActionListener {
                 return;
             }
             myExecution.setWorkingDirectory(bundledTidy.getAbsolutePath());
-            myExecution.setCommand(PerlUtilsConstants.PERL_DEFAULT);
-            myExecution.setCommandArgs(PerlUtilsConstants.PERL_TIDY_BINARY);
+            if (perlCustomBinary.equals("")) {
+                myExecution.setCommand(PerlConstants.PERL_DEFAULT);
+            } else {
+                myExecution.setCommand(perlCustomBinary);
+            }
+            if (!perlLibrary.equals("")) {
+                myExecution.setCommandArgs(perlLibrary);
+            }
+            myExecution.setCommandArgs(PerlConstants.PERL_TIDY_BINARY);
         } else {
             myExecution.setCommand(perlTidyBinary);
             File tidy = new File(myExecution.getCommand());
@@ -84,23 +106,55 @@ public class PerlTidyCodeFormatterAction implements ActionListener {
 
         //The below option is always required --DO NOT REMOVE THIS SWITCH
         if (myExecution.getCommandArgs() == null) {
-            myExecution.setCommandArgs(" -b");
+            myExecution.setCommandArgs(PerlConstants.PERL_TIDY_BACKUP_PARAM);
         } else {
-            myExecution.setCommandArgs(myExecution.getCommandArgs() + " -b");
+            myExecution.setCommandArgs(myExecution.getCommandArgs() + PerlConstants.PERL_TIDY_BACKUP_PARAM);
         }
         //Putting all the options as available from the Options panel
-        if (perlTidyColumnIndentation.equals("")) {
-            myExecution.setCommandArgs(myExecution.getCommandArgs() + " -i=4");
+        if (perlTidyUseConfigFile) {
+            if (perlTidyConfigFile.equals("")) {
+                myExecution.setCommandArgs(myExecution.getCommandArgs() + PerlConstants.PERL_TIDY_CONFIG_FILE_PARAM + PerlConstants.PERL_TIDY_DEFAULT_CONFIG_FILE);
+            } else {
+                myExecution.setCommandArgs(myExecution.getCommandArgs() + PerlConstants.PERL_TIDY_CONFIG_FILE_PARAM + perlTidyConfigFile);
+            }
+        } else if (perlTidyUsePBPConfig) {
+            myExecution.setCommandArgs(myExecution.getCommandArgs() + PerlConstants.PERL_TIDY_PBP_PARAM);
         } else {
-            myExecution.setCommandArgs(myExecution.getCommandArgs() + " -i=" + perlTidyColumnIndentation);
+            if (perlTidyColumnIndentation.equals("")) {
+                myExecution.setCommandArgs(myExecution.getCommandArgs() + PerlConstants.PERL_TIDY_DEFAULT_INDENT_PARAM);
+            } else {
+                myExecution.setCommandArgs(myExecution.getCommandArgs() + PerlConstants.PERL_TIDY_INDENT_PARAM + perlTidyColumnIndentation);
+            }
+            if (perlTidyLineLength.equals("")) {
+                myExecution.setCommandArgs(myExecution.getCommandArgs() + PerlConstants.PERL_TIDY_DEFAULT_LINE_LENGTH_PARAM);
+            } else {
+                myExecution.setCommandArgs(myExecution.getCommandArgs() + PerlConstants.PERL_TIDY_LINE_LENGTH_PARAM + perlTidyLineLength);
+            }
         }
-        if (perlTidyLineLength.equals("")) {
-            myExecution.setCommandArgs(myExecution.getCommandArgs() + " -l=80");
-        } else {
-            myExecution.setCommandArgs(myExecution.getCommandArgs() + " -l=" + perlTidyLineLength);
+        //If output is HTML
+        if (perlTidyGenerateHTML) {
+            myExecution.setCommandArgs(myExecution.getCommandArgs() + PerlConstants.PERL_TIDY_GENERATE_HTML_PARAM);
+            if (perlTidyGenerateHTMLTableOfContents) {
+                myExecution.setCommandArgs(myExecution.getCommandArgs() + PerlConstants.PERL_TIDY_GENERATE_HTML_TOC_PARAM);
+            }
+            if (perlTidyHTMLWithPRE) {
+                myExecution.setCommandArgs(myExecution.getCommandArgs() + PerlConstants.PERL_TIDY_GENERATE_HTML_PRE_PARAM);
+            }
+            if (perlTidyHTMLWithFRAME) {
+                myExecution.setCommandArgs(myExecution.getCommandArgs() + PerlConstants.PERL_TIDY_GENERATE_HTML_FRAMES_PARAM);
+            }
+            if (!perlTidyCSSFile.equals("")) {
+                myExecution.setCommandArgs(myExecution.getCommandArgs() + PerlConstants.PERL_TIDY_GENERATE_HTML_CSS_PARAM + "\"" + perlTidyCSSFile + "\"");
+            }
+            if (!perlCustomHTMLOutputFolder.equals("")) {
+                myExecution.setCommandArgs(myExecution.getCommandArgs() + PerlConstants.PERL_TIDY_GENERATE_HTML_OUTPUT_PARAM + perlCustomHTMLOutputFolder);
+            }
         }
         if (perlTidyGenerateLog) {
-            myExecution.setCommandArgs(myExecution.getCommandArgs() + " -g");
+            myExecution.setCommandArgs(myExecution.getCommandArgs() + PerlConstants.PERL_TIDY_GENERATE_LOG_PARAM);
+        }
+        if (!perlTidyAdditionalParameters.equals("")) {
+            myExecution.setCommandArgs(myExecution.getCommandArgs() + " " + perlTidyAdditionalParameters + " ");
         }
         try {
             myExecution.setRawScript(fileName);
@@ -108,21 +162,8 @@ public class PerlTidyCodeFormatterAction implements ActionListener {
             Exceptions.printStackTrace(ex);
         }
 
-
-        //This can be done on a separate thread
-        /* //This is the main thread
-         PerlCodeFormatterThread code = new PerlCodeFormatterThread(myExecution);
-         code.run();
-         */
         Thread codeFormatterThread = new Thread(new PerlCodeFormatterThread(myExecution));
         codeFormatterThread.start();
-        /*
-         try {
-         codeFormatterThread.join();
-         } catch (InterruptedException ex) {
-         Exceptions.printStackTrace(ex);
-         }
-         */
     }
 
     public class PerlCodeFormatterThread implements Runnable {

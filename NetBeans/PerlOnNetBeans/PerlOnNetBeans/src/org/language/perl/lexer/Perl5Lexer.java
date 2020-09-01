@@ -1,6 +1,7 @@
 package org.language.perl.lexer;
 
-import org.antlr.runtime.Token;
+import org.antlr.v4.runtime.CharStream;
+import org.antlr.v4.runtime.Token;
 import org.language.perl.grammar.AntlrCharStream;
 import org.language.perl.grammar.PerlLexer;
 import org.netbeans.spi.lexer.Lexer;
@@ -15,7 +16,7 @@ public class Perl5Lexer implements Lexer<PerlTokenId> {
     public Perl5Lexer(LexerRestartInfo<PerlTokenId> lexerRestartInfo) {
         this.lexerRestartInfo = lexerRestartInfo;
         AntlrCharStream charStream = new AntlrCharStream(lexerRestartInfo.input(), "PerlEditor");
-        perlLexer = new PerlLexer(charStream);
+        perlLexer = new PerlLexer((CharStream) charStream);
         
     }
 

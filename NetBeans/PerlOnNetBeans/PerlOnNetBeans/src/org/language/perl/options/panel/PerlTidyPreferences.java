@@ -4,9 +4,8 @@
  */
 package org.language.perl.options.panel;
 
-import java.io.File;
 import java.util.prefs.Preferences;
-import org.openide.modules.InstalledFileLocator;
+import org.language.perl.utilities.PerlBundledUtilities;
 import org.openide.util.NbPreferences;
 
 public class PerlTidyPreferences {
@@ -32,7 +31,12 @@ public class PerlTidyPreferences {
         boolean perlTidyGenerateLog = pref.getBoolean("perlTidyGenerateLog", false);
         return perlTidyGenerateLog;
     }
-
+    
+    public boolean getPerlTidyGenerateHTML() {
+        boolean perlTidyGenerateHTML = pref.getBoolean("perlTidyGenerateHTML", false);
+        return perlTidyGenerateHTML;
+    }
+    
     public boolean getPerlTidyGenerateHTMLTableOfContents() {
         boolean perlTidyGenerateHTMLTableOfContents = pref.getBoolean("perlTidyGenerateHTMLTableOfContents", false);
         return perlTidyGenerateHTMLTableOfContents;
@@ -59,12 +63,30 @@ public class PerlTidyPreferences {
     }
 
     public String getBundledPerlTidyPath() {
-
-        File perlTidy = InstalledFileLocator.getDefault().locate(
-                "perltidy/perltidy",
-                "org.languages.perl",
-                false);
-        String executableFolder = perlTidy.getParent();
-        return executableFolder;
+        PerlBundledUtilities perlTidy = new PerlBundledUtilities();
+        return perlTidy.getBundledPerlTidyPath();
     }
+
+    public boolean getPerlTidyUseConfigFile() {
+        boolean perlTidyUseConfigFile = pref.getBoolean("perlTidyUseConfigFile", false);
+        return perlTidyUseConfigFile;
+    }
+    
+    public String getPerlTidyConfigFile() {
+        String perlTidyConfigFile = pref.get("perlTidyUseConfigFile", "").trim();
+        return perlTidyConfigFile;
+    }
+    
+    public boolean getPerlTidyUsePBPConfig() {
+        boolean perlTidyUsePBPConfig = pref.getBoolean("perlTidyUsePBPConfig", false);
+        return perlTidyUsePBPConfig;
+    }
+    
+    public String getPerlTidyAdditionalParameters() {
+        String perlTidyAdditionalParameters = pref.get("perlTidyAdditionalParameters", "").trim();
+        return perlTidyAdditionalParameters;
+    }
+    
+    
+    
 }

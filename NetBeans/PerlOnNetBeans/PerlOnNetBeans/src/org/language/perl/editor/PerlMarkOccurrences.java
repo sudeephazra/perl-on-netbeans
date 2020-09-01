@@ -8,6 +8,8 @@ package org.language.perl.editor;
 
 import java.awt.Color;
 import java.lang.ref.WeakReference;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JEditorPane;
@@ -69,6 +71,7 @@ public class PerlMarkOccurrences implements CaretListener {
                 public void run() {
                     String selection = comp.getSelectedText();
                     if (selection != null) {
+                        try {
                         Pattern p = Pattern.compile(selection);
                         //Matcher m = p.matcher(comp.getText().replaceAll("(\\n)", ""));
                         Matcher m = 
@@ -77,6 +80,9 @@ public class PerlMarkOccurrences implements CaretListener {
                             int startOffset = m.start();
                             int endOffset = m.end();
                             bag.addHighlight(startOffset, endOffset, defaultColors);
+                        }
+                        } catch (Exception e) {
+                            Logger.getLogger(PerlMarkOccurrences.class.getName()).log(Level.WARNING, "Perl Mark occurences issue");
                         }
                     }
                 }

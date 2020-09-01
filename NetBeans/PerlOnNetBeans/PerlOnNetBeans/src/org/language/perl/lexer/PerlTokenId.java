@@ -9,7 +9,7 @@ import org.netbeans.api.lexer.TokenId;
 
 public class PerlTokenId implements TokenId {
     
-    private static final Language<PerlTokenId> language = new PerlLanguageHierarchy().language();
+    public static final Language<PerlTokenId> language = new PerlLanguageHierarchy().language();
     private final String name;
     private final String primaryCategory;
     private final int id;

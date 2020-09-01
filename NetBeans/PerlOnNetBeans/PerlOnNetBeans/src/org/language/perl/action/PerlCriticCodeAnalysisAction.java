@@ -6,8 +6,10 @@ import java.io.File;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 import org.language.perl.file.PerlFileDataObject;
+import org.language.perl.options.panel.GeneralPanelPreferences;
 import org.language.perl.options.panel.PerlCriticPreferences;
 import org.language.perl.utilities.CheckInstalledPerlModules;
+import org.language.perl.utilities.PerlConstants;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.awt.ActionReferences;
@@ -48,18 +50,21 @@ public final class PerlCriticCodeAnalysisAction implements ActionListener {
         }
         File file = FileUtil.toFile(context.getPrimaryFile());
         String fileName = file.getAbsolutePath();
-
+        
+        GeneralPanelPreferences perlPreferences = new GeneralPanelPreferences();
+        String perlCustomBinary = perlPreferences.getPerlCustomBinary();
+        String perlLibrary = perlPreferences.getPerlCustomLibrary();
+        
         PerlCriticPreferences criticPref = new PerlCriticPreferences();
         String perlCriticBinary = criticPref.getPerlCriticBinary();
         String perlCriticSeverity = criticPref.getPerlCriticSeverity();
         String perlCriticForce = criticPref.getPerlCriticForce();
         String perlCriticTheme = criticPref.getPerlCriticTheme();
         
-
         PerlExecution myExecution = new PerlExecution();
         myExecution.setRedirectError(true);
         myExecution.setWorkingDirectory(file.getParent().toString());
-        myExecution.setDisplayName(file.getName() + " (Source Code Analysis)");
+        myExecution.setDisplayName(file.getName() + PerlConstants.PERL_CODE_ANALYSIS_OUTPUT_WINDOW_TITLE);
         if (perlCriticBinary.equals("")) {
             //Check if the module is installed
             CheckInstalledPerlModules checkModules = new CheckInstalledPerlModules();
@@ -67,12 +72,6 @@ public final class PerlCriticCodeAnalysisAction implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Code Analysis not available. Please install Perl::Critic or use the latest version of Perl.");
                 return;
             }
-//            File newFile = new File(criticPref.getBundledPerlCriticPath());
-//            if (!newFile.exists()) {
-//                JOptionPane.showMessageDialog(null, "Integrated Code Analysis unavailable. Please send this error to the development team.");
-//                return;
-//            }
-//            myExecution.setWorkingDirectory(criticPref.getBundledPerlCriticPath());
             myExecution.setCommand(criticPref.getBundledPerlCritic());
         } else {
             myExecution.setCommand(perlCriticBinary);
@@ -105,20 +104,13 @@ public final class PerlCriticCodeAnalysisAction implements ActionListener {
 
         try {
             myExecution.setRawScript(fileName);
-        } catch (Exception ex) {
+        } catch (IOException ex) {
             Exceptions.printStackTrace(ex);
         }
 
         //This is done on a separate thread
         Thread codeAnalysisThread = new Thread(new PerlCodeAnalysisThread(myExecution));
         codeAnalysisThread.start();
-        /*
-        try {
-            codeAnalysisThread.join();
-        } catch (InterruptedException ex) {
-            Exceptions.printStackTrace(ex);
-        }
-        */
     }
 
     public class PerlCodeAnalysisThread implements Runnable {

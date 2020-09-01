@@ -1,0 +1,66 @@
+Changelog
+=================================================
+
+=================================================
+Version: Release 0.6
+Date: TBD
+=================================================
+- Fixed highlighting issue with empty strings
+=================================================
+
+=================================================
+Version: Release 0.5.1
+Date: 10-Mar-2018
+=================================================
+- Combined external libraries into the plugin to correct plugin verification issues
+=================================================
+
+=================================================
+Version: Release 0.5
+Date: 27-Feb-2018
+=================================================
+Features:
+- Added support for Dancer2 framework (initial stages) 
+- Added code completion for keywords 
+- Additional Perl::Tidy configuration options
+- Corrected custom Perl binary and libraries location integration errors
+- Bug fixes around syntax highlighting
+- UI improvements
+- Performance improvements
+- Upgraded underlying helper libraries 
+=================================================
+
+=================================================
+Version: Release 0.4
+Date: 19-May-2015
+=================================================
+- Comment toggle using Ctrl+/
+- Retain line indentation on new line
+- Menu options to run and compile files
+- Added code formatting and template under Options -> Tools
+- Project copy/move/rename functions
+- Theme support
+- Added Dancer support
+- Removed extra menu buttons
+=================================================
+
+=================================================
+Version: Release 0.3
+Date: 27-Feb-2018
+=================================================
+
+=================================================
+
+=================================================
+Version: Release 0.2
+Date: 27-Feb-2018
+=================================================
+
+=================================================
+
+=================================================
+Version: Release 0.1
+Date: 27-Feb-2018
+=================================================
+
+=================================================

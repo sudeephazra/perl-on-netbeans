@@ -10,8 +10,9 @@ import java.io.File;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 import org.language.perl.file.PerlFileDataObject;
+import org.language.perl.options.panel.GeneralPanelPreferences;
 import org.language.perl.options.panel.PerlTidyPreferences;
-import org.language.perl.utilities.PerlUtilsConstants;
+import org.language.perl.utilities.PerlConstants;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.awt.ActionReferences;
@@ -54,6 +55,10 @@ public final class exportToHTMLAction implements ActionListener {
         File file = FileUtil.toFile(context.getPrimaryFile());
         String fileName = file.getAbsolutePath();
         
+        GeneralPanelPreferences perlPreferences = new GeneralPanelPreferences();
+        String perlCustomBinary = perlPreferences.getPerlCustomBinary();
+        String perlLibrary = perlPreferences.getPerlCustomLibrary();
+        
         PerlTidyPreferences tidyPref = new PerlTidyPreferences();
         String perlTidyBinary = tidyPref.getPerlTidyBinary();
         boolean perlTidyGenerateHTMLTableOfContents = tidyPref.getPerlTidyGenerateHTMLTableOfContents();
@@ -65,7 +70,7 @@ public final class exportToHTMLAction implements ActionListener {
         
         PerlExecution myExecution = new PerlExecution();
         myExecution.setRedirectError(true);
-        myExecution.setWorkingDirectory(file.getParent().toString());
+        myExecution.setWorkingDirectory(file.getParent());
         myExecution.setDisplayName(file.getName() + " (Source Code -> HTML)");
         if (perlTidyBinary.equals(""))
         {
@@ -75,8 +80,15 @@ public final class exportToHTMLAction implements ActionListener {
                 return;
             }
             myExecution.setWorkingDirectory(bundledTidy.getAbsolutePath());
-            myExecution.setCommand(PerlUtilsConstants.PERL_DEFAULT);
-            myExecution.setCommandArgs(PerlUtilsConstants.PERL_TIDY_BINARY);
+            if (perlCustomBinary.equals("")) {
+                myExecution.setCommand(PerlConstants.PERL_DEFAULT);
+            } else {
+                myExecution.setCommand(perlCustomBinary);
+            }
+            if (!perlLibrary.equals("")) {
+                myExecution.setCommandArgs(perlLibrary);
+            }
+            myExecution.setCommandArgs(PerlConstants.PERL_TIDY_BINARY);
         } else {
             myExecution.setCommand(perlTidyBinary);
             File tidy = new File(myExecution.getCommand());
@@ -109,7 +121,7 @@ public final class exportToHTMLAction implements ActionListener {
         }
         if (!perlCustomHTMLOutputFolder.equals(""))
         {
-            myExecution.setCommandArgs(myExecution.getCommandArgs() + " -o=" + perlCustomHTMLOutputFolder + File.separator + file.getName() + ".html");
+            myExecution.setCommandArgs(myExecution.getCommandArgs() + " -opath=" + perlCustomHTMLOutputFolder + File.separator + file.getName() + ".html");
         }
         
         try {
@@ -120,14 +132,6 @@ public final class exportToHTMLAction implements ActionListener {
         
         Thread codeHTMLExporterThread = new Thread(new PerlHTMLGeneratorThread(myExecution));
         codeHTMLExporterThread.start();
-        /*
-        try {
-            codeHTMLExporterThread.join();
-        } catch (InterruptedException ex) {
-            Exceptions.printStackTrace(ex);
-        }
-        */
-        
     }
     
    public class PerlHTMLGeneratorThread implements Runnable {

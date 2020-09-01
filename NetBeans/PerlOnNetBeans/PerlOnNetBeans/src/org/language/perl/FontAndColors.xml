@@ -1,6 +1,7 @@
 <!DOCTYPE fontscolors PUBLIC "-//NetBeans//DTD Editor Fonts and Colors settings 1.1//EN" "http://www.netbeans.org/dtds/EditorFontsColors-1_1.dtd">
 <fontscolors>
-    <fontcolor bgColor="white" foreColor="black" name="default"/>
+    <fontcolor foreColor="black" name="default"/>
+    <!--<fontcolor bgColor="white" foreColor="black" name="default"/>-->
     <fontcolor bgColor="ff9900" foreColor="white" name="error"/>
     <fontcolor foreColor="c71585" name="string">
         <font style="italic" />

@@ -5,3 +5,5 @@
 # @Created ${date} ${time}
 #
 
+package ${name}
+package ${package}
