@@ -18,8 +18,9 @@ import java.util.regex.Pattern;
 import org.language.perl.utilities.PerlBundledUtilities;
 import org.netbeans.api.extexecution.ExecutionDescriptor;
 import org.netbeans.api.extexecution.ExecutionService;
-import org.netbeans.api.extexecution.base.input.InputProcessor;
 import org.netbeans.api.extexecution.base.ProcessBuilder;
+import org.netbeans.api.extexecution.base.input.InputProcessor;
+//import org.netbeans.api.extexecution.base.input.InputProcessor;
 import org.openide.util.Exceptions;
 
 @SuppressWarnings("deprecation")
@@ -49,10 +50,10 @@ public class PerlExecution {
         LOGGER.log(Level.INFO, "Execution Service to be configured");
         try {
             ExecutionService service
-                    = ExecutionService.newService(
-                            buildProcess(),
-                            descriptor,
-                            displayName);
+                = ExecutionService.newService(
+                        buildProcess(),
+                        descriptor,
+                        displayName);
             LOGGER.log(Level.INFO, "Execution Service configured {0}", service.toString());
             return service.run();
         } catch (IOException ex) {
@@ -266,12 +267,7 @@ public class PerlExecution {
      * Attach a Processor to collect the output of the running process
      */
     public void attachOutputProcessor() {
-        descriptor = descriptor.outProcessorFactory(new ExecutionDescriptor.InputProcessorFactory2() {
-            @Override
-            public InputProcessor newInputProcessor(InputProcessor ip) {
-                return outProcessor;
-            }
-        });
+        descriptor = descriptor.outProcessorFactory((InputProcessor arg0) -> (InputProcessor) outProcessor);
     }
 
     public Reader getOutput() {

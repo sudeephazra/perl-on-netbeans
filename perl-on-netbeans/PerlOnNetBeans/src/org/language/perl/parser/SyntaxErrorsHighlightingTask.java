@@ -1,19 +1,9 @@
 package org.language.perl.parser;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-import javax.swing.text.Document;
-import org.antlr.v4.runtime.RecognitionException;
-import org.language.perl.parser.Perl5Parser.PerlEditorParserResult;
-import org.netbeans.modules.parsing.spi.Parser;
 import org.netbeans.modules.parsing.spi.Parser.Result;
 import org.netbeans.modules.parsing.spi.ParserResultTask;
 import org.netbeans.modules.parsing.spi.Scheduler;
 import org.netbeans.modules.parsing.spi.SchedulerEvent;
-import org.netbeans.spi.editor.hints.ErrorDescription;
-import org.netbeans.spi.editor.hints.ErrorDescriptionFactory;
-import org.netbeans.spi.editor.hints.HintsController;
 
 public class SyntaxErrorsHighlightingTask extends ParserResultTask {
 

@@ -59,7 +59,7 @@ public final class ExecuteAction implements ActionListener {
 
         PerlExecution myExecution = new PerlExecution();
         myExecution.setRedirectError(true);
-        myExecution.setWorkingDirectory(file.getParent().toString());
+        myExecution.setWorkingDirectory(file.getParent());
         myExecution.setDisplayName(file.getName() + " (Execute)");
         if (perlCustomBinary.equals("")) {
             myExecution.setCommand(PerlConstants.PERL_DEFAULT);
@@ -103,7 +103,7 @@ public final class ExecuteAction implements ActionListener {
 
         PerlExecution myExecution = new PerlExecution();
         myExecution.setRedirectError(true);
-        myExecution.setWorkingDirectory(file.getParent().toString());
+        myExecution.setWorkingDirectory(file.getParent());
         myExecution.setDisplayName(file.getName() + " (Execute)");
         if (perlCustomBinary.equals("")) {
             myExecution.setCommand(PerlConstants.PERL_DEFAULT);
@@ -131,9 +131,7 @@ public final class ExecuteAction implements ActionListener {
         }
         if (file.exists()) {
             myExecution.run();
-        } else {
-            return;
-        }
+        } 
 
     }
 }

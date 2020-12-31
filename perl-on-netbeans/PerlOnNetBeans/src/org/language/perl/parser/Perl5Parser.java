@@ -1,22 +1,16 @@
 package org.language.perl.parser;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.event.ChangeListener;
-import org.antlr.v4.runtime.ANTLRInputStream;
-import org.antlr.v4.runtime.BaseErrorListener;
+import org.antlr.v4.runtime.CharStream;
+import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
-import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.RecognitionException;
-import org.antlr.v4.runtime.Recognizer;
-import org.antlr.v4.runtime.misc.ParseCancellationException;
 import org.language.perl.grammar.PerlLexer;
 import org.language.perl.grammar.PerlParser;
-import org.language.perl.grammar.ThrowingErrorListener;
-import org.netbeans.modules.csl.api.Error;
 import org.netbeans.modules.csl.api.Severity;
 import org.netbeans.modules.csl.spi.ParserResult;
 import org.netbeans.modules.parsing.api.Snapshot;
@@ -37,8 +31,8 @@ public class Perl5Parser extends Parser {
     @Override
     public void parse(Snapshot snapshot, Task task, SourceModificationEvent event) {
         this.snapshot = snapshot;
-        ANTLRInputStream stream = new ANTLRInputStream(snapshot.getText().toString());
-
+        //ANTLRInputStream stream = new ANTLRInputStream(snapshot.getText().toString());
+        CharStream stream = CharStreams.fromString(snapshot.getText().toString());
         lexer = new PerlLexer(stream);
         tokens = new CommonTokenStream(lexer);
         parser = new PerlParser(tokens);

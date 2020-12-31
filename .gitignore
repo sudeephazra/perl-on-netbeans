@@ -3,3 +3,5 @@ build.xml
 /NetBeans/PerlOnNetBeans/build/
 /NetBeans/PerlOnNetBeans/PerlOnNetBeans/build/
 NetBeans/PerlOnNetBeans/PerlOnNetBeans/.jacocoverage/
+/perl-on-netbeans/build/
+/perl-on-netbeans/PerlOnNetBeans/build/
