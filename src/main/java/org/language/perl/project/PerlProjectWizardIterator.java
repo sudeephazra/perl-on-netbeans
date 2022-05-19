@@ -32,10 +32,12 @@ import org.openide.util.Exceptions;
 import org.openide.util.NbBundle;
 import org.openide.util.NbBundle.Messages;
 import org.openide.xml.XMLUtil;
+import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
 
 // TODO define position attribute
 @TemplateRegistration(folder = "Project/Perl", 
@@ -233,7 +235,7 @@ public class PerlProjectWizardIterator implements WizardDescriptor.Instantiating
             } finally {
                 out.close();
             }
-        } catch (Exception ex) {
+        } catch (IOException | DOMException | SAXException ex) {
             Exceptions.printStackTrace(ex);
             writeFile(str, fo);
         }

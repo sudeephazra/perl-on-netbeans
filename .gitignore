@@ -5,3 +5,4 @@ build.xml
 NetBeans/PerlOnNetBeans/PerlOnNetBeans/.jacocoverage/
 /perl-on-netbeans/build/
 /perl-on-netbeans/PerlOnNetBeans/build/
+/target/

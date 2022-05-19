@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package org.language.perl.project;
+package org.language.perl.project.existing.sources;
 
 import java.awt.Image;
 import java.beans.PropertyChangeListener;
@@ -39,8 +34,8 @@ import org.openide.filesystems.FileObject;
 import org.openide.loaders.DataFolder;
 import org.openide.loaders.DataObjectNotFoundException;
 import org.openide.nodes.AbstractNode;
-import org.openide.nodes.Children;
 import org.openide.nodes.FilterNode;
+import org.openide.nodes.FilterNode.Children;
 import org.openide.nodes.Node;
 import org.openide.util.Exceptions;
 import org.openide.util.ImageUtilities;
@@ -49,18 +44,13 @@ import org.openide.util.actions.SystemAction;
 import org.openide.util.lookup.Lookups;
 import org.openide.util.lookup.ProxyLookup;
 
-/**
- *
- * @author Sudeep
- */
-public class PerlProject implements Project {
+public class PerlProjectWithExistingSources implements Project {
 
     private final FileObject projectDir;
     private final ProjectState state;
     private Lookup lkp;
-//    PerlDebugger debugger;
 
-    PerlProject(FileObject dir, ProjectState state) {
+    PerlProjectWithExistingSources(FileObject dir, ProjectState state) {
         this.projectDir = dir;
         this.state = state;
     }
@@ -75,20 +65,20 @@ public class PerlProject implements Project {
         if (lkp == null) {
             lkp = Lookups.fixed(new Object[]{
                 //Register your features here
-                new PerlProjectActionProvider(),
-                new PerlProjectMoveOrRenameOperation(),
-                new PerlProjectCopyOperation(),
-                new PerlProjectDeleteOperation(this),
+                new PerlProjectExistingSourcesActionProvider(),
+                new PerlProjectExistingSourcesMoveOrRenameOperation(),
+                new PerlProjectExistingSourcesCopyOperation(),
+                new PerlProjectExistingSourcesDeleteOperation(this),
                 this,
-                new PerlProjectInfo(),
-                new PerlProjectLogicalView(this),
-                new PerlProjectCustomizerProperties(this)
+                new PerlProjectExistingSourcesInfo(),
+                new PerlProjectExistingSourcesLogicalView(this),
+                new PerlProjectExistingSourcesCustomizerProperties(this)
             });
         }
         return lkp;
     }
 
-    private final class PerlProjectActionProvider implements ActionProvider {
+       private final class PerlProjectExistingSourcesActionProvider implements ActionProvider {
 
         private final String[] supported = new String[]{
             ActionProvider.COMMAND_DELETE,
@@ -112,18 +102,18 @@ public class PerlProject implements Project {
             //Project should not have hidden files in structure
 
             if (string.equalsIgnoreCase(ActionProvider.COMMAND_DELETE)) {
-                DefaultProjectOperations.performDefaultDeleteOperation(PerlProject.this);
+                DefaultProjectOperations.performDefaultDeleteOperation(PerlProjectWithExistingSources.this);
 
             }
             if (string.equalsIgnoreCase(ActionProvider.COMMAND_COPY)) {
-                DefaultProjectOperations.performDefaultCopyOperation(PerlProject.this);
+                DefaultProjectOperations.performDefaultCopyOperation(PerlProjectWithExistingSources.this);
                 //PerlProjectOperationsImplementation.copyProject(PerlProject.this);
             }
             if (string.equalsIgnoreCase(ActionProvider.COMMAND_MOVE)) {
-                DefaultProjectOperations.performDefaultMoveOperation(PerlProject.this);
+                DefaultProjectOperations.performDefaultMoveOperation(PerlProjectWithExistingSources.this);
             }
             if (string.equalsIgnoreCase(ActionProvider.COMMAND_RENAME)) {
-                DefaultProjectOperations.performDefaultRenameOperation(PerlProject.this, "");
+                DefaultProjectOperations.performDefaultRenameOperation(PerlProjectWithExistingSources.this, "");
             }
             if (string.equalsIgnoreCase(ActionProvider.COMMAND_RUN)
                     || string.equalsIgnoreCase(ActionProvider.COMMAND_RUN_SINGLE)) {
@@ -172,8 +162,6 @@ public class PerlProject implements Project {
                 return true;
             } else if (command.equals(ActionProvider.COMMAND_COMPILE_SINGLE)) { //for enabling the debugger button.
                 return true;
-            } else if (command.equals(ActionProvider.COMMAND_DEBUG)) {
-                return true;
             } else {
                 throw new IllegalArgumentException(command);
             }
@@ -181,10 +169,10 @@ public class PerlProject implements Project {
     }
 
     //New Info class
-    private final class PerlProjectInfo implements ProjectInformation {
+    private final class PerlProjectExistingSourcesInfo implements ProjectInformation {
 
         @StaticResource()
-        public static final String PERL_ICON = "org/language/perl/images/perl-project.png";
+        public static final String PERL_ICON = "org/language/perl/project/existing/sources/perlproject.png";
 
         @Override
         public Icon getIcon() {
@@ -203,7 +191,7 @@ public class PerlProject implements Project {
 
         @Override
         public Project getProject() {
-            return PerlProject.this;
+            return PerlProjectWithExistingSources.this;
         }
 
         @Override
@@ -215,18 +203,16 @@ public class PerlProject implements Project {
         public void removePropertyChangeListener(PropertyChangeListener pl) {
             //throw new UnsupportedOperationException("Not supported yet.");
         }
-
     }
 
     //Logical view class
-    class PerlProjectLogicalView implements LogicalViewProvider {
+    class PerlProjectExistingSourcesLogicalView implements LogicalViewProvider {
 
         @StaticResource()
-        public static final String PERL_ICON = "org/language/perl/images/perl-project.png";
+        public static final String PERL_ICON = "org/language/perl/project/existing/sources/perlproject.png";
+        private final PerlProjectWithExistingSources project;
 
-        private final PerlProject project;
-
-        public PerlProjectLogicalView(PerlProject project) {
+        public PerlProjectExistingSourcesLogicalView(PerlProjectWithExistingSources project) {
             this.project = project;
         }
 
@@ -236,7 +222,7 @@ public class PerlProject implements Project {
                 FileObject Text = project.getProjectDirectory();
                 DataFolder TextDataObject = DataFolder.findFolder(Text);
                 Node realTextFolderNode = TextDataObject.getNodeDelegate();
-                return new ProjectNode(realTextFolderNode, project);
+                return new PerlProjectWithExistingSourcesNode(realTextFolderNode, project);
 
             } catch (DataObjectNotFoundException donfe) {
                 Exceptions.printStackTrace(donfe);
@@ -244,20 +230,19 @@ public class PerlProject implements Project {
             }
         }
 
-        private final class ProjectNode extends FilterNode {
+        private final class PerlProjectWithExistingSourcesNode extends FilterNode {
 
-            final PerlProject project;
+            final PerlProjectWithExistingSources project;
 
-            public ProjectNode(Node node, PerlProject project) throws DataObjectNotFoundException {
+            public PerlProjectWithExistingSourcesNode(Node node, PerlProjectWithExistingSources project) throws DataObjectNotFoundException {
 
                 super(node,
-                        new PerlProjectFilterNodeFactory(node),
+                        new PerlProjectWithExistingSourcesFilterNodeFactory(node),
                         new ProxyLookup(
                                 new Lookup[]{
                                     Lookups.singleton(project),
                                     node.getLookup()
                                 }));
-
                 this.project = project;
             }
 
@@ -270,8 +255,8 @@ public class PerlProject implements Project {
                     CommonProjectActions.renameProjectAction(),
                     CommonProjectActions.deleteProjectAction(),
                     CommonProjectActions.closeProjectAction(),
-                    CommonProjectActions.customizeProjectAction(), //Adding project properties
-                    SystemAction.get(FileSystemAction.class)
+                    CommonProjectActions.customizeProjectAction(),
+                    SystemAction.get(FileSystemAction.class) // Version Control is done from here
                 };
             }
 
@@ -289,7 +274,6 @@ public class PerlProject implements Project {
             public String getDisplayName() {
                 return project.getProjectDirectory().getName();
             }
-
         }
 
         @Override
@@ -297,10 +281,9 @@ public class PerlProject implements Project {
             //leave unimplemented for now
             return null;
         }
-
     }
-
-    private final class PerlProjectMoveOrRenameOperation implements MoveOrRenameOperationImplementation {
+    
+        private final class PerlProjectExistingSourcesMoveOrRenameOperation implements MoveOrRenameOperationImplementation {
 
         @Override
         public void notifyRenaming() throws IOException {
@@ -334,7 +317,7 @@ public class PerlProject implements Project {
 
     }
 
-    private final class PerlProjectCopyOperation implements CopyOperationImplementation {
+    private final class PerlProjectExistingSourcesCopyOperation implements CopyOperationImplementation {
 
         @Override
         public void notifyCopying() throws IOException {
@@ -358,11 +341,11 @@ public class PerlProject implements Project {
 
     }
 
-    private final class PerlProjectDeleteOperation implements DeleteOperationImplementation {
+    private final class PerlProjectExistingSourcesDeleteOperation implements DeleteOperationImplementation {
 
-        private final PerlProject project;
+        private final PerlProjectWithExistingSources project;
 
-        private PerlProjectDeleteOperation(PerlProject project) {
+        private PerlProjectExistingSourcesDeleteOperation(PerlProjectWithExistingSources project) {
             this.project = project;
         }
 

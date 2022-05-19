@@ -29,7 +29,7 @@ import org.openide.util.NbBundle.Messages;
 )
 @DataObject.Registration(
         mimeType = PerlConstants.MIME_TYPE,
-        iconBase = "org/language/perl/images/perl-file.png",
+        iconBase = "org/language/perl/file/perlfile.png",
         displayName = "#LBL_PerlFile_LOADER",
         position = 300
 )
