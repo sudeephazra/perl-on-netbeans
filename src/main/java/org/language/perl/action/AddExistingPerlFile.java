@@ -22,7 +22,7 @@ import org.openide.util.NbBundle.Messages;
     category = "File",
 id = "org.language.perl.action.AddExistingPerlFile")
 @ActionRegistration(
-    iconBase = "org/language/perl/images/perl-project-add-file.png",
+    iconBase = "org/language/perl/action/perl-project-add-file.png",
 displayName = "#CTL_AddExistingFile")
 @ActionReference(path = "Toolbars/File", position = 150)
 @Messages("CTL_AddExistingFile=Add Existing File(s)")
