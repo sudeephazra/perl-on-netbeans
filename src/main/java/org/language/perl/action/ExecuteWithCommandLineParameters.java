@@ -25,7 +25,7 @@ import org.openide.util.NbBundle.Messages;
         category = "Build",
         id = "org.netbeans.perl.file.ExecuteWithCommandLineParameters")
 @ActionRegistration(
-        iconBase = "org/language/perl/images/file-command-line.png",
+        iconBase = "org/language/perl/action/file-command-line.png",
         displayName = "#CTL_ExecuteWithCommandLineParameters")
 @ActionReferences({
     @ActionReference(path = "Toolbars/Build", position = 700),

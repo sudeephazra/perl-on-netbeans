@@ -26,7 +26,7 @@ import org.openide.util.NbBundle.Messages;
         category = "Build",
         id = "org.netbeans.perl.file.PerlTidyCodeFormatterAction")
 @ActionRegistration(
-        iconBase = "org/language/perl/images/file-code-format.gif",
+        iconBase = "org/language/perl/action/file-code-format.gif",
         displayName = "#CTL_PerlTidyCodeFormatterAction")
 @ActionReferences({
     @ActionReference(path = "Toolbars/Build", position = 450),

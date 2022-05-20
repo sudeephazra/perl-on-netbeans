@@ -23,7 +23,7 @@ import org.openide.util.NbBundle.Messages;
     category = "Build",
 id = "org.netbeans.perl.actions.PerlCriticCodeAnalysisAction")
 @ActionRegistration(
-    iconBase = "org/language/perl/images/file-code-analysis.png",
+    iconBase = "org/language/perl/action/file-code-analysis.png",
 displayName = "#CTL_PerlCriticCodeAnalysisAction")
 @ActionReferences({
     @ActionReference(path = "Toolbars/Build", position = 400),
