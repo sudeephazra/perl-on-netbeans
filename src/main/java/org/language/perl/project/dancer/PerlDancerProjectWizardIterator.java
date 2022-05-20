@@ -41,7 +41,7 @@ import org.xml.sax.InputSource;
 // TODO define position attribute
 @TemplateRegistration(folder = "Project/Perl", displayName = "#PerlDancerProject_displayName", 
         description = "PerlDancerProjectDescription.html", 
-        iconBase = "org/language/perl/project/dancer/PerDancerProject.png", 
+        iconBase = "org/language/perl/project/dancer/perl-dancer-project.png", 
         content = "PerlDancerProject.zip", position = 300)
 @Messages("PerlDancerProject_displayName=Perl Dancer Project")
 public class PerlDancerProjectWizardIterator implements WizardDescriptor.InstantiatingIterator<WizardDescriptor> {

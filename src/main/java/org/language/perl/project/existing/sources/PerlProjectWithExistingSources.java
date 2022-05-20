@@ -172,7 +172,7 @@ public class PerlProjectWithExistingSources implements Project {
     private final class PerlProjectExistingSourcesInfo implements ProjectInformation {
 
         @StaticResource()
-        public static final String PERL_ICON = "org/language/perl/project/existing/sources/perlproject.png";
+        public static final String PERL_ICON = "org/language/perl/project/existing/sources/perl-existing-sources-project.png";
 
         @Override
         public Icon getIcon() {
@@ -209,7 +209,7 @@ public class PerlProjectWithExistingSources implements Project {
     class PerlProjectExistingSourcesLogicalView implements LogicalViewProvider {
 
         @StaticResource()
-        public static final String PERL_ICON = "org/language/perl/project/existing/sources/perlproject.png";
+        public static final String PERL_ICON = "org/language/perl/project/existing/sources/perl-existing-sources-project.png";
         private final PerlProjectWithExistingSources project;
 
         public PerlProjectExistingSourcesLogicalView(PerlProjectWithExistingSources project) {

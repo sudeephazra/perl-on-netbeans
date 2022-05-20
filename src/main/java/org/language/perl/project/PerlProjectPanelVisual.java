@@ -20,7 +20,7 @@ public class PerlProjectPanelVisual extends JPanel implements DocumentListener {
 
     public static final String PROP_PROJECT_NAME = "projectName";
 
-    private PerlProjectWizardPanel panel;
+    private final PerlProjectWizardPanel panel;
 
     public PerlProjectPanelVisual(PerlProjectWizardPanel panel) {
         initComponents();
@@ -221,6 +221,7 @@ public class PerlProjectPanelVisual extends JPanel implements DocumentListener {
     }
 
     // Implementation of DocumentListener --------------------------------------
+    @Override
     public void changedUpdate(DocumentEvent e) {
         updateTexts(e);
         if (this.projectNameTextField.getDocument() == e.getDocument()) {
@@ -228,6 +229,7 @@ public class PerlProjectPanelVisual extends JPanel implements DocumentListener {
         }
     }
 
+    @Override
     public void insertUpdate(DocumentEvent e) {
         updateTexts(e);
         if (this.projectNameTextField.getDocument() == e.getDocument()) {
@@ -235,6 +237,7 @@ public class PerlProjectPanelVisual extends JPanel implements DocumentListener {
         }
     }
 
+    @Override
     public void removeUpdate(DocumentEvent e) {
         updateTexts(e);
         if (this.projectNameTextField.getDocument() == e.getDocument()) {

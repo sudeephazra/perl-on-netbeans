@@ -6,7 +6,6 @@
 package org.language.perl.project;
 
 import javax.swing.JComponent;
-import javax.swing.JPanel;
 import org.netbeans.spi.project.ui.support.ProjectCustomizer;
 import org.openide.util.Lookup;
 import org.openide.util.NbBundle;

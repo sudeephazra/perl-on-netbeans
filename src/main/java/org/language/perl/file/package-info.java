@@ -5,9 +5,9 @@
 //@Messages(value = {"OptionsCategory_Name_PerlOnNetBeans=Perl On NetBeans", 
 //    "OptionsCategory_Keywords_PerlOnNetBeans=Perl On NetBeans"})
 
-package org.language.perl.file;
-
-import org.netbeans.api.templates.TemplateRegistration;
-import org.netbeans.spi.options.OptionsPanelController.ContainerRegistration;
-import org.openide.util.NbBundle.Messages;
-
+//package org.language.perl.file;
+//
+//import org.netbeans.api.templates.TemplateRegistration;
+//import org.netbeans.spi.options.OptionsPanelController.ContainerRegistration;
+//import org.openide.util.NbBundle.Messages;
+//

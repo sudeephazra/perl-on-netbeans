@@ -40,7 +40,7 @@ import org.xml.sax.InputSource;
 // TODO define position attribute
 @TemplateRegistration(folder = "Project/Perl", displayName = "#PerlProjectWithExistingSources_displayName", 
         description = "PerlProjectWithExistingSourcesDescription.html", 
-        iconBase = "org/language/perl/project/existing/sources/PerlProjectWithExistingSources.png", 
+        iconBase = "org/language/perl/project/existing/sources/perl-existing-sources-project.png", 
         content = "PerlProjectWithExistingSourcesProject.zip", position = 200)
 @Messages("PerlProjectWithExistingSources_displayName=Perl Project With Existing Sources")
 public class PerlProjectWithExistingSourcesWizardIterator implements WizardDescriptor.InstantiatingIterator<WizardDescriptor> {

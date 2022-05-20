@@ -182,8 +182,8 @@ public class PerlProject implements Project {
     //New Info class
     private final class PerlProjectInfo implements ProjectInformation {
 
-        @StaticResource()
-        public static final String PERL_ICON = "org/language/perl/project/perlproject.png";
+        @StaticResource        
+        public static final String PERL_ICON = "org/language/perl/project/perl-project.png";
 
         @Override
         public Icon getIcon() {
@@ -220,8 +220,8 @@ public class PerlProject implements Project {
     //Logical view class
     class PerlProjectLogicalView implements LogicalViewProvider {
 
-        @StaticResource()
-        public static final String PERL_ICON = "org/language/perl/project/perlproject.png";
+        @StaticResource
+        public static final String PERL_ICON = "org/language/perl/project/perl-project.png";
 
         private final PerlProject project;
 

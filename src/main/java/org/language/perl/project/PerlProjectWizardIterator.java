@@ -42,7 +42,7 @@ import org.xml.sax.SAXException;
 // TODO define position attribute
 @TemplateRegistration(folder = "Project/Perl", 
         displayName = "#PerlProject_displayName", description = "PerlProjectDescription.html", 
-        iconBase = "org/language/perl/project/PerlProject.png", 
+        iconBase = "org/language/perl/project/perl-project.png", 
         content = "PerlProjectProject.zip", position = 100)
 @Messages("PerlProject_displayName=Perl Project")
 public class PerlProjectWizardIterator implements WizardDescriptor.InstantiatingIterator <WizardDescriptor> {

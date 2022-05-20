@@ -29,9 +29,9 @@ import org.openide.util.NbBundle.Messages;
 )
 @DataObject.Registration(
         mimeType = PerlConstants.MIME_TYPE,
-        iconBase = "org/language/perl/images/perl-module.png",
+        iconBase = "org/language/perl/module/perl-module.png",
         displayName = "#LBL_PerlModule_LOADER",
-        position = 300
+        position = 200
 )
 @ActionReferences({
     @ActionReference(
