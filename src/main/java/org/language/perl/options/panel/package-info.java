@@ -11,7 +11,7 @@
         )
 @ContainerRegistration(id = "PerlOnNetBeans", 
         categoryName = "#OptionsCategory_Name_PerlOnNetBeans", 
-        iconBase = "org/language/perl/images/perl-options-panel.png", 
+        iconBase = "org/language/perl/options/panel/perl-options-panel.png", 
         keywords = "#OptionsCategory_Keywords_PerlOnNetBeans", 
         keywordsCategory = "PerlOnNetBeans")
 @Messages(value = {"OptionsCategory_Name_PerlOnNetBeans=Perl On NetBeans", 

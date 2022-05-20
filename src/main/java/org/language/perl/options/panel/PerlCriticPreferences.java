@@ -40,14 +40,14 @@ public class PerlCriticPreferences {
         File newFile = new File(path);
         switch (Utilities.getOperatingSystem()) {
             case Utilities.OS_WIN_OTHER:
-                executableFolder = (newFile.getAbsolutePath() + File.separator + "utils").toString();
+                executableFolder = (newFile.getAbsolutePath() + File.separator + "utils");
                 break;
             //Not supporting Mac OS yet
             case Utilities.OS_MAC:
                 executableFolder = null; //Pending
                 break;
             case Utilities.OS_LINUX:
-                executableFolder = (newFile.getParent() + File.separator + "utils").toString() ; 
+                executableFolder = (newFile.getParent() + File.separator + "utils") ; 
                 break;
             default:
                 executableFolder = "";
