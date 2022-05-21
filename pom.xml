@@ -4,9 +4,13 @@
     <artifactId>perl-on-netbeans</artifactId>
     <version>0.5-SNAPSHOT</version>
     <packaging>nbm</packaging>
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+        </license>
+    </licenses>
     <build>
-        
-
         <plugins>
             <plugin>
                 <groupId>org.apache.netbeans.utilities</groupId>
@@ -17,7 +21,17 @@
                     <publicPackages>
                         <publicPackage>org.language.perl.*</publicPackage>
                     </publicPackages>
+                    <nbmResources>
+                        <nbmResource>
+                            <directory>src/main/release</directory>
+                            <targetPath>./</targetPath>
+                            <includes>
+                                <include>**/*.*</include>
+                            </includes>
+                        </nbmResource>
+                    </nbmResources>
                 </configuration>
+                
             </plugin>
             <plugin> <!-- required since nbm-plugin 3.0-->
                 <groupId>org.apache.maven.plugins</groupId>

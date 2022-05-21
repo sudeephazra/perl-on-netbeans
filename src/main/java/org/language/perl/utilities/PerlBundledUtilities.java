@@ -6,6 +6,9 @@
 package org.language.perl.utilities;
 
 import java.io.File;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import org.openide.modules.InstalledFileLocator;
 
 /**
@@ -14,31 +17,37 @@ import org.openide.modules.InstalledFileLocator;
  */
 public class PerlBundledUtilities {
     
-    
-    public String getBundledPerlAutoflushPath() {
+    private static final Logger logger = Logger.getLogger(PerlBundledUtilities.class.getName());
 
-        File perlAutoflush = InstalledFileLocator.getDefault().locate(
-                "autoflush/Autoflush.pod",
-                "org.languages.perl",
+    public String getBundledPerlAutoflushPath() {
+        File perlAutoflush = null;
+        String flushFolder = null;
+        try {
+            perlAutoflush = InstalledFileLocator.getDefault().locate(
+                "org/language/perl/autoflush/Autoflush.pod",
+                null,
                 false);
-        String flushFolder = perlAutoflush.getParent();
+            flushFolder = perlAutoflush.getParent();
+        } catch (Exception ex) {
+            logger.log(Level.SEVERE, "Unable to get Autoflush module");
+        }
         return flushFolder;
     }
-    
+
     public String getBundledPerlBarewordsFile() {
-        
+
         File perl_barewords = InstalledFileLocator.getDefault().locate(
-                "perl_barewords.txt",
-                "org.language.perl.completion",
+                "org/language/perl/perl_barewords.txt",
+                null,
                 false);
         return perl_barewords.getAbsolutePath();
     }
-    
+
     public String getBundledPerlTidyPath() {
 
         File perlTidy = InstalledFileLocator.getDefault().locate(
-                "perltidy/perltidy",
-                "org.languages.perl",
+                "org/language/perl/perltidy/perltidy",
+                null,
                 false);
         String executableFolder = perlTidy.getParent();
         return executableFolder;
