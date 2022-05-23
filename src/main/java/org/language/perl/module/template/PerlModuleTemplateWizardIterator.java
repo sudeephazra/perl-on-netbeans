@@ -32,9 +32,13 @@ import org.openide.loaders.DataObject;
 import org.openide.util.NbBundle.Messages;
 
 // TODO the following section is disabled to use the existing file menu
-@TemplateRegistration(folder = "Perl", displayName = "#PerlModuleTemplateWizardIterator_displayName", 
-        iconBase = "org/language/perl/images/perl-module.png", description = "perlModuleTemplate.html",
-        scriptEngine = "freemarker", content = "PerlModuleTemplate.pm")
+@TemplateRegistration(
+        folder = "Perl", 
+        displayName = "#PerlModuleTemplateWizardIterator_displayName", 
+        iconBase = "org/language/perl/module/perl-module.png", 
+        description = "perlModuleTemplate.html",
+        scriptEngine = "freemarker", 
+        content = "PerlModuleTemplate.pm")
 @Messages("PerlModuleTemplateWizardIterator_displayName=New Perl Module")
 // TODO the above section is disabled to use the existing file menu
 
