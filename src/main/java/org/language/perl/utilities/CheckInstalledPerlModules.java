@@ -53,11 +53,11 @@ public class CheckInstalledPerlModules {
 
     public boolean isPerlInstalled() throws IOException {
         if ((SystemUtils.IS_OS_LINUX || SystemUtils.IS_OS_MAC) && !isPerlExecutableOnLinuxMac()) {
-            JOptionPane.showMessageDialog(null, "Perl not installed. Please install Perl and try again.");
+            JOptionPane.showMessageDialog(null, PerlConstants.MSG_PERL_NOT_INSTALLED, "Error", JOptionPane.ERROR_MESSAGE);
             return false;
         }
         if (SystemUtils.IS_OS_WINDOWS && !isPerlExecutableOnWindows()) {
-            JOptionPane.showMessageDialog(null, "Perl not installed. Please install Perl and try again.");
+            JOptionPane.showMessageDialog(null, PerlConstants.MSG_PERL_NOT_INSTALLED, "Error", JOptionPane.ERROR_MESSAGE);
             return false;
         }
         return true;

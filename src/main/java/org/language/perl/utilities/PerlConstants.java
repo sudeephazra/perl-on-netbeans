@@ -65,5 +65,5 @@ public final class PerlConstants {
     public static final String PERL_CODE_EXECUTION_OUTPUT_WINDOW_TITLE = " (Source Code Execution)";
     
     
-    
+    public static final String MSG_PERL_NOT_INSTALLED = "Perl not installed. Please install Perl and try again.";
 }
