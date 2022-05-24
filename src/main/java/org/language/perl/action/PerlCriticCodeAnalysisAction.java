@@ -54,6 +54,27 @@ public final class PerlCriticCodeAnalysisAction implements ActionListener {
         GeneralPanelPreferences perlPreferences = new GeneralPanelPreferences();
         String perlCustomBinary = perlPreferences.getPerlCustomBinary();
         String perlLibrary = perlPreferences.getPerlCustomLibrary();
+
+        CheckInstalledPerlModules checkModules = new CheckInstalledPerlModules();
+        
+        PerlExecution myExecution = new PerlExecution();
+        myExecution.setRedirectError(true);
+        myExecution.setWorkingDirectory(file.getParent());
+        myExecution.setDisplayName(file.getName() + PerlConstants.PERL_CODE_ANALYSIS_OUTPUT_WINDOW_TITLE);
+        if (perlCustomBinary.equals("")) {
+            myExecution.setCommand(PerlConstants.PERL_DEFAULT);
+            boolean isPerlInstalled = false;
+            try {
+                isPerlInstalled = checkModules.isPerlInstalled();
+            } catch (IOException ex) {
+                Exceptions.printStackTrace(ex);
+            }
+            if (!isPerlInstalled) {
+                return;
+            }
+        } else {
+            myExecution.setCommand(perlCustomBinary);
+        }
         
         PerlCriticPreferences criticPref = new PerlCriticPreferences();
         String perlCriticBinary = criticPref.getPerlCriticBinary();
@@ -61,13 +82,8 @@ public final class PerlCriticCodeAnalysisAction implements ActionListener {
         String perlCriticForce = criticPref.getPerlCriticForce();
         String perlCriticTheme = criticPref.getPerlCriticTheme();
         
-        PerlExecution myExecution = new PerlExecution();
-        myExecution.setRedirectError(true);
-        myExecution.setWorkingDirectory(file.getParent().toString());
-        myExecution.setDisplayName(file.getName() + PerlConstants.PERL_CODE_ANALYSIS_OUTPUT_WINDOW_TITLE);
         if (perlCriticBinary.equals("")) {
             //Check if the module is installed
-            CheckInstalledPerlModules checkModules = new CheckInstalledPerlModules();
             if (checkModules.isPerlCriticInstalled() == false) {
                 JOptionPane.showMessageDialog(null, "Code Analysis not available. Please install Perl::Critic or use the latest version of Perl.");
                 return;

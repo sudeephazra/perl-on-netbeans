@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.IOException;
 import org.language.perl.file.PerlFileDataObject;
 import org.language.perl.options.panel.GeneralPanelPreferences;
+import org.language.perl.utilities.CheckInstalledPerlModules;
 import org.language.perl.utilities.PerlConstants;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
@@ -100,13 +101,23 @@ public final class SyntaxCheckAction implements ActionListener {
         String perlCustomBinary = perlPreferences.getPerlCustomBinary();
         String perlLibrary = perlPreferences.getPerlCustomLibrary();
         
+        CheckInstalledPerlModules checkModules = new CheckInstalledPerlModules();
+        
         PerlExecution myExecution = new PerlExecution();
         myExecution.setRedirectError(true);
-        myExecution.setWorkingDirectory(file.getParent().toString());
+        myExecution.setWorkingDirectory(file.getParent());
         myExecution.setDisplayName(file.getName() + " (Syntax Checking)");
-        if (perlCustomBinary.equals(""))
-        {
+        if (perlCustomBinary.equals("")) {
             myExecution.setCommand(PerlConstants.PERL_DEFAULT);
+            boolean isPerlInstalled = false;
+            try {
+                isPerlInstalled = checkModules.isPerlInstalled();
+            } catch (IOException ex) {
+                Exceptions.printStackTrace(ex);
+            }
+            if (!isPerlInstalled) {
+                return;
+            }
         } else {
             myExecution.setCommand(perlCustomBinary);
         }

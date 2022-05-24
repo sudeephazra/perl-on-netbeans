@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 import org.language.perl.file.PerlFileDataObject;
 import org.language.perl.options.panel.GeneralPanelPreferences;
 import org.language.perl.options.panel.PerlTidyPreferences;
+import org.language.perl.utilities.CheckInstalledPerlModules;
 import org.language.perl.utilities.PerlConstants;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
@@ -54,11 +55,32 @@ public class PerlTidyCodeFormatterAction implements ActionListener {
 
         File file = FileUtil.toFile(context.getPrimaryFile());
         String fileName = file.getAbsolutePath();
-        
+
         GeneralPanelPreferences perlPreferences = new GeneralPanelPreferences();
         String perlCustomBinary = perlPreferences.getPerlCustomBinary();
         String perlLibrary = perlPreferences.getPerlCustomLibrary();
         
+        CheckInstalledPerlModules checkModules = new CheckInstalledPerlModules();
+
+        PerlExecution myExecution = new PerlExecution();
+        myExecution.setRedirectError(true);
+        myExecution.setWorkingDirectory(file.getParent());
+        myExecution.setDisplayName(file.getName() + PerlConstants.PERL_CODE_FORMATING_OUTPUT_WINDOW_TITLE);
+        if (perlCustomBinary.equals("")) {
+            myExecution.setCommand(PerlConstants.PERL_DEFAULT);
+            boolean isPerlInstalled = false;
+            try {
+                isPerlInstalled = checkModules.isPerlInstalled();
+            } catch (IOException ex) {
+                Exceptions.printStackTrace(ex);
+            }
+            if (!isPerlInstalled) {
+                return;
+            }
+        } else {
+            myExecution.setCommand(perlCustomBinary);
+        }
+
         PerlTidyPreferences tidyPref = new PerlTidyPreferences();
         String perlTidyBinary = tidyPref.getPerlTidyBinary();
         String perlTidyColumnIndentation = tidyPref.getPerlTidyColumnIndentation();
@@ -74,23 +96,18 @@ public class PerlTidyCodeFormatterAction implements ActionListener {
         String perlTidyCSSFile = tidyPref.getPerlTidyCSSFile();
         String perlCustomHTMLOutputFolder = tidyPref.getPerlTidyCustomHTMLOutputFolder();
         String perlTidyAdditionalParameters = tidyPref.getPerlTidyAdditionalParameters();
-        
-        PerlExecution myExecution = new PerlExecution();
-        myExecution.setRedirectError(true);
-        myExecution.setWorkingDirectory(file.getParent());
-        myExecution.setDisplayName(file.getName() + PerlConstants.PERL_CODE_FORMATING_OUTPUT_WINDOW_TITLE);
+
         if (perlTidyBinary.equals("")) {
+            if (checkModules.isPerlTidyInstalled() == false) {
+                JOptionPane.showMessageDialog(null, "Code Formatting not available. Please install Perl::Tidy or use the latest version of Perl.");
+                return;
+            }
             File bundledTidy = new File(tidyPref.getBundledPerlTidyPath());
             if (!bundledTidy.exists()) {
                 JOptionPane.showMessageDialog(null, "Code Formatting not supported. Please refer to the documentation.");
                 return;
             }
-            myExecution.setWorkingDirectory(bundledTidy.getAbsolutePath());
-            if (perlCustomBinary.equals("")) {
-                myExecution.setCommand(PerlConstants.PERL_DEFAULT);
-            } else {
-                myExecution.setCommand(perlCustomBinary);
-            }
+
             if (!perlLibrary.equals("")) {
                 myExecution.setCommandArgs(perlLibrary);
             }

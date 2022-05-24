@@ -7,6 +7,7 @@ import java.io.IOException;
 import javax.swing.JOptionPane;
 import org.language.perl.file.PerlFileDataObject;
 import org.language.perl.options.panel.GeneralPanelPreferences;
+import org.language.perl.utilities.CheckInstalledPerlModules;
 import org.language.perl.utilities.PerlConstants;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
@@ -50,6 +51,35 @@ public class ExecuteWithCommandLineParameters implements ActionListener {
                 Exceptions.printStackTrace(ex);
             }
         }
+        
+        File file = FileUtil.toFile(context.getPrimaryFile());
+        String fileName = file.getAbsolutePath();
+        
+        GeneralPanelPreferences perlPreferences = new GeneralPanelPreferences();
+        String perlCustomBinary = perlPreferences.getPerlCustomBinary();
+        String perlLibrary = perlPreferences.getPerlCustomLibrary();
+        
+        CheckInstalledPerlModules checkModules = new CheckInstalledPerlModules();
+        
+        PerlExecution myExecution = new PerlExecution();
+        myExecution.setRedirectError(true);
+        myExecution.setWorkingDirectory(file.getParent());
+        myExecution.setDisplayName(file.getName() + " (Execute with command line parameters)");
+        if (perlCustomBinary.equals("")) {
+            myExecution.setCommand(PerlConstants.PERL_DEFAULT);
+            boolean isPerlInstalled = false;
+            try {
+                isPerlInstalled = checkModules.isPerlInstalled();
+            } catch (IOException ex) {
+                Exceptions.printStackTrace(ex);
+            }
+            if (!isPerlInstalled) {
+                return;
+            }
+        } else {
+            myExecution.setCommand(perlCustomBinary);
+        }
+        
         //Display pop-up here to get the command line options
         String commandLineParamaters;
         commandLineParamaters = JOptionPane.showInputDialog(null, "Command Line Parameters: ",
@@ -57,23 +87,7 @@ public class ExecuteWithCommandLineParameters implements ActionListener {
         if (commandLineParamaters == null) {
             return;
         }
-        File file = FileUtil.toFile(context.getPrimaryFile());
-        String fileName = file.getAbsolutePath();
-
-        GeneralPanelPreferences perlPreferences = new GeneralPanelPreferences();
-        String perlCustomBinary = perlPreferences.getPerlCustomBinary();
-        String perlLibrary = perlPreferences.getPerlCustomLibrary();
         
-        PerlExecution myExecution = new PerlExecution();
-        myExecution.setRedirectError(true);
-        myExecution.setWorkingDirectory(file.getParent().toString());
-        myExecution.setDisplayName(file.getName() + " (Execute with command line parameters)");
-        if (perlCustomBinary.equals("")) {
-            myExecution.setCommand(PerlConstants.PERL_DEFAULT);
-        } else {
-            myExecution.setCommand(perlCustomBinary);
-        }
-
         myExecution.setCommandArgs("-w");
         //Add perl library location here
         if (!perlLibrary.equals("")) {

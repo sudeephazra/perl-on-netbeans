@@ -6,14 +6,18 @@ package org.language.perl.action;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import javax.swing.JOptionPane;
 import javax.swing.text.JTextComponent;
 import org.language.perl.file.PerlFileDataObject;
+import org.language.perl.options.panel.GeneralPanelPreferences;
+import org.language.perl.utilities.CheckInstalledPerlModules;
 import org.language.perl.utilities.PerlConstants;
 import org.netbeans.api.editor.EditorRegistry;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.awt.ActionRegistration;
+import org.openide.util.Exceptions;
 import org.openide.util.NbBundle.Messages;
 import org.openide.util.Utilities;
 
@@ -37,6 +41,31 @@ public final class perlDocAction implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ev) {
+
+        GeneralPanelPreferences perlPreferences = new GeneralPanelPreferences();
+        String perlCustomBinary = perlPreferences.getPerlCustomBinary();
+        //String perlLibrary = perlPreferences.getPerlCustomLibrary();
+        
+        CheckInstalledPerlModules checkModules = new CheckInstalledPerlModules();
+        
+        PerlExecution myExecution = new PerlExecution();
+        myExecution.setRedirectError(true);
+        myExecution.setWorkingDirectory(System.getProperty("user.dir"));
+        myExecution.setDisplayName("Perl DOC Help");
+        if (perlCustomBinary.equals("")) {
+            myExecution.setCommand(PerlConstants.PERL_DEFAULT);
+            boolean isPerlInstalled = false;
+            try {
+                isPerlInstalled = checkModules.isPerlInstalled();
+            } catch (IOException ex) {
+                Exceptions.printStackTrace(ex);
+            }
+            if (!isPerlInstalled) {
+                return;
+            }
+        } else {
+            myExecution.setCommand(perlCustomBinary);
+        }
         
         String selectedText = "";
         JTextComponent editor = EditorRegistry.lastFocusedComponent();
@@ -54,10 +83,6 @@ public final class perlDocAction implements ActionListener {
             }
         }
         
-        PerlExecution myExecution = new PerlExecution();
-        myExecution.setRedirectError(true);
-        myExecution.setWorkingDirectory(System.getProperty("user.dir"));
-        myExecution.setDisplayName("Perl DOC Help");
         myExecution.setCommand(getPerlDoc());
         myExecution.setCommandArgs(" -f");
         myExecution.setCommandArgs(myExecution.getCommandArgs() + selectedText);

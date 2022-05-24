@@ -20,7 +20,6 @@ import org.netbeans.api.extexecution.ExecutionDescriptor;
 import org.netbeans.api.extexecution.ExecutionService;
 import org.netbeans.api.extexecution.base.ProcessBuilder;
 import org.netbeans.api.extexecution.base.input.InputProcessor;
-//import org.netbeans.api.extexecution.base.input.InputProcessor;
 import org.openide.util.Exceptions;
 
 @SuppressWarnings("deprecation")

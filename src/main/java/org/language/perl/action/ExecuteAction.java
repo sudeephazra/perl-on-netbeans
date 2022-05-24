@@ -19,6 +19,7 @@ import org.openide.filesystems.FileObject;
 import org.openide.filesystems.FileUtil;
 import org.openide.util.Exceptions;
 import org.openide.util.NbBundle.Messages;
+import org.language.perl.utilities.CheckInstalledPerlModules;
 
 @ActionID(
         category = "File",
@@ -63,6 +64,16 @@ public final class ExecuteAction implements ActionListener {
         myExecution.setDisplayName(file.getName() + " (Execute)");
         if (perlCustomBinary.equals("")) {
             myExecution.setCommand(PerlConstants.PERL_DEFAULT);
+            CheckInstalledPerlModules checkModules = new CheckInstalledPerlModules();
+            boolean isPerlInstalled = false;
+            try {
+                isPerlInstalled = checkModules.isPerlInstalled();
+            } catch (IOException ex) {
+                Exceptions.printStackTrace(ex);
+            }
+            if (!isPerlInstalled) {
+                return;
+            }
         } else {
             myExecution.setCommand(perlCustomBinary);
         }
@@ -83,7 +94,8 @@ public final class ExecuteAction implements ActionListener {
         myExecution.run();
 
     }
-
+    
+    // This block of code is executed when a file is executed
     public void runPerlFile() {
         if (context.isModified() == true) {
             SaveCookie sc = context.getLookup().lookup(SaveCookie.class);
@@ -107,6 +119,16 @@ public final class ExecuteAction implements ActionListener {
         myExecution.setDisplayName(file.getName() + " (Execute)");
         if (perlCustomBinary.equals("")) {
             myExecution.setCommand(PerlConstants.PERL_DEFAULT);
+            CheckInstalledPerlModules checkModules = new CheckInstalledPerlModules();
+            boolean isPerlInstalled = false;
+            try {
+                isPerlInstalled = checkModules.isPerlInstalled();
+            } catch (IOException ex) {
+                Exceptions.printStackTrace(ex);
+            }
+            if (!isPerlInstalled) {
+                return;
+            }
         } else {
             myExecution.setCommand(perlCustomBinary);
         }
