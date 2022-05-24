@@ -12,6 +12,7 @@ import javax.swing.JFileChooser;
 import org.netbeans.api.project.Project;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
+import org.openide.awt.ActionReferences;
 import org.openide.awt.ActionRegistration;
 import org.openide.filesystems.FileObject;
 import org.openide.filesystems.FileUtil;
@@ -19,12 +20,17 @@ import org.openide.util.Exceptions;
 import org.openide.util.NbBundle.Messages;
 
 @ActionID(
-    category = "File",
-id = "org.language.perl.action.AddExistingPerlFile")
+        category = "File",
+        id = "org.language.perl.action.AddExistingPerlFile")
 @ActionRegistration(
-    iconBase = "org/language/perl/action/perl-project-add-file.png",
-displayName = "#CTL_AddExistingFile")
-@ActionReference(path = "Toolbars/File", position = 150)
+        iconBase = "org/language/perl/action/perl-project-add-file.png",
+        displayName = "#CTL_AddExistingFile")
+@ActionReferences({
+    @ActionReference(path = "Toolbars/File", position = 150),
+    @ActionReference(path = "Projects/org-language-perl-project/Actions", position = 1000),
+    @ActionReference(path = "Projects/org-language-perl-project-existing-sources/Actions", position = 1000),
+    @ActionReference(path = "Projects/org-language-perl-project-dancer/Actions", position = 1000)
+})
 @Messages("CTL_AddExistingFile=Add Existing File(s)")
 public final class AddExistingPerlFile implements ActionListener {
 
@@ -41,13 +47,12 @@ public final class AddExistingPerlFile implements ActionListener {
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
         fileChooser.setMultiSelectionEnabled(true);
-        
+
         int returnVal;
         returnVal = fileChooser.showOpenDialog(null);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             File[] files = fileChooser.getSelectedFiles();
-            for (File file : files)
-            {
+            for (File file : files) {
                 FileObject source = FileUtil.toFileObject(file);
                 FileObject dest = FileUtil.toFileObject(new File(newLocation));
                 try {
