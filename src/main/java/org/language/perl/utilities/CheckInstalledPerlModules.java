@@ -1,10 +1,67 @@
 package org.language.perl.utilities;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
+import javax.swing.JOptionPane;
+import org.apache.commons.lang.SystemUtils;
 import org.language.perl.options.panel.GeneralPanelPreferences;
 
 public class CheckInstalledPerlModules {
+
+    private static boolean isPerlExecutableOnLinuxMac() throws IOException {
+        String line;
+        ProcessBuilder builder;
+        BufferedReader reader;
+        Process process;
+
+        builder = new ProcessBuilder("/usr/bin/which", "perl");
+        builder.redirectErrorStream(true);
+        process = builder.start();
+        reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+        try {
+            process.waitFor();
+        } catch (InterruptedException e) {
+            System.out.println(e.getMessage());
+        }
+        while ((line = reader.readLine()) != null) {
+            break;
+        }
+        return (line != null && !line.isEmpty());
+    }
+
+    private static boolean isPerlExecutableOnWindows() throws IOException {
+        String line;
+        ProcessBuilder builder;
+        BufferedReader reader;
+        Process process;
+
+        builder = new ProcessBuilder("cmd", "/c", "perl");
+        builder.redirectErrorStream(true);
+        process = builder.start();
+        reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+        try {
+            process.waitFor();
+        } catch (InterruptedException e) {
+            System.out.println(e.getMessage());
+        }
+        while ((line = reader.readLine()) != null) {
+            break;
+        }
+        return (line != null && !line.contains("is not recognized as an internal or external command"));
+    }
+
+    public boolean isPerlInstalled() throws IOException {
+        if ((SystemUtils.IS_OS_LINUX || SystemUtils.IS_OS_MAC) && !isPerlExecutableOnLinuxMac()) {
+            JOptionPane.showMessageDialog(null, "Perl not installed. Please install Perl and try again.");
+            return false;
+        }
+        if (SystemUtils.IS_OS_WINDOWS && !isPerlExecutableOnWindows()) {
+            JOptionPane.showMessageDialog(null, "Perl not installed. Please install Perl and try again.");
+            return false;
+        }
+        return true;
+    }
 
     public String getCurrentPerlExecutable() {
         GeneralPanelPreferences perlPreferences = new GeneralPanelPreferences();
