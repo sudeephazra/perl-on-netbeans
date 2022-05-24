@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import javax.swing.JOptionPane;
+import org.apache.commons.lang.SystemUtils;
 import org.language.perl.file.PerlFileDataObject;
 import org.language.perl.options.panel.GeneralPanelPreferences;
 import org.language.perl.options.panel.PerlTidyPreferences;
@@ -87,18 +88,24 @@ public final class exportToHTMLAction implements ActionListener {
         } else {
             myExecution.setCommand(perlCustomBinary);
         }
-        if (perlTidyBinary.equals("")) {
-            File bundledTidy = new File(tidyPref.getBundledPerlTidyPath());
-            if (!bundledTidy.exists()) {
-                JOptionPane.showMessageDialog(null, "Code Formatting not supported. Please refer to the documentation.");
-                return;
-            }
-            myExecution.setWorkingDirectory(bundledTidy.getAbsolutePath());
-
-            if (!perlLibrary.equals("")) {
+        if (!perlLibrary.equals("")) {
                 myExecution.setCommandArgs(perlLibrary);
             }
-            myExecution.setCommandArgs(PerlConstants.PERL_TIDY_BINARY);
+        if (perlTidyBinary.equals("")) {
+//            File bundledTidy = new File(tidyPref.getBundledPerlTidyPath());
+//            if (!bundledTidy.exists()) {
+//                JOptionPane.showMessageDialog(null, "Code Formatting not supported. Please refer to the documentation.");
+//                return;
+//            }
+//            myExecution.setWorkingDirectory(bundledTidy.getAbsolutePath());
+
+            
+            if (SystemUtils.IS_OS_LINUX || SystemUtils.IS_OS_MAC) {
+                myExecution.setCommand(PerlConstants.PERL_TIDY_BINARY_LINUX_MAC);
+            }
+            if (SystemUtils.IS_OS_WINDOWS) {
+                myExecution.setCommand(PerlConstants.PERL_TIDY_BINARY_WIN);
+            }
         } else {
             myExecution.setCommand(perlTidyBinary);
             File tidy = new File(myExecution.getCommand());

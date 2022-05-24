@@ -36,7 +36,7 @@ public class CheckInstalledPerlModules {
         BufferedReader reader;
         Process process;
 
-        builder = new ProcessBuilder("cmd", "/c", "perl");
+        builder = new ProcessBuilder("cmd", "/c", "perl", "-v");
         builder.redirectErrorStream(true);
         process = builder.start();
         reader = new BufferedReader(new InputStreamReader(process.getInputStream()));

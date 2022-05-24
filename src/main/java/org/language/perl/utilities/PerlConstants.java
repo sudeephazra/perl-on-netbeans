@@ -42,7 +42,8 @@ public final class PerlConstants {
     public static final String DANCER2_DEFAULT_URL = "http://localhost:5000/";
         
     //Perl Tidy Parameters
-    public static final String PERL_TIDY_BINARY = "perltidy";
+    public static final String PERL_TIDY_BINARY_LINUX_MAC = "perltidy";
+    public static final String PERL_TIDY_BINARY_WIN = "perltidy.bat";
     public static final String PERL_TIDY_BACKUP_PARAM = " -b";
     public static final String PERL_TIDY_INDENT_PARAM = " -i=";
     public static final String PERL_TIDY_DEFAULT_INDENT_PARAM = " -i=4";
@@ -66,4 +67,6 @@ public final class PerlConstants {
     
     
     public static final String MSG_PERL_NOT_INSTALLED = "Perl not installed. Please install Perl and try again.";
+    public static final String MSG_PERL_TIDY_NOT_INSTALLED = "Perl::Tidy not installed and not configured in the Options panel. Please install/configure and try again.";
+    public static final String MSG_PERL_TIDY_NOT_CONFIGURED = "PerlTidy binary in the Options panel is invalid. Please install/configure and try again.";
 }

@@ -22,6 +22,7 @@ import org.openide.cookies.SaveCookie;
 import org.openide.filesystems.FileUtil;
 import org.openide.util.Exceptions;
 import org.openide.util.NbBundle.Messages;
+import org.apache.commons.lang.SystemUtils;
 
 @ActionID(
         category = "Build",
@@ -59,7 +60,7 @@ public class PerlTidyCodeFormatterAction implements ActionListener {
         GeneralPanelPreferences perlPreferences = new GeneralPanelPreferences();
         String perlCustomBinary = perlPreferences.getPerlCustomBinary();
         String perlLibrary = perlPreferences.getPerlCustomLibrary();
-        
+
         CheckInstalledPerlModules checkModules = new CheckInstalledPerlModules();
 
         PerlExecution myExecution = new PerlExecution();
@@ -98,27 +99,44 @@ public class PerlTidyCodeFormatterAction implements ActionListener {
         String perlTidyAdditionalParameters = tidyPref.getPerlTidyAdditionalParameters();
 
         if (perlTidyBinary.equals("")) {
-            if (checkModules.isPerlTidyInstalled() == false) {
-                JOptionPane.showMessageDialog(null, "Code Formatting not available. Please install Perl::Tidy or use the latest version of Perl.");
+//            if (checkModules.isPerlTidyInstalled() == false) {
+//                File bundledTidy = new File(tidyPref.getBundledPerlTidyPath());
+//                if (!bundledTidy.exists()) {
+//                    JOptionPane.showMessageDialog(null, "Code Formatting not supported. Please refer to the documentation.");
+//                    return;
+//                } else {
+//                    myExecution.setCommand(bundledTidy.getAbsolutePath());
+//                }
+//            } else {
+//                myExecution.setCommand(PerlConstants.PERL_TIDY_BINARY);
+//            }
+//            File bundledTidy = new File(tidyPref.getBundledPerlTidyPath());
+//            if (!bundledTidy.exists()) {
+//                JOptionPane.showMessageDialog(null, "Code Formatting not supported. Please refer to the documentation.");
+//                return;
+//            }
+            if (checkModules.isPerlTidyInstalled() == true) {
+                if (SystemUtils.IS_OS_LINUX || SystemUtils.IS_OS_MAC) {
+                    myExecution.setCommand(PerlConstants.PERL_TIDY_BINARY_LINUX_MAC);
+                }
+                if (SystemUtils.IS_OS_WINDOWS) {
+                    myExecution.setCommand(PerlConstants.PERL_TIDY_BINARY_WIN);
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, PerlConstants.MSG_PERL_TIDY_NOT_INSTALLED, "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            File bundledTidy = new File(tidyPref.getBundledPerlTidyPath());
-            if (!bundledTidy.exists()) {
-                JOptionPane.showMessageDialog(null, "Code Formatting not supported. Please refer to the documentation.");
-                return;
-            }
-
-            if (!perlLibrary.equals("")) {
-                myExecution.setCommandArgs(perlLibrary);
-            }
-            myExecution.setCommandArgs(PerlConstants.PERL_TIDY_BINARY);
         } else {
             myExecution.setCommand(perlTidyBinary);
             File tidy = new File(myExecution.getCommand());
             if (!tidy.exists()) {
-                JOptionPane.showMessageDialog(null, "Code Formatting not properly set. Please refer to the product documentation");
+                JOptionPane.showMessageDialog(null, PerlConstants.MSG_PERL_TIDY_NOT_CONFIGURED, "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
+        }
+
+        if (!perlLibrary.equals("")) {
+            myExecution.setCommandArgs(perlLibrary);
         }
 
         //The below option is always required --DO NOT REMOVE THIS SWITCH
