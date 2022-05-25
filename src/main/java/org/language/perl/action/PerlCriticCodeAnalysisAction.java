@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import javax.swing.JOptionPane;
+import org.apache.commons.lang.SystemUtils;
 import org.language.perl.file.PerlFileDataObject;
 import org.language.perl.options.panel.GeneralPanelPreferences;
 import org.language.perl.options.panel.PerlCriticPreferences;
@@ -85,15 +86,21 @@ public final class PerlCriticCodeAnalysisAction implements ActionListener {
         if (perlCriticBinary.equals("")) {
             //Check if the module is installed
             if (checkModules.isPerlCriticInstalled() == false) {
-                JOptionPane.showMessageDialog(null, "Code Analysis not available. Please install Perl::Critic or use the latest version of Perl.");
+                JOptionPane.showMessageDialog(null, PerlConstants.MSG_PERL_CRITIC_NOT_INSTALLED, "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            myExecution.setCommand(criticPref.getBundledPerlCritic());
+//            myExecution.setCommand(criticPref.getBundledPerlCritic());
+            if (SystemUtils.IS_OS_LINUX || SystemUtils.IS_OS_MAC) {
+                myExecution.setCommand(PerlConstants.PERL_CRITIC_LINUX_MAC);
+            }
+            if (SystemUtils.IS_OS_WINDOWS) {
+                myExecution.setCommand(PerlConstants.PERL_CRITIC_WIN);
+            }
         } else {
             myExecution.setCommand(perlCriticBinary);
             File critic = new File(myExecution.getCommand());
             if (!critic.exists()) {
-                JOptionPane.showMessageDialog(null, "Code Analysis binary cannot be found. Please check the executable location.");
+                JOptionPane.showMessageDialog(null, PerlConstants.MSG_PERL_CRITIC_NOT_INSTALLED, "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
             //Severity
