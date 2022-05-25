@@ -27,6 +27,7 @@ public class PerlProjectWithExistingSourcesWizardPanel implements WizardDescript
     public PerlProjectWithExistingSourcesWizardPanel() {
     }
 
+    @Override
     public Component getComponent() {
         if (component == null) {
             component = new PerlProjectWithExistingSourcesPanelVisual(this);

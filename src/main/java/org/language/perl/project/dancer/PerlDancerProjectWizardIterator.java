@@ -33,10 +33,12 @@ import org.openide.util.Exceptions;
 import org.openide.util.NbBundle;
 import org.openide.util.NbBundle.Messages;
 import org.openide.xml.XMLUtil;
+import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
 
 // TODO define position attribute
 @TemplateRegistration(folder = "Project/Perl", displayName = "#PerlDancerProject_displayName", 
@@ -183,7 +185,7 @@ public class PerlDancerProjectWizardIterator implements WizardDescriptor.Instant
     }
 
     private static void unZipFile(InputStream source, FileObject projectRoot) throws IOException {
-        try {
+        try (source) {
             ZipInputStream str = new ZipInputStream(source);
             ZipEntry entry;
             while ((entry = str.getNextEntry()) != null) {
@@ -199,17 +201,12 @@ public class PerlDancerProjectWizardIterator implements WizardDescriptor.Instant
                     }
                 }
             }
-        } finally {
-            source.close();
         }
     }
 
     private static void writeFile(ZipInputStream str, FileObject fo) throws IOException {
-        OutputStream out = fo.getOutputStream();
-        try {
+        try (OutputStream out = fo.getOutputStream()) {
             FileUtil.copy(str, out);
-        } finally {
-            out.close();
         }
     }
 
@@ -231,13 +228,10 @@ public class PerlDancerProjectWizardIterator implements WizardDescriptor.Instant
                     }
                 }
             }
-            OutputStream out = fo.getOutputStream();
-            try {
+            try (OutputStream out = fo.getOutputStream()) {
                 XMLUtil.write(doc, out, "UTF-8");
-            } finally {
-                out.close();
             }
-        } catch (Exception ex) {
+        } catch (IOException | DOMException | SAXException ex) {
             Exceptions.printStackTrace(ex);
             writeFile(str, fo);
         }

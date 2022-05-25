@@ -41,6 +41,7 @@ public final class ExecuteAction implements ActionListener {
     }
 
     @Override
+    // This block of code is not being used
     public void actionPerformed(ActionEvent ev) {
         if (context.isModified() == true) {
             SaveCookie sc = context.getLookup().lookup(SaveCookie.class);
