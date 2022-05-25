@@ -15,7 +15,7 @@ __Please note the supported version before downloading and installing the plugin
 ---  
 
 ## Getting Started (Pre-Requisites)
-- Download and install the plugin for the corresponding supported version of NetBeans from https://netbeans.apache.org/download/index.html
+- Download and install the plugin for the corresponding supported version of NetBeans from [https://netbeans.apache.org/download/index.html](https://github.com/sudeephazra/perl-on-netbeans/releases)
 - Download and install Strawberry Perl 5.32.1.1 from https://strawberryperl.com/ *(Perl::Tidy v20210111 is installed by default)*
 - Install Perl::Critic using the command *$> cpan install Perl::Critic*
 - Copy the files *"perlcritic"* and *"perlcritic.bat"* from *{PERL_INSTALLED_LOCATION}/perl/site/bin* to *{PERL_INSTALLED_LOCATION}/perl/bin*
