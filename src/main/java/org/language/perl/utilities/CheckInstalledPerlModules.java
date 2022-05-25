@@ -84,11 +84,27 @@ public class CheckInstalledPerlModules {
         String perlDancer2Location = perlPreferences.getPerlDancer2Location();
         String perlDancer2Script = "";
         if (perlDancer2Location.isEmpty()) {
-            perlDancer2Script = PerlConstants.PERL_DANCER2_SCRIPT;
+//            perlDancer2Script = PerlConstants.PERL_DANCER2_SCRIPT;
+            if (SystemUtils.IS_OS_LINUX || SystemUtils.IS_OS_MAC) {
+                perlDancer2Script = PerlConstants.PERL_DANCER2_LINUX_MAC;
+            }
+            if (SystemUtils.IS_OS_WINDOWS) {
+                perlDancer2Script = PerlConstants.PERL_DANCER2_WIN;
+            }
         } else {
             perlDancer2Script = perlDancer2Location
                     + PerlConstants.FILE_SEPARATOR
                     + PerlConstants.PERL_DANCER2_SCRIPT;
+            if (SystemUtils.IS_OS_LINUX || SystemUtils.IS_OS_MAC) {
+                perlDancer2Script = perlDancer2Location
+                    + PerlConstants.FILE_SEPARATOR
+                    + PerlConstants.PERL_DANCER2_LINUX_MAC;
+            }
+            if (SystemUtils.IS_OS_WINDOWS) {
+                perlDancer2Script = perlDancer2Location
+                    + PerlConstants.FILE_SEPARATOR
+                    + PerlConstants.PERL_DANCER2_WIN;
+            }
         }
         return perlDancer2Script;
     }
@@ -98,11 +114,22 @@ public class CheckInstalledPerlModules {
         String perlDancer2Location = perlPreferences.getPerlDancer2Location();
         String perlPlackScript = "";
         if (perlDancer2Location.isEmpty()) {
-            perlPlackScript = PerlConstants.PERL_DANCER2_PLACKUP;
+//            perlPlackScript = PerlConstants.PERL_DANCER2_PLACKUP;
+            if (SystemUtils.IS_OS_LINUX || SystemUtils.IS_OS_MAC) {
+                perlPlackScript = PerlConstants.PERL_DANCER2_PLACKUP_LINUX_MAC;
+            }
+            if (SystemUtils.IS_OS_WINDOWS) {
+                perlPlackScript = PerlConstants.PERL_DANCER2_PLACKUP_WIN;
+            }
         } else {
             perlPlackScript = perlDancer2Location
-                    + PerlConstants.FILE_SEPARATOR
-                    + PerlConstants.PERL_DANCER2_PLACKUP;
+                    + PerlConstants.FILE_SEPARATOR;
+            if (SystemUtils.IS_OS_LINUX || SystemUtils.IS_OS_MAC) {
+                perlPlackScript = perlPlackScript + PerlConstants.PERL_DANCER2_PLACKUP_LINUX_MAC;
+            }
+            if (SystemUtils.IS_OS_WINDOWS) {
+                perlPlackScript = perlPlackScript + PerlConstants.PERL_DANCER2_PLACKUP_WIN;
+            }
         }
         return perlPlackScript;
     }
@@ -119,7 +146,7 @@ public class CheckInstalledPerlModules {
                 output += (line + '\n');
             }
             input.close();
-        } catch (Exception ex) {
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
         return output.isEmpty();
@@ -132,12 +159,12 @@ public class CheckInstalledPerlModules {
         String output = "";
         try {
             Process p = Runtime.getRuntime().exec(cmdLine);
-            BufferedReader input = new BufferedReader(new InputStreamReader(p.getErrorStream()));
-            while ((line = input.readLine()) != null) {
-                output += (line + '\n');
+            try ( BufferedReader input = new BufferedReader(new InputStreamReader(p.getErrorStream()))) {
+                while ((line = input.readLine()) != null) {
+                    output += (line + '\n');
+                }
             }
-            input.close();
-        } catch (Exception ex) {
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
 
@@ -152,14 +179,13 @@ public class CheckInstalledPerlModules {
         try {
             Process p = Runtime.getRuntime().exec(cmdLine);
             p.waitFor();
-            BufferedReader input
-                    = new BufferedReader(new InputStreamReader(p.getErrorStream()));
-            while ((line = input.readLine()) != null) {
-                output += (line + '\n');
-            }
+            try ( BufferedReader input = new BufferedReader(new InputStreamReader(p.getErrorStream()))) {
+                while ((line = input.readLine()) != null) {
+                    output += (line + '\n');
+                }
 //            p.waitFor();
-            input.close();
-        } catch (Exception ex) {
+            }
+        } catch (IOException | InterruptedException ex) {
             ex.printStackTrace();
         }
         return output.isEmpty();
@@ -172,14 +198,13 @@ public class CheckInstalledPerlModules {
         try {
             Process p = Runtime.getRuntime().exec(cmdLine);
             p.waitFor();
-            BufferedReader input
-                    = new BufferedReader(new InputStreamReader(p.getErrorStream()));
-            while ((line = input.readLine()) != null) {
-                output += (line + '\n');
-            }
+            try ( BufferedReader input = new BufferedReader(new InputStreamReader(p.getErrorStream()))) {
+                while ((line = input.readLine()) != null) {
+                    output += (line + '\n');
+                }
 //            p.waitFor();
-            input.close();
-        } catch (Exception ex) {
+            }
+        } catch (IOException | InterruptedException ex) {
             ex.printStackTrace();
         }
         return output.isEmpty();
@@ -192,12 +217,12 @@ public class CheckInstalledPerlModules {
         String output = "";
         try {
             Process p = Runtime.getRuntime().exec(cmdLine);
-            BufferedReader input = new BufferedReader(new InputStreamReader(p.getErrorStream()));
-            while ((line = input.readLine()) != null) {
-                output += (line + '\n');
+            try ( BufferedReader input = new BufferedReader(new InputStreamReader(p.getErrorStream()))) {
+                while ((line = input.readLine()) != null) {
+                    output += (line + '\n');
+                }
             }
-            input.close();
-        } catch (Exception ex) {
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
 

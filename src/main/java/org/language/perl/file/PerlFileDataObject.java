@@ -25,7 +25,7 @@ import org.openide.util.NbBundle.Messages;
 @MIMEResolver.ExtensionRegistration(
         displayName = "#LBL_PerlFile_LOADER",
         mimeType = PerlConstants.MIME_TYPE,
-        extension = {"pl", "PL"}
+        extension = {"pl", "PL", "psgi"}
 )
 @DataObject.Registration(
         mimeType = PerlConstants.MIME_TYPE,

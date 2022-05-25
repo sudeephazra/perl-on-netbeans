@@ -6,10 +6,12 @@
 package org.language.perl.dancer;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import javax.swing.JOptionPane;
 import org.language.perl.options.panel.GeneralPanelPreferences;
+import org.language.perl.utilities.CheckInstalledPerlModules;
 import org.language.perl.utilities.PerlConstants;
 
 /**
@@ -56,15 +58,17 @@ public class PerlDancerAppInitiator {
         return perlDancer2Script;
     }
 
-    public void createDefaultDancerWebApplication(File appLocation) {
-        if  (getCurrentPerlExecutable().isEmpty()) {
+    public void createDefaultDancerWebApplication(File appLocation) throws IOException {
+        CheckInstalledPerlModules checkModules = new CheckInstalledPerlModules();
+        
+        if  (checkModules.isPerlInstalled() == false) {
             JOptionPane.showMessageDialog(null,
                         "The Perl executable could not be located. Please check your settings.",
                         "Unable to locate Perl executable",
                         JOptionPane.ERROR_MESSAGE);
             return;
         }
-        if (getCurrentDancer2().isEmpty()) {
+        if (checkModules.isPerlDancer2Installed() == false) {
             JOptionPane.showMessageDialog(null,
                         "The Dancer2 script file does not exist in the Dancer2 location.",
                         "Unable to create Dancer2 project",
@@ -76,7 +80,7 @@ public class PerlDancerAppInitiator {
         }
 
         List<String> dancerCreation
-                = Arrays.asList(getCurrentPerlExecutable(), getCurrentDancer2(), "-a", appLocation.getName());
+                = Arrays.asList(checkModules.getCurrentDancer2(), "gen", "-a", appLocation.getName());
 //        File tempDirectory = new File(PerlConstants.TEMP_DIRECTORY);
 //        File tempAppDirectory = new File(PerlConstants.TEMP_DIRECTORY
 //                + PerlConstants.FILE_SEPARATOR
@@ -92,7 +96,7 @@ public class PerlDancerAppInitiator {
             p.waitFor();
 //            FileOperations fileOp = new FileOperations();
 //            fileOp.copyFiles(tempAppDirectory, appLocation);
-        } catch (Exception ex) {
+        } catch (IOException | InterruptedException ex) {
             ex.printStackTrace();
         }
     }
@@ -101,15 +105,16 @@ public class PerlDancerAppInitiator {
         GeneralPanelPreferences perlPreferences = new GeneralPanelPreferences();
         String perlDancer2Location = perlPreferences.getPerlDancer2Location();
         String executableName = "";
-        if (perlDancer2Location.isEmpty()) {
-            executableName = PerlConstants.PERL_DANCER2_PLACKUP;
-        } else {
-            executableName = perlDancer2Location
-                    + PerlConstants.FILE_SEPARATOR
-                    + PerlConstants.PERL_DANCER2_PLACKUP;
-        }
+        CheckInstalledPerlModules checkModules = new CheckInstalledPerlModules();
+//        if (perlDancer2Location.isEmpty()) {
+//            executableName = PerlConstants.PERL_DANCER2_PLACKUP;
+//        } else {
+//            executableName = perlDancer2Location
+//                    + PerlConstants.FILE_SEPARATOR
+//                    + PerlConstants.PERL_DANCER2_PLACKUP;
+//        }
 
-        return executableName;
+        return checkModules.getCurrentPlackup();
     }
 
 }

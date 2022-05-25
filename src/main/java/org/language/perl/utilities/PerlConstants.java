@@ -32,13 +32,14 @@ public final class PerlConstants {
     public static final String INCLUDE_LIBRARY_FLAG = " -I ";
     
     public static final String PERL_DANCER_WIN = "dancer.bat";
-    public static final String PERL_DANCER_UIX = "dancer";
+    public static final String PERL_DANCER_LINUX_MAC = "dancer";
     public static final String DANCER_DEFAULT_URL = "http://localhost:3000/";
     
     public static final String PERL_DANCER2_SCRIPT = "dancer2";
     public static final String PERL_DANCER2_WIN = "dancer2.bat";
-    public static final String PERL_DANCER2_UIX = "dancer2";
-    public static final String PERL_DANCER2_PLACKUP = "plackup";
+    public static final String PERL_DANCER2_LINUX_MAC = "dancer2";
+    public static final String PERL_DANCER2_PLACKUP_LINUX_MAC = "plackup";
+    public static final String PERL_DANCER2_PLACKUP_WIN = "plackup.bat";
     public static final String DANCER2_DEFAULT_URL = "http://localhost:5000/";
         
     //Perl Tidy Parameters

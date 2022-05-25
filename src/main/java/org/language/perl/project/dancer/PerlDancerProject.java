@@ -18,6 +18,7 @@ import org.language.perl.action.PerlExecution;
 import org.language.perl.action.SyntaxCheckAction;
 import org.language.perl.file.PerlFileDataObject;
 import org.language.perl.options.panel.GeneralPanelPreferences;
+import org.language.perl.utilities.CheckInstalledPerlModules;
 import org.language.perl.utilities.PerlConstants;
 import org.netbeans.api.annotations.common.StaticResource;
 import org.netbeans.api.editor.EditorRegistry;
@@ -140,39 +141,39 @@ public class PerlDancerProject implements Project {
                     File file = new File(currentFile);
                     String fileName = file.getAbsolutePath();
 
-                    GeneralPanelPreferences perlPreferences = new GeneralPanelPreferences();
-                    String perlCustomBinary = perlPreferences.getPerlCustomBinary();
-                    String perlLibrary = perlPreferences.getPerlCustomLibrary();
-                    String perlPlackupLibraryLocation = perlPreferences.getPerlDancer2Location();
-
+//                    GeneralPanelPreferences perlPreferences = new GeneralPanelPreferences();
+//                    String perlCustomBinary = perlPreferences.getPerlCustomBinary();
+//                    String perlLibrary = perlPreferences.getPerlCustomLibrary();
+//                    String perlPlackupBinaryLocation = perlPreferences.getPerlDancer2Location();
+                    
+                    CheckInstalledPerlModules checkModules = new CheckInstalledPerlModules();
+                    
                     PerlExecution myExecution = new PerlExecution();
                     myExecution.setRedirectError(true);
                     myExecution.setWorkingDirectory(file.getParent());
                     myExecution.setDisplayName(file.getName() + " (Execute Dancer2)");
-                    if (perlCustomBinary.equals("")) {
-                        myExecution.setCommand(PerlConstants.PERL_DEFAULT);
-                    } else {
-                        myExecution.setCommand(perlCustomBinary);
-                    }
-                    if (!perlLibrary.equals("")) {
-                        myExecution.setCommandArgs(perlLibrary);
-                    }
-                    if (!perlPlackupLibraryLocation.equals("")) {
-                        if(!(new File(perlPlackupLibraryLocation
-                                + PerlConstants.FILE_SEPARATOR
-                                + PerlConstants.PERL_DANCER2_PLACKUP)).exists()) {
-                            JOptionPane.showMessageDialog(null,
-                            "The plackup file does not exist in the Dancer2 location.",
-                            "Unable to run Dancer2 project",
-                            JOptionPane.ERROR_MESSAGE);
-                            return;
-                        }
-                        myExecution.setCommandArgs(perlPlackupLibraryLocation
-                                + PerlConstants.FILE_SEPARATOR
-                                + PerlConstants.PERL_DANCER2_PLACKUP);
-                    } else {
-                        myExecution.setCommandArgs(PerlConstants.PERL_DANCER2_PLACKUP);
-                    }
+                    myExecution.setCommand(checkModules.getCurrentPlackup());
+                    
+//                    if (!perlLibrary.equals("")) {
+//                        myExecution.setCommandArgs(perlLibrary);
+//                    }
+//                    if (!perlPlackupLibraryLocation.equals("")) {
+//                        if(!(new File(perlPlackupLibraryLocation
+//                                + PerlConstants.FILE_SEPARATOR
+//                                + PerlConstants.PERL_DANCER2_PLACKUP)).exists()) {
+//                            JOptionPane.showMessageDialog(null,
+//                            "The plackup file does not exist in the Dancer2 location.",
+//                            "Unable to run Dancer2 project",
+//                            JOptionPane.ERROR_MESSAGE);
+//                            return;
+//                        }
+//                        myExecution.setCommandArgs(perlPlackupLibraryLocation
+//                                + PerlConstants.FILE_SEPARATOR
+//                                + PerlConstants.PERL_DANCER2_PLACKUP);
+//                    } else {
+//                        myExecution.setCommandArgs(PerlConstants.PERL_DANCER2_PLACKUP);
+//                    }
+//                    myExecution.setCommandArgs(checkModules.getCurrentPlackup());
                     try {
                         myExecution.setRawScript(fileName);
                     } catch (IOException ex) {
@@ -231,7 +232,7 @@ public class PerlDancerProject implements Project {
     private final class PerlDancerProjectInfo implements ProjectInformation {
 
         @StaticResource()
-        public static final String PERL_ICON = "org/language/perl/images/perl-dancer-project.png";
+        public static final String PERL_ICON = "org/language/perl/project/dancer/perl-dancer-project.png";
 
         @Override
         public Icon getIcon() {
@@ -268,7 +269,7 @@ public class PerlDancerProject implements Project {
     class PerlDancerProjectLogicalView implements LogicalViewProvider {
 
         @StaticResource()
-        public static final String PERL_ICON = "org/language/perl/images/perl-dancer-project.png";
+        public static final String PERL_ICON = "org/language/perl/project/dancer/perl-dancer-project.png";
         private final PerlDancerProject project;
 
         public PerlDancerProjectLogicalView(PerlDancerProject project) {
@@ -365,12 +366,12 @@ public class PerlDancerProject implements Project {
 
         @Override
         public List<FileObject> getMetadataFiles() {
-            return new ArrayList<FileObject>();
+            return new ArrayList<>();
         }
 
         @Override
         public List<FileObject> getDataFiles() {
-            return new ArrayList<FileObject>();
+            return new ArrayList<>();
         }
 
     }
@@ -389,12 +390,12 @@ public class PerlDancerProject implements Project {
 
         @Override
         public List<FileObject> getMetadataFiles() {
-            return new ArrayList<FileObject>();
+            return new ArrayList<>();
         }
 
         @Override
         public List<FileObject> getDataFiles() {
-            return new ArrayList<FileObject>();
+            return new ArrayList<>();
         }
 
     }
@@ -419,12 +420,12 @@ public class PerlDancerProject implements Project {
 
         @Override
         public List<FileObject> getMetadataFiles() {
-            return new ArrayList<FileObject>();
+            return new ArrayList<>();
         }
 
         @Override
         public List<FileObject> getDataFiles() {
-            List<FileObject> files = new ArrayList<FileObject>();
+            List<FileObject> files = new ArrayList<>();
             FileObject[] projectChildren = project.getProjectDirectory().getChildren();
             for (FileObject fileObject : projectChildren) {
                 addFile(project.getProjectDirectory(), fileObject.getNameExt(), files);
