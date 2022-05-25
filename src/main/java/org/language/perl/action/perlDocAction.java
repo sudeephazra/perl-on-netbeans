@@ -103,10 +103,10 @@ public final class perlDocAction implements ActionListener {
                 executableName = PerlConstants.PERL_DOC_WIN;
                 break;
             case Utilities.OS_MAC:
-                executableName = PerlConstants.PERL_DOC_UIX;
+                executableName = PerlConstants.PERL_DOC_LINUX_MAC;
                 break;
             case Utilities.OS_LINUX:
-                executableName = PerlConstants.PERL_DOC_UIX; 
+                executableName = PerlConstants.PERL_DOC_LINUX_MAC; 
                 break;
             default: 
                 executableName = null;
