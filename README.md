@@ -21,6 +21,10 @@ __Please note the supported version before downloading and installing the plugin
 - Copy the files *"perlcritic"* and *"perlcritic.bat"* from *{PERL_INSTALLED_LOCATION}/perl/site/bin* to *{PERL_INSTALLED_LOCATION}/perl/bin*
 - Start Perlin'
 
+### Optional (For Dancer web aplications)
+- Install Dancer2 using the command *$> cpan install Dancer2*  
+- Copy the files *"plackup"* and *"plackup.bat"* from *{PERL_INSTALLED_LOCATION}/perl/site/bin* to *{PERL_INSTALLED_LOCATION}/perl/bin*  
+
 *N.B. - Perl::Critic v1.140 is the latest as of writing this guide*  
 
 ---  
@@ -28,8 +32,8 @@ __Please note the supported version before downloading and installing the plugin
 ## Updates
 
 Version: Release 0.6  
-Date: TBD  
-Tested On: NetBeans 13 on Windows 10  
+Date: 25-May-2022  
+Tested On: NetBeans 13 with Starwberry Perl 5.32.1.1 64-bit on Windows 10  
 Recommended Perl: Starwberry Perl 5.32.1.1 64-bit  
 
 Features:
