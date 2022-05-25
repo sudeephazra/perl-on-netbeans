@@ -10,10 +10,10 @@ public final class PerlConstants {
     public static final String PERL_DEFAULT = "perl";
        
     public static final String PERL_CRITIC_WIN = "perlcritic.bat";
-    public static final String PERL_CRITIC_UIX = "perlcritic";
+    public static final String PERL_CRITIC_LINUX_MAC = "perlcritic";
     
     public static final String PERL_DOC_WIN = "perldoc.bat";
-    public static final String PERL_DOC_UIX = "perldoc";
+    public static final String PERL_DOC_LINUX_MAC = "perldoc";
         
     public static final boolean SUCCESS = true;
     public static final boolean FAILURE = false;
@@ -66,7 +66,10 @@ public final class PerlConstants {
     public static final String PERL_CODE_EXECUTION_OUTPUT_WINDOW_TITLE = " (Source Code Execution)";
     
     
-    public static final String MSG_PERL_NOT_INSTALLED = "Perl not installed. Please install Perl and try again.";
+    public static final String MSG_PERL_NOT_INSTALLED = "Perl not installed. Please install/configure Perl and try again.";
     public static final String MSG_PERL_TIDY_NOT_INSTALLED = "Perl::Tidy not installed and not configured in the Options panel. Please install/configure and try again.";
     public static final String MSG_PERL_TIDY_NOT_CONFIGURED = "PerlTidy binary in the Options panel is invalid. Please install/configure and try again.";
+    
+    public static final String MSG_PERL_CRITIC_NOT_INSTALLED = "Code Analysis not available. Please install/configure Perl::Critic and try again.";
+            
 }
