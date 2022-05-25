@@ -10,6 +10,17 @@
             <url>https://opensource.org/licenses/MIT</url>
         </license>
     </licenses>
+    <developers>
+        <developer>
+            <name>Sudeep Hazra</name>
+            <email>sudeephazra@gmail.com</email>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:git://github.com/sudeephazra/perl-on-netbeans.git</connection>
+        <developerConnection>scm:git:ssh://github.com:sudeephazra/perl-on-netbeans.git</developerConnection>
+        <url>http://github.com/sudeephazra/perl-on-netbeans/tree/master</url>
+    </scm>
     <build>
         <plugins>
             <plugin>
