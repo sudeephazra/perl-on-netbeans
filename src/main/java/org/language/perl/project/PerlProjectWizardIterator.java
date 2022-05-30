@@ -177,11 +177,12 @@ public class PerlProjectWizardIterator implements WizardDescriptor.Instantiating
     public final void addChangeListener(ChangeListener l) {
     }
 
+    @Override
     public final void removeChangeListener(ChangeListener l) {
     }
 
     private static void unZipFile(InputStream source, FileObject projectRoot) throws IOException {
-        try {
+        try (source) {
             ZipInputStream str = new ZipInputStream(source);
             ZipEntry entry;
             while ((entry = str.getNextEntry()) != null) {
@@ -197,17 +198,12 @@ public class PerlProjectWizardIterator implements WizardDescriptor.Instantiating
                     }
                 }
             }
-        } finally {
-            source.close();
         }
     }
 
     private static void writeFile(ZipInputStream str, FileObject fo) throws IOException {
-        OutputStream out = fo.getOutputStream();
-        try {
+        try (OutputStream out = fo.getOutputStream()) {
             FileUtil.copy(str, out);
-        } finally {
-            out.close();
         }
     }
 
@@ -229,11 +225,8 @@ public class PerlProjectWizardIterator implements WizardDescriptor.Instantiating
                     }
                 }
             }
-            OutputStream out = fo.getOutputStream();
-            try {
+            try (OutputStream out = fo.getOutputStream()) {
                 XMLUtil.write(doc, out, "UTF-8");
-            } finally {
-                out.close();
             }
         } catch (IOException | DOMException | SAXException ex) {
             Exceptions.printStackTrace(ex);

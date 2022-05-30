@@ -45,23 +45,6 @@ public class Perl5Parser extends Parser {
         }
     }
 
-//    public static String parse(String text) throws ParseCancellationException {
-//        PerlLexer lexer = new PerlLexer(new ANTLRInputStream(text));
-//        lexer.removeErrorListeners();
-//        lexer.addErrorListener(ThrowingErrorListener.INSTANCE);
-//
-//        CommonTokenStream tokens = new CommonTokenStream(lexer);
-//
-//        PerlParser parser = new PerlParser(tokens);
-//        parser.removeErrorListeners();
-//        parser.addErrorListener(ThrowingErrorListener.INSTANCE);
-//
-//        ParserRuleContext tree = parser.prog();
-//        MyParseRules extractor = new MyParseRules();
-//
-//        return extractor.visit(tree);
-//    }
-
     @Override
     public Result getResult(Task task) throws ParseException {
         return new PerlEditorParserResult(snapshot, parser, lexer, /*tree,*/ tokens);
@@ -80,20 +63,19 @@ public class Perl5Parser extends Parser {
     //
     public static class PerlEditorParserResult extends ParserResult {
 
-        private PerlParser parser;
-        private PerlLexer lexer;
+        private final PerlParser parser;
+        private final PerlLexer lexer;
         //private CommonTree tree;
-        private CommonTokenStream tokens;
+        private final CommonTokenStream tokens;
         private boolean valid = true;
         
-        List<Error> errorList = new ArrayList<Error>();
-        List<Block> blockList = new ArrayList<Block>();
+        List<Error> errorList = new ArrayList<>();
+        List<Block> blockList = new ArrayList<>();
 
         PerlEditorParserResult(Snapshot snapshot, PerlParser parser, PerlLexer lexer, /*CommonTree tree,*/ CommonTokenStream tokens) {
             super(snapshot);
             this.parser = parser;
             this.lexer = lexer;
-            //this.tree = tree;
             this.tokens = tokens;
 
         }
@@ -102,9 +84,6 @@ public class Perl5Parser extends Parser {
             return lexer;
         }
 
-//        public CommonTree getTree() {
-//            return tree;
-//        }
         public CommonTokenStream getTokens() {
             return tokens;
         }
@@ -123,7 +102,6 @@ public class Perl5Parser extends Parser {
 
         @Override
         public List<? extends Error> getDiagnostics() {
-//            return Collections.<Error>emptyList();
             return errorList;
         }
     }
