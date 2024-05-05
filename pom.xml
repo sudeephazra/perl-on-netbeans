@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.language.perl</groupId>
     <artifactId>perl-on-netbeans</artifactId>
-    <version>0.6</version>
+    <version>0.7</version>
     <packaging>nbm</packaging>
     <licenses>
         <license>
