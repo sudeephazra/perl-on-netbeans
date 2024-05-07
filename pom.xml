@@ -1,9 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.language.perl</groupId>
+    <groupId>io.github.sudeephazra</groupId>
     <artifactId>perl-on-netbeans</artifactId>
     <version>0.7</version>
     <packaging>nbm</packaging>
+    <name>Perl On NetBeans</name>
+    <description>This plugin adds support for Perl 5 to NetBeans</description>
+    <url>https://sudeephazra.github.io/perl-on-netbeans</url>
     <licenses>
         <license>
             <name>MIT License</name>
@@ -14,19 +17,41 @@
         <developer>
             <name>Sudeep Hazra</name>
             <email>sudeephazra@gmail.com</email>
+            <url>https://github.com/sudeephazra</url>
         </developer>
     </developers>
     <scm>
         <connection>scm:git:git://github.com/sudeephazra/perl-on-netbeans.git</connection>
         <developerConnection>scm:git:ssh://github.com:sudeephazra/perl-on-netbeans.git</developerConnection>
-        <url>http://github.com/sudeephazra/perl-on-netbeans/tree/master</url>
+        <url>http://github.com/sudeephazra/perl-on-netbeans</url>
     </scm>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+    
     <build>
         <plugins>
             <plugin>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>0.4.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <publishingServerId>central</publishingServerId>
+                    <tokenAuth>true</tokenAuth>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.netbeans.utilities</groupId>
                 <artifactId>nbm-maven-plugin</artifactId>
-                <version>4.8-SNAPSHOT</version>
+                <version>14.1</version>
                 <extensions>true</extensions>
                 <configuration>
                     <publicPackages>
@@ -42,7 +67,6 @@
                         </nbmResource>
                     </nbmResources>
                 </configuration>
-                
             </plugin>
             <plugin> <!-- required since nbm-plugin 3.0-->
                 <groupId>org.apache.maven.plugins</groupId>
@@ -54,33 +78,54 @@
                     </archive>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.netbeans.utilities</groupId>
-                <artifactId>nbm-maven-plugin</artifactId>
-                <version>4.7</version>
-                <extensions>true</extensions>
-            </plugin>
+            
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <source>11</source>
-                    <target>11</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.1.2</version>
-                <configuration>
-                    <archive>
-                        <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
-                    </archive>
+                    <source>21</source>
+                    <target>21</target>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+    <profiles>        
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>3.2.0</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
     <dependencies>
         <dependency>
             <groupId>org.netbeans.api</groupId>
