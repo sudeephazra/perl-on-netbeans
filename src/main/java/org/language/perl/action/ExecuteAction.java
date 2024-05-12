@@ -24,9 +24,6 @@ import org.language.perl.utilities.CheckInstalledPerlModules;
 @ActionID(
         category = "File",
         id = "org.netbeans.perl.file.ExecuteAction")
-//@ActionRegistration(
-//        iconBase = "org/language/perl/images/file-run-icon.png",
-//        displayName = "#CTL_ExecuteAction")
 @ActionReferences({
     @ActionReference(path = "Toolbars/Build", position = 600),
     @ActionReference(path = "Loaders/text/x-perl/Actions", position = 175)

@@ -92,14 +92,6 @@ public final class exportToHTMLAction implements ActionListener {
                 myExecution.setCommandArgs(perlLibrary);
             }
         if (perlTidyBinary.equals("")) {
-//            File bundledTidy = new File(tidyPref.getBundledPerlTidyPath());
-//            if (!bundledTidy.exists()) {
-//                JOptionPane.showMessageDialog(null, "Code Formatting not supported. Please refer to the documentation.");
-//                return;
-//            }
-//            myExecution.setWorkingDirectory(bundledTidy.getAbsolutePath());
-
-            
             if (SystemUtils.IS_OS_LINUX || SystemUtils.IS_OS_MAC) {
                 myExecution.setCommand(PerlConstants.PERL_TIDY_BINARY_LINUX_MAC);
             }

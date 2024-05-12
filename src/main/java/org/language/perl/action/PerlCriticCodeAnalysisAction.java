@@ -89,7 +89,6 @@ public final class PerlCriticCodeAnalysisAction implements ActionListener {
                 JOptionPane.showMessageDialog(null, PerlConstants.MSG_PERL_CRITIC_NOT_INSTALLED, "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-//            myExecution.setCommand(criticPref.getBundledPerlCritic());
             if (SystemUtils.IS_OS_LINUX || SystemUtils.IS_OS_MAC) {
                 myExecution.setCommand(PerlConstants.PERL_CRITIC_LINUX_MAC);
             }

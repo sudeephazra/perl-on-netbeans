@@ -74,7 +74,6 @@ public final class perlDocAction implements ActionListener {
             if (selectedText == null)
             {
                 selectedText = "";
-                //JOptionPane.showMessageDialog(null, selectedText);
                 selectedText = JOptionPane.showInputDialog(null, "Search Perl DOC topic : ",
                                 "Perl DOC Search", JOptionPane.PLAIN_MESSAGE);
                 if ((selectedText == null) || (selectedText.isEmpty())) {
