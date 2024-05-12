@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.sudeephazra</groupId>
     <artifactId>perl-on-netbeans</artifactId>
-    <version>0.7</version>
+    <version>0.8</version>
     <packaging>nbm</packaging>
     <name>Perl On NetBeans</name>
     <description>This plugin adds support for Perl 5 to NetBeans</description>
@@ -46,6 +46,13 @@
                 <configuration>
                     <publishingServerId>central</publishingServerId>
                     <tokenAuth>true</tokenAuth>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
                 </configuration>
             </plugin>
             <plugin>
