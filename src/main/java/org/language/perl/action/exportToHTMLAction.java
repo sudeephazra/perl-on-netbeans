@@ -28,7 +28,7 @@ import org.openide.util.NbBundle.Messages;
         category = "Build",
         id = "org.netbeans.perl.file.exportToHTMLAction")
 @ActionRegistration(
-        iconBase = "org/language/perl/action/exportToHTML24.png",
+        iconBase = "org/language/perl/action/export-to-html.png",
         displayName = "#CTL_exportToHTMLAction")
 @ActionReferences({
     @ActionReference(path = "Toolbars/Build", position = 475),

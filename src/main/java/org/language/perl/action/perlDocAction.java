@@ -25,7 +25,7 @@ import org.openide.util.Utilities;
     category = "Build",
 id = "org.netbeans.perl.file.perlDocAction")
 @ActionRegistration(
-    iconBase = "org/language/perl/action/perldoc_16x16.png",
+    iconBase = "org/language/perl/action/perldoc.png",
 displayName = "#CTL_perlDocAction")
 @ActionReference(path = "Toolbars/Build", position = 800)
 @Messages("CTL_perlDocAction=PerlDOC Help")
