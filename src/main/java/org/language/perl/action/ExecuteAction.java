@@ -80,17 +80,20 @@ public final class ExecuteAction implements ActionListener {
             myExecution.setCommandArgs(perlLibrary);
         }
         //Removing the need to create a new file for output buffer flushing
-        myExecution.setCommandArgs(myExecution.getCommandArgs() + " -I ");
+        myExecution.setCommandArgs(myExecution.getCommandArgs() 
+                + PerlConstants.INCLUDE_LIBRARY_FLAG);
         myExecution.setCommandArgs(myExecution.getCommandArgs()
-                + "\"" + myExecution.getBundledPerlAutoflushPath() + "\"");
-        myExecution.setCommandArgs(myExecution.getCommandArgs() + " -MDevel::Autoflush ");
+                + "\"" 
+                + myExecution.getBundledPerlAutoflushPath() 
+                + "\"");
+        myExecution.setCommandArgs(myExecution.getCommandArgs() 
+                + " -MDevel::Autoflush ");
         try {
             myExecution.setRawScript(fileName);
         } catch (IOException ex) {
             Exceptions.printStackTrace(ex);
         }
         myExecution.run();
-
     }
     
     // This block of code is executed when a file is executed
@@ -137,13 +140,25 @@ public final class ExecuteAction implements ActionListener {
         //Removing the need to create a new file for output buffer flushing
         myExecution.setCommandArgs(myExecution.getCommandArgs()
                 + PerlConstants.INCLUDE_LIBRARY_FLAG
-                + " \"" + myExecution.getBundledPerlAutoflushPath() + "\" ");
+                + " \"" 
+                + myExecution.getBundledPerlAutoflushPath() 
+                + "\" ");
         myExecution.setCommandArgs(myExecution.getCommandArgs()
                 + " -MDevel::Autoflush ");
         //Adding current folder for include list as it is not allowed
         //by default in taint mode
         myExecution.setCommandArgs(myExecution.getCommandArgs()
-                + " -I " + myExecution.getWorkingDirectory());
+                + PerlConstants.INCLUDE_LIBRARY_FLAG 
+                + myExecution.getWorkingDirectory());
+        myExecution.setCommandArgs(myExecution.getCommandArgs()
+                + PerlConstants.INCLUDE_LIBRARY_FLAG 
+                + myExecution.getWorkingDirectory() 
+                + File.separator 
+                + "local" 
+                + File.separator 
+                + "lib" 
+                + File.separator 
+                + "perl5");
         try {
             myExecution.setRawScript(fileName);
         } catch (IOException ex) {
