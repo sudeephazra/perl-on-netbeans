@@ -25,7 +25,7 @@ import org.openide.util.Utilities;
     category = "Build",
 id = "org.netbeans.perl.file.perlDocAction")
 @ActionRegistration(
-    iconBase = "org/language/perl/action/perldoc_16x16.png",
+    iconBase = "org/language/perl/action/perldoc.png",
 displayName = "#CTL_perlDocAction")
 @ActionReference(path = "Toolbars/Build", position = 800)
 @Messages("CTL_perlDocAction=PerlDOC Help")
@@ -74,7 +74,6 @@ public final class perlDocAction implements ActionListener {
             if (selectedText == null)
             {
                 selectedText = "";
-                //JOptionPane.showMessageDialog(null, selectedText);
                 selectedText = JOptionPane.showInputDialog(null, "Search Perl DOC topic : ",
                                 "Perl DOC Search", JOptionPane.PLAIN_MESSAGE);
                 if ((selectedText == null) || (selectedText.isEmpty())) {

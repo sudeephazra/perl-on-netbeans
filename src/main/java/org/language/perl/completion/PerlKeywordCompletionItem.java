@@ -28,7 +28,7 @@ public class PerlKeywordCompletionItem implements CompletionItem {
 
     private String text;
     private static ImageIcon fieldIcon
-            = new ImageIcon(ImageUtilities.loadImage("org/language/perl/images/keyword16x16.png"));
+            = new ImageIcon(ImageUtilities.loadImage("org/language/perl/utilities/autocomplete.png"));
     private static Color fieldColor = Color.decode("0x0000B2");
     private int caretOffset;
     private int dotOffset;

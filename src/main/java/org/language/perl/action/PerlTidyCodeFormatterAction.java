@@ -28,7 +28,7 @@ import org.apache.commons.lang.SystemUtils;
         category = "Build",
         id = "org.netbeans.perl.file.PerlTidyCodeFormatterAction")
 @ActionRegistration(
-        iconBase = "org/language/perl/action/file-code-format.gif",
+        iconBase = "org/language/perl/action/file-code-format.png",
         displayName = "#CTL_PerlTidyCodeFormatterAction")
 @ActionReferences({
     @ActionReference(path = "Toolbars/Build", position = 450),
@@ -99,22 +99,6 @@ public class PerlTidyCodeFormatterAction implements ActionListener {
         String perlTidyAdditionalParameters = tidyPref.getPerlTidyAdditionalParameters();
 
         if (perlTidyBinary.equals("")) {
-//            if (checkModules.isPerlTidyInstalled() == false) {
-//                File bundledTidy = new File(tidyPref.getBundledPerlTidyPath());
-//                if (!bundledTidy.exists()) {
-//                    JOptionPane.showMessageDialog(null, "Code Formatting not supported. Please refer to the documentation.");
-//                    return;
-//                } else {
-//                    myExecution.setCommand(bundledTidy.getAbsolutePath());
-//                }
-//            } else {
-//                myExecution.setCommand(PerlConstants.PERL_TIDY_BINARY);
-//            }
-//            File bundledTidy = new File(tidyPref.getBundledPerlTidyPath());
-//            if (!bundledTidy.exists()) {
-//                JOptionPane.showMessageDialog(null, "Code Formatting not supported. Please refer to the documentation.");
-//                return;
-//            }
             if (checkModules.isPerlTidyInstalled() == true) {
                 if (SystemUtils.IS_OS_LINUX || SystemUtils.IS_OS_MAC) {
                     myExecution.setCommand(PerlConstants.PERL_TIDY_BINARY_LINUX_MAC);

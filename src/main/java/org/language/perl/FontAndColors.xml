@@ -15,8 +15,5 @@
     </fontcolor>
     <fontcolor foreColor="ce7b00" name="variable"/>
     <fontcolor foreColor="a0a0a0" name="pod"/>
-    <!--<fontcolor name="identifier"  default="default"/>-->
-    <!--<fontcolor name="operator"  default="default"/>-->
-    <!--<fontcolor foreColor="black" name="whitespace"  default="whitespace"/>-->
     <fontcolor foreColor="a0522d" name="number"/>
 </fontscolors>
