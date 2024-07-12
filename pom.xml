@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.sudeephazra</groupId>
     <artifactId>perl-on-netbeans</artifactId>
-    <version>0.8</version>
+    <version>0.9</version>
     <packaging>nbm</packaging>
     <name>Perl On NetBeans</name>
     <description>This plugin adds support for Perl 5 to NetBeans</description>
