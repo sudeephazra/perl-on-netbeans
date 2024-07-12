@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package org.language.perl;
 
 import java.util.ArrayList;
@@ -23,10 +22,10 @@ import org.netbeans.modules.csl.api.StructureScanner;
 import org.netbeans.modules.csl.spi.ParserResult;
 import org.openide.text.NbDocument;
 
-public class PerlStructureScanner implements StructureScanner  {
+public class PerlStructureScanner implements StructureScanner {
 
     private final String FOLD_TYPE = "comments";
-    
+
     @Override
     public List<? extends StructureItem> scan(ParserResult pr) {
         return new ArrayList<>();
@@ -37,7 +36,6 @@ public class PerlStructureScanner implements StructureScanner  {
         Map<String, List<OffsetRange>> folds = new HashMap<>();
         Document document = pr.getSnapshot().getSource().getDocument(false);
         collectTokenFolds(folds, pr, document);
-//        collectGrammarFolds(folds, Utils.getRoot(pr), document);
         return folds;
     }
 
@@ -45,7 +43,7 @@ public class PerlStructureScanner implements StructureScanner  {
     public Configuration getConfiguration() {
         return new StructureScanner.Configuration(true, false);
     }
-    
+
     protected static Tree getLastChild(ParserRuleContext tree, int lastToken) {
         Tree lastChild = tree.getChild(tree.getChildCount() - lastToken);
         if (lastChild.getChildCount() > 0) {
@@ -53,59 +51,25 @@ public class PerlStructureScanner implements StructureScanner  {
                 lastChild = lastChild.getChild(lastChild.getChildCount() - 1);
             } while (lastChild.getChildCount() > 0);
         }
-        //System.out.println(lastChild.getText() + '\t' + lastChild.getLine());
         return lastChild;
     }
-    
+
     private void collectTokenFolds(Map<String, List<OffsetRange>> folds, ParserResult pr, Document document) {
         if (pr != null) {
             org.antlr.v4.runtime.CommonTokenStream tokens = ((PerlEditorParserResult) pr).getTokens();
             for (int i = 0; i < tokens.getTokens().size(); i++) {
                 Token token = (tokens.getTokens().get(i));
-//                if (token.getType() == PerlLexer.POD) {
-//                    addFold(FOLD_TYPE, folds, token, document);
-//                }
             }
         }
     }
-    
-     private void collectGrammarFolds(Map<String, List<OffsetRange>> folds, ParserRuleContext tree, Document document) {
-//        if (tree != null) {
-//            for (int i = 0; i < tree.getChildCount(); i++) {
-//                switch (tree.getChild(i).getType()) {
-//                    case PL_SQLLexer.IM_BEGIN_END:
-//                        addFold(FOLD_TYPE, folds, (CommonTree) tree.getChild(i), document, 0, 1);
-//                        break;
-//                    case PL_SQLLexer.IM_IF:
-//                        addFold(FOLD_TYPE, folds, (CommonTree) tree.getChild(i), document, 0, 2);
-//                        break;
-//                    case PL_SQLLexer.IM_LOOP:
-//                        addFold(FOLD_TYPE, folds, (CommonTree) tree.getChild(i), document, 0, 2);
-//                        break;
-//                    case PL_SQLLexer.IM_CASE:
-//                        addFold(FOLD_TYPE, folds, (CommonTree) tree.getChild(i), document, 0, 1);
-//                        break;
-//                    case PL_SQLLexer.IM_FUNC:
-//                        addFold(FOLD_TYPE, folds, (CommonTree) tree.getChild(i), document, 1, 1);
-//                        break;
-//                    case PL_SQLLexer.IM_PROC:
-//                        addFold(FOLD_TYPE, folds, (CommonTree) tree.getChild(i), document, 1, 1);
-//                        break;
-//                }
-//
-//                collectGrammarFolds(folds, (CommonTree) tree.getChild(i), document);
-//            }
-//        }
+
+    private void collectGrammarFolds(Map<String, List<OffsetRange>> folds, ParserRuleContext tree, Document document) {
+
     }
-     
+
     private void addFold(String foldType, Map<String, List<OffsetRange>> folds, ParserRuleContext tree, Document document, int firstToken, int lastToken) {
         ParseTree firstChild = tree.getChild(firstToken);
         ParseTree lastChild = (ParseTree) getLastChild(tree, lastToken);
-//        if (firstChild.getLine() != 0 && lastChild.getLine() != 0 && lastChild.getLine() - firstChild.getLine() > 1) {
-//            int start = NbDocument.findLineOffset((StyledDocument) document, firstChild.getLine() - 1) + firstChild.getCharPositionInLine() + firstChild.getText().length();
-//            int end = NbDocument.findLineOffset((StyledDocument) document, lastChild.getLine() - 1) + lastChild.getCharPositionInLine();
-//            createFold(foldType, folds, start, end);
-//        }
     }
 
     private void addFold(String foldType, Map<String, List<OffsetRange>> folds, Token token, Document document) {
@@ -117,7 +81,7 @@ public class PerlStructureScanner implements StructureScanner  {
             createFold(foldType, folds, start, end);
         }
     }
-    
+
     private void createFold(String foldType, Map<String, List<OffsetRange>> folds, int start, int end) {
         OffsetRange range = new OffsetRange(start, end);
         List<OffsetRange> fold = folds.get(foldType);
@@ -127,6 +91,5 @@ public class PerlStructureScanner implements StructureScanner  {
         }
         fold.add(range);
     }
-    
-    
+
 }

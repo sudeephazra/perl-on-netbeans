@@ -23,9 +23,6 @@ import org.openide.util.NbBundle.Messages;
 @ActionID(
     category = "File",
 id = "org.netbeans.perl.file.SyntaxCheckAction")
-//@ActionRegistration(
-//    iconBase = "org/language/perl/images/file-parse-icon.png",
-//displayName = "#CTL_SyntaxCheckAction")
 @ActionReferences({
     @ActionReference(path = "Toolbars/Build", position = 500),
     @ActionReference(path = "Loaders/text/x-perl/Actions", position = 150)
