@@ -50,6 +50,9 @@ carton install
 carton install
 ```
 
+## User Documentation
+
+Please read the user documentation [here](docs/using-perl-on-netbeans.md)
 
 ---  
 
