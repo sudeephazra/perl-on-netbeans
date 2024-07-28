@@ -74,6 +74,7 @@ public final class exportToHTMLAction implements ActionListener {
         myExecution.setRedirectError(true);
         myExecution.setWorkingDirectory(file.getParent());
         myExecution.setDisplayName(file.getName() + " (Source Code -> HTML)");
+        myExecution.setShowWindow(false);
         if (perlCustomBinary.equals("")) {
             myExecution.setCommand(PerlConstants.PERL_DEFAULT);
             boolean isPerlInstalled = false;

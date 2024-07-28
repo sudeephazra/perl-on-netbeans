@@ -67,6 +67,7 @@ public class PerlTidyCodeFormatterAction implements ActionListener {
         myExecution.setRedirectError(true);
         myExecution.setWorkingDirectory(file.getParent());
         myExecution.setDisplayName(file.getName() + PerlConstants.PERL_CODE_FORMATING_OUTPUT_WINDOW_TITLE);
+        myExecution.setShowWindow(false);
         if (perlCustomBinary.equals("")) {
             myExecution.setCommand(PerlConstants.PERL_DEFAULT);
             boolean isPerlInstalled = false;
