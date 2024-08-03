@@ -14,7 +14,7 @@
         iconBase = "org/language/perl/options/panel/perl-options-panel.png", 
         keywords = "#OptionsCategory_Keywords_PerlOnNetBeans", 
         keywordsCategory = "PerlOnNetBeans")
-@Messages(value = {"OptionsCategory_Name_PerlOnNetBeans=Perl On NetBeans", 
+@Messages(value = {"OptionsCategory_Name_PerlOnNetBeans=Perl", 
     "OptionsCategory_Keywords_PerlOnNetBeans=Perl On NetBeans"})
 
 package org.language.perl.options.panel;
