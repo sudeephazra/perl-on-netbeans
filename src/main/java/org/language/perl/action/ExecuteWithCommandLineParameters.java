@@ -61,12 +61,12 @@ public class ExecuteWithCommandLineParameters implements ActionListener {
         
         CheckInstalledPerlModules checkModules = new CheckInstalledPerlModules();
         
-        PerlExecution myExecution = new PerlExecution();
-        myExecution.setRedirectError(true);
-        myExecution.setWorkingDirectory(file.getParent());
-        myExecution.setDisplayName(file.getName() + " (Execute with command line parameters)");
+        PerlExecution perlFileExecutionWithParameters = new PerlExecution();
+        perlFileExecutionWithParameters.setRedirectError(true);
+        perlFileExecutionWithParameters.setWorkingDirectory(file.getParent());
+        perlFileExecutionWithParameters.setDisplayName(file.getName() + " (Execute with command line parameters)");
         if (perlCustomBinary.equals("")) {
-            myExecution.setCommand(PerlConstants.PERL_DEFAULT);
+            perlFileExecutionWithParameters.setCommand(PerlConstants.PERL_DEFAULT);
             boolean isPerlInstalled = false;
             try {
                 isPerlInstalled = checkModules.isPerlInstalled();
@@ -77,7 +77,7 @@ public class ExecuteWithCommandLineParameters implements ActionListener {
                 return;
             }
         } else {
-            myExecution.setCommand(perlCustomBinary);
+            perlFileExecutionWithParameters.setCommand(perlCustomBinary);
         }
         
         //Display pop-up here to get the command line options
@@ -88,24 +88,24 @@ public class ExecuteWithCommandLineParameters implements ActionListener {
             return;
         }
         
-        myExecution.setCommandArgs("-w");
+        perlFileExecutionWithParameters.setCommandArgs("-w");
         //Add perl library location here
         if (!perlLibrary.equals("")) {
-            myExecution.setCommandArgs(perlLibrary);
+            perlFileExecutionWithParameters.setCommandArgs(perlLibrary);
         }
         //Removing the need to create a new file for output buffer flushing
-        myExecution.setCommandArgs(myExecution.getCommandArgs()
+        perlFileExecutionWithParameters.setCommandArgs(perlFileExecutionWithParameters.getCommandArgs()
                 + PerlConstants.INCLUDE_LIBRARY_FLAG
-                + " \"" + myExecution.getBundledPerlAutoflushPath() + "\" ");
-        myExecution.setCommandArgs(myExecution.getCommandArgs() + " -MDevel::Autoflush ");
+                + " \"" + perlFileExecutionWithParameters.getBundledPerlAutoflushPath() + "\" ");
+        perlFileExecutionWithParameters.setCommandArgs(perlFileExecutionWithParameters.getCommandArgs() + " -MDevel::Autoflush ");
 
         try {
-            myExecution.setRawScript(fileName);
+            perlFileExecutionWithParameters.setRawScript(fileName);
         } catch (IOException ex) {
             Exceptions.printStackTrace(ex);
         }
 
-        myExecution.setScriptArgs(commandLineParamaters);
-        myExecution.run();
+        perlFileExecutionWithParameters.setScriptArgs(commandLineParamaters);
+        perlFileExecutionWithParameters.run();
     }
 }

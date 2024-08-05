@@ -55,12 +55,12 @@ public final class ExecuteAction implements ActionListener {
         String perlCustomBinary = perlPreferences.getPerlCustomBinary();
         String perlLibrary = perlPreferences.getPerlCustomLibrary();
 
-        PerlExecution myExecution = new PerlExecution();
-        myExecution.setRedirectError(true);
-        myExecution.setWorkingDirectory(file.getParent());
-        myExecution.setDisplayName(file.getName() + " (Execute)");
+        PerlExecution perlFileExecution = new PerlExecution();
+        perlFileExecution.setRedirectError(true);
+        perlFileExecution.setWorkingDirectory(file.getParent());
+        perlFileExecution.setDisplayName(file.getName() + " (Execute)");
         if (perlCustomBinary.equals("")) {
-            myExecution.setCommand(PerlConstants.PERL_DEFAULT);
+            perlFileExecution.setCommand(PerlConstants.PERL_DEFAULT);
             CheckInstalledPerlModules checkModules = new CheckInstalledPerlModules();
             boolean isPerlInstalled = false;
             try {
@@ -72,27 +72,27 @@ public final class ExecuteAction implements ActionListener {
                 return;
             }
         } else {
-            myExecution.setCommand(perlCustomBinary);
+            perlFileExecution.setCommand(perlCustomBinary);
         }
-        myExecution.setCommandArgs(" -w ");
+        perlFileExecution.setCommandArgs(" -w ");
         if (!perlLibrary.equals("")) {
-            myExecution.setCommandArgs(perlLibrary);
+            perlFileExecution.setCommandArgs(perlLibrary);
         }
         //Removing the need to create a new file for output buffer flushing
-        myExecution.setCommandArgs(myExecution.getCommandArgs() 
+        perlFileExecution.setCommandArgs(perlFileExecution.getCommandArgs() 
                 + PerlConstants.INCLUDE_LIBRARY_FLAG);
-        myExecution.setCommandArgs(myExecution.getCommandArgs()
+        perlFileExecution.setCommandArgs(perlFileExecution.getCommandArgs()
                 + "\"" 
-                + myExecution.getBundledPerlAutoflushPath() 
+                + perlFileExecution.getBundledPerlAutoflushPath() 
                 + "\"");
-        myExecution.setCommandArgs(myExecution.getCommandArgs() 
+        perlFileExecution.setCommandArgs(perlFileExecution.getCommandArgs() 
                 + " -MDevel::Autoflush ");
         try {
-            myExecution.setRawScript(fileName);
+            perlFileExecution.setRawScript(fileName);
         } catch (IOException ex) {
             Exceptions.printStackTrace(ex);
         }
-        myExecution.run();
+        perlFileExecution.run();
     }
     
     // This block of code is executed when a file is executed
@@ -113,12 +113,12 @@ public final class ExecuteAction implements ActionListener {
         String perlCustomBinary = perlPreferences.getPerlCustomBinary();
         String perlLibrary = perlPreferences.getPerlCustomLibrary();
 
-        PerlExecution myExecution = new PerlExecution();
-        myExecution.setRedirectError(true);
-        myExecution.setWorkingDirectory(file.getParent());
-        myExecution.setDisplayName(file.getName() + " (Execute)");
+        PerlExecution perlFileExecution = new PerlExecution();
+        perlFileExecution.setRedirectError(true);
+        perlFileExecution.setWorkingDirectory(file.getParent());
+        perlFileExecution.setDisplayName(file.getName() + " (Execute)");
         if (perlCustomBinary.equals("")) {
-            myExecution.setCommand(PerlConstants.PERL_DEFAULT);
+            perlFileExecution.setCommand(PerlConstants.PERL_DEFAULT);
             CheckInstalledPerlModules checkModules = new CheckInstalledPerlModules();
             boolean isPerlInstalled = false;
             try {
@@ -130,28 +130,28 @@ public final class ExecuteAction implements ActionListener {
                 return;
             }
         } else {
-            myExecution.setCommand(perlCustomBinary);
+            perlFileExecution.setCommand(perlCustomBinary);
         }
-        myExecution.setCommandArgs(" -w ");
+        perlFileExecution.setCommandArgs(" -w ");
         if (!perlLibrary.equals("")) {
-            myExecution.setCommandArgs(perlLibrary);
+            perlFileExecution.setCommandArgs(perlLibrary);
         }
         //Removing the need to create a new file for output buffer flushing
-        myExecution.setCommandArgs(myExecution.getCommandArgs()
+        perlFileExecution.setCommandArgs(perlFileExecution.getCommandArgs()
                 + PerlConstants.INCLUDE_LIBRARY_FLAG
                 + " \"" 
-                + myExecution.getBundledPerlAutoflushPath() 
+                + perlFileExecution.getBundledPerlAutoflushPath() 
                 + "\" ");
-        myExecution.setCommandArgs(myExecution.getCommandArgs()
+        perlFileExecution.setCommandArgs(perlFileExecution.getCommandArgs()
                 + " -MDevel::Autoflush ");
         //Adding current folder for include list as it is not allowed
         //by default in taint mode
-        myExecution.setCommandArgs(myExecution.getCommandArgs()
+        perlFileExecution.setCommandArgs(perlFileExecution.getCommandArgs()
                 + PerlConstants.INCLUDE_LIBRARY_FLAG 
-                + myExecution.getWorkingDirectory());
-        myExecution.setCommandArgs(myExecution.getCommandArgs()
+                + perlFileExecution.getWorkingDirectory());
+        perlFileExecution.setCommandArgs(perlFileExecution.getCommandArgs()
                 + PerlConstants.INCLUDE_LIBRARY_FLAG 
-                + myExecution.getWorkingDirectory() 
+                + perlFileExecution.getWorkingDirectory() 
                 + File.separator 
                 + "local" 
                 + File.separator 
@@ -159,12 +159,12 @@ public final class ExecuteAction implements ActionListener {
                 + File.separator 
                 + "perl5");
         try {
-            myExecution.setRawScript(fileName);
+            perlFileExecution.setRawScript(fileName);
         } catch (IOException ex) {
             Exceptions.printStackTrace(ex);
         }
         if (file.exists()) {
-            myExecution.run();
+            perlFileExecution.run();
         } 
 
     }
