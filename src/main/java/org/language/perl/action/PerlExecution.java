@@ -1,15 +1,11 @@
 package org.language.perl.action;
 
-import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
 import java.util.concurrent.Future;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -142,56 +138,6 @@ public class PerlExecution {
 
     public synchronized String getScript() {
         return script;
-    }
-
-    public synchronized void setScript(String script) throws IOException {
-
-        File file = new File(script);
-        String content = new Scanner(file).useDelimiter("\\Z").next();
-        content
-                = "local $| = 1;" + "\n"
-                + content;
-        Random rndNumbers = new Random();
-
-        String tempFileURL
-                = System.getProperty("java.io.tmpdir")
-                + System.getProperty("file.separator")
-                + "PerlOnNetBeans_Temp"
-                + System.getProperty("file.separator")
-                + "filename" + Integer.toString(rndNumbers.nextInt())
-                + //".pl" +
-                file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf('.'));
-
-        File newFile = new File(tempFileURL);
-        //Check if the directory exists, if no then create
-        String dir = newFile.getParent();
-        File parentDir = new File(dir);
-        if (!parentDir.exists()) {
-            parentDir.mkdirs();
-        }
-
-        //Deleting all files
-        File[] files = parentDir.listFiles();
-        for (File toBeDeletedfile : files) {
-            if (!toBeDeletedfile.delete()) {
-                System.out.println("Failed to delete " + file);
-            }
-        }
-        //
-        //Check if the file exists, if yes then delete it else create a new file
-        if (newFile.exists() == true) {
-            newFile.delete();
-        }
-        //
-
-        //Creating the new file here
-        PrintWriter out = new PrintWriter(tempFileURL);
-        out.println(content);
-        out.close();
-        this.script = newFile.getAbsolutePath();
-
-        //The following is the original method
-        //this.script = script;
     }
 
     public synchronized void setRawScript(String script) throws IOException {

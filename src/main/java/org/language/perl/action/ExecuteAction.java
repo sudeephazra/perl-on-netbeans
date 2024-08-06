@@ -4,8 +4,6 @@
  */
 package org.language.perl.action;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import org.language.perl.file.PerlFileDataObject;
@@ -28,7 +26,7 @@ import org.language.perl.utilities.CheckInstalledPerlModules;
     @ActionReference(path = "Loaders/text/x-perl/Actions", position = 175)
 })
 @Messages("CTL_ExecuteAction=Execute")
-public final class ExecuteAction implements ActionListener {
+public final class ExecuteAction {
 
     private final PerlFileDataObject context;
 
@@ -36,66 +34,6 @@ public final class ExecuteAction implements ActionListener {
         this.context = context;
     }
 
-    @Override
-    // This block of code is not being used
-    public void actionPerformed(ActionEvent ev) {
-        if (context.isModified() == true) {
-            SaveCookie sc = context.getLookup().lookup(SaveCookie.class);
-            try {
-                sc.save();
-            } catch (IOException ex) {
-                Exceptions.printStackTrace(ex);
-            }
-        }
-
-        File file = FileUtil.toFile(context.getPrimaryFile());
-        String fileName = file.getAbsolutePath();
-
-        GeneralPanelPreferences perlPreferences = new GeneralPanelPreferences();
-        String perlCustomBinary = perlPreferences.getPerlCustomBinary();
-        String perlLibrary = perlPreferences.getPerlCustomLibrary();
-
-        PerlExecution perlFileExecution = new PerlExecution();
-        perlFileExecution.setRedirectError(true);
-        perlFileExecution.setWorkingDirectory(file.getParent());
-        perlFileExecution.setDisplayName(file.getName() + " (Execute)");
-        if (perlCustomBinary.equals("")) {
-            perlFileExecution.setCommand(PerlConstants.PERL_DEFAULT);
-            CheckInstalledPerlModules checkModules = new CheckInstalledPerlModules();
-            boolean isPerlInstalled = false;
-            try {
-                isPerlInstalled = checkModules.isPerlInstalled();
-            } catch (IOException ex) {
-                Exceptions.printStackTrace(ex);
-            }
-            if (!isPerlInstalled) {
-                return;
-            }
-        } else {
-            perlFileExecution.setCommand(perlCustomBinary);
-        }
-        perlFileExecution.setCommandArgs(" -w ");
-        if (!perlLibrary.equals("")) {
-            perlFileExecution.setCommandArgs(perlLibrary);
-        }
-        //Removing the need to create a new file for output buffer flushing
-        perlFileExecution.setCommandArgs(perlFileExecution.getCommandArgs() 
-                + PerlConstants.INCLUDE_LIBRARY_FLAG);
-        perlFileExecution.setCommandArgs(perlFileExecution.getCommandArgs()
-                + "\"" 
-                + perlFileExecution.getBundledPerlAutoflushPath() 
-                + "\"");
-        perlFileExecution.setCommandArgs(perlFileExecution.getCommandArgs() 
-                + " -MDevel::Autoflush ");
-        try {
-            perlFileExecution.setRawScript(fileName);
-        } catch (IOException ex) {
-            Exceptions.printStackTrace(ex);
-        }
-        perlFileExecution.run();
-    }
-    
-    // This block of code is executed when a file is executed
     public void runPerlFile() {
         if (context.isModified() == true) {
             SaveCookie sc = context.getLookup().lookup(SaveCookie.class);
