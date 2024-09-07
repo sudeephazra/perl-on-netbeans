@@ -8,7 +8,7 @@ import org.apache.commons.lang.SystemUtils;
 import org.language.perl.options.panel.GeneralPanelPreferences;
 
 public class CheckInstalledPerlModules {
-
+    
     private static boolean isPerlExecutableOnLinuxMac() throws IOException {
         String line;
         ProcessBuilder builder;
@@ -77,6 +77,35 @@ public class CheckInstalledPerlModules {
         currentPerlExecutable = currentPerlExecutable + perlLibrary;
 
         return currentPerlExecutable;
+    }
+    
+    public String getCurrentPerlVersion() throws IOException {
+        String currentPerlVersion = "<None>";
+        String line;
+        ProcessBuilder builder = null;
+        BufferedReader reader;
+        Process process;
+        String currentPerlExecutable = getCurrentPerlExecutable();
+        if (SystemUtils.IS_OS_LINUX || SystemUtils.IS_OS_MAC) {
+            builder = new ProcessBuilder(currentPerlExecutable, "-e", "\"print $^V\"");
+
+        }
+        if (SystemUtils.IS_OS_WINDOWS) {
+            builder = new ProcessBuilder(currentPerlExecutable, "-e", "\"print $^V\"");
+        }
+        builder.redirectErrorStream(true);
+        process = builder.start();
+        reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+        try {
+            process.waitFor();
+        } catch (InterruptedException e) {
+            System.out.println(e.getMessage());
+        }
+        while ((line = reader.readLine()) != null) {
+            break;
+        }
+        return currentPerlVersion = line;
+        
     }
 
     public String getCurrentDancer2() {
