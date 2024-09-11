@@ -253,13 +253,6 @@ public class PerlProject implements Project {
 
             public ProjectNode(Node node, PerlProject project) throws DataObjectNotFoundException {
 
-//                super(node,
-//                        new PerlProjectFilterNodeFactory(node),
-//                        new ProxyLookup(
-//                                new Lookup[]{
-//                                    Lookups.singleton(project),
-//                                    node.getLookup()
-//                                }));
                 super(node,
                         NodeFactorySupport.createCompositeChildren(
                                 project,
