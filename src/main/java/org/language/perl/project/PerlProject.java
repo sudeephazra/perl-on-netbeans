@@ -34,6 +34,7 @@ import org.netbeans.spi.project.ProjectState;
 import org.netbeans.spi.project.ui.LogicalViewProvider;
 import org.netbeans.spi.project.ui.support.CommonProjectActions;
 import org.netbeans.spi.project.ui.support.DefaultProjectOperations;
+import org.netbeans.spi.project.ui.support.NodeFactorySupport;
 import org.openide.actions.FileSystemAction;
 import org.openide.filesystems.FileObject;
 import org.openide.loaders.DataFolder;
@@ -232,13 +233,16 @@ public class PerlProject implements Project {
         @Override
         public Node createLogicalView() {
             try {
-                FileObject Text = project.getProjectDirectory();
-                DataFolder TextDataObject = DataFolder.findFolder(Text);
-                Node realTextFolderNode = TextDataObject.getNodeDelegate();
-                return new ProjectNode(realTextFolderNode, project);
-
+                // Obtain the project directory's node:
+                FileObject projectDirectory = project.getProjectDirectory();
+                DataFolder projectFolder = DataFolder.findFolder(projectDirectory);
+                Node nodeOfProjectFolder = projectFolder.getNodeDelegate();
+                // Decorate the project directory's node:
+                return new ProjectNode(nodeOfProjectFolder, project);
             } catch (DataObjectNotFoundException donfe) {
                 Exceptions.printStackTrace(donfe);
+                // Fallback-the directory couldn't be created -
+                // read-only filesystem or something evil happened
                 return new AbstractNode(Children.LEAF);
             }
         }
@@ -249,14 +253,23 @@ public class PerlProject implements Project {
 
             public ProjectNode(Node node, PerlProject project) throws DataObjectNotFoundException {
 
+//                super(node,
+//                        new PerlProjectFilterNodeFactory(node),
+//                        new ProxyLookup(
+//                                new Lookup[]{
+//                                    Lookups.singleton(project),
+//                                    node.getLookup()
+//                                }));
                 super(node,
-                        new PerlProjectFilterNodeFactory(node),
+                        NodeFactorySupport.createCompositeChildren(
+                                project,
+                                "Projects/org-language-perl-project/Nodes"
+                        ),
                         new ProxyLookup(
                                 new Lookup[]{
                                     Lookups.singleton(project),
                                     node.getLookup()
                                 }));
-
                 this.project = project;
             }
 
