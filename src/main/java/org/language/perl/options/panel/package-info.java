@@ -5,7 +5,7 @@
 @TemplateRegistration(
             folder = "Perl", 
             content = "/org/language/perl/file/PerlFileTemplate.pl", 
-            displayName ="New Perl File", 
+            displayName ="Perl File", 
             position = 100,
             scriptEngine = "freemarker"
         )

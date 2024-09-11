@@ -39,7 +39,7 @@ import org.openide.util.NbBundle.Messages;
         description = "perlModuleTemplate.html",
         scriptEngine = "freemarker", 
         content = "PerlModuleTemplate.pm")
-@Messages("PerlModuleTemplateWizardIterator_displayName=New Perl Module")
+@Messages("PerlModuleTemplateWizardIterator_displayName=Perl Module")
 // TODO the above section is disabled to use the existing file menu
 
 public final class PerlModuleTemplateWizardIterator implements WizardDescriptor.InstantiatingIterator<WizardDescriptor> {
