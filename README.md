@@ -1,6 +1,10 @@
 # Perl On NetBeans
 This plugin adds support for Perl 5 to NetBeans
 
+### Requirements
+
+[![](https://img.shields.io/badge/Perl-5.30+-blue)]() [![](https://img.shields.io/badge/JDK-21+-orange)]() [![](https://img.shields.io/badge/Netbeans-17+-green)]()
+
 ---  
 
 ## Plugin Documentation
