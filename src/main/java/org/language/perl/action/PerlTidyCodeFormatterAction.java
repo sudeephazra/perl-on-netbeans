@@ -22,7 +22,7 @@ import org.openide.cookies.SaveCookie;
 import org.openide.filesystems.FileUtil;
 import org.openide.util.Exceptions;
 import org.openide.util.NbBundle.Messages;
-import org.apache.commons.lang.SystemUtils;
+import org.apache.commons.lang3.SystemUtils;
 
 @ActionID(
         category = "Build",

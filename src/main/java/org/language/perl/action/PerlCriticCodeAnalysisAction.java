@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import javax.swing.JOptionPane;
-import org.apache.commons.lang.SystemUtils;
+import org.apache.commons.lang3.SystemUtils;
 import org.language.perl.file.PerlFileDataObject;
 import org.language.perl.options.panel.GeneralPanelPreferences;
 import org.language.perl.options.panel.PerlCriticPreferences;
